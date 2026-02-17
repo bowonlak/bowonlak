@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Ethics - Bowonlak Sandee</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts (Prompt for Thai) -->
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Prompt', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            purple: '#A855F7',
+                            light: '#F3E8FF',
+                            blue: '#38BDF8',
+                            yellow: '#FACC15',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Prompt', sans-serif;
+            background-color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .animate-in {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body class="text-gray-700 bg-gray-50/50">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300 py-4 top-0 left-0">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <a href="profile.html" class="flex items-center gap-3 group">
+                <div
+                    class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 font-bold text-lg group-hover:scale-110 transition-transform">
+                    B</div>
+                <div class="leading-tight">
+                    <h1 class="text-lg font-bold text-gray-800 group-hover:text-purple-600 transition-colors">Bowonlak
+                        Sandee</h1>
+                    <p class="text-xs text-gray-400 font-light">ข้อมูลส่วนตัว</p>
+                </div>
+            </a>
+
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-500">
+                <a href="index.html" class="hover:text-purple-600 transition-colors">หน้าแรก</a>
+                <a href="teaching.html" class="hover:text-purple-600 transition-colors">การจัดการเรียนรู้</a>
+                <a href="student-care.html" class="hover:text-purple-600 transition-colors">ระบบดูแลนักเรียน</a>
+                <a href="ethics.html" class="text-purple-600 border-b-2 border-purple-500 pb-1">จรรยาบรรณวิชาชีพ</a>
+            </div>
+
+            <a href="index.html#contact"
+                class="hidden md:inline-block px-8 py-2.5 rounded-full bg-gradient-to-r from-[#C084FC] to-[#A855F7] text-white text-sm font-semibold hover:scale-105 hover:shadow-lg transition-all shadow-md">ติดต่อ</a>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-gray-600 text-xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu"
+            class="hidden fixed inset-0 z-50 bg-white p-6 flex flex-col animate-in fade-in duration-300 md:hidden">
+            <div class="flex justify-between items-center mb-12">
+                <div class="flex items-center gap-3">
+                    <div
+                        class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 font-bold text-lg">
+                        B</div>
+                    <h1 class="text-lg font-bold text-gray-800">Menu</h1>
+                </div>
+                <button id="close-menu-btn" class="text-gray-600 text-2xl focus:outline-none">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <nav class="flex flex-col gap-6 text-lg font-medium text-gray-600">
+                <a href="index.html" class="hover:text-purple-600 flex items-center gap-4 transition-colors">
+                    <i class="fa-solid fa-house w-6"></i> หน้าแรก
+                </a>
+                <a href="teaching.html" class="hover:text-purple-600 flex items-center gap-4 transition-colors">
+                    <i class="fa-solid fa-book-open w-6"></i> การจัดการเรียนรู้
+                </a>
+                <a href="student-care.html" class="hover:text-purple-600 flex items-center gap-4 transition-colors">
+                    <i class="fa-solid fa-hands-holding-child w-6"></i> ระบบดูแลนักเรียน
+                </a>
+                <a href="ethics.html" class="text-purple-600 flex items-center gap-4 transition-colors">
+                    <i class="fa-solid fa-scale-balanced w-6"></i> จรรยาบรรณวิชาชีพ
+                </a>
+                <a href="profile.html" class="hover:text-purple-600 flex items-center gap-4 transition-colors">
+                    <i class="fa-solid fa-user w-6"></i> ข้อมูลส่วนตัว
+                </a>
+            </nav>
+
+            <div class="mt-auto pb-10">
+                <a href="index.html#contact"
+                    class="block w-full py-4 rounded-2xl bg-gradient-to-r from-[#C084FC] to-[#A855F7] text-white text-center font-bold shadow-lg">
+                    ติดต่อสอบถาม
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <div class="pt-32 pb-4 bg-white">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h1 class="text-3xl md:text-4xl font-bold text-purple-500 mb-2">ตัวชี้วัดที่ 3 ด้านจรรยาบรรณวิชาชีพครู</h1>
+            <p class="text-gray-400 font-light max-w-2xl mx-auto text-sm">
+                การประพฤติปฏิบัติตนตามจรรยาบรรณและมาตรฐานวิชาชีพ</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="pt-2 pb-8">
+        <div class="max-w-7xl mx-auto px-6">
+
+            <!-- Tabs Navigation -->
+            <div class="flex justify-center mb-8">
+                <div
+                    class="inline-flex p-1 bg-gray-100 rounded-2xl shadow-inner border border-gray-200 overflow-x-auto max-w-full">
+                    <button onclick="switchTab('duty')" id="tabduty"
+                        class="px-6 py-2.5 rounded-xl transition-all duration-300 flex items-center gap-2 text-sm font-medium bg-white text-purple-600 shadow-sm border border-gray-200/50 whitespace-nowrap">
+                        <i class="fa-regular fa-clock"></i>
+                        การปฏิบัติหน้าที่เวร
+                    </button>
+                    <button onclick="switchTab('collab')" id="tabcollab"
+                        class="px-6 py-2.5 rounded-xl transition-all duration-300 flex items-center gap-2 text-sm font-medium text-gray-500 hover:text-gray-700 whitespace-nowrap">
+                        <i class="fa-solid fa-users-viewfinder"></i>
+                        การทำงานร่วมกับผู้อื่น
+                    </button>
+                    <button onclick="switchTab('dev')" id="tabdev"
+                        class="px-6 py-2.5 rounded-xl transition-all duration-300 flex items-center gap-2 text-sm font-medium text-gray-500 hover:text-gray-700 whitespace-nowrap">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        การพัฒนาตนเอง
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tab Content: Duty Performance -->
+            <div id="duty-content" class="space-y-12 animate-in">
+                <!-- Section 1: Documents -->
+                <div>
+                    <div class="mb-8">
+                        <h2 class="text-2xl font-bold text-gray-800">3.1) การปฏิบัติหน้าที่เวรประจำวัน</h2>
+                        <div class="h-1.5 w-16 bg-gradient-to-r from-purple-500 to-purple-300 rounded-full mt-2"></div>
+                    </div>
+
+                    <div class="flex justify-between items-center mb-6">
+                        <div class="relative">
+                            <h2 class="text-xl font-bold text-gray-800">เอกสารคำสั่ง</h2>
+                            <div class="h-1 w-10 bg-purple-300 rounded-full mt-1.5 opacity-60"></div>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <a href="#" target="_blank" rel="noopener noreferrer"
+                            class="bg-white p-5 rounded-2xl border border-gray-100 hover:border-purple-200 hover:shadow-md transition-all flex items-center gap-4 cursor-pointer group">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-red-50 flex items-center justify-center text-red-400 text-xl group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-file-pdf"></i>
+                            </div>
+                            <div>
+                                <h3
+                                    class="text-sm font-bold text-gray-700 group-hover:text-purple-600 transition-colors">
+                                    คำสั่งเวรประจำวัน เดือนมกราคม</h3>
+                                <p class="text-[10px] text-gray-400 mt-1">1 ม.ค. 2567</p>
+                            </div>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer"
+                            class="bg-white p-5 rounded-2xl border border-gray-100 hover:border-purple-200 hover:shadow-md transition-all flex items-center gap-4 cursor-pointer group">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-blue-400 text-xl group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-file-lines"></i>
+                            </div>
+                            <div>
+                                <h3
+                                    class="text-sm font-bold text-gray-700 group-hover:text-purple-600 transition-colors">
+                                    บันทึกการตรวจเวร</h3>
+                                <p class="text-[10px] text-gray-400 mt-1">31 ม.ค. 2567</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Section 2: Photos -->
+                <div>
+                    <div class="mb-6">
+                        <div class="relative">
+                            <h2 class="text-xl font-bold text-gray-800">ภาพการปฏิบัติหน้าที่</h2>
+                            <div class="h-1 w-10 bg-purple-300 rounded-full mt-1.5 opacity-60"></div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                        <div
+                            class="aspect-square rounded-2xl bg-white border border-gray-100 flex items-center justify-center text-gray-200">
+                            <i class="fa-regular fa-image text-4xl"></i>
+                        </div>
+                        <div
+                            class="aspect-square rounded-2xl bg-white border border-gray-100 flex items-center justify-center text-gray-200">
+                            <i class="fa-regular fa-image text-4xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content: Collaboration -->
+            <div id="collab-content" class="hidden space-y-12 animate-in">
+                <!-- Section 1: Documents -->
+                <div>
+                    <div class="mb-8">
+                        <h2 class="text-2xl font-bold text-gray-800">3.2) การทำงานร่วมกับผู้อื่นและการมีจิตอาสา</h2>
+                        <div class="h-1.5 w-16 bg-gradient-to-r from-purple-500 to-purple-300 rounded-full mt-2"></div>
+                    </div>
+
+                    <div class="flex justify-between items-center mb-6">
+                        <div class="relative">
+                            <h2 class="text-xl font-bold text-gray-800">เอกสารคำสั่ง</h2>
+                            <div class="h-1 w-10 bg-purple-300 rounded-full mt-1.5 opacity-60"></div>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <a href="#" target="_blank" rel="noopener noreferrer"
+                            class="bg-white p-5 rounded-2xl border border-gray-100 hover:border-purple-200 hover:shadow-md transition-all flex items-center gap-4 cursor-pointer group">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-purple-50 flex items-center justify-center text-purple-400 text-xl group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-handshake"></i>
+                            </div>
+                            <div>
+                                <h3
+                                    class="text-sm font-bold text-gray-700 group-hover:text-purple-600 transition-colors">
+                                    บันทึกการประชุม PLC</h3>
+                                <p class="text-[10px] text-gray-400 mt-1">กลุ่มสาระการเรียนรู้วิทยาศาสตร์และเทคโนโลยี
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Section 2: Volunteer Activities -->
+                <div>
+                    <div class="flex justify-between items-center mb-6">
+                        <div class="relative">
+                            <h2 class="text-xl font-bold text-gray-800">กิจกรรมจิตอาสาและงานส่วนรวม</h2>
+                            <div class="h-1 w-10 bg-purple-300 rounded-full mt-1.5 opacity-60"></div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                        <!-- Activity 1: School Development -->
+                        <div onclick="openActivityModal('school-dev')"
+                            class="aspect-square rounded-2xl bg-white border border-gray-100 overflow-hidden relative group cursor-pointer shadow-sm hover:shadow-lg transition-all">
+                            <div
+                                class="absolute inset-0 flex items-center justify-center opacity-20 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-broom text-4xl text-purple-400"></i>
+                            </div>
+                            <div
+                                class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 p-3 opacity-90 group-hover:opacity-100 transition-opacity">
+                                <p class="text-white text-[10px] font-bold leading-tight">กิจกรรมพัฒนาโรงเรียน</p>
+                                <p class="text-white/70 text-[8px] mt-0.5">ร่วมแรงร่วมใจพัฒนาภูมิทัศน์</p>
+                            </div>
+                        </div>
+
+                        <!-- Duplicate for demo as per screenshot -->
+                        <div onclick="openActivityModal('school-dev')"
+                            class="aspect-square rounded-2xl bg-white border border-gray-100 overflow-hidden relative group cursor-pointer shadow-sm hover:shadow-lg transition-all">
+                            <div
+                                class="absolute inset-0 flex items-center justify-center opacity-20 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-paint-roller text-4xl text-blue-400"></i>
+                            </div>
+                            <div
+                                class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 p-3 opacity-90 group-hover:opacity-100 transition-opacity">
+                                <p class="text-white text-[10px] font-bold leading-tight">กิจกรรมพัฒนาโรงเรียน</p>
+                                <p class="text-white/70 text-[8px] mt-0.5">ร่วมแรงร่วมใจพัฒนาภูมิทัศน์</p>
+                            </div>
+                        </div>
+
+                        <div onclick="openActivityModal('school-dev')"
+                            class="aspect-square rounded-2xl bg-white border border-gray-100 overflow-hidden relative group cursor-pointer shadow-sm hover:shadow-lg transition-all">
+                            <div
+                                class="absolute inset-0 flex items-center justify-center opacity-20 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-seedling text-4xl text-green-400"></i>
+                            </div>
+                            <div
+                                class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 p-3 opacity-90 group-hover:opacity-100 transition-opacity">
+                                <p class="text-white text-[10px] font-bold leading-tight">กิจกรรมพัฒนาโรงเรียน</p>
+                                <p class="text-white/70 text-[8px] mt-0.5">ร่วมแรงร่วมใจพัฒนาภูมิทัศน์</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content: Self Development -->
+            <div id="dev-content" class="hidden space-y-12 animate-in">
+                <!-- Section 1: Certificates -->
+                <div>
+                    <div class="mb-8">
+                        <h2 class="text-2xl font-bold text-gray-800">3.3) การพัฒนาตนเองด้านวิชาชีพครู</h2>
+                        <div class="h-1.5 w-16 bg-gradient-to-r from-purple-500 to-purple-300 rounded-full mt-2"></div>
+                    </div>
+
+                    <div class="flex justify-between items-center mb-6">
+                        <div class="relative">
+                            <h2 class="text-xl font-bold text-gray-800">เอกสารคำสั่ง</h2>
+                            <div class="h-1 w-10 bg-purple-300 rounded-full mt-1.5 opacity-60"></div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Certificate 1 -->
+                        <a href="#" target="_blank" rel="noopener noreferrer"
+                            onclick="openActivityModal('workshop-canva')"
+                            class="bg-white rounded-3xl border border-gray-100 p-2 shadow-sm hover:shadow-xl transition-all group cursor-pointer">
+                            <div
+                                class="aspect-[4/3] rounded-2xl bg-gray-50 flex flex-col items-center justify-center relative overflow-hidden text-gray-300 group-hover:text-purple-300 transition-colors">
+                                <i
+                                    class="fa-solid fa-award text-4xl mb-2 opacity-50 group-hover:scale-110 transition-transform"></i>
+                                <p class="text-[10px] uppercase tracking-widest font-light">Certificate</p>
+                                <div
+                                    class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-white/80 to-transparent">
+                                </div>
+                            </div>
+                            <div class="px-4 py-3 text-center">
+                                <h3
+                                    class="text-xs font-bold text-gray-700 leading-tight group-hover:text-purple-600 transition-colors">
+                                    การอบรมเชิงปฏิบัติการ..</h3>
+                            </div>
+                        </a>
+
+                        <!-- Certificate 2 -->
+                        <a href="#" target="_blank" rel="noopener noreferrer" onclick="openActivityModal('pro-teacher')"
+                            class="bg-white rounded-3xl border border-gray-100 p-2 shadow-sm hover:shadow-xl transition-all group cursor-pointer">
+                            <div
+                                class="aspect-[4/3] rounded-2xl bg-gray-50 flex flex-col items-center justify-center relative overflow-hidden text-gray-300 group-hover:text-purple-300 transition-colors">
+                                <i
+                                    class="fa-solid fa-award text-4xl mb-2 opacity-50 group-hover:scale-110 transition-transform"></i>
+                                <p class="text-[10px] uppercase tracking-widest font-light">Certificate</p>
+                                <div
+                                    class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-white/80 to-transparent">
+                                </div>
+                            </div>
+                            <div class="px-4 py-3 text-center">
+                                <h3
+                                    class="text-xs font-bold text-gray-700 leading-tight group-hover:text-purple-600 transition-colors">
+                                    หลักสูตรครูมืออาชีพ..</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Section 2: Training Reports -->
+                <div>
+                    <div class="flex justify-between items-center mb-6">
+                        <div class="relative">
+                            <h2 class="text-xl font-bold text-gray-800">รายงานการอบรม</h2>
+                            <div class="h-1 w-10 bg-purple-300 rounded-full mt-1.5 opacity-60"></div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 gap-4">
+                        <a href="#" target="_blank" rel="noopener noreferrer"
+                            class="bg-white p-5 rounded-3xl border border-gray-100 hover:border-purple-200 hover:shadow-md transition-all flex items-center gap-4 cursor-pointer group leading-tight">
+                            <div
+                                class="w-12 h-12 rounded-2xl bg-red-50 flex items-center justify-center text-red-400 text-xl group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-file-pdf"></i>
+                            </div>
+                            <div>
+                                <h3
+                                    class="text-sm font-bold text-gray-700 group-hover:text-purple-600 transition-colors">
+                                    สรุปผลการอบรมออนไลน์ ThaiMOOC</h3>
+                                <p class="text-[10px] text-gray-400 mt-1 font-light tracking-wide">20 ธ.ค. 2566</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modal for Activities -->
+    <div id="activity-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4">
+        <div onclick="closeActivityModal()" class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity">
+        </div>
+        <div
+            class="relative w-full max-w-4xl bg-white rounded-3xl overflow-hidden shadow-2xl animate-in zoom-in duration-300 max-h-[90vh] flex flex-col">
+            <!-- Modal Header -->
+            <div
+                class="px-8 py-6 border-b border-gray-100 flex justify-between items-center sticky top-0 bg-white z-10">
+                <div>
+                    <h2 id="modal-title" class="text-2xl font-bold text-gray-800">หัวข้อกิจกรรม</h2>
+                    <p id="modal-subtitle" class="text-purple-500 text-sm font-medium mt-1">รายละเอียด</p>
+                </div>
+                <button onclick="closeActivityModal()"
+                    class="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:text-red-500 hover:bg-red-50 transition-all">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <!-- Modal Content (Scrollable) -->
+            <div class="p-8 overflow-y-auto">
+                <div class="mb-10">
+                    <h3 class="text-gray-800 font-bold mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-circle-info text-purple-400"></i>
+                        รายละเอียดกิจกรรม
+                    </h3>
+                    <p id="modal-description" class="text-gray-500 leading-relaxed text-base font-light">
+                        คำบรรยายหน้าที่การทำงาน...
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="text-gray-800 font-bold mb-6 flex items-center gap-2">
+                        <i class="fa-solid fa-images text-purple-400"></i>
+                        ภาพบรรยากาศกิจกรรม
+                    </h3>
+                    <div id="modal-gallery" class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <!-- Gallery images will be injected here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white py-12 border-t border-gray-100 mt-20">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <!-- Left Side -->
+            <div class="text-center md:text-left">
+                <h3 class="font-bold text-purple-600">นางสาวบวรลักษณ์ แสนดี</h3>
+                <p class="text-xs text-gray-400 font-light mt-1">นิสิตฝึกประสบการณ์วิชาชีพครู | โรงเรียนเฉลิมขวัญสตรี
+                </p>
+            </div>
+
+            <!-- Right Side -->
+            <div class="flex items-center gap-6 text-gray-300">
+                <span class="text-sm font-medium text-gray-400">Jasminenie</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function switchTab(tab) {
+            const tabs = ['duty', 'collab', 'dev'];
+            tabs.forEach(t => {
+                const btn = document.getElementById('tab' + t);
+                const content = document.getElementById(t + '-content');
+                if (t === tab) {
+                    btn.className = "px-6 py-2.5 rounded-xl transition-all duration-300 flex items-center gap-2 text-sm font-medium bg-white text-purple-600 shadow-sm border border-gray-200/50 whitespace-nowrap";
+                    content.classList.remove('hidden');
+                } else {
+                    btn.className = "px-6 py-2.5 rounded-xl transition-all duration-300 flex items-center gap-2 text-sm font-medium text-gray-500 hover:text-gray-700 whitespace-nowrap";
+                    content.classList.add('hidden');
+                }
+            });
+        }
+
+        const activityData = {
+            'school-dev': {
+                title: 'กิจกรรมพัฒนาโรงเรียน',
+                subtitle: 'ร่วมแรงร่วมใจพัฒนาภูมิทัศน์',
+                description: 'ปฏิบัติหน้าที่ร่วมกับคณะครูและบุคลากรในการปรับปรุงภูมิทัศน์รอบบริเวณโรงเรียน ทาสีอาคารเรียน ปลูกต้นไม้ และดูแลความสะอาดพื้นที่ส่วนรวม เพื่อสร้างบรรยากาศที่เอื้อต่อการเรียนรู้ของนักเรียน และสร้างความภาคภูมิใจในสถานศึกษาร่วมกัน',
+                images: 6
+            },
+            'workshop-canva': {
+                title: 'การอบรมเชิงปฏิบัติการ Canva',
+                subtitle: 'การสร้างสื่อการเรียนรู้แบบโต้ตอบ',
+                description: 'เข้ารับการอบรมเชิงปฏิบัติการเกี่ยวกับการใช้งานแอปพลิเคชัน Canva เพื่อสร้างสื่อการเรียนการสอนที่มีประสิทธิภาพ สวยงาม และน่าสนใจ โดยมุ่งเน้นการสร้าง Interactive Presentation และ Infographic ข้อมูลเชิงนามธรรมสำหรับนักเรียนชั้นมัธยมศึกษาปีที่ 1',
+                images: 6
+            },
+            'pro-teacher': {
+                title: 'หลักสูตรครูมืออาชีพในยุคดิจิทัล',
+                subtitle: 'การพัฒนาทักษะวิชาชีพครู',
+                description: 'เรียนรู้เทคนิคการจัดการชั้นเรียนยุคใหม่ การใช้เครื่องมือเทคโนโลยีทางการศึกษา (EdTech) และการสร้างบรรยากาศการเรียนรู้ที่ยืดหยุ่น เพื่อส่งเสริมสมรรถนะผู้เรียนในศตวรรษที่ 21 ให้สอดคล้องกับมาตรฐานวิชาชีพและจรรยาบรรณของครู',
+                images: 6
+            }
+        };
+
+        function openActivityModal(type) {
+            const data = activityData[type];
+            document.getElementById('modal-title').innerText = data.title;
+            document.getElementById('modal-subtitle').innerText = data.subtitle;
+            document.getElementById('modal-description').innerText = data.description;
+
+            const gallery = document.getElementById('modal-gallery');
+            gallery.innerHTML = '';
+
+            for (let i = 1; i <= data.images; i++) {
+                const imgContainer = document.createElement('div');
+                imgContainer.className = "aspect-[4/3] rounded-2xl bg-gray-50 border border-gray-100 flex items-center justify-center overflow-hidden group cursor-pointer hover:shadow-lg transition-all";
+                imgContainer.innerHTML = `
+                    <div class="opacity-20 group-hover:scale-110 transition-transform duration-500">
+                        <i class="fa-solid fa-image text-4xl text-gray-300"></i>
+                    </div>
+                `;
+                gallery.appendChild(imgContainer);
+            }
+
+            const modal = document.getElementById('activity-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeActivityModal() {
+            const modal = document.getElementById('activity-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close on ESC
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeActivityModal();
+        });
+    </script>
+    <script>
+        // Mobile Menu Toggle logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileMenuBtn && closeMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            });
+
+            closeMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            });
+
+            // Close menu when clicking on a link
+            const menuLinks = mobileMenu.querySelectorAll('a');
+            menuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    document.body.style.overflow = 'auto';
+                });
+            });
+        }
+    </script>
+</body>
+
+</html>

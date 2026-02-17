@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teaching Management - Bowonlak Sandee</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts (Prompt for Thai) -->
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Prompt', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            purple: '#A855F7', // Lilac/Purple
+                            light: '#F3E8FF',
+                            blue: '#38BDF8',   // Light Blue
+                            yellow: '#FACC15', // Gold/Yellow
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Prompt', sans-serif;
+            background-color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(to right, #A855F7, #EC4899);
+        }
+
+        .tab-active {
+            color: #A855F7;
+            /* purple-500 */
+            border-bottom: 2px solid #A855F7;
+        }
+
+        .tab-inactive {
+            color: #9CA3AF;
+            /* gray-400 */
+            border-bottom: 2px solid transparent;
+        }
+
+        .tab-inactive:hover {
+            color: #6B7280;
+            /* gray-500 */
+        }
+    </style>
+</head>
+
+<body class="text-gray-700 bg-gray-50/50">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300 py-4 top-0 left-0">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <!-- Logo / Name -->
+            <a href="profile.html" class="flex items-center gap-3 group">
+                <div
+                    class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 font-bold text-lg group-hover:scale-110 transition-transform">
+                    B
+                </div>
+                <div class="leading-tight">
+                    <h1 class="text-lg font-bold text-gray-800 group-hover:text-purple-600 transition-colors">Bowonlak
+                        Sandee</h1>
+                    <p class="text-xs text-gray-400 font-light">ข้อมูลส่วนตัว</p>
+                </div>
+            </a>
+
+            <!-- Menu -->
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-500">
+                <a href="index.html" class="hover:text-purple-600 transition-colors">หน้าแรก</a>
+                <a href="teaching.html" class="text-purple-600 border-b-2 border-purple-500 pb-1">การจัดการเรียนรู้</a>
+                <a href="student-care.html" class="hover:text-purple-600 transition-colors">ระบบดูแลนักเรียน</a>
+                <a href="ethics.html" class="hover:text-purple-600 transition-colors">จรรยาบรรณวิชาชีพ</a>
+            </div>
+
+            <!-- Contact Button -->
+            <a href="index.html#contact"
+                class="hidden md:inline-block px-8 py-2.5 rounded-full bg-gradient-to-r from-[#C084FC] to-[#A855F7] text-white text-sm font-semibold hover:scale-105 hover:shadow-lg transition-all shadow-md">
+                ติดต่อ
+            </a>
+
+            <!-- Mobile Menu Button (Hamburger) -->
+            <button class="md:hidden text-gray-600 text-xl">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <div class="pt-32 pb-12 bg-white">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h1 class="text-3xl md:text-4xl font-bold text-purple-500 mb-4">ตัวชี้วัดที่ 1 ด้านการจัดการเรียนรู้</h1>
+            <p class="text-gray-500 font-light max-w-2xl mx-auto">รวบรวมข้อมูลและผลงานด้านการจัดการเรียนการสอน</p>
+        </div>
+    </div>
+
+    <!-- Tabs Navigation -->
+    <div class="bg-white border-b border-gray-100 sticky top-[72px] z-40">
+        <div class="max-w-7xl mx-auto px-6 overflow-x-auto scrollbar-hide">
+            <div class="flex items-center gap-8 min-w-max">
+                <!-- Tab 1: Learning Plans -->
+                <a href="teaching.html"
+                    class="py-4 text-sm font-medium flex items-center gap-2 tab-inactive transition-colors">
+                    <i class="fa-solid fa-book-open"></i>
+                    แผนการจัดการเรียนรู้
+                </a>
+
+                <!-- Tab 2: Technology -->
+                <a href="teaching-media.html"
+                    class="py-4 text-sm font-medium flex items-center gap-2 tab-inactive transition-colors">
+                    <i class="fa-solid fa-laptop-code"></i>
+                    สื่อเทคโนโลยี
+                </a>
+
+                <!-- Tab 3: Evaluation -->
+                <a href="teaching-eval.html"
+                    class="py-4 text-sm font-medium flex items-center gap-2 tab-active transition-colors">
+                    <i class="fa-solid fa-clipboard-check"></i>
+                    การวัดผลและประเมินผล
+                </a>
+
+                <!-- Tab 4: Research -->
+                <a href="teaching-research.html"
+                    class="py-4 text-sm font-medium flex items-center gap-2 tab-inactive transition-colors">
+                    <i class="fa-solid fa-microscope"></i>
+                    วิจัยในชั้นเรียน
+                </a>
+
+                <!-- Tab 5: Student Works -->
+                <a href="teaching-student-works.html"
+                    class="py-4 text-sm font-medium flex items-center gap-2 tab-inactive transition-colors">
+                    <i class="fa-solid fa-users"></i>
+                    ผลงานนักเรียน
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Section -->
+    <div class="py-12 min-h-[600px]">
+        <div class="max-w-7xl mx-auto px-6">
+
+
+
+            <!-- Evaluation Content -->
+            <div id="eval-content">
+                <!-- Main Eval List -->
+                <div id="eval-list-view">
+                    <!-- Section Header & Action -->
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
+                        <div>
+                            <h2 class="text-2xl font-bold text-gray-800 flex items-center gap-3">
+                                1.3) การวัดผลและประเมินผล
+                            </h2>
+                            <div class="h-1 w-12 bg-purple-300 rounded-full mt-2"></div>
+                            <p class="text-sm text-gray-400 font-light mt-2">เครื่องมือวัดผล ข้อสอบ และแบบประเมิน</p>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <!-- Item 1 -->
+                        <!-- Item 1 -->
+                        <div onclick="showEvalDetail('concept')"
+                            class="bg-white p-6 rounded-2xl border border-gray-100 hover:shadow-md transition-shadow flex items-center gap-4 group cursor-pointer">
+                            <div
+                                class="w-12 h-12 rounded-lg bg-red-50 flex items-center justify-center text-red-500 text-xl group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-file-signature"></i>
+                            </div>
+                            <div class="flex-grow">
+                                <h3 class="font-medium text-gray-800 group-hover:text-purple-600 transition-colors">
+                                    แบบทดสอบก่อนและหลังเรียน เรื่อง แนวคิดเชิงนามธรรมและการแก้ปัญหา</h3>
+                            </div>
+                            <i
+                                class="fa-solid fa-chevron-right text-gray-300 group-hover:text-purple-500 transition-colors"></i>
+                        </div>
+
+                        <!-- Item 2 -->
+                        <!-- Item 2 -->
+                        <div onclick="showEvalDetail('data')"
+                            class="bg-white p-6 rounded-2xl border border-gray-100 hover:shadow-md transition-shadow flex items-center gap-4 group cursor-pointer">
+                            <div
+                                class="w-12 h-12 rounded-lg bg-red-50 flex items-center justify-center text-red-500 text-xl group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-file-signature"></i>
+                            </div>
+                            <div class="flex-grow">
+                                <h3 class="font-medium text-gray-800 group-hover:text-purple-600 transition-colors">
+                                    แบบทดสอบก่อนและหลังเรียน เรื่อง ข้อมูลและการประมวลผล
+                                    และการใช้เทคโนโลยีสารสนเทศอย่างปลอดภัย</h3>
+                            </div>
+                            <i
+                                class="fa-solid fa-chevron-right text-gray-300 group-hover:text-purple-500 transition-colors"></i>
+                        </div>
+
+                        <!-- Item 3 -->
+                        <div onclick="showEvalDetail('midterm')"
+                            class="bg-white p-6 rounded-2xl border border-gray-100 hover:shadow-md transition-shadow flex items-center gap-4 group cursor-pointer">
+                            <div
+                                class="w-12 h-12 rounded-lg bg-orange-50 flex items-center justify-center text-orange-500 text-xl group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <div class="flex-grow">
+                                <h3 class="font-medium text-gray-800 group-hover:text-purple-600 transition-colors">
+                                    งานสอบกลางภาค</h3>
+                                <p class="text-xs text-gray-400 mt-1">หัวข้อ "ละครเวทีดิจิทัล"</p>
+                            </div>
+                            <i
+                                class="fa-solid fa-chevron-right text-gray-300 group-hover:text-purple-500 transition-colors"></i>
+                        </div>
+
+                        <!-- Item 4 -->
+                        <div onclick="showEvalDetail('final')"
+                            class="bg-white p-6 rounded-2xl border border-gray-100 hover:shadow-md transition-shadow flex items-center gap-4 group cursor-pointer">
+                            <div
+                                class="w-12 h-12 rounded-lg bg-blue-50 flex items-center justify-center text-blue-500 text-xl group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-trophy"></i>
+                            </div>
+                            <div class="flex-grow">
+                                <h3 class="font-medium text-gray-800 group-hover:text-purple-600 transition-colors">
+                                    งานสอบปลายภาค</h3>
+                                <p class="text-xs text-gray-400 mt-1">หัวข้อ "ฉลาดรู้ของดีท้องถิ่น"</p>
+                            </div>
+                            <i
+                                class="fa-solid fa-chevron-right text-gray-300 group-hover:text-purple-500 transition-colors"></i>
+                        </div>
+
+                        <!-- Item 5 -->
+                        <div onclick="showEvalDetail('samples')"
+                            class="bg-white p-6 rounded-2xl border border-gray-100 hover:shadow-md transition-shadow flex items-center gap-4 group cursor-pointer">
+                            <div
+                                class="w-12 h-12 rounded-lg bg-purple-50 flex items-center justify-center text-purple-500 text-xl group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-folder-open"></i>
+                            </div>
+                            <div class="flex-grow">
+                                <h3 class="font-medium text-gray-800 group-hover:text-purple-600 transition-colors">
+                                    ตัวอย่างกิจกรรมที่ใช้ในการจัดการเรียนรู้</h3>
+                                <p class="text-xs text-gray-400 mt-1">กิจกรรม 1.1 - 4.1</p>
+                            </div>
+                            <i
+                                class="fa-solid fa-chevron-right text-gray-300 group-hover:text-purple-500 transition-colors"></i>
+                        </div>
+
+                        <!-- Item 6 -->
+                        <a href="https://docs.google.com/spreadsheets/d/1MxxcTmpecp384EsbW0Tup5M63aN0QQwJ/edit?usp=sharing&ouid=115125663495159958930&rtpof=true&sd=true"
+                            target="_blank" rel="noopener noreferrer"
+                            class="bg-white p-6 rounded-2xl border border-gray-100 hover:shadow-md transition-shadow flex items-center gap-4 group cursor-pointer">
+                            <div
+                                class="w-12 h-12 rounded-lg bg-green-50 flex items-center justify-center text-green-500 text-xl group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-table"></i>
+                            </div>
+                            <div class="flex-grow">
+                                <h3 class="font-medium text-gray-800 group-hover:text-purple-600 transition-colors">
+                                    คะแนนนักเรียนชั้นมัธยมศึกษาปีที่ 1 รายวิชา เทคโนโลยีเพื่อการแก้ปัญหา 1</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Concept Detail (Item 1) -->
+                <div id="eval-concept" class="hidden">
+                    <button onclick="hideEvalDetail()"
+                        class="flex items-center gap-2 text-purple-600 font-medium mb-6 hover:translate-x-[-4px] transition-transform">
+                        <i class="fa-solid fa-arrow-left"></i> กลับไปหน้ารวม
+                    </button>
+                    <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-2">แบบทดสอบก่อนและหลังเรียน เรื่อง
+                            แนวคิดเชิงนามธรรมและการแก้ปัญหา</h2>
+                        <div class="h-1 w-20 bg-red-300 rounded-full mb-6"></div>
+
+                        <div class="space-y-6 text-gray-600">
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-2 flex items-center gap-2">
+                                    <i class="fa-solid fa-circle-info text-blue-400"></i> คำชี้แจง
+                                </h4>
+                                <p class="leading-relaxed">
+                                    ให้นักเรียนทำแบบทดสอบเพื่อวัดความรู้ความเข้าใจในเรื่องแนวคิดเชิงนามธรรมและการแก้ปัญหา
+                                    โดยประกอบด้วยข้อสอบปรนัยจำนวน 20 ข้อ
+                                </p>
+                            </div>
+
+                            <div class="flex flex-wrap gap-4">
+                                <a href="https://forms.gle/3QWMhMa7XaTr4oWh8" target="_blank"
+                                    class="inline-flex px-6 py-3 bg-red-500 text-white rounded-xl shadow-md hover:bg-red-600 transition-colors items-center gap-2 font-medium w-full md:w-auto justify-center">
+                                    <i class="fa-brands fa-google"></i> แบบทดสอบก่อนเรียน
+                                </a>
+                                <a href="https://forms.gle/NvxMyEcdQt78YDAL6" target="_blank"
+                                    class="inline-flex px-6 py-3 bg-red-500 text-white rounded-xl shadow-md hover:bg-red-600 transition-colors items-center gap-2 font-medium w-full md:w-auto justify-center">
+                                    <i class="fa-brands fa-google"></i> แบบทดสอบหลังเรียน
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Detail (Item 2) -->
+                <div id="eval-data" class="hidden">
+                    <button onclick="hideEvalDetail()"
+                        class="flex items-center gap-2 text-purple-600 font-medium mb-6 hover:translate-x-[-4px] transition-transform">
+                        <i class="fa-solid fa-arrow-left"></i> กลับไปหน้ารวม
+                    </button>
+                    <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-2">แบบทดสอบก่อนและหลังเรียน เรื่อง
+                            ข้อมูลและการประมวลผล
+                            และการใช้เทคโนโลยีสารสนเทศอย่างปลอดภัย</h2>
+                        <div class="h-1 w-20 bg-red-300 rounded-full mb-6"></div>
+
+                        <div class="space-y-6 text-gray-600">
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-2 flex items-center gap-2">
+                                    <i class="fa-solid fa-circle-info text-blue-400"></i> คำชี้แจง
+                                </h4>
+                                <p class="leading-relaxed">
+                                    ให้นักเรียนทำแบบทดสอบเพื่อวัดความรู้ความเข้าใจในเรื่องข้อมูลและการประมวลผล
+                                    รวมถึงการใช้งานเทคโนโลยีสารสนเทศอย่างปลอดภัย
+                                </p>
+                            </div>
+
+                            <div class="flex flex-wrap gap-4">
+                                <a href="https://forms.gle/Px1K95XHmJ9qrGA98" target="_blank"
+                                    class="inline-flex px-6 py-3 bg-red-500 text-white rounded-xl shadow-md hover:bg-red-600 transition-colors items-center gap-2 font-medium w-full md:w-auto justify-center">
+                                    <i class="fa-brands fa-google"></i> แบบทดสอบก่อนเรียน
+                                </a>
+                                <a href="https://forms.gle/JjmQmiQpvMVUUVm89" target="_blank"
+                                    class="inline-flex px-6 py-3 bg-red-500 text-white rounded-xl shadow-md hover:bg-red-600 transition-colors items-center gap-2 font-medium w-full md:w-auto justify-center">
+                                    <i class="fa-brands fa-google"></i> แบบทดสอบหลังเรียน
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Midterm Detail -->
+                <div id="eval-midterm" class="hidden">
+                    <button onclick="hideEvalDetail()"
+                        class="flex items-center gap-2 text-purple-600 font-medium mb-6 hover:translate-x-[-4px] transition-transform">
+                        <i class="fa-solid fa-arrow-left"></i> กลับไปหน้ารวม
+                    </button>
+                    <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-2">งานสอบกลางภาค หัวข้อ "ละครเวทีดิจิทัล"</h2>
+                        <div class="h-1 w-20 bg-orange-300 rounded-full mb-6"></div>
+
+                        <div class="space-y-6 text-gray-600">
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-2 flex items-center gap-2">
+                                    <i class="fa-solid fa-circle-info text-blue-400"></i> คำชี้แจง
+                                </h4>
+                                <p class="leading-relaxed">ให้นักเรียนสร้างสถานการณ์จำลองตามจินตนาการของตนเอง
+                                    ที่มีตัวละครไม่น้อยกว่า 2 ตัวสนทนากัน มีบทสนทนาไม่น้อยกว่า 4 บทสนทนา
+                                    พร้อมมีการเคลื่อนไหวของตัวละคร การเปลี่ยนฉากอย่างน้อย 1 ฉาก และการใช้เงื่อนไขแบบง่าย
+                                </p>
+                            </div>
+
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-2 flex items-center gap-2">
+                                    <i class="fa-solid fa-pen-to-square text-orange-400"></i> การตั้งชื่อไฟล์งาน
+                                </h4>
+                                <div class="bg-gray-50 p-4 rounded-xl border-l-4 border-orange-400">
+                                    <code class="text-orange-600">สอบกลางภาค_ชื่อ นามสกุล_ชั้น_เลขที่</code>
+                                </div>
+                            </div>
+
+                            <div class="bg-blue-50 p-6 rounded-2xl flex items-start gap-4">
+                                <i class="fa-solid fa-lightbulb text-blue-500 text-xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-blue-800 mb-1">สำคัญ!</h4>
+                                    <p class="text-blue-700 text-sm">อ่านรายละเอียดงานได้จากสไลด์ที่แนบ</p>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-wrap gap-4 pt-4">
+                                <a href="https://www.canva.com/design/DAG64TGPvRg/l2rRm551k1adwaEVQ5L80A/view?utm_content=DAG64TGPvRg&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h083ed9b17e"
+                                    target="_blank"
+                                    class="px-6 py-3 bg-purple-600 text-white rounded-xl shadow-md hover:bg-purple-700 transition-colors flex items-center gap-2 font-medium">
+                                    <i class="fa-solid fa-book-open"></i> ดูรายละเอียดของงาน (สื่อประกอบ)
+                                </a>
+                                <a href="https://scratch.mit.edu/projects/1253365862" target="_blank"
+                                    class="px-6 py-3 bg-white border border-purple-200 text-purple-600 rounded-xl hover:bg-purple-50 transition-colors flex items-center gap-2 font-medium">
+                                    <i class="fa-solid fa-magnifying-glass"></i> ดูตัวอย่างผลงาน
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Final Detail -->
+                <div id="eval-final" class="hidden">
+                    <button onclick="hideEvalDetail()"
+                        class="flex items-center gap-2 text-purple-600 font-medium mb-6 hover:translate-x-[-4px] transition-transform">
+                        <i class="fa-solid fa-arrow-left"></i> กลับไปหน้ารวม
+                    </button>
+                    <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-2">งานสอบปลายภาค หัวข้อ "ฉลาดรู้ของดีท้องถิ่น"
+                        </h2>
+                        <div class="h-1 w-20 bg-blue-300 rounded-full mb-6"></div>
+
+                        <div class="space-y-6 text-gray-600">
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-2 flex items-center gap-2">
+                                    <i class="fa-solid fa-circle-info text-blue-400"></i> คำชี้แจง
+                                </h4>
+                                <p class="leading-relaxed">
+                                    ให้นักเรียนนำความรู้เกี่ยวกับผลิตภัณฑ์หรือสถานที่ขึ้นชื่อหรือโดดเด่นของชุมชนที่ตนเองเลือกมา
+                                    นำมาสร้างเกมตอบคำถามจำนวนอย่างน้อย 5 ข้อ และมีตัวละครอย่างน้อย 2 ตัว ในโปรแกรม
+                                    Scratch โดยกำหนดให้เป็นเกมตอบคำถามแบบหลายตัวเลือก ก ข ค ง จากนั้นแชร์เป็นเป็นลิงค์
+                                    ส่งใน Classroom</p>
+                            </div>
+
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-2 flex items-center gap-2">
+                                    <i class="fa-solid fa-pen-to-square text-orange-400"></i> การตั้งชื่อไฟล์งาน
+                                </h4>
+                                <div class="bg-gray-50 p-4 rounded-xl border-l-4 border-orange-400">
+                                    <code class="text-orange-600">สอบปลายภาค_ชื่อ นามสกุล_ชั้น_เลขที่</code>
+                                </div>
+                            </div>
+
+                            <div class="bg-blue-50 p-6 rounded-2xl flex items-start gap-4">
+                                <i class="fa-solid fa-lightbulb text-blue-500 text-xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-blue-800 mb-1">สำคัญ!</h4>
+                                    <p class="text-blue-700 text-sm">อ่านรายละเอียดงานได้จากสไลด์ที่แนบ</p>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-wrap gap-4 pt-4">
+                                <a href="https://www.canva.com/design/DAG-L2drOOk/ByIHT7zKXkc1096qL7X9lQ/view?utm_content=DAG-L2drOOk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hdd51af5b8f"
+                                    target="_blank"
+                                    class="px-6 py-3 bg-purple-600 text-white rounded-xl shadow-md hover:bg-purple-700 transition-colors flex items-center gap-2 font-medium">
+                                    <i class="fa-solid fa-book-open"></i> ดูรายละเอียดของงาน (สื่อประกอบ)
+                                </a>
+                                <a href="https://scratch.mit.edu/projects/1267625325" target="_blank"
+                                    class="px-6 py-3 bg-white border border-purple-200 text-purple-600 rounded-xl hover:bg-purple-50 transition-colors flex items-center gap-2 font-medium">
+                                    <i class="fa-solid fa-magnifying-glass"></i> ดูตัวอย่างผลงาน
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Work Samples Detail -->
+                <div id="eval-samples" class="hidden">
+                    <button onclick="hideEvalDetail()"
+                        class="flex items-center gap-2 text-purple-600 font-medium mb-6 hover:translate-x-[-4px] transition-transform">
+                        <i class="fa-solid fa-arrow-left"></i> กลับไปหน้ารวม
+                    </button>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-8">ตัวอย่างกิจกรรมที่ใช้ในการจัดการเรียนรู้</h2>
+
+                    <div class="space-y-6">
+                        <!-- Activity 1.1 -->
+                        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+                            <h3 class="font-bold text-gray-800 mb-3">1. กิจกรรม 1.1 เรื่อง ไปโรงเรียนกันเถอะ</h3>
+                            <p class="text-sm text-gray-600 mb-4 font-light">
+                                ให้นักเรียนเขียนเส้นทางเดินจากบ้านไปโรงเรียนในแบบสถานการณ์จริง และแบบแนวคิดเชิงนามธรรม
+                                พร้อมบอกเส้นทางที่ใกล้ที่สุด เขียนชื่อชั้นเลขที่มุมขวาบน</p>
+                            <div
+                                class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-t border-gray-50 pt-4">
+                                <p class="text-xs text-blue-500 bg-blue-50 px-3 py-1 rounded-full w-fit">ตั้งชื่อไฟล์:
+                                    กิจกรรม1.1_ชื่อ นามสกุล_ชั้น_เลขที่</p>
+                                <a href="assets/PDF/ตัวอย่างกิจกรรม 1.1.pdf" target="_blank"
+                                    class="text-sm font-medium text-purple-600 hover:text-purple-700 flex items-center gap-2">
+                                    <i class="fa-solid fa-eye"></i> ดูตัวอย่างผลงาน
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Activity 1.5 -->
+                        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+                            <h3 class="font-bold text-gray-800 mb-3">2. กิจกรรม 1.5 เรื่อง จับคู่สัญลักษณ์ผังงาน</h3>
+                            <p class="text-sm text-gray-600 mb-4 font-light">
+                                ให้นักเรียนจับคู่สัญลักษณ์ผังงานกับความหมายให้ถูกต้อง
+                                ซึ่งเป็นเกมจำลองที่ฝึกฝนทักษะความจำและความเข้าใจในสัญลักษณ์ต่างๆ
+                                โดยวิธีการเล่นคือจับคู่รูปภาพสัญลักษณ์ให้ตรงกับความหมายให้ไห้ได้ในระดับ 80%หรือ 4
+                                คะแนนขึ้นไปจึงจะผ่านด่าน และได้รับการผ่านแบบทดสอบ
+                                แล้วจึงถ่ายภาพหน้าจอคะแนนของตนเองจากนั้นส่งใน Classroom ภายในคาบเรียน</p>
+                            <div
+                                class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-t border-gray-50 pt-4">
+                                <p class="text-xs text-blue-500 bg-blue-50 px-3 py-1 rounded-full w-fit">ตั้งชื่อไฟล์:
+                                    กิจกรรม1.5_ชื่อ นามสกุล_ชั้น_เลขที่</p>
+                                <a href="https://bowonlak.my.canva.site/flowchart1" target="_blank"
+                                    class="text-sm font-medium text-purple-600 hover:text-purple-700 flex items-center gap-2">
+                                    <i class="fa-solid fa-eye"></i> ดูตัวอย่างผลงาน
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Activity 2.1 -->
+                        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+                            <h3 class="font-bold text-gray-800 mb-3">3. กิจกรรม 2.2 เรื่อง
+                                Scratch เดินเล่น</h3>
+                            <p class="text-sm text-gray-600 mb-4 font-light">
+                                โดยนักเรียนต้องใช้คำสั่งพื้นฐานในการทำให้ตัวละครของตนเองเดินไปและเดินกลับช้ำกัน 5 รอบ
+                                มีเงื่อนไขให้ใช้บล็อกคำสั่ง repeat กำหนด 5 ครั้ง
+                                สามารถเปลี่ยนฉากหลังให้ตัวละครที่ตนเองเลือกมาได้เมื่อเสร็จแล้วให้นักเรียตั้งชื่องานของตนเองว่า
+                                กิจกรรม 2.2_ชื่อ นามสกุล ชั้น_เลขที่ จากนั้นกดแชร์และคัดลอกลิงค์ส่งใน Classroom
+                                ของชั้นเรียนตนเอง</p>
+                            <div
+                                class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-t border-gray-50 pt-4">
+                                <p class="text-xs text-blue-500 bg-blue-50 px-3 py-1 rounded-full w-fit">ตั้งชื่อไฟล์:
+                                    กิจกรรม2.2_ชื่อ นามสกุล_ชั้น_เลขที่</p>
+                                <a href="https://scratch.mit.edu/projects/1252690897" target="_blank"
+                                    class="text-sm font-medium text-purple-600 hover:text-purple-700 flex items-center gap-2">
+                                    <i class="fa-solid fa-eye"></i> ดูตัวอย่างผลงาน
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Activity 3.4 -->
+                        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+                            <h3 class="font-bold text-gray-800 mb-3">4. กิจกรรม 3.4 เรื่อง เสนอ ตอน ของดีชุมชน</h3>
+                            <p class="text-sm text-gray-600 mb-4 font-light">ให้นักเรียนคัดเลือกผลิตภัณฑ์ ของขึ้นชื่อ
+                                หรืออาหารที่โดดเด่นของชุมชนตนเองมา 3 ชนิด(สามารถหาในอินเทอร์เน็ตได้) และเลือกมา 1 ชนิด
+                                พร้อมให้เหตุผลประกอบ ทำใน Canva</p>
+                            <div
+                                class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-t border-gray-50 pt-4">
+                                <p class="text-xs text-blue-500 bg-blue-50 px-3 py-1 rounded-full w-fit">ตั้งชื่อไฟล์:
+                                    กิจกรรม3.4_ชื่อ นามสกุล_ชั้น_เลขที่</p>
+                                <a href="assets/PDF/ตัวอย่างกิจกรรม 3.4.pdf" target="_blank"
+                                    class="text-sm font-medium text-purple-600 hover:text-purple-700 flex items-center gap-2">
+                                    <i class="fa-solid fa-eye"></i> ดูตัวอย่างผลงาน
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Activity 4.1 -->
+                        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+                            <h3 class="font-bold text-gray-800 mb-3">5. กิจกรรม 4.1 เรื่อง ความรู้เรื่องของดี</h3>
+                            <p class="text-sm text-gray-600 mb-2 font-light">นักเรียนสร้างอินโฟกราฟฟิก
+                                เพื่อให้ความรู้เกี่ยวกับผลิตภัณฑ์ที่ตนเองเลือก โดยมีหัวข้อ ดังนี้:</p>
+                            <ul class="text-xs text-gray-500 list-disc ml-5 mb-4 space-y-1">
+                                <li>ประวัติความเป็นมา/ความสำคัญ</li>
+                                <li>พื้นที่/กลุ่มชุมชน</li>
+                                <li>กระบวนการผลิต/การเข้าชม</li>
+                                <li>ประโยชน์ของผลิตภัณฑ์ที่มีต่อชุมชน</li>
+                                <li>ใส่รูปให้สวยงาม พร้อมเขียนแนวทางการใช้ไอทีอย่างปลอดภัยมา 3 ข้อ</li>
+                            </ul>
+                            <div
+                                class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-t border-gray-50 pt-4">
+                                <p class="text-xs text-blue-500 bg-blue-50 px-3 py-1 rounded-full w-fit">ตั้งชื่อไฟล์:
+                                    กิจกรรม4.1_ชื่อ นามสกุล_เลขที่_ชั้น</p>
+                                <a href="assets/PDF/ตัวอย่างกิจกรรม 4.1.pdf" target="_blank"
+                                    class="text-sm font-medium text-purple-600 hover:text-purple-700 flex items-center gap-2">
+                                    <i class="fa-solid fa-eye"></i> ดูตัวอย่างผลงาน
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white py-12 border-t border-gray-100 mt-auto">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <!-- Left Side -->
+            <div class="text-center md:text-left">
+                <h3 class="font-bold text-purple-600">นางสาวบวรลักษณ์ แสนดี</h3>
+                <p class="text-xs text-gray-400 font-light mt-1">นิสิตฝึกประสบการณ์วิชาชีพครู |
+                    โรงเรียนเฉลิมขวัญสตรี</p>
+            </div>
+
+            <!-- Right Side -->
+            <div class="flex items-center gap-6 text-gray-300">
+                <span class="text-sm font-medium text-gray-400">Jasminenie</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Tab Switching Script -->
+    <script>
+
+
+        function showEvalDetail(type) {
+            document.getElementById('eval-list-view').classList.add('hidden');
+            document.getElementById('eval-midterm').classList.add('hidden');
+            document.getElementById('eval-final').classList.add('hidden');
+            document.getElementById('eval-samples').classList.add('hidden');
+            document.getElementById('eval-concept').classList.add('hidden');
+            document.getElementById('eval-data').classList.add('hidden');
+
+            if (type === 'midterm') {
+                document.getElementById('eval-midterm').classList.remove('hidden');
+            } else if (type === 'final') {
+                document.getElementById('eval-final').classList.remove('hidden');
+            } else if (type === 'samples') {
+                document.getElementById('eval-samples').classList.remove('hidden');
+            } else if (type === 'concept') {
+                document.getElementById('eval-concept').classList.remove('hidden');
+            } else if (type === 'data') {
+                document.getElementById('eval-data').classList.remove('hidden');
+            }
+        }
+
+        function hideEvalDetail() {
+            document.getElementById('eval-list-view').classList.remove('hidden');
+            document.getElementById('eval-midterm').classList.add('hidden');
+            document.getElementById('eval-final').classList.add('hidden');
+            document.getElementById('eval-samples').classList.add('hidden');
+            document.getElementById('eval-concept').classList.add('hidden');
+            document.getElementById('eval-data').classList.add('hidden');
+        }
+    </script>
+
+    <script>
+        // Mobile Menu Toggle logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileMenuBtn && closeMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            });
+
+            closeMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            });
+
+            // Close menu when clicking on a link
+            const menuLinks = mobileMenu.querySelectorAll('a');
+            menuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    document.body.style.overflow = 'auto';
+                });
+            });
+        }
+    </script>
+</body>
+
+</html>

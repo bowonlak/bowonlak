@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Works - Bowonlak Sandee</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts (Prompt for Thai) -->
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Prompt', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            purple: '#A855F7', // Lilac/Purple
+                            light: '#F3E8FF',
+                            blue: '#38BDF8',   // Light Blue
+                            yellow: '#FACC15', // Gold/Yellow
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Prompt', sans-serif;
+            background-color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .tab-active {
+            color: #A855F7;
+            border-bottom: 2px solid #A855F7;
+        }
+
+        .tab-inactive {
+            color: #9CA3AF;
+            border-bottom: 2px solid transparent;
+        }
+
+        .tab-inactive:hover {
+            color: #6B7280;
+        }
+    </style>
+</head>
+
+<body class="text-gray-700 bg-gray-50/50">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300 py-4 top-0 left-0">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <a href="profile.html" class="flex items-center gap-3 group">
+                <div
+                    class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 font-bold text-lg group-hover:scale-110 transition-transform">
+                    B</div>
+                <div class="leading-tight">
+                    <h1 class="text-lg font-bold text-gray-800 group-hover:text-purple-600 transition-colors">Bowonlak
+                        Sandee</h1>
+                    <p class="text-xs text-gray-400 font-light">ข้อมูลส่วนตัว</p>
+                </div>
+            </a>
+
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-500">
+                <a href="index.html" class="hover:text-purple-600 transition-colors">หน้าแรก</a>
+                <a href="teaching.html" class="text-purple-600 border-b-2 border-purple-500 pb-1">การจัดการเรียนรู้</a>
+                <a href="student-care.html" class="hover:text-purple-600 transition-colors">ระบบดูแลนักเรียน</a>
+                <a href="ethics.html" class="hover:text-purple-600 transition-colors">จรรยาบรรณวิชาชีพ</a>
+            </div>
+
+            <!-- Contact Button -->
+            <a href="index.html#contact"
+                class="hidden md:inline-block px-8 py-2.5 rounded-full bg-gradient-to-r from-[#C084FC] to-[#A855F7] text-white text-sm font-semibold hover:scale-105 hover:shadow-lg transition-all shadow-md">
+                ติดต่อ
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-gray-600 text-xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu"
+            class="hidden fixed inset-0 z-50 bg-white p-6 flex flex-col animate-in fade-in duration-300 md:hidden">
+            <div class="flex justify-between items-center mb-12">
+                <div class="flex items-center gap-3">
+                    <div
+                        class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 font-bold text-lg">
+                        B</div>
+                    <h1 class="text-lg font-bold text-gray-800">Menu</h1>
+                </div>
+                <button id="close-menu-btn" class="text-gray-600 text-2xl focus:outline-none">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <nav class="flex flex-col gap-6 text-lg font-medium text-gray-600">
+                <a href="index.html" class="hover:text-purple-600 flex items-center gap-4 transition-colors">
+                    <i class="fa-solid fa-house w-6"></i> หน้าแรก
+                </a>
+                <a href="teaching.html" class="text-purple-600 flex items-center gap-4 transition-colors">
+                    <i class="fa-solid fa-book-open w-6"></i> การจัดการเรียนรู้
+                </a>
+                <a href="student-care.html" class="hover:text-purple-600 flex items-center gap-4 transition-colors">
+                    <i class="fa-solid fa-hands-holding-child w-6"></i> ระบบดูแลนักเรียน
+                </a>
+                <a href="ethics.html" class="hover:text-purple-600 flex items-center gap-4 transition-colors">
+                    <i class="fa-solid fa-scale-balanced w-6"></i> จรรยาบรรณวิชาชีพ
+                </a>
+                <a href="profile.html" class="hover:text-purple-600 flex items-center gap-4 transition-colors">
+                    <i class="fa-solid fa-user w-6"></i> ข้อมูลส่วนตัว
+                </a>
+            </nav>
+
+            <div class="mt-auto pb-10">
+                <a href="index.html#contact"
+                    class="block w-full py-4 rounded-2xl bg-gradient-to-r from-[#C084FC] to-[#A855F7] text-white text-center font-bold shadow-lg">
+                    ติดต่อสอบถาม
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <div class="pt-32 pb-12 bg-white">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h1 class="text-3xl md:text-4xl font-bold text-purple-500 mb-4">ตัวชี้วัดที่ 1 ด้านการจัดการเรียนรู้</h1>
+            <p class="text-gray-500 font-light max-w-2xl mx-auto">รวบรวมข้อมูลและผลงานด้านการจัดการเรียนการสอน</p>
+        </div>
+    </div>
+
+    <!-- Tabs Navigation -->
+    <div class="bg-white border-b border-gray-100 sticky top-[72px] z-40">
+        <div class="max-w-7xl mx-auto px-6 overflow-x-auto scrollbar-hide">
+            <div class="flex items-center gap-8 min-w-max">
+                <a href="teaching.html"
+                    class="py-4 text-sm font-medium flex items-center gap-2 tab-inactive transition-colors">
+                    <i class="fa-solid fa-book-open"></i> แผนการจัดการเรียนรู้
+                </a>
+                <a href="teaching-media.html"
+                    class="py-4 text-sm font-medium flex items-center gap-2 tab-inactive transition-colors">
+                    <i class="fa-solid fa-laptop-code"></i> สื่อเทคโนโลยี
+                </a>
+                <a href="teaching-eval.html"
+                    class="py-4 text-sm font-medium flex items-center gap-2 tab-inactive transition-colors">
+                    <i class="fa-solid fa-clipboard-check"></i> การวัดผลและประเมินผล
+                </a>
+                <a href="teaching-research.html"
+                    class="py-4 text-sm font-medium flex items-center gap-2 tab-inactive transition-colors">
+                    <i class="fa-solid fa-microscope"></i> วิจัยในชั้นเรียน
+                </a>
+                <a href="teaching-student-works.html"
+                    class="py-4 text-sm font-medium flex items-center gap-2 tab-active transition-colors">
+                    <i class="fa-solid fa-users"></i> ผลงานนักเรียน
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Section -->
+    <div class="py-12 min-h-[600px]">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- Section Header -->
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-800 flex items-center gap-3">
+                        1.5) ผลงานนักเรียน
+                    </h2>
+                    <div class="h-1 w-12 bg-purple-300 rounded-full mt-2"></div>
+                    <p class="text-sm text-gray-400 font-light mt-2">ผลผลิตจากการเรียนรู้และกิจกรรมในชั้นเรียน</p>
+                </div>
+            </div>
+
+            <!-- Student Works Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Topic 1: แนวคิดเชิงนามธรรม -->
+                <div onclick="openGallery('แนวคิดเชิงนามธรรม', 'abstraction')"
+                    class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all group flex flex-col cursor-pointer">
+                    <!-- Horizontal Image Preview -->
+                    <div
+                        class="aspect-video bg-gradient-to-br from-purple-50 to-indigo-50 flex items-center justify-center relative overflow-hidden p-4">
+                        <div
+                            class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10">
+                        </div>
+                        <div
+                            class="relative z-10 w-full h-full bg-white/40 backdrop-blur-sm rounded-lg border border-white/50 flex flex-col items-center justify-center gap-3 group-hover:bg-white/60 transition-colors">
+                            <i
+                                class="fa-solid fa-shapes text-purple-500 text-4xl group-hover:scale-110 transition-transform"></i>
+                            <span
+                                class="text-[10px] font-bold text-purple-600 tracking-widest uppercase">Abstraction</span>
+                        </div>
+                        <div
+                            class="absolute bottom-3 right-3 bg-white/90 backdrop-blur-md px-2 py-1 rounded text-[10px] font-bold text-gray-600 shadow-sm">
+                            20 รูปภาพ
+                        </div>
+                    </div>
+                    <!-- Description -->
+                    <div class="p-5 flex-grow">
+                        <h3 class="font-bold text-gray-800 mb-2 group-hover:text-purple-600 transition-colors">
+                            แนวคิดเชิงนามธรรม</h3>
+                        <p class="text-sm text-gray-500 font-light leading-relaxed line-clamp-2">
+                            ผลงานการแยกแยะความสำคัญและการสร้างแบบจำลองปัญหาเพื่อให้เข้าใจแก่นของสิ่งที่สนใจ
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Topic 2: การแก้ปัญหา -->
+                <div onclick="openGallery('การแก้ปัญหา', 'problem-solving')"
+                    class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all group flex flex-col cursor-pointer">
+                    <!-- Horizontal Image Preview -->
+                    <div
+                        class="aspect-video bg-gradient-to-br from-blue-50 to-cyan-50 flex items-center justify-center relative overflow-hidden p-4">
+                        <div
+                            class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/grid-me.png')] opacity-10">
+                        </div>
+                        <div
+                            class="relative z-10 w-full h-full bg-white/40 backdrop-blur-sm rounded-lg border border-white/50 flex flex-col items-center justify-center gap-3 group-hover:bg-white/60 transition-colors">
+                            <i
+                                class="fa-solid fa-lightbulb text-blue-500 text-4xl group-hover:scale-110 transition-transform"></i>
+                            <span class="text-[10px] font-bold text-blue-600 tracking-widest uppercase">Problem
+                                Solving</span>
+                        </div>
+                        <div
+                            class="absolute bottom-3 right-3 bg-white/90 backdrop-blur-md px-2 py-1 rounded text-[10px] font-bold text-gray-600 shadow-sm">
+                            20 รูปภาพ
+                        </div>
+                    </div>
+                    <!-- Description -->
+                    <div class="p-5 flex-grow">
+                        <h3 class="font-bold text-gray-800 mb-2 group-hover:text-purple-600 transition-colors">
+                            การแก้ปัญหา</h3>
+                        <p class="text-sm text-gray-500 font-light leading-relaxed line-clamp-2">
+                            การออกแบบขั้นตอนวิธี (Algorithm) และผังงานเพื่อหาแนวทางการแก้ปัญหาที่ถูกต้องแม่นยำ
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Topic 3: การเขียนโปรแกรมอย่างง่าย -->
+                <div onclick="openGallery('การเขียนโปรแกรมอย่างง่าย', 'coding')"
+                    class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all group flex flex-col cursor-pointer">
+                    <!-- Horizontal Image Preview -->
+                    <div
+                        class="aspect-video bg-gradient-to-br from-indigo-50 to-purple-50 flex items-center justify-center relative overflow-hidden p-4">
+                        <div
+                            class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/asfalt-dark.png')] opacity-5">
+                        </div>
+                        <div
+                            class="relative z-10 w-full h-full bg-white/40 backdrop-blur-sm rounded-lg border border-white/50 flex flex-col items-center justify-center gap-3 group-hover:bg-white/60 transition-colors">
+                            <i
+                                class="fa-solid fa-code text-indigo-500 text-4xl group-hover:scale-110 transition-transform"></i>
+                            <span class="text-[10px] font-bold text-indigo-600 tracking-widest uppercase">Simple
+                                Coding</span>
+                        </div>
+                        <div
+                            class="absolute bottom-3 right-3 bg-white/90 backdrop-blur-md px-2 py-1 rounded text-[10px] font-bold text-gray-600 shadow-sm">
+                            20 รูปภาพ
+                        </div>
+                    </div>
+                    <!-- Description -->
+                    <div class="p-5 flex-grow">
+                        <h3 class="font-bold text-gray-800 mb-2 group-hover:text-purple-600 transition-colors">
+                            การเขียนโปรแกรมอย่างง่าย</h3>
+                        <p class="text-sm text-gray-500 font-light leading-relaxed line-clamp-2">
+                            พื้นฐานการเขียนโปรแกรมด้วยภาษาที่เหมาะสมกับช่วงวัยเพื่อสร้างสรรค์ผลงานอย่างง่าย
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Topic 4: ข้อมูลและการประมวลผล -->
+                <div onclick="openGallery('ข้อมูลและการประมวลผล', 'data-processing')"
+                    class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all group flex flex-col cursor-pointer">
+                    <!-- Horizontal Image Preview -->
+                    <div
+                        class="aspect-video bg-gradient-to-br from-teal-50 to-green-50 flex items-center justify-center relative overflow-hidden p-4">
+                        <div
+                            class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/checkered-pattern.png')] opacity-10">
+                        </div>
+                        <div
+                            class="relative z-10 w-full h-full bg-white/40 backdrop-blur-sm rounded-lg border border-white/50 flex flex-col items-center justify-center gap-3 group-hover:bg-white/60 transition-colors">
+                            <i
+                                class="fa-solid fa-database text-teal-500 text-4xl group-hover:scale-110 transition-transform"></i>
+                            <span class="text-[10px] font-bold text-teal-600 tracking-widest uppercase">Data
+                                Processing</span>
+                        </div>
+                        <div
+                            class="absolute bottom-3 right-3 bg-white/90 backdrop-blur-md px-2 py-1 rounded text-[10px] font-bold text-gray-600 shadow-sm">
+                            20 รูปภาพ
+                        </div>
+                    </div>
+                    <!-- Description -->
+                    <div class="p-5 flex-grow">
+                        <h3 class="font-bold text-gray-800 mb-2 group-hover:text-purple-600 transition-colors">
+                            ข้อมูลและการประมวลผล</h3>
+                        <p class="text-sm text-gray-500 font-light leading-relaxed line-clamp-2">
+                            การรวบรวม จัดทำ และประมวลผลข้อมูลเพื่อให้ได้สารสนเทศที่เป็นประโยชน์
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Topic 5: การใช้เทคโนโลยีสารสนเทศอย่างปลอดภัย -->
+                <div onclick="openGallery('การใช้เทคโนโลยีสารสนเทศอย่างปลอดภัย', 'safety')"
+                    class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all group flex flex-col cursor-pointer">
+                    <!-- Horizontal Image Preview -->
+                    <div
+                        class="aspect-video bg-gradient-to-br from-amber-50 to-orange-50 flex items-center justify-center relative overflow-hidden p-4">
+                        <div
+                            class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/grid.png')] opacity-10">
+                        </div>
+                        <div
+                            class="relative z-10 w-full h-full bg-white/40 backdrop-blur-sm rounded-lg border border-white/50 flex flex-col items-center justify-center gap-3 group-hover:bg-white/60 transition-colors">
+                            <i
+                                class="fa-solid fa-shield-halved text-amber-500 text-4xl group-hover:scale-110 transition-transform"></i>
+                            <span class="text-[10px] font-bold text-amber-600 tracking-widest uppercase">Safe
+                                Technology</span>
+                        </div>
+                        <div
+                            class="absolute bottom-3 right-3 bg-white/90 backdrop-blur-md px-2 py-1 rounded text-[10px] font-bold text-gray-600 shadow-sm">
+                            20 รูปภาพ
+                        </div>
+                    </div>
+                    <!-- Description -->
+                    <div class="p-5 flex-grow">
+                        <h3 class="font-bold text-gray-800 mb-2 group-hover:text-purple-600 transition-colors">
+                            การใช้เทคโนโลยีสารสนเทศอย่างปลอดภัย</h3>
+                        <p class="text-sm text-gray-500 font-light leading-relaxed line-clamp-2">
+                            การสร้างความเข้าใจเรื่องจริยธรรม ความปลอดภัย และการปกป้องความเป็นส่วนตัวในโลกออนไลน์
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery Modal -->
+    <div id="galleryModal" class="fixed inset-0 z-[100] hidden overflow-y-auto bg-black/95 backdrop-blur-xl">
+        <div class="min-h-screen p-4 md:p-8 flex flex-col">
+            <!-- Modal Header -->
+            <div
+                class="max-w-7xl mx-auto w-full flex justify-between items-center mb-10 sticky top-0 bg-transparent py-4 text-white z-50">
+                <div>
+                    <h2 id="modalTitle" class="text-2xl md:text-3xl font-bold">แกลเลอรี่ภาพ</h2>
+                    <p id="modalCount" class="text-white/40 font-light mt-1">จำนวน 20 รูปภาพ</p>
+                </div>
+                <button onclick="closeGallery()"
+                    class="w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-all text-white border border-white/10">
+                    <i class="fa-solid fa-times text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Image Grid in Modal -->
+            <div id="modalImageGrid"
+                class="max-w-7xl mx-auto w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 pb-20">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white py-12 border-t border-gray-100 mt-auto">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <!-- Left Side -->
+            <div class="text-center md:text-left">
+                <h3 class="font-bold text-purple-600">นางสาวบวรลักษณ์ แสนดี</h3>
+                <p class="text-xs text-gray-400 font-light mt-1">นิสิตฝึกประสบการณ์วิชาชีพครู | โรงเรียนเฉลิมขวัญสตรี
+                </p>
+            </div>
+
+            <!-- Right Side -->
+            <div class="flex items-center gap-6 text-gray-300">
+                <span class="text-sm font-medium text-gray-400">Jasminenie</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function openGallery(title, theme) {
+            const modal = document.getElementById('galleryModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const grid = document.getElementById('modalImageGrid');
+
+            modalTitle.innerText = title;
+            grid.innerHTML = '';
+
+            // Themes mapping
+            const themeConfigs = {
+                'abstraction': { icon: 'fa-shapes', color: 'purple' },
+                'problem-solving': { icon: 'fa-lightbulb', color: 'blue' },
+                'coding': { icon: 'fa-code', color: 'indigo' },
+                'data-processing': { icon: 'fa-database', color: 'teal' },
+                'safety': { icon: 'fa-shield-halved', color: 'amber' }
+            };
+
+            const config = themeConfigs[theme];
+
+            // Create 20 placeholder images
+            for (let i = 1; i <= 20; i++) {
+                const imgCard = document.createElement('div');
+                imgCard.className = 'aspect-video rounded-2xl bg-white/5 border border-white/10 overflow-hidden relative group cursor-pointer hover:border-white/40 transition-all hover:scale-[1.02] shadow-2xl';
+
+                const inner = `
+                    <div class="absolute inset-0 flex flex-col items-center justify-center opacity-30 group-hover:opacity-80 transition-opacity">
+                        <i class="fa-solid ${config.icon} text-white text-4xl mb-3"></i>
+                        <span class="text-[8px] text-white/50 font-bold uppercase tracking-[0.2em]">Work Photo ${i}</span>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-5">
+                        <p class="text-[10px] text-white/40 uppercase tracking-widest mb-1 italic">Student Achievement</p>
+                        <span class="text-sm text-white font-medium">รูปภาพที่ ${i} - ${title}</span>
+                    </div>
+                    <div class="absolute top-4 right-4 bg-white/10 backdrop-blur-md px-2 py-1 rounded text-[8px] text-white opacity-0 group-hover:opacity-100 transition-opacity border border-white/10">
+                        HD PREVIEW
+                    </div>
+                `;
+
+                imgCard.innerHTML = inner;
+                grid.appendChild(imgCard);
+            }
+
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+
+        function closeGallery() {
+            const modal = document.getElementById('galleryModal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+
+        // Handle Escape key
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeGallery();
+        });
+    </script>
+    <script>
+        // Mobile Menu Toggle logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileMenuBtn && closeMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            });
+
+            closeMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            });
+
+            // Close menu when clicking on a link
+            const menuLinks = mobileMenu.querySelectorAll('a');
+            menuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    document.body.style.overflow = 'auto';
+                });
+            });
+        }
+    </script>
+</body>
+
+</html>

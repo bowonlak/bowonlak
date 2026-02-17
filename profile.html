@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Bowonlak Sandee</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts (Prompt for Thai) -->
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Prompt', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            purple: '#A855F7', // Lilac/Purple
+                            light: '#F3E8FF',
+                            blue: '#38BDF8',   // Light Blue
+                            yellow: '#FACC15', // Gold/Yellow
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Prompt', sans-serif;
+            background-color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(to right, #A855F7, #EC4899);
+        }
+
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 24px;
+            height: 100%;
+            width: 2px;
+            background: #E5E7EB;
+            z-index: 0;
+        }
+    </style>
+</head>
+
+<body class="text-gray-700">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300 py-4 top-0 left-0">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <!-- Logo / Name -->
+            <div class="flex items-center gap-3">
+                <div
+                    class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 font-bold text-lg">
+                    B
+                </div>
+                <div class="leading-tight">
+                    <h1 class="text-lg font-bold text-gray-800">Bowonlak Sandee</h1>
+                    <p class="text-xs text-gray-400 font-light">ข้อมูลส่วนตัว</p>
+                </div>
+            </div>
+
+            <!-- Menu -->
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-500">
+                <a href="index.html" class="hover:text-purple-600 transition-colors">หน้าแรก</a>
+                <a href="teaching.html" class="hover:text-purple-600 transition-colors">การจัดการเรียนรู้</a>
+                <a href="index.html#student-care" class="hover:text-purple-600 transition-colors">ระบบดูแลนักเรียน</a>
+                <a href="index.html#ethics" class="hover:text-purple-600 transition-colors">จรรยาบรรณวิชาชีพ</a>
+            </div>
+
+            <!-- Contact Button -->
+            <a href="index.html#contact"
+                class="hidden md:inline-block px-8 py-2.5 rounded-full bg-gradient-to-r from-[#C084FC] to-[#A855F7] text-white text-sm font-semibold hover:scale-105 hover:shadow-lg transition-all shadow-md">
+                ติดต่อ
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-gray-600 text-xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu"
+            class="hidden fixed inset-0 z-50 bg-white p-6 flex flex-col animate-in fade-in duration-300 md:hidden">
+            <div class="flex justify-between items-center mb-12">
+                <div class="flex items-center gap-3">
+                    <div
+                        class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 font-bold text-lg">
+                        B</div>
+                    <h1 class="text-lg font-bold text-gray-800">Menu</h1>
+                </div>
+                <button id="close-menu-btn" class="text-gray-600 text-2xl focus:outline-none">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <nav class="flex flex-col gap-6 text-lg font-medium text-gray-600">
+                <a href="index.html" class="hover:text-purple-600 flex items-center gap-4 transition-colors">
+                    <i class="fa-solid fa-house w-6"></i> หน้าแรก
+                </a>
+                <a href="teaching.html" class="hover:text-purple-600 flex items-center gap-4 transition-colors">
+                    <i class="fa-solid fa-book-open w-6"></i> การจัดการเรียนรู้
+                </a>
+                <a href="student-care.html" class="hover:text-purple-600 flex items-center gap-4 transition-colors">
+                    <i class="fa-solid fa-hands-holding-child w-6"></i> ระบบดูแลนักเรียน
+                </a>
+                <a href="ethics.html" class="hover:text-purple-600 flex items-center gap-4 transition-colors">
+                    <i class="fa-solid fa-scale-balanced w-6"></i> จรรยาบรรณวิชาชีพ
+                </a>
+                <a href="profile.html" class="text-purple-600 flex items-center gap-4 transition-colors">
+                    <i class="fa-solid fa-user w-6"></i> ข้อมูลส่วนตัว
+                </a>
+            </nav>
+
+            <div class="mt-auto pb-10">
+                <a href="index.html#contact"
+                    class="block w-full py-4 rounded-2xl bg-gradient-to-r from-[#C084FC] to-[#A855F7] text-white text-center font-bold shadow-lg">
+                    ติดต่อสอบถาม
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header / Background -->
+    <div class="pt-32 pb-10 bg-gradient-to-b from-purple-50 to-white">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="bg-white rounded-3xl shadow-sm p-8 md:p-12 relative overflow-hidden">
+                <!-- Decorative background elements -->
+                <div
+                    class="absolute top-0 right-0 w-64 h-64 bg-purple-100 rounded-full mix-blend-multiply filter blur-3xl opacity-50 -translate-y-1/2 translate-x-1/3">
+                </div>
+                <div
+                    class="absolute bottom-0 left-0 w-64 h-64 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-50 translate-y-1/2 -translate-x-1/3">
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-12 relative z-10">
+                    <!-- Profile Image -->
+                    <div class="shrink-0 flex justify-center md:block">
+                        <a href="#contact" class="block">
+                            <div
+                                class="w-48 h-48 rounded-full border-4 border-white shadow-lg overflow-hidden relative bg-gray-100 p-1 group cursor-pointer">
+                                <div
+                                    class="w-full h-full rounded-full overflow-hidden relative bg-white flex items-center justify-center">
+                                    <img src="assets/image/ใช้เป็นรูปโปรไฟล์.jpg" alt="Bowonlak Sandee"
+                                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                </div>
+                                <div
+                                    class="absolute inset-0 rounded-full border-2 border-purple-100 pointer-events-none">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Info -->
+                    <div class="flex-grow space-y-6">
+                        <div>
+                            <h1 class="text-3xl md:text-4xl font-bold text-gray-800">นางสาวบวรลักษณ์ แสนดี</h1>
+                            <p class="text-purple-500 font-medium text-lg">Bowonlak Sandee</p>
+                        </div>
+
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3 text-gray-600">
+                                <div
+                                    class="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center text-blue-400 shrink-0">
+                                    <i class="fa-solid fa-user-graduate text-sm"></i>
+                                </div>
+                                <span>นิสิตฝึกประสบการณ์ (ชั้นปีที่ 4)</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-gray-600">
+                                <div
+                                    class="w-8 h-8 rounded-full bg-purple-50 flex items-center justify-center text-purple-400 shrink-0">
+                                    <i class="fa-solid fa-book text-sm"></i>
+                                </div>
+                                <span>คณะศึกษาศาสตร์ สาขาเทคโนโลยีและสื่อสารการศึกษา</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-gray-600">
+                                <div
+                                    class="w-8 h-8 rounded-full bg-yellow-50 flex items-center justify-center text-yellow-500 shrink-0">
+                                    <i class="fa-solid fa-location-dot text-sm"></i>
+                                </div>
+                                <span>มหาวิทยาลัยนเรศวร</span>
+                            </div>
+                        </div>
+
+                        <!-- Stats -->
+                        <div class="flex flex-wrap gap-4 pt-4 border-t border-gray-100">
+                            <div class="bg-gray-50 rounded-xl px-5 py-3 text-center min-w-[100px]">
+                                <span class="block text-xs font-bold text-gray-400 uppercase tracking-wide">GPAX</span>
+                                <span class="block text-lg font-bold text-gray-800">3.40</span>
+                            </div>
+                            <div class="bg-gray-50 rounded-xl px-5 py-3 text-center min-w-[100px]">
+                                <span class="block text-xs font-bold text-gray-400 uppercase tracking-wide">อายุ</span>
+                                <span class="block text-lg font-bold text-gray-800">22 ปี</span>
+                            </div>
+                            <div class="bg-gray-50 rounded-xl px-5 py-3 text-center">
+                                <span
+                                    class="block text-xs font-bold text-gray-400 uppercase tracking-wide">วันเกิด</span>
+                                <span class="block text-lg font-bold text-gray-800">26 พฤษภาคม 2546</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Details Section -->
+    <div class="pb-20">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12">
+
+                <!-- Left: Contact & Skills (merged logically or separate) -->
+                <div class="space-y-12">
+                    <!-- Contact Short -->
+                    <div id="contact">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-1 h-8 bg-purple-500 rounded-full"></div>
+                            <h2 class="text-xl font-bold text-gray-800">ข้อมูลการติดต่อ</h2>
+                        </div>
+                        <div class="space-y-4 pl-4">
+                            <div class="flex items-center gap-3 text-gray-600">
+                                <i class="fa-solid fa-phone text-purple-400 w-5"></i>
+                                <span>097-992-1525</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-gray-600">
+                                <i class="fa-solid fa-envelope text-purple-400 w-5"></i>
+                                <span>bowonlak04092605@gmail.com</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skills -->
+                    <div>
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-1 h-8 bg-blue-400 rounded-full"></div>
+                            <h2 class="text-xl font-bold text-gray-800">ทักษะความสามารถ</h2>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pl-4">
+                            <span
+                                class="px-4 py-1.5 bg-white border border-gray-200 rounded-full text-sm text-gray-600 shadow-sm">การสอน</span>
+                            <span
+                                class="px-4 py-1.5 bg-white border border-gray-200 rounded-full text-sm text-gray-600 shadow-sm">การผลิตสื่อ</span>
+                            <span
+                                class="px-4 py-1.5 bg-white border border-gray-200 rounded-full text-sm text-gray-600 shadow-sm">Microsoft
+                                Office</span>
+                            <span
+                                class="px-4 py-1.5 bg-white border border-gray-200 rounded-full text-sm text-gray-600 shadow-sm">Canva</span>
+                            <span
+                                class="px-4 py-1.5 bg-white border border-gray-200 rounded-full text-sm text-gray-600 shadow-sm">Video
+                                Editing</span>
+                            <span
+                                class="px-4 py-1.5 bg-white border border-gray-200 rounded-full text-sm text-gray-600 shadow-sm">Photography</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Internship Timeline -->
+                <div>
+                    <div class="flex items-center gap-3 mb-8">
+                        <div class="w-1 h-8 bg-yellow-400 rounded-full"></div>
+                        <h2 class="text-xl font-bold text-gray-800">ประวัติการฝึกประสบการณ์วิชาชีพ</h2>
+                    </div>
+
+                    <div class="relative timeline-line pl-4 space-y-8">
+
+                        <!-- Item 1 -->
+                        <div class="relative pl-12">
+                            <div
+                                class="absolute left-[14px] top-1.5 w-5 h-5 rounded-full border-4 border-white bg-purple-500 shadow-sm z-10">
+                            </div>
+                            <div
+                                class="bg-white p-5 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="font-bold text-gray-800">โรงเรียนบ่อวิทยบางระกำ</h3>
+                                    <span
+                                        class="bg-green-100 text-green-600 text-[10px] px-2 py-1 rounded-full font-bold">1
+                                        สัปดาห์</span>
+                                </div>
+                                <p class="text-sm text-gray-500 font-light">สังเกตการสอนและเรียนรู้งานครู</p>
+                            </div>
+                        </div>
+
+                        <!-- Item 2 -->
+                        <div class="relative pl-12">
+                            <div
+                                class="absolute left-[14px] top-1.5 w-5 h-5 rounded-full border-4 border-white bg-blue-400 shadow-sm z-10">
+                            </div>
+                            <div
+                                class="bg-white p-5 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="font-bold text-gray-800">โรงเรียนจ่านกร้อง</h3>
+                                    <span
+                                        class="bg-green-100 text-green-600 text-[10px] px-2 py-1 rounded-full font-bold">2
+                                        สัปดาห์</span>
+                                </div>
+                                <p class="text-sm text-gray-500 font-light">ผู้ช่วยครูและสังเกตการสอน</p>
+                            </div>
+                        </div>
+
+                        <!-- Item 3 -->
+                        <div class="relative pl-12">
+                            <div
+                                class="absolute left-[14px] top-1.5 w-5 h-5 rounded-full border-4 border-white bg-yellow-400 shadow-sm z-10">
+                            </div>
+                            <div
+                                class="bg-white p-5 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="font-bold text-gray-800">โรงเรียนเฉลิมขวัญสตรี</h3>
+                                    <span
+                                        class="bg-green-100 text-green-600 text-[10px] px-2 py-1 rounded-full font-bold">4
+                                        สัปดาห์</span>
+                                </div>
+                                <p class="text-sm text-gray-500 font-light">ทดลองสอนและปฏิบัติหน้าที่ครู</p>
+                            </div>
+                        </div>
+
+                        <!-- Item 4 -->
+                        <div class="relative pl-12">
+                            <div
+                                class="absolute left-[14px] top-1.5 w-5 h-5 rounded-full border-4 border-white bg-purple-500 shadow-sm z-10">
+                            </div>
+                            <div
+                                class="bg-white p-5 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow ring-2 ring-purple-50">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="font-bold text-gray-800 text-purple-600">โรงเรียนเฉลิมขวัญสตรี</h3>
+                                    <span
+                                        class="bg-purple-100 text-purple-600 text-[10px] px-2 py-1 rounded-full font-bold">1
+                                        ภาคเรียน</span>
+                                </div>
+                                <p class="text-sm text-gray-500 font-light">ฝึกประสบการณ์วิชาชีพครูเต็มรูปแบบ</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white py-12 border-t border-gray-100 mt-auto">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <!-- Left Side -->
+            <div class="text-center md:text-left">
+                <h3 class="font-bold text-purple-600">นางสาวบวรลักษณ์ แสนดี</h3>
+                <p class="text-xs text-gray-400 font-light mt-1">นิสิตฝึกประสบการณ์วิชาชีพครู | โรงเรียนเฉลิมขวัญสตรี
+                </p>
+            </div>
+
+            <!-- Right Side -->
+            <div class="flex items-center gap-6 text-gray-300">
+                <span class="text-sm font-medium text-gray-400">Jasminenie</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileMenuBtn && closeMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            });
+
+            closeMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            });
+
+            // Close menu when clicking on a link
+            const menuLinks = mobileMenu.querySelectorAll('a');
+            menuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    document.body.style.overflow = 'auto';
+                });
+            });
+        }
+    </script>
+</body>
+
+</html>
