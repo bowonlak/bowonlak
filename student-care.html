@@ -154,9 +154,10 @@
     </nav>
 
     <!-- Header Section -->
-    <div class="pt-32 pb-4 bg-white">
+    <div class="pt-24 md:pt-32 pb-4 bg-white">
         <div class="max-w-7xl mx-auto px-6 text-center">
-            <h1 class="text-3xl md:text-4xl font-bold text-purple-500 mb-2">ตัวชี้วัดที่ 2 ด้านระบบดูแลช่วยเหลือนักเรียน
+            <h1 class="text-2xl md:text-4xl font-bold text-purple-500 mb-2">ตัวชี้วัดที่ 2
+                ด้านระบบดูแลช่วยเหลือนักเรียน
             </h1>
             <p class="text-gray-400 font-light max-w-2xl mx-auto text-sm">
                 การปฏิบัติหน้าที่ครูที่ปรึกษาและงานกิจการนักเรียน</p>
@@ -169,14 +170,15 @@
 
             <!-- Custom Styled Tabs (As per screenshot) -->
             <div class="flex justify-center mb-8">
-                <div class="inline-flex p-1 bg-gray-100 rounded-2xl shadow-inner border border-gray-200">
+                <div
+                    class="inline-flex p-1 bg-gray-100 rounded-2xl shadow-inner border border-gray-200 overflow-x-auto max-w-full">
                     <button onclick="switchTab('advisor')" id="tabadvisor"
-                        class="px-6 py-2.5 rounded-xl transition-all duration-300 flex items-center gap-2 text-sm font-medium bg-white text-purple-600 shadow-sm border border-gray-200/50">
+                        class="px-6 py-2.5 rounded-xl transition-all duration-300 flex items-center gap-2 text-sm font-medium bg-white text-purple-600 shadow-sm border border-gray-200/50 whitespace-nowrap">
                         <i class="fa-solid fa-user-check"></i>
                         หน้าที่ครูประจำชั้น
                     </button>
                     <button onclick="switchTab('community')" id="tabcommunity"
-                        class="px-6 py-2.5 rounded-xl transition-all duration-300 flex items-center gap-2 text-sm font-medium text-gray-500 hover:text-gray-700">
+                        class="px-6 py-2.5 rounded-xl transition-all duration-300 flex items-center gap-2 text-sm font-medium text-gray-500 hover:text-gray-700 whitespace-nowrap">
                         <i class="fa-solid fa-users-rectangle"></i>
                         ความสัมพันธ์ชุมชน
                     </button>
@@ -247,7 +249,7 @@
                             class="aspect-square rounded-2xl bg-gradient-to-br from-purple-50 to-blue-50 border border-gray-200 overflow-hidden relative group cursor-pointer shadow-sm hover:shadow-lg transition-all">
                             <div
                                 class="absolute inset-0 flex items-center justify-center opacity-20 group-hover:scale-110 transition-transform">
-                                <i class="fa-solid fa-user-group text-4xl"></i>
+                                <i class="fa-solid fa-user-group text-2xl md:text-4xl"></i>
                             </div>
                             <div
                                 class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 p-3 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -260,7 +262,7 @@
                             class="aspect-square rounded-2xl bg-gradient-to-br from-blue-50 to-purple-50 border border-gray-200 overflow-hidden relative group cursor-pointer shadow-sm hover:shadow-lg transition-all">
                             <div
                                 class="absolute inset-0 flex items-center justify-center opacity-20 group-hover:scale-110 transition-transform">
-                                <i class="fa-solid fa-house-chimney-user text-4xl"></i>
+                                <i class="fa-solid fa-house-chimney-user text-2xl md:text-4xl"></i>
                             </div>
                             <div
                                 class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 p-3 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -341,7 +343,7 @@
                             class="aspect-square rounded-2xl bg-white border border-gray-100 overflow-hidden relative group cursor-pointer shadow-sm hover:shadow-lg transition-all">
                             <div
                                 class="absolute inset-0 flex items-center justify-center opacity-20 group-hover:scale-110 transition-transform">
-                                <i class="fa-solid fa-users text-4xl text-purple-400"></i>
+                                <i class="fa-solid fa-users text-2xl md:text-4xl text-purple-400"></i>
                             </div>
                             <div
                                 class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 p-3 opacity-90 group-hover:opacity-100 transition-opacity">
@@ -355,7 +357,7 @@
                             class="aspect-square rounded-2xl bg-white border border-gray-100 overflow-hidden relative group cursor-pointer shadow-sm hover:shadow-lg transition-all">
                             <div
                                 class="absolute inset-0 flex items-center justify-center opacity-20 group-hover:scale-110 transition-transform">
-                                <i class="fa-solid fa-user-plus text-4xl text-blue-400"></i>
+                                <i class="fa-solid fa-user-plus text-2xl md:text-4xl text-blue-400"></i>
                             </div>
                             <div
                                 class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 p-3 opacity-90 group-hover:opacity-100 transition-opacity">
@@ -504,7 +506,7 @@
                 imgContainer.className = "aspect-[4/3] rounded-2xl bg-gray-50 border border-gray-100 flex items-center justify-center overflow-hidden group cursor-pointer hover:shadow-lg transition-all";
                 imgContainer.innerHTML = `
                     <div class="opacity-20 group-hover:scale-110 transition-transform duration-500">
-                        <i class="fa-solid fa-image text-4xl text-gray-300"></i>
+                        <i class="fa-solid fa-image text-2xl md:text-4xl text-gray-300"></i>
                     </div>
                 `;
                 gallery.appendChild(imgContainer);
