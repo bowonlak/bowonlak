@@ -510,19 +510,26 @@
                 const workLink = document.createElement('a');
                 workLink.href = work.url;
                 workLink.target = '_blank';
-                workLink.className = 'group flex items-center gap-6 p-6 bg-white/60 border border-white/40 rounded-[28px] hover:bg-white hover:shadow-2xl hover:border-purple-200 transition-all duration-300 relative overflow-hidden';
+                // Adaptive padding and gap for mobile/desktop
+                workLink.className = 'group flex items-center gap-4 md:gap-6 p-4 md:p-6 bg-white/60 border border-white/40 rounded-[28px] hover:bg-white hover:shadow-2xl hover:border-purple-200 transition-all duration-300 relative overflow-hidden';
 
                 workLink.innerHTML = `
                     <div class="absolute left-0 top-0 bottom-0 w-2 ${config.color.replace('text-', 'bg-')} opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                    <div class="w-16 h-16 rounded-2xl ${config.bg} flex items-center justify-center text-2xl ${config.color} group-hover:scale-110 transition-transform duration-500 shadow-sm">
+                    
+                    <!-- Responsive Square Icon Container -->
+                    <div class="w-14 h-14 md:w-16 md:h-16 flex-shrink-0 rounded-xl md:rounded-2xl ${config.bg} flex items-center justify-center text-xl md:text-2xl ${config.color} group-hover:scale-110 transition-transform duration-500 shadow-sm">
                         <i class="fa-solid ${config.icon}"></i>
                     </div>
-                    <div class="flex-grow text-left">
-                        <h4 class="text-[17px] font-bold text-gray-800 leading-tight group-hover:text-purple-600 transition-colors">${work.title}</h4>
-                        <p class="text-sm text-gray-500 font-light mt-1.5">${work.subtitle}</p>
+                    
+                    <!-- Adaptive Typography with Single-Line Truncation -->
+                    <div class="flex-grow text-left min-width-0 overflow-hidden">
+                        <h4 class="text-base md:text-[17px] font-bold text-gray-800 leading-tight group-hover:text-purple-600 transition-colors truncate">${work.title}</h4>
+                        <p class="text-[12px] md:text-sm text-gray-500 font-light mt-1 md:mt-1.5 truncate">${work.subtitle}</p>
                     </div>
-                    <div class="w-12 h-12 rounded-full border border-gray-100 flex items-center justify-center text-gray-400 group-hover:text-purple-500 group-hover:bg-purple-50 transition-all">
-                        <i class="fa-solid fa-chevron-right text-sm"></i>
+                    
+                    <!-- Action Icon (Hidden on very small screens or smaller on mobile) -->
+                    <div class="w-10 h-10 md:w-12 md:h-12 flex-shrink-0 rounded-full border border-gray-100 flex items-center justify-center text-gray-400 group-hover:text-purple-500 group-hover:bg-purple-50 transition-all">
+                        <i class="fa-solid fa-chevron-right text-xs md:text-sm"></i>
                     </div>
                 `;
                 listArea.appendChild(workLink);
