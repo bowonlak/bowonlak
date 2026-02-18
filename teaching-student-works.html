@@ -192,7 +192,7 @@
             </div>
 
             <!-- Student Works Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
 
                 <!-- Topic 1: Abstraction -->
                 <div class="student-work-card bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all group flex flex-col cursor-pointer relative"
@@ -554,176 +554,178 @@
                 }
             </style>
 
-            <!-- Footer -->
-            <!-- Footer -->
-            <footer class="bg-white py-12 border-t border-gray-100 mt-auto">
-                <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-                    <!-- Left Side -->
-                    <div class="text-center md:text-left">
-                        <h3 class="font-bold text-purple-600">นางสาวบวรลักษณ์ แสนดี</h3>
-                        <p class="text-xs text-gray-400 font-light mt-1">นิสิตฝึกประสบการณ์วิชาชีพครู |
-                            โรงเรียนเฉลิมขวัญสตรี</p>
-                    </div>
+        </div>
+    </div>
 
-                    <!-- Right Side -->
-                    <div class="flex items-center gap-6 text-gray-300">
-                        <span class="text-sm font-medium text-gray-400">Jasminenie</span>
-                    </div>
-                </div>
-            </footer>
+    <!-- Footer -->
+    <footer class="bg-white py-12 border-t border-gray-100 mt-20">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <!-- Left Side -->
+            <div class="text-center md:text-left">
+                <h3 class="font-bold text-purple-600">นางสาวบวรลักษณ์ แสนดี</h3>
+                <p class="text-xs text-gray-400 font-light mt-1">นิสิตฝึกประสบการณ์วิชาชีพครู | โรงเรียนเฉลิมขวัญสตรี
+                </p>
+            </div>
 
-            <script>
-                // Data for student works - easily edit links and titles here
-                const studentWorksData = {
-                    'abstraction': [
-                        { title: 'ผลงานนักเรียน ชุดที่ 1', subtitle: 'กิจกรรม 1.1 เรื่อง ไปโรงเรียนกันเถอะ', url: 'assets/ตัวอย่างงานนักเรียน/แนวคิดเชิงนามธรรม/กิจกรรม 1.1_ภิญญาพัชญ์ จันทร์มีเทศ_1.6_7.pdf' },
-                        { title: 'ผลงานนักเรียน ชุดที่ 2', subtitle: 'กิจกรรม 1.1 เรื่อง ไปโรงเรียนกันเถอะ', url: 'assets/ตัวอย่างงานนักเรียน/แนวคิดเชิงนามธรรม/กิจกรรม1.1_ฐิติกาญจน์ สีหะวงค์_1.8_9.pdf' },
-                        { title: 'ผลงานนักเรียน ชุดที่ 3', subtitle: 'กิจกรรม 1.1 เรื่อง ไปโรงเรียนกันเถอะ', url: 'assets/ตัวอย่างงานนักเรียน/แนวคิดเชิงนามธรรม/กิจกรรม1.1_ภิรญาณ์ หม้อสุวรรณ_1.5_12.pdf' },
-                        { title: 'ผลงานนักเรียน ชุดที่ 4', subtitle: 'กิจกรรม 1.1 เรื่อง ไปโรงเรียนกันเถอะ', url: 'assets/ตัวอย่างงานนักเรียน/แนวคิดเชิงนามธรรม/กิจกรรมที่1.1_ด.ญ.บุญญิสา  ณ วิเชียร_1.7_5.pdf' },
-                        { title: 'ผลงานนักเรียน ชุดที่ 5', subtitle: 'กิจกรรม 1.2 เรื่อง รหัสลับในบ้านคุณตา', url: 'assets/ตัวอย่างงานนักเรียน/แนวคิดเชิงนามธรรม/กิจกรรมที่1.2_ฉัตรกมล เชื้อช่าง_1.5_1.PNG' }
-                    ],
-                    'problem-solving': [
-                        { title: 'ผลงานนักเรียน ชุดที่ 1', subtitle: 'กิจกรรม 1.5 เรื่อง จับคู่สัญลักษณ์ผังงาน', url: 'assets/ตัวอย่างงานนักเรียน/การแก้ปัญหา/กิจกรรม1.5_ฉัตรกมล เชื้อช่าง__1.5_1.PNG' },
-                        { title: 'ผลงานนักเรียน ชุดที่ 2', subtitle: 'กิจกรรม 1.5 เรื่อง จับคู่สัญลักษณ์ผังงาน', url: 'assets/ตัวอย่างงานนักเรียน/การแก้ปัญหา/กิจกรรม1.5_พัชมณ เฮงชัชนันท์_1.7_เลขที่3.PNG' },
-                        { title: 'ผลงานนักเรียน ชุดที่ 3', subtitle: 'กิจกรรม 1.5 เรื่อง จับคู่สัญลักษณ์ผังงาน', url: 'assets/ตัวอย่างงานนักเรียน/การแก้ปัญหา/กิจกรรม1.5_ลลิภัสร์ ลักษมีนิยมชัย_ม.1.9_เลขที่4.png' },
-                        { title: 'ผลงานนักเรียน ชุดที่ 4', subtitle: 'กิจกรรม 1.6 เรื่อง เขียนแผนผัง Flowchart', url: 'assets/ตัวอย่างงานนักเรียน/การแก้ปัญหา/กิจกรรม1.6_ด.ญ.พิมพ์ไพลิน ฟูเต็ม_1.8_5.PNG' },
-                        { title: 'ผลงานนักเรียน ชุดที่ 5', subtitle: 'กิจกรรม 1.6 เรื่อง เขียนแผนผัง Flowchart', url: 'assets/ตัวอย่างงานนักเรียน/การแก้ปัญหา/กิจกรรม1.6_ด.ญ.พิมพ์ลดา แก้วเหม_1.6_4.PNG' }
-                    ],
-                    'coding': [
-                        { title: 'ผลงานนักเรียน ชุดที่ 1', subtitle: 'กิจกรรม 2.2 เรื่อง Scratch เดินเล่น', url: 'https://scratch.mit.edu/projects/1252925731' },
-                        { title: 'ผลงานนักเรียน ชุดที่ 2', subtitle: 'กิจกรรม 2.2 เรื่อง Scratch เดินเล่น', url: 'https://scratch.mit.edu/projects/1255730767' },
-                        { title: 'ผลงานนักเรียน ชุดที่ 3', subtitle: 'กิจกรรม 2.2 เรื่อง Scratch เดินเล่น', url: 'https://scratch.mit.edu/projects/1256916671' },
-                        { title: 'ผลงานนักเรียน ชุดที่ 4', subtitle: 'กิจกรรม 2.2 เรื่อง Scratch เดินเล่น', url: 'https://scratch.mit.edu/projects/1254409476' },
-                        { title: 'ผลงานนักเรียน ชุดที่ 5', subtitle: 'กิจกรรม 2.2 เรื่อง Scratch เดินเล่น', url: 'https://scratch.mit.edu/projects/1257779166' }
-                    ],
-                    'data-processing': [
-                        { title: 'ผลงานนักเรียน ชุดที่ 1', subtitle: 'Data Collection', url: '#' },
-                        { title: 'ผลงานนักเรียน ชุดที่ 2', subtitle: 'Spreadsheet Analysis', url: '#' },
-                        { title: 'ผลงานนักเรียน ชุดที่ 3', subtitle: 'Graph Creation', url: '#' },
-                        { title: 'ผลงานนักเรียน ชุดที่ 4', subtitle: 'Information Synthesis', url: '#' },
-                        { title: 'ผลงานนักเรียน ชุดที่ 5', subtitle: 'Database Concept', url: '#' }
-                    ],
-                    'safety': [
-                        { title: 'ผลงานนักเรียน ชุดที่ 1', subtitle: 'Digital Ethics', url: '#' },
-                        { title: 'ผลงานนักเรียน ชุดที่ 2', subtitle: 'Privacy Workshop', url: '#' },
-                        { title: 'ผลงานนักเรียน ชุดที่ 3', subtitle: 'Security Checklist', url: '#' },
-                        { title: 'ผลงานนักเรียน ชุดที่ 4', subtitle: 'Internet Safety Poster', url: '#' },
-                        { title: 'ผลงานนักเรียน ชุดที่ 5', subtitle: 'Bullying Prevention', url: '#' }
-                    ],
-                    'midterm': [
-                        { title: 'ผลงานนักเรียน ชุดที่ 1', subtitle: 'ชิ้นงานสอบกลางภาค ชุดที่ 1', url: '#' },
-                        { title: 'ผลงานนักเรียน ชุดที่ 2', subtitle: 'ชิ้นงานสอบกลางภาค ชุดที่ 2', url: '#' },
-                        { title: 'ผลงานนักเรียน ชุดที่ 3', subtitle: 'ชิ้นงานสอบกลางภาค ชุดที่ 3', url: '#' },
-                        { title: 'ผลงานนักเรียน ชุดที่ 4', subtitle: 'ชิ้นงานสอบกลางภาค ชุดที่ 4', url: '#' },
-                        { title: 'ผลงานนักเรียน ชุดที่ 5', subtitle: 'ชิ้นงานสอบกลางภาค ชุดที่ 5', url: '#' }
-                    ],
-                    'final': [
-                        { title: 'ผลงานนักเรียน ชุดที่ 1', subtitle: 'ชิ้นงานสอบปลายภาค ชุดที่ 1', url: '#' },
-                        { title: 'ผลงานนักเรียน ชุดที่ 2', subtitle: 'ชิ้นงานสอบปลายภาค ชุดที่ 2', url: '#' },
-                        { title: 'ผลงานนักเรียน ชุดที่ 3', subtitle: 'ชิ้นงานสอบปลายภาค ชุดที่ 3', url: '#' },
-                        { title: 'ผลงานนักเรียน ชุดที่ 4', subtitle: 'ชิ้นงานสอบปลายภาค ชุดที่ 4', url: '#' },
-                        { title: 'ผลงานนักเรียน ชุดที่ 5', subtitle: 'ชิ้นงานสอบปลายภาค ชุดที่ 5', url: '#' }
-                    ],
-                    'photos': [
-                        { title: 'บรรยากาศการเรียนรู้ 1', subtitle: 'กิจกรรมการเขียนโปรแกรม Scratch', url: '#' },
-                        { title: 'บรรยากาศการเรียนรู้ 2', subtitle: 'กิจกรรมการแก้ปัญหาเชิงสร้างสรรค์', url: '#' },
-                        { title: 'บรรยากาศการเรียนรู้ 3', subtitle: 'การทำงานกลุ่มและการแลกเปลี่ยนเรียนรู้', url: '#' },
-                        { title: 'บรรยากาศการเรียนรู้ 4', subtitle: 'การนำเสนอผลงานหน้าชั้นเรียน', url: '#' },
-                        { title: 'บรรยากาศการเรียนรู้ 5', subtitle: 'ความสำเร็จในการทำโปรเจกต์สอบ', url: '#' }
-                    ]
-                };
+            <!-- Right Side -->
+            <div class="flex items-center gap-6 text-gray-300">
+                <span class="text-sm font-medium text-gray-400">Jasminenie</span>
+            </div>
+        </div>
+    </footer>
 
-                function toggleWorks(card, theme, title) {
-                    // Close any other open cards
-                    document.querySelectorAll('.student-work-card').forEach(c => {
-                        if (c !== card) c.classList.remove('active');
-                    });
+    <script>
+        // Data for student works - easily edit links and titles here
+        const studentWorksData = {
+            'abstraction': [
+                { title: 'ผลงานนักเรียน ชุดที่ 1', subtitle: 'กิจกรรม 1.1 เรื่อง ไปโรงเรียนกันเถอะ', url: 'assets/ตัวอย่างงานนักเรียน/แนวคิดเชิงนามธรรม/กิจกรรม 1.1_ภิญญาพัชญ์ จันทร์มีเทศ_1.6_7.pdf' },
+                { title: 'ผลงานนักเรียน ชุดที่ 2', subtitle: 'กิจกรรม 1.1 เรื่อง ไปโรงเรียนกันเถอะ', url: 'assets/ตัวอย่างงานนักเรียน/แนวคิดเชิงนามธรรม/กิจกรรม1.1_ฐิติกาญจน์ สีหะวงค์_1.8_9.pdf' },
+                { title: 'ผลงานนักเรียน ชุดที่ 3', subtitle: 'กิจกรรม 1.1 เรื่อง ไปโรงเรียนกันเถอะ', url: 'assets/ตัวอย่างงานนักเรียน/แนวคิดเชิงนามธรรม/กิจกรรม1.1_ภิรญาณ์ หม้อสุวรรณ_1.5_12.pdf' },
+                { title: 'ผลงานนักเรียน ชุดที่ 4', subtitle: 'กิจกรรม 1.1 เรื่อง ไปโรงเรียนกันเถอะ', url: 'assets/ตัวอย่างงานนักเรียน/แนวคิดเชิงนามธรรม/กิจกรรมที่1.1_ด.ญ.บุญญิสา  ณ วิเชียร_1.7_5.pdf' },
+                { title: 'ผลงานนักเรียน ชุดที่ 5', subtitle: 'กิจกรรม 1.2 เรื่อง รหัสลับในบ้านคุณตา', url: 'assets/ตัวอย่างงานนักเรียน/แนวคิดเชิงนามธรรม/กิจกรรมที่1.2_ฉัตรกมล เชื้อช่าง_1.5_1.PNG' }
+            ],
+            'problem-solving': [
+                { title: 'ผลงานนักเรียน ชุดที่ 1', subtitle: 'กิจกรรม 1.5 เรื่อง จับคู่สัญลักษณ์ผังงาน', url: 'assets/ตัวอย่างงานนักเรียน/การแก้ปัญหา/กิจกรรม1.5_ฉัตรกมล เชื้อช่าง__1.5_1.PNG' },
+                { title: 'ผลงานนักเรียน ชุดที่ 2', subtitle: 'กิจกรรม 1.5 เรื่อง จับคู่สัญลักษณ์ผังงาน', url: 'assets/ตัวอย่างงานนักเรียน/การแก้ปัญหา/กิจกรรม1.5_พัชมณ เฮงชัชนันท์_1.7_เลขที่3.PNG' },
+                { title: 'ผลงานนักเรียน ชุดที่ 3', subtitle: 'กิจกรรม 1.5 เรื่อง จับคู่สัญลักษณ์ผังงาน', url: 'assets/ตัวอย่างงานนักเรียน/การแก้ปัญหา/กิจกรรม1.5_ลลิภัสร์ ลักษมีนิยมชัย_ม.1.9_เลขที่4.png' },
+                { title: 'ผลงานนักเรียน ชุดที่ 4', subtitle: 'กิจกรรม 1.6 เรื่อง เขียนแผนผัง Flowchart', url: 'assets/ตัวอย่างงานนักเรียน/การแก้ปัญหา/กิจกรรม1.6_ด.ญ.พิมพ์ไพลิน ฟูเต็ม_1.8_5.PNG' },
+                { title: 'ผลงานนักเรียน ชุดที่ 5', subtitle: 'กิจกรรม 1.6 เรื่อง เขียนแผนผัง Flowchart', url: 'assets/ตัวอย่างงานนักเรียน/การแก้ปัญหา/กิจกรรม1.6_ด.ญ.พิมพ์ลดา แก้วเหม_1.6_4.PNG' }
+            ],
+            'coding': [
+                { title: 'ผลงานนักเรียน ชุดที่ 1', subtitle: 'กิจกรรม 2.2 เรื่อง Scratch เดินเล่น', url: 'https://scratch.mit.edu/projects/1252925731' },
+                { title: 'ผลงานนักเรียน ชุดที่ 2', subtitle: 'กิจกรรม 2.2 เรื่อง Scratch เดินเล่น', url: 'https://scratch.mit.edu/projects/1255730767' },
+                { title: 'ผลงานนักเรียน ชุดที่ 3', subtitle: 'กิจกรรม 2.2 เรื่อง Scratch เดินเล่น', url: 'https://scratch.mit.edu/projects/1256916671' },
+                { title: 'ผลงานนักเรียน ชุดที่ 4', subtitle: 'กิจกรรม 2.2 เรื่อง Scratch เดินเล่น', url: 'https://scratch.mit.edu/projects/1254409476' },
+                { title: 'ผลงานนักเรียน ชุดที่ 5', subtitle: 'กิจกรรม 2.2 เรื่อง Scratch เดินเล่น', url: 'https://scratch.mit.edu/projects/1257779166' }
+            ],
+            'data-processing': [
+                { title: 'ผลงานนักเรียน ชุดที่ 1', subtitle: 'Data Collection', url: '#' },
+                { title: 'ผลงานนักเรียน ชุดที่ 2', subtitle: 'Spreadsheet Analysis', url: '#' },
+                { title: 'ผลงานนักเรียน ชุดที่ 3', subtitle: 'Graph Creation', url: '#' },
+                { title: 'ผลงานนักเรียน ชุดที่ 4', subtitle: 'Information Synthesis', url: '#' },
+                { title: 'ผลงานนักเรียน ชุดที่ 5', subtitle: 'Database Concept', url: '#' }
+            ],
+            'safety': [
+                { title: 'ผลงานนักเรียน ชุดที่ 1', subtitle: 'Digital Ethics', url: '#' },
+                { title: 'ผลงานนักเรียน ชุดที่ 2', subtitle: 'Privacy Workshop', url: '#' },
+                { title: 'ผลงานนักเรียน ชุดที่ 3', subtitle: 'Security Checklist', url: '#' },
+                { title: 'ผลงานนักเรียน ชุดที่ 4', subtitle: 'Internet Safety Poster', url: '#' },
+                { title: 'ผลงานนักเรียน ชุดที่ 5', subtitle: 'Bullying Prevention', url: '#' }
+            ],
+            'midterm': [
+                { title: 'ผลงานนักเรียน ชุดที่ 1', subtitle: 'ชิ้นงานสอบกลางภาค ชุดที่ 1', url: '#' },
+                { title: 'ผลงานนักเรียน ชุดที่ 2', subtitle: 'ชิ้นงานสอบกลางภาค ชุดที่ 2', url: '#' },
+                { title: 'ผลงานนักเรียน ชุดที่ 3', subtitle: 'ชิ้นงานสอบกลางภาค ชุดที่ 3', url: '#' },
+                { title: 'ผลงานนักเรียน ชุดที่ 4', subtitle: 'ชิ้นงานสอบกลางภาค ชุดที่ 4', url: '#' },
+                { title: 'ผลงานนักเรียน ชุดที่ 5', subtitle: 'ชิ้นงานสอบกลางภาค ชุดที่ 5', url: '#' }
+            ],
+            'final': [
+                { title: 'ผลงานนักเรียน ชุดที่ 1', subtitle: 'ชิ้นงานสอบปลายภาค ชุดที่ 1', url: '#' },
+                { title: 'ผลงานนักเรียน ชุดที่ 2', subtitle: 'ชิ้นงานสอบปลายภาค ชุดที่ 2', url: '#' },
+                { title: 'ผลงานนักเรียน ชุดที่ 3', subtitle: 'ชิ้นงานสอบปลายภาค ชุดที่ 3', url: '#' },
+                { title: 'ผลงานนักเรียน ชุดที่ 4', subtitle: 'ชิ้นงานสอบปลายภาค ชุดที่ 4', url: '#' },
+                { title: 'ผลงานนักเรียน ชุดที่ 5', subtitle: 'ชิ้นงานสอบปลายภาค ชุดที่ 5', url: '#' }
+            ],
+            'photos': [
+                { title: 'บรรยากาศการเรียนรู้ 1', subtitle: 'กิจกรรมการเขียนโปรแกรม Scratch', url: '#' },
+                { title: 'บรรยากาศการเรียนรู้ 2', subtitle: 'กิจกรรมการแก้ปัญหาเชิงสร้างสรรค์', url: '#' },
+                { title: 'บรรยากาศการเรียนรู้ 3', subtitle: 'การทำงานกลุ่มและการแลกเปลี่ยนเรียนรู้', url: '#' },
+                { title: 'บรรยากาศการเรียนรู้ 4', subtitle: 'การนำเสนอผลงานหน้าชั้นเรียน', url: '#' },
+                { title: 'บรรยากาศการเรียนรู้ 5', subtitle: 'ความสำเร็จในการทำโปรเจกต์สอบ', url: '#' }
+            ]
+        };
 
-                    if (card.classList.contains('active')) return;
+        function toggleWorks(card, theme, title) {
+            // Close any other open cards
+            document.querySelectorAll('.student-work-card').forEach(c => {
+                if (c !== card) c.classList.remove('active');
+            });
 
-                    const listArea = card.querySelector('.works-overlay div:last-child');
-                    listArea.innerHTML = '';
+            if (card.classList.contains('active')) return;
 
-                    const themeConfigs = {
-                        'abstraction': { icon: 'fa-shapes', color: 'text-purple-400', bg: 'bg-purple-500/10' },
-                        'problem-solving': { icon: 'fa-lightbulb', color: 'text-blue-400', bg: 'bg-blue-500/10' },
-                        'coding': { icon: 'fa-code', color: 'text-indigo-400', bg: 'bg-indigo-500/10' },
-                        'data-processing': { icon: 'fa-database', color: 'text-teal-400', bg: 'bg-teal-500/10' },
-                        'safety': { icon: 'fa-shield-halved', color: 'text-amber-400', bg: 'bg-amber-500/10' },
-                        'midterm': { icon: 'fa-file-signature', color: 'text-rose-400', bg: 'bg-rose-500/10' },
-                        'final': { icon: 'fa-trophy', color: 'text-amber-400', bg: 'bg-amber-500/10' },
-                        'photos': { icon: 'fa-images', color: 'text-teal-400', bg: 'bg-teal-500/10' }
-                    };
+            const listArea = card.querySelector('.works-overlay div:last-child');
+            listArea.innerHTML = '';
 
-                    const config = themeConfigs[theme];
-                    const works = studentWorksData[theme] || [];
+            const themeConfigs = {
+                'abstraction': { icon: 'fa-shapes', color: 'text-purple-400', bg: 'bg-purple-500/10' },
+                'problem-solving': { icon: 'fa-lightbulb', color: 'text-blue-400', bg: 'bg-blue-500/10' },
+                'coding': { icon: 'fa-code', color: 'text-indigo-400', bg: 'bg-indigo-500/10' },
+                'data-processing': { icon: 'fa-database', color: 'text-teal-400', bg: 'bg-teal-500/10' },
+                'safety': { icon: 'fa-shield-halved', color: 'text-amber-400', bg: 'bg-amber-500/10' },
+                'midterm': { icon: 'fa-file-signature', color: 'text-rose-400', bg: 'bg-rose-500/10' },
+                'final': { icon: 'fa-trophy', color: 'text-amber-400', bg: 'bg-amber-500/10' },
+                'photos': { icon: 'fa-images', color: 'text-teal-400', bg: 'bg-teal-500/10' }
+            };
 
-                    works.forEach((work, index) => {
-                        const workLink = document.createElement('a');
-                        workLink.href = work.url;
-                        workLink.target = '_blank';
-                        workLink.onclick = (e) => e.stopPropagation();
-                        workLink.className = 'group flex items-center gap-4 p-4 bg-white border border-gray-100 rounded-2xl hover:shadow-xl hover:border-purple-200 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden';
+            const config = themeConfigs[theme];
+            const works = studentWorksData[theme] || [];
 
-                        workLink.innerHTML = `
+            works.forEach((work, index) => {
+                const workLink = document.createElement('a');
+                workLink.href = work.url;
+                workLink.target = '_blank';
+                workLink.onclick = (e) => e.stopPropagation();
+                workLink.className = 'group flex items-center gap-6 p-6 bg-white border border-gray-100 rounded-2xl hover:shadow-2xl hover:border-purple-200 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden';
+
+                workLink.innerHTML = `
                     <!-- Selection Indicator -->
-                    <div class="absolute left-0 top-0 bottom-0 w-1.5 ${config.bg.replace('/10', '')} opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="absolute left-0 top-0 bottom-0 w-2 ${config.bg.replace('/10', '')} opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     
-                    <div class="w-12 h-12 rounded-xl ${config.bg} flex items-center justify-center text-lg ${config.color} group-hover:scale-110 transition-transform duration-500">
+                    <div class="w-16 h-16 rounded-2xl ${config.bg} flex items-center justify-center text-2xl ${config.color} group-hover:scale-110 transition-transform duration-500">
                         <i class="fa-solid ${config.icon}"></i>
                     </div>
                     <div class="flex-grow">
-                        <h4 class="text-[15px] font-bold text-gray-800 leading-tight group-hover:text-purple-600 transition-colors">${work.title}</h4>
-                        <p class="text-xs text-gray-400 font-light mt-1">${work.subtitle}</p>
+                        <h4 class="text-lg font-bold text-gray-800 leading-tight group-hover:text-purple-600 transition-colors">${work.title}</h4>
+                        <p class="text-sm text-gray-400 font-light mt-1.5">${work.subtitle}</p>
                     </div>
-                    <div class="w-8 h-8 rounded-full border border-gray-100 flex items-center justify-center text-gray-300 group-hover:text-purple-500 group-hover:border-purple-100 transition-all">
-                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                    <div class="w-10 h-10 rounded-full border border-gray-100 flex items-center justify-center text-gray-400 group-hover:text-purple-500 group-hover:border-purple-100 transition-all">
+                        <i class="fa-solid fa-chevron-right text-sm"></i>
                     </div>
                 `;
-                        listArea.appendChild(workLink);
-                    });
+                listArea.appendChild(workLink);
+            });
 
-                    card.classList.add('active');
+            card.classList.add('active');
+        }
+
+        function closeWorks(card) {
+            card.classList.remove('active');
+        }
+
+        // Close when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.student-work-card')) {
+                document.querySelectorAll('.student-work-card').forEach(c => c.classList.remove('active'));
+            }
+        });
+    </script>
+    <script>
+        // Mobile Menu Toggle logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Close when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                    mobileMenu.classList.add('hidden');
                 }
+            });
 
-                function closeWorks(card) {
-                    card.classList.remove('active');
-                }
-
-                // Close when clicking outside
-                document.addEventListener('click', (e) => {
-                    if (!e.target.closest('.student-work-card')) {
-                        document.querySelectorAll('.student-work-card').forEach(c => c.classList.remove('active'));
-                    }
+            // Close menu when clicking on a link
+            const menuLinks = mobileMenu.querySelectorAll('a');
+            menuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
                 });
-            </script>
-            <script>
-                // Mobile Menu Toggle logic
-                const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-                const mobileMenu = document.getElementById('mobile-menu');
-
-                if (mobileMenuBtn && mobileMenu) {
-                    mobileMenuBtn.addEventListener('click', (e) => {
-                        e.stopPropagation();
-                        mobileMenu.classList.toggle('hidden');
-                    });
-
-                    // Close when clicking outside
-                    document.addEventListener('click', (e) => {
-                        if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-                            mobileMenu.classList.add('hidden');
-                        }
-                    });
-
-                    // Close menu when clicking on a link
-                    const menuLinks = mobileMenu.querySelectorAll('a');
-                    menuLinks.forEach(link => {
-                        link.addEventListener('click', () => {
-                            mobileMenu.classList.add('hidden');
-                        });
-                    });
-                }
-            </script>
+            });
+        }
+    </script>
 </body>
 
 </html>
