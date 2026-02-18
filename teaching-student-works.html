@@ -195,11 +195,11 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 lg:grid-cols-3 gap-8">
 
                 <!-- Topic 1: แนวคิดเชิงนามธรรม -->
-                <div
-                    class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all group flex flex-col">
+                <div onclick="openWorks('แนวคิดเชิงนามธรรม', 'abstraction')"
+                    class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all group flex flex-col cursor-pointer">
                     <!-- Horizontal Image Preview -->
-                    <div onclick="openGallery('แนวคิดเชิงนามธรรม', 'abstraction')"
-                        class="aspect-video bg-gradient-to-br from-purple-50 to-indigo-50 flex items-center justify-center relative overflow-hidden p-4 cursor-pointer">
+                    <div
+                        class="aspect-video bg-gradient-to-br from-purple-50 to-indigo-50 flex items-center justify-center relative overflow-hidden p-4">
                         <div
                             class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10">
                         </div>
@@ -212,38 +212,25 @@
                         </div>
                         <div
                             class="absolute bottom-3 right-3 bg-white/90 backdrop-blur-md px-2 py-1 rounded text-[10px] font-bold text-gray-600 shadow-sm">
-                            20 รูปภาพ
+                            5 ผลงาน
                         </div>
                     </div>
                     <!-- Description -->
-                    <div class="p-5 flex-grow flex flex-col">
-                        <div class="flex-grow">
-                            <h3 class="font-bold text-gray-800 mb-2 group-hover:text-purple-600 transition-colors">
-                                แนวคิดเชิงนามธรรม</h3>
-                            <p class="text-sm text-gray-500 font-light leading-relaxed line-clamp-2">
-                                ผลงานการแยกแยะความสำคัญและการสร้างแบบจำลองปัญหาเพื่อให้เข้าใจแก่นของสิ่งที่สนใจ
-                            </p>
-                        </div>
-                        <!-- Actions -->
-                        <div class="flex items-center justify-between mt-4 pt-4 border-t border-gray-50">
-                            <button onclick="openGallery('แนวคิดเชิงนามธรรม', 'abstraction')"
-                                class="text-xs text-gray-400 hover:text-purple-600 transition-colors font-medium flex items-center gap-1">
-                                <i class="fa-solid fa-images"></i> ดูรูปภาพ
-                            </button>
-                            <a href="#" target="_blank"
-                                class="text-sm text-purple-600 font-bold flex items-center gap-2 hover:bg-purple-50 px-3 py-1.5 rounded-lg transition-colors">
-                                <i class="fa-solid fa-link"></i> ลิ้งค์ผลงาน
-                            </a>
-                        </div>
+                    <div class="p-5 flex-grow">
+                        <h3 class="font-bold text-gray-800 mb-2 group-hover:text-purple-600 transition-colors">
+                            แนวคิดเชิงนามธรรม</h3>
+                        <p class="text-sm text-gray-500 font-light leading-relaxed line-clamp-2">
+                            ผลงานการแยกแยะความสำคัญและการสร้างแบบจำลองปัญหาเพื่อให้เข้าใจแก่นของสิ่งที่สนใจ
+                        </p>
                     </div>
                 </div>
 
                 <!-- Topic 2: การแก้ปัญหา -->
-                <div
-                    class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all group flex flex-col">
+                <div onclick="openWorks('การแก้ปัญหา', 'problem-solving')"
+                    class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all group flex flex-col cursor-pointer">
                     <!-- Horizontal Image Preview -->
-                    <div onclick="openGallery('การแก้ปัญหา', 'problem-solving')"
-                        class="aspect-video bg-gradient-to-br from-blue-50 to-cyan-50 flex items-center justify-center relative overflow-hidden p-4 cursor-pointer">
+                    <div
+                        class="aspect-video bg-gradient-to-br from-blue-50 to-cyan-50 flex items-center justify-center relative overflow-hidden p-4">
                         <div
                             class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/grid-me.png')] opacity-10">
                         </div>
@@ -256,38 +243,25 @@
                         </div>
                         <div
                             class="absolute bottom-3 right-3 bg-white/90 backdrop-blur-md px-2 py-1 rounded text-[10px] font-bold text-gray-600 shadow-sm">
-                            20 รูปภาพ
+                            5 ผลงาน
                         </div>
                     </div>
                     <!-- Description -->
-                    <div class="p-5 flex-grow flex flex-col">
-                        <div class="flex-grow">
-                            <h3 class="font-bold text-gray-800 mb-2 group-hover:text-purple-600 transition-colors">
-                                การแก้ปัญหา</h3>
-                            <p class="text-sm text-gray-500 font-light leading-relaxed line-clamp-2">
-                                การออกแบบขั้นตอนวิธี (Algorithm) และผังงานเพื่อหาแนวทางการแก้ปัญหาที่ถูกต้องแม่นยำ
-                            </p>
-                        </div>
-                        <!-- Actions -->
-                        <div class="flex items-center justify-between mt-4 pt-4 border-t border-gray-50">
-                            <button onclick="openGallery('การแก้ปัญหา', 'problem-solving')"
-                                class="text-xs text-gray-400 hover:text-purple-600 transition-colors font-medium flex items-center gap-1">
-                                <i class="fa-solid fa-images"></i> ดูรูปภาพ
-                            </button>
-                            <a href="#" target="_blank"
-                                class="text-sm text-purple-600 font-bold flex items-center gap-2 hover:bg-purple-50 px-3 py-1.5 rounded-lg transition-colors">
-                                <i class="fa-solid fa-link"></i> ลิ้งค์ผลงาน
-                            </a>
-                        </div>
+                    <div class="p-5 flex-grow">
+                        <h3 class="font-bold text-gray-800 mb-2 group-hover:text-purple-600 transition-colors">
+                            การแก้ปัญหา</h3>
+                        <p class="text-sm text-gray-500 font-light leading-relaxed line-clamp-2">
+                            การออกแบบขั้นตอนวิธี (Algorithm) และผังงานเพื่อหาแนวทางการแก้ปัญหาที่ถูกต้องแม่นยำ
+                        </p>
                     </div>
                 </div>
 
                 <!-- Topic 3: การเขียนโปรแกรมอย่างง่าย -->
-                <div
-                    class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all group flex flex-col">
+                <div onclick="openWorks('การเขียนโปรแกรมอย่างง่าย', 'coding')"
+                    class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all group flex flex-col cursor-pointer">
                     <!-- Horizontal Image Preview -->
-                    <div onclick="openGallery('การเขียนโปรแกรมอย่างง่าย', 'coding')"
-                        class="aspect-video bg-gradient-to-br from-indigo-50 to-purple-50 flex items-center justify-center relative overflow-hidden p-4 cursor-pointer">
+                    <div
+                        class="aspect-video bg-gradient-to-br from-indigo-50 to-purple-50 flex items-center justify-center relative overflow-hidden p-4">
                         <div
                             class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/asfalt-dark.png')] opacity-5">
                         </div>
@@ -300,38 +274,25 @@
                         </div>
                         <div
                             class="absolute bottom-3 right-3 bg-white/90 backdrop-blur-md px-2 py-1 rounded text-[10px] font-bold text-gray-600 shadow-sm">
-                            20 รูปภาพ
+                            5 ผลงาน
                         </div>
                     </div>
                     <!-- Description -->
-                    <div class="p-5 flex-grow flex flex-col">
-                        <div class="flex-grow">
-                            <h3 class="font-bold text-gray-800 mb-2 group-hover:text-purple-600 transition-colors">
-                                การเขียนโปรแกรมอย่างง่าย</h3>
-                            <p class="text-sm text-gray-500 font-light leading-relaxed line-clamp-2">
-                                พื้นฐานการเขียนโปรแกรมด้วยภาษาที่เหมาะสมกับช่วงวัยเพื่อสร้างสรรค์ผลงานอย่างง่าย
-                            </p>
-                        </div>
-                        <!-- Actions -->
-                        <div class="flex items-center justify-between mt-4 pt-4 border-t border-gray-50">
-                            <button onclick="openGallery('การเขียนโปรแกรมอย่างง่าย', 'coding')"
-                                class="text-xs text-gray-400 hover:text-purple-600 transition-colors font-medium flex items-center gap-1">
-                                <i class="fa-solid fa-images"></i> ดูรูปภาพ
-                            </button>
-                            <a href="#" target="_blank"
-                                class="text-sm text-purple-600 font-bold flex items-center gap-2 hover:bg-purple-50 px-3 py-1.5 rounded-lg transition-colors">
-                                <i class="fa-solid fa-link"></i> ลิ้งค์ผลงาน
-                            </a>
-                        </div>
+                    <div class="p-5 flex-grow">
+                        <h3 class="font-bold text-gray-800 mb-2 group-hover:text-purple-600 transition-colors">
+                            การเขียนโปรแกรมอย่างง่าย</h3>
+                        <p class="text-sm text-gray-500 font-light leading-relaxed line-clamp-2">
+                            พื้นฐานการเขียนโปรแกรมด้วยภาษาที่เหมาะสมกับช่วงวัยเพื่อสร้างสรรค์ผลงานอย่างง่าย
+                        </p>
                     </div>
                 </div>
 
                 <!-- Topic 4: ข้อมูลและการประมวลผล -->
-                <div
-                    class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all group flex flex-col">
+                <div onclick="openWorks('ข้อมูลและการประมวลผล', 'data-processing')"
+                    class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all group flex flex-col cursor-pointer">
                     <!-- Horizontal Image Preview -->
-                    <div onclick="openGallery('ข้อมูลและการประมวลผล', 'data-processing')"
-                        class="aspect-video bg-gradient-to-br from-teal-50 to-green-50 flex items-center justify-center relative overflow-hidden p-4 cursor-pointer">
+                    <div
+                        class="aspect-video bg-gradient-to-br from-teal-50 to-green-50 flex items-center justify-center relative overflow-hidden p-4">
                         <div
                             class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/checkered-pattern.png')] opacity-10">
                         </div>
@@ -344,38 +305,25 @@
                         </div>
                         <div
                             class="absolute bottom-3 right-3 bg-white/90 backdrop-blur-md px-2 py-1 rounded text-[10px] font-bold text-gray-600 shadow-sm">
-                            20 รูปภาพ
+                            5 ผลงาน
                         </div>
                     </div>
                     <!-- Description -->
-                    <div class="p-5 flex-grow flex flex-col">
-                        <div class="flex-grow">
-                            <h3 class="font-bold text-gray-800 mb-2 group-hover:text-purple-600 transition-colors">
-                                ข้อมูลและการประมวลผล</h3>
-                            <p class="text-sm text-gray-500 font-light leading-relaxed line-clamp-2">
-                                การรวบรวม จัดทำ และประมวลผลข้อมูลเพื่อให้ได้สารสนเทศที่เป็นประโยชน์
-                            </p>
-                        </div>
-                        <!-- Actions -->
-                        <div class="flex items-center justify-between mt-4 pt-4 border-t border-gray-50">
-                            <button onclick="openGallery('ข้อมูลและการประมวลผล', 'data-processing')"
-                                class="text-xs text-gray-400 hover:text-purple-600 transition-colors font-medium flex items-center gap-1">
-                                <i class="fa-solid fa-images"></i> ดูรูปภาพ
-                            </button>
-                            <a href="#" target="_blank"
-                                class="text-sm text-purple-600 font-bold flex items-center gap-2 hover:bg-purple-50 px-3 py-1.5 rounded-lg transition-colors">
-                                <i class="fa-solid fa-link"></i> ลิ้งค์ผลงาน
-                            </a>
-                        </div>
+                    <div class="p-5 flex-grow">
+                        <h3 class="font-bold text-gray-800 mb-2 group-hover:text-purple-600 transition-colors">
+                            ข้อมูลและการประมวลผล</h3>
+                        <p class="text-sm text-gray-500 font-light leading-relaxed line-clamp-2">
+                            การรวบรวม จัดทำ และประมวลผลข้อมูลเพื่อให้ได้สารสนเทศที่เป็นประโยชน์
+                        </p>
                     </div>
                 </div>
 
                 <!-- Topic 5: การใช้เทคโนโลยีสารสนเทศอย่างปลอดภัย -->
-                <div
-                    class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all group flex flex-col">
+                <div onclick="openWorks('การใช้เทคโนโลยีสารสนเทศอย่างปลอดภัย', 'safety')"
+                    class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all group flex flex-col cursor-pointer">
                     <!-- Horizontal Image Preview -->
-                    <div onclick="openGallery('การใช้เทคโนโลยีสารสนเทศอย่างปลอดภัย', 'safety')"
-                        class="aspect-video bg-gradient-to-br from-amber-50 to-orange-50 flex items-center justify-center relative overflow-hidden p-4 cursor-pointer">
+                    <div
+                        class="aspect-video bg-gradient-to-br from-amber-50 to-orange-50 flex items-center justify-center relative overflow-hidden p-4">
                         <div
                             class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/grid.png')] opacity-10">
                         </div>
@@ -388,29 +336,16 @@
                         </div>
                         <div
                             class="absolute bottom-3 right-3 bg-white/90 backdrop-blur-md px-2 py-1 rounded text-[10px] font-bold text-gray-600 shadow-sm">
-                            20 รูปภาพ
+                            5 ผลงาน
                         </div>
                     </div>
                     <!-- Description -->
-                    <div class="p-5 flex-grow flex flex-col">
-                        <div class="flex-grow">
-                            <h3 class="font-bold text-gray-800 mb-2 group-hover:text-purple-600 transition-colors">
-                                การใช้เทคโนโลยีสารสนเทศอย่างปลอดภัย</h3>
-                            <p class="text-sm text-gray-500 font-light leading-relaxed line-clamp-2">
-                                การสร้างความเข้าใจเรื่องจริยธรรม ความปลอดภัย และการปกป้องความเป็นส่วนตัวในโลกออนไลน์
-                            </p>
-                        </div>
-                        <!-- Actions -->
-                        <div class="flex items-center justify-between mt-4 pt-4 border-t border-gray-50">
-                            <button onclick="openGallery('การใช้เทคโนโลยีสารสนเทศอย่างปลอดภัย', 'safety')"
-                                class="text-xs text-gray-400 hover:text-purple-600 transition-colors font-medium flex items-center gap-1">
-                                <i class="fa-solid fa-images"></i> ดูรูปภาพ
-                            </button>
-                            <a href="#" target="_blank"
-                                class="text-sm text-purple-600 font-bold flex items-center gap-2 hover:bg-purple-50 px-3 py-1.5 rounded-lg transition-colors">
-                                <i class="fa-solid fa-link"></i> ลิ้งค์ผลงาน
-                            </a>
-                        </div>
+                    <div class="p-5 flex-grow">
+                        <h3 class="font-bold text-gray-800 mb-2 group-hover:text-purple-600 transition-colors">
+                            การใช้เทคโนโลยีสารสนเทศอย่างปลอดภัย</h3>
+                        <p class="text-sm text-gray-500 font-light leading-relaxed line-clamp-2">
+                            การสร้างความเข้าใจเรื่องจริยธรรม ความปลอดภัย และการปกป้องความเป็นส่วนตัวในโลกออนไลน์
+                        </p>
                     </div>
                 </div>
 
@@ -418,25 +353,24 @@
         </div>
     </div>
 
-    <!-- Gallery Modal -->
-    <div id="galleryModal" class="fixed inset-0 z-[100] hidden overflow-y-auto bg-black/95 backdrop-blur-xl">
-        <div class="min-h-screen p-4 md:p-8 flex flex-col">
+    <!-- Works Modal -->
+    <div id="worksModal" class="fixed inset-0 z-[100] hidden overflow-y-auto bg-black/95 backdrop-blur-xl">
+        <div class="min-h-screen p-4 md:p-8 flex flex-col items-center justify-center">
             <!-- Modal Header -->
             <div
-                class="max-w-7xl mx-auto w-full flex justify-between items-center mb-10 sticky top-0 bg-transparent py-4 text-white z-50">
+                class="max-w-4xl mx-auto w-full flex justify-between items-center mb-8 sticky top-0 bg-transparent py-4 text-white z-50">
                 <div>
-                    <h2 id="modalTitle" class="text-2xl md:text-3xl font-bold">แกลเลอรี่ภาพ</h2>
-                    <p id="modalCount" class="text-white/40 font-light mt-1">จำนวน 20 รูปภาพ</p>
+                    <h2 id="worksModalTitle" class="text-2xl md:text-3xl font-bold">เลือกดูผลงาน</h2>
+                    <p id="worksModalCount" class="text-white/40 font-light mt-1">จำนวน 5 รายการ</p>
                 </div>
-                <button onclick="closeGallery()"
+                <button onclick="closeWorks()"
                     class="w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-all text-white border border-white/10">
                     <i class="fa-solid fa-times text-xl"></i>
                 </button>
             </div>
 
-            <!-- Image Grid in Modal -->
-            <div id="modalImageGrid"
-                class="max-w-7xl mx-auto w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 pb-20">
+            <!-- Content Area: Selection List -->
+            <div id="worksListArea" class="max-w-4xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-4 pb-12">
                 <!-- Dynamically populated -->
             </div>
         </div>
@@ -460,61 +394,61 @@
     </footer>
 
     <script>
-        function openGallery(title, theme) {
-            const modal = document.getElementById('galleryModal');
-            const modalTitle = document.getElementById('modalTitle');
-            const grid = document.getElementById('modalImageGrid');
+        function openWorks(title, theme) {
+            const modal = document.getElementById('worksModal');
+            const modalTitle = document.getElementById('worksModalTitle');
+            const listArea = document.getElementById('worksListArea');
 
-            modalTitle.innerText = title;
-            grid.innerHTML = '';
+            modalTitle.innerText = `${title}`;
+            listArea.innerHTML = '';
 
-            // Themes mapping
+            // Themes mapping for icons
             const themeConfigs = {
-                'abstraction': { icon: 'fa-shapes', color: 'purple' },
-                'problem-solving': { icon: 'fa-lightbulb', color: 'blue' },
-                'coding': { icon: 'fa-code', color: 'indigo' },
-                'data-processing': { icon: 'fa-database', color: 'teal' },
-                'safety': { icon: 'fa-shield-halved', color: 'amber' }
+                'abstraction': { icon: 'fa-shapes', color: 'text-purple-400' },
+                'problem-solving': { icon: 'fa-lightbulb', color: 'text-blue-400' },
+                'coding': { icon: 'fa-code', color: 'text-indigo-400' },
+                'data-processing': { icon: 'fa-database', color: 'text-teal-400' },
+                'safety': { icon: 'fa-shield-halved', color: 'text-amber-400' }
             };
 
             const config = themeConfigs[theme];
 
-            // Create 20 placeholder images
-            for (let i = 1; i <= 20; i++) {
-                const imgCard = document.createElement('div');
-                imgCard.className = 'aspect-video rounded-2xl bg-white/5 border border-white/10 overflow-hidden relative group cursor-pointer hover:border-white/40 transition-all hover:scale-[1.02] shadow-2xl';
+            // Create 5 work item links
+            for (let i = 1; i <= 5; i++) {
+                const workLink = document.createElement('a');
+                workLink.href = '#'; // Placeholder for actual file/link
+                workLink.target = '_blank';
+                workLink.className = 'group flex items-center gap-6 p-6 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 hover:border-white/30 transition-all hover:scale-[1.02]';
 
-                const inner = `
-                    <div class="absolute inset-0 flex flex-col items-center justify-center opacity-30 group-hover:opacity-80 transition-opacity">
-                        <i class="fa-solid ${config.icon} text-white text-2xl md:text-4xl mb-3"></i>
-                        <span class="text-[8px] text-white/50 font-bold uppercase tracking-[0.2em]">Work Photo ${i}</span>
+                workLink.innerHTML = `
+                    <div class="w-14 h-14 rounded-xl bg-white/5 flex items-center justify-center text-2xl ${config.color} group-hover:scale-110 transition-transform border border-white/5">
+                        <i class="fa-solid ${config.icon}"></i>
                     </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-5">
-                        <p class="text-[10px] text-white/40 uppercase tracking-widest mb-1 italic">Student Achievement</p>
-                        <span class="text-sm text-white font-medium">รูปภาพที่ ${i} - ${title}</span>
+                    <div class="flex-grow">
+                        <h4 class="text-lg font-bold text-white mb-0.5 group-hover:text-white transition-colors">ผลงานนักเรียน ชุดที่ ${i}</h4>
+                        <p class="text-xs text-white/40 uppercase tracking-widest font-light">Student Work Collection</p>
                     </div>
-                    <div class="absolute top-4 right-4 bg-white/10 backdrop-blur-md px-2 py-1 rounded text-[8px] text-white opacity-0 group-hover:opacity-100 transition-opacity border border-white/10">
-                        HD PREVIEW
+                    <div class="w-10 h-10 rounded-full flex items-center justify-center text-white/20 group-hover:text-white group-hover:bg-white/10 transition-all">
+                        <i class="fa-solid fa-arrow-right"></i>
                     </div>
                 `;
 
-                imgCard.innerHTML = inner;
-                grid.appendChild(imgCard);
+                listArea.appendChild(workLink);
             }
 
             modal.classList.remove('hidden');
             document.body.style.overflow = 'hidden'; // Prevent scrolling
         }
 
-        function closeGallery() {
-            const modal = document.getElementById('galleryModal');
+        function closeWorks() {
+            const modal = document.getElementById('worksModal');
             modal.classList.add('hidden');
             document.body.style.overflow = 'auto'; // Restore scrolling
         }
 
         // Handle Escape key
         window.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeGallery();
+            if (e.key === 'Escape') closeWorks();
         });
     </script>
     <script>
