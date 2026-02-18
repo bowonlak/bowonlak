@@ -493,6 +493,45 @@
     </footer>
 
     <script>
+        // Data for student works - easily edit links and titles here
+        const studentWorksData = {
+            'abstraction': [
+                { title: 'ผลงานนักเรียน ชุดที่ 1', subtitle: 'Concept Visualization', url: '#' },
+                { title: 'ผลงานนักเรียน ชุดที่ 2', subtitle: 'Model Design', url: '#' },
+                { title: 'ผลงานนักเรียน ชุดที่ 3', subtitle: 'Abstraction Exercise', url: '#' },
+                { title: 'ผลงานนักเรียน ชุดที่ 4', subtitle: 'Problem Decomposition', url: '#' },
+                { title: 'ผลงานนักเรียน ชุดที่ 5', subtitle: 'Simplified Systems', url: '#' }
+            ],
+            'problem-solving': [
+                { title: 'ผลงานนักเรียน ชุดที่ 1', subtitle: 'Algorithm Flowchart', url: '#' },
+                { title: 'ผลงานนักเรียน ชุดที่ 2', subtitle: 'Logic Puzzles', url: '#' },
+                { title: 'ผลงานนักเรียน ชุดที่ 3', subtitle: 'Sequence Planning', url: '#' },
+                { title: 'ผลงานนักเรียน ชุดที่ 4', subtitle: 'Step-by-Step Guide', url: '#' },
+                { title: 'ผลงานนักเรียน ชุดที่ 5', subtitle: 'Optimization Task', url: '#' }
+            ],
+            'coding': [
+                { title: 'ผลงานนักเรียน ชุดที่ 1', subtitle: 'Scratch Project', url: '#' },
+                { title: 'ผลงานนักเรียน ชุดที่ 2', subtitle: 'Micro:bit Script', url: '#' },
+                { title: 'ผลงานนักเรียน ชุดที่ 3', subtitle: 'Python Basics', url: '#' },
+                { title: 'ผลงานนักเรียน ชุดที่ 4', subtitle: 'UI/UX Design', url: '#' },
+                { title: 'ผลงานนักเรียน ชุดที่ 5', subtitle: 'Game Mechanics', url: '#' }
+            ],
+            'data-processing': [
+                { title: 'ผลงานนักเรียน ชุดที่ 1', subtitle: 'Data Collection', url: '#' },
+                { title: 'ผลงานนักเรียน ชุดที่ 2', subtitle: 'Spreadsheet Analysis', url: '#' },
+                { title: 'ผลงานนักเรียน ชุดที่ 3', subtitle: 'Graph Creation', url: '#' },
+                { title: 'ผลงานนักเรียน ชุดที่ 4', subtitle: 'Information Synthesis', url: '#' },
+                { title: 'ผลงานนักเรียน ชุดที่ 5', subtitle: 'Database Concept', url: '#' }
+            ],
+            'safety': [
+                { title: 'ผลงานนักเรียน ชุดที่ 1', subtitle: 'Digital Ethics', url: '#' },
+                { title: 'ผลงานนักเรียน ชุดที่ 2', subtitle: 'Privacy Workshop', url: '#' },
+                { title: 'ผลงานนักเรียน ชุดที่ 3', subtitle: 'Security Checklist', url: '#' },
+                { title: 'ผลงานนักเรียน ชุดที่ 4', subtitle: 'Internet Safety Poster', url: '#' },
+                { title: 'ผลงานนักเรียน ชุดที่ 5', subtitle: 'Bullying Prevention', url: '#' }
+            ]
+        };
+
         function toggleWorks(card, theme, title) {
             // Close any other open cards
             document.querySelectorAll('.student-work-card').forEach(c => {
@@ -513,10 +552,11 @@
             };
 
             const config = themeConfigs[theme];
+            const works = studentWorksData[theme] || [];
 
-            for (let i = 1; i <= 5; i++) {
+            works.forEach((work, index) => {
                 const workLink = document.createElement('a');
-                workLink.href = '#';
+                workLink.href = work.url;
                 workLink.target = '_blank';
                 workLink.onclick = (e) => e.stopPropagation();
                 workLink.className = 'group flex items-center gap-4 p-3.5 bg-white/5 border border-white/5 rounded-xl hover:bg-white/10 hover:border-white/20 transition-all';
@@ -526,13 +566,13 @@
                         <i class="fa-solid ${config.icon}"></i>
                     </div>
                     <div class="flex-grow">
-                        <h4 class="text-sm font-bold text-white leading-tight group-hover:text-white transition-colors">ผลงานนักเรียน ชุดที่ ${i}</h4>
-                        <p class="text-[9px] text-white/30 uppercase tracking-[0.1em] mt-0.5">Student Collection</p>
+                        <h4 class="text-sm font-bold text-white leading-tight group-hover:text-white transition-colors">${work.title}</h4>
+                        <p class="text-[9px] text-white/30 uppercase tracking-[0.1em] mt-0.5">${work.subtitle}</p>
                     </div>
                     <i class="fa-solid fa-chevron-right text-xs text-white/20 group-hover:text-white group-hover:translate-x-1 transition-all"></i>
                 `;
                 listArea.appendChild(workLink);
-            }
+            });
 
             card.classList.add('active');
         }
