@@ -195,11 +195,11 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 lg:grid-cols-3 gap-8">
 
                 <!-- Topic 1: แนวคิดเชิงนามธรรม -->
-                <div onclick="openGallery('แนวคิดเชิงนามธรรม', 'abstraction')"
-                    class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all group flex flex-col cursor-pointer">
+                <div
+                    class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all group flex flex-col">
                     <!-- Horizontal Image Preview -->
-                    <div
-                        class="aspect-video bg-gradient-to-br from-purple-50 to-indigo-50 flex items-center justify-center relative overflow-hidden p-4">
+                    <div onclick="openGallery('แนวคิดเชิงนามธรรม', 'abstraction')"
+                        class="aspect-video bg-gradient-to-br from-purple-50 to-indigo-50 flex items-center justify-center relative overflow-hidden p-4 cursor-pointer">
                         <div
                             class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10">
                         </div>
@@ -216,21 +216,34 @@
                         </div>
                     </div>
                     <!-- Description -->
-                    <div class="p-5 flex-grow">
-                        <h3 class="font-bold text-gray-800 mb-2 group-hover:text-purple-600 transition-colors">
-                            แนวคิดเชิงนามธรรม</h3>
-                        <p class="text-sm text-gray-500 font-light leading-relaxed line-clamp-2">
-                            ผลงานการแยกแยะความสำคัญและการสร้างแบบจำลองปัญหาเพื่อให้เข้าใจแก่นของสิ่งที่สนใจ
-                        </p>
+                    <div class="p-5 flex-grow flex flex-col">
+                        <div class="flex-grow">
+                            <h3 class="font-bold text-gray-800 mb-2 group-hover:text-purple-600 transition-colors">
+                                แนวคิดเชิงนามธรรม</h3>
+                            <p class="text-sm text-gray-500 font-light leading-relaxed line-clamp-2">
+                                ผลงานการแยกแยะความสำคัญและการสร้างแบบจำลองปัญหาเพื่อให้เข้าใจแก่นของสิ่งที่สนใจ
+                            </p>
+                        </div>
+                        <!-- Actions -->
+                        <div class="flex items-center justify-between mt-4 pt-4 border-t border-gray-50">
+                            <button onclick="openGallery('แนวคิดเชิงนามธรรม', 'abstraction')"
+                                class="text-xs text-gray-400 hover:text-purple-600 transition-colors font-medium flex items-center gap-1">
+                                <i class="fa-solid fa-images"></i> ดูรูปภาพ
+                            </button>
+                            <a href="#" target="_blank"
+                                class="text-sm text-purple-600 font-bold flex items-center gap-2 hover:bg-purple-50 px-3 py-1.5 rounded-lg transition-colors">
+                                <i class="fa-solid fa-link"></i> ลิ้งค์ผลงาน
+                            </a>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Topic 2: การแก้ปัญหา -->
-                <div onclick="openGallery('การแก้ปัญหา', 'problem-solving')"
-                    class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all group flex flex-col cursor-pointer">
+                <div
+                    class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all group flex flex-col">
                     <!-- Horizontal Image Preview -->
-                    <div
-                        class="aspect-video bg-gradient-to-br from-blue-50 to-cyan-50 flex items-center justify-center relative overflow-hidden p-4">
+                    <div onclick="openGallery('การแก้ปัญหา', 'problem-solving')"
+                        class="aspect-video bg-gradient-to-br from-blue-50 to-cyan-50 flex items-center justify-center relative overflow-hidden p-4 cursor-pointer">
                         <div
                             class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/grid-me.png')] opacity-10">
                         </div>
@@ -247,21 +260,34 @@
                         </div>
                     </div>
                     <!-- Description -->
-                    <div class="p-5 flex-grow">
-                        <h3 class="font-bold text-gray-800 mb-2 group-hover:text-purple-600 transition-colors">
-                            การแก้ปัญหา</h3>
-                        <p class="text-sm text-gray-500 font-light leading-relaxed line-clamp-2">
-                            การออกแบบขั้นตอนวิธี (Algorithm) และผังงานเพื่อหาแนวทางการแก้ปัญหาที่ถูกต้องแม่นยำ
-                        </p>
+                    <div class="p-5 flex-grow flex flex-col">
+                        <div class="flex-grow">
+                            <h3 class="font-bold text-gray-800 mb-2 group-hover:text-purple-600 transition-colors">
+                                การแก้ปัญหา</h3>
+                            <p class="text-sm text-gray-500 font-light leading-relaxed line-clamp-2">
+                                การออกแบบขั้นตอนวิธี (Algorithm) และผังงานเพื่อหาแนวทางการแก้ปัญหาที่ถูกต้องแม่นยำ
+                            </p>
+                        </div>
+                        <!-- Actions -->
+                        <div class="flex items-center justify-between mt-4 pt-4 border-t border-gray-50">
+                            <button onclick="openGallery('การแก้ปัญหา', 'problem-solving')"
+                                class="text-xs text-gray-400 hover:text-purple-600 transition-colors font-medium flex items-center gap-1">
+                                <i class="fa-solid fa-images"></i> ดูรูปภาพ
+                            </button>
+                            <a href="#" target="_blank"
+                                class="text-sm text-purple-600 font-bold flex items-center gap-2 hover:bg-purple-50 px-3 py-1.5 rounded-lg transition-colors">
+                                <i class="fa-solid fa-link"></i> ลิ้งค์ผลงาน
+                            </a>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Topic 3: การเขียนโปรแกรมอย่างง่าย -->
-                <div onclick="openGallery('การเขียนโปรแกรมอย่างง่าย', 'coding')"
-                    class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all group flex flex-col cursor-pointer">
+                <div
+                    class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all group flex flex-col">
                     <!-- Horizontal Image Preview -->
-                    <div
-                        class="aspect-video bg-gradient-to-br from-indigo-50 to-purple-50 flex items-center justify-center relative overflow-hidden p-4">
+                    <div onclick="openGallery('การเขียนโปรแกรมอย่างง่าย', 'coding')"
+                        class="aspect-video bg-gradient-to-br from-indigo-50 to-purple-50 flex items-center justify-center relative overflow-hidden p-4 cursor-pointer">
                         <div
                             class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/asfalt-dark.png')] opacity-5">
                         </div>
@@ -278,21 +304,34 @@
                         </div>
                     </div>
                     <!-- Description -->
-                    <div class="p-5 flex-grow">
-                        <h3 class="font-bold text-gray-800 mb-2 group-hover:text-purple-600 transition-colors">
-                            การเขียนโปรแกรมอย่างง่าย</h3>
-                        <p class="text-sm text-gray-500 font-light leading-relaxed line-clamp-2">
-                            พื้นฐานการเขียนโปรแกรมด้วยภาษาที่เหมาะสมกับช่วงวัยเพื่อสร้างสรรค์ผลงานอย่างง่าย
-                        </p>
+                    <div class="p-5 flex-grow flex flex-col">
+                        <div class="flex-grow">
+                            <h3 class="font-bold text-gray-800 mb-2 group-hover:text-purple-600 transition-colors">
+                                การเขียนโปรแกรมอย่างง่าย</h3>
+                            <p class="text-sm text-gray-500 font-light leading-relaxed line-clamp-2">
+                                พื้นฐานการเขียนโปรแกรมด้วยภาษาที่เหมาะสมกับช่วงวัยเพื่อสร้างสรรค์ผลงานอย่างง่าย
+                            </p>
+                        </div>
+                        <!-- Actions -->
+                        <div class="flex items-center justify-between mt-4 pt-4 border-t border-gray-50">
+                            <button onclick="openGallery('การเขียนโปรแกรมอย่างง่าย', 'coding')"
+                                class="text-xs text-gray-400 hover:text-purple-600 transition-colors font-medium flex items-center gap-1">
+                                <i class="fa-solid fa-images"></i> ดูรูปภาพ
+                            </button>
+                            <a href="#" target="_blank"
+                                class="text-sm text-purple-600 font-bold flex items-center gap-2 hover:bg-purple-50 px-3 py-1.5 rounded-lg transition-colors">
+                                <i class="fa-solid fa-link"></i> ลิ้งค์ผลงาน
+                            </a>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Topic 4: ข้อมูลและการประมวลผล -->
-                <div onclick="openGallery('ข้อมูลและการประมวลผล', 'data-processing')"
-                    class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all group flex flex-col cursor-pointer">
+                <div
+                    class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all group flex flex-col">
                     <!-- Horizontal Image Preview -->
-                    <div
-                        class="aspect-video bg-gradient-to-br from-teal-50 to-green-50 flex items-center justify-center relative overflow-hidden p-4">
+                    <div onclick="openGallery('ข้อมูลและการประมวลผล', 'data-processing')"
+                        class="aspect-video bg-gradient-to-br from-teal-50 to-green-50 flex items-center justify-center relative overflow-hidden p-4 cursor-pointer">
                         <div
                             class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/checkered-pattern.png')] opacity-10">
                         </div>
@@ -309,21 +348,34 @@
                         </div>
                     </div>
                     <!-- Description -->
-                    <div class="p-5 flex-grow">
-                        <h3 class="font-bold text-gray-800 mb-2 group-hover:text-purple-600 transition-colors">
-                            ข้อมูลและการประมวลผล</h3>
-                        <p class="text-sm text-gray-500 font-light leading-relaxed line-clamp-2">
-                            การรวบรวม จัดทำ และประมวลผลข้อมูลเพื่อให้ได้สารสนเทศที่เป็นประโยชน์
-                        </p>
+                    <div class="p-5 flex-grow flex flex-col">
+                        <div class="flex-grow">
+                            <h3 class="font-bold text-gray-800 mb-2 group-hover:text-purple-600 transition-colors">
+                                ข้อมูลและการประมวลผล</h3>
+                            <p class="text-sm text-gray-500 font-light leading-relaxed line-clamp-2">
+                                การรวบรวม จัดทำ และประมวลผลข้อมูลเพื่อให้ได้สารสนเทศที่เป็นประโยชน์
+                            </p>
+                        </div>
+                        <!-- Actions -->
+                        <div class="flex items-center justify-between mt-4 pt-4 border-t border-gray-50">
+                            <button onclick="openGallery('ข้อมูลและการประมวลผล', 'data-processing')"
+                                class="text-xs text-gray-400 hover:text-purple-600 transition-colors font-medium flex items-center gap-1">
+                                <i class="fa-solid fa-images"></i> ดูรูปภาพ
+                            </button>
+                            <a href="#" target="_blank"
+                                class="text-sm text-purple-600 font-bold flex items-center gap-2 hover:bg-purple-50 px-3 py-1.5 rounded-lg transition-colors">
+                                <i class="fa-solid fa-link"></i> ลิ้งค์ผลงาน
+                            </a>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Topic 5: การใช้เทคโนโลยีสารสนเทศอย่างปลอดภัย -->
-                <div onclick="openGallery('การใช้เทคโนโลยีสารสนเทศอย่างปลอดภัย', 'safety')"
-                    class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all group flex flex-col cursor-pointer">
+                <div
+                    class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all group flex flex-col">
                     <!-- Horizontal Image Preview -->
-                    <div
-                        class="aspect-video bg-gradient-to-br from-amber-50 to-orange-50 flex items-center justify-center relative overflow-hidden p-4">
+                    <div onclick="openGallery('การใช้เทคโนโลยีสารสนเทศอย่างปลอดภัย', 'safety')"
+                        class="aspect-video bg-gradient-to-br from-amber-50 to-orange-50 flex items-center justify-center relative overflow-hidden p-4 cursor-pointer">
                         <div
                             class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/grid.png')] opacity-10">
                         </div>
@@ -340,12 +392,25 @@
                         </div>
                     </div>
                     <!-- Description -->
-                    <div class="p-5 flex-grow">
-                        <h3 class="font-bold text-gray-800 mb-2 group-hover:text-purple-600 transition-colors">
-                            การใช้เทคโนโลยีสารสนเทศอย่างปลอดภัย</h3>
-                        <p class="text-sm text-gray-500 font-light leading-relaxed line-clamp-2">
-                            การสร้างความเข้าใจเรื่องจริยธรรม ความปลอดภัย และการปกป้องความเป็นส่วนตัวในโลกออนไลน์
-                        </p>
+                    <div class="p-5 flex-grow flex flex-col">
+                        <div class="flex-grow">
+                            <h3 class="font-bold text-gray-800 mb-2 group-hover:text-purple-600 transition-colors">
+                                การใช้เทคโนโลยีสารสนเทศอย่างปลอดภัย</h3>
+                            <p class="text-sm text-gray-500 font-light leading-relaxed line-clamp-2">
+                                การสร้างความเข้าใจเรื่องจริยธรรม ความปลอดภัย และการปกป้องความเป็นส่วนตัวในโลกออนไลน์
+                            </p>
+                        </div>
+                        <!-- Actions -->
+                        <div class="flex items-center justify-between mt-4 pt-4 border-t border-gray-50">
+                            <button onclick="openGallery('การใช้เทคโนโลยีสารสนเทศอย่างปลอดภัย', 'safety')"
+                                class="text-xs text-gray-400 hover:text-purple-600 transition-colors font-medium flex items-center gap-1">
+                                <i class="fa-solid fa-images"></i> ดูรูปภาพ
+                            </button>
+                            <a href="#" target="_blank"
+                                class="text-sm text-purple-600 font-bold flex items-center gap-2 hover:bg-purple-50 px-3 py-1.5 rounded-lg transition-colors">
+                                <i class="fa-solid fa-link"></i> ลิ้งค์ผลงาน
+                            </a>
+                        </div>
                     </div>
                 </div>
 
