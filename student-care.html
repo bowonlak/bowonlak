@@ -243,7 +243,7 @@
 
                     <div class="grid grid-cols-2 lg:grid-cols-4 lg:grid-cols-5 gap-4">
                         <!-- Mock Photo 1 -->
-                        <a href="#" target="_blank" rel="noopener noreferrer"
+                        <div onclick="openActivityModal('homeroom')"
                             class="aspect-square rounded-2xl bg-gradient-to-br from-purple-50 to-blue-50 border border-gray-200 overflow-hidden relative group cursor-pointer shadow-sm hover:shadow-lg transition-all">
                             <div
                                 class="absolute inset-0 flex items-center justify-center opacity-20 group-hover:scale-110 transition-transform">
@@ -254,9 +254,9 @@
                                 <p class="text-white text-[10px] font-medium leading-tight">การโฮมรูมนักเรียนในช่วงเช้า
                                 </p>
                             </div>
-                        </a>
+                        </div>
                         <!-- Mock Photo 2 -->
-                        <a href="#" target="_blank" rel="noopener noreferrer"
+                        <div onclick="openActivityModal('homevisit')"
                             class="aspect-square rounded-2xl bg-gradient-to-br from-blue-50 to-purple-50 border border-gray-200 overflow-hidden relative group cursor-pointer shadow-sm hover:shadow-lg transition-all">
                             <div
                                 class="absolute inset-0 flex items-center justify-center opacity-20 group-hover:scale-110 transition-transform">
@@ -266,7 +266,7 @@
                                 class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 p-3 opacity-0 group-hover:opacity-100 transition-opacity">
                                 <p class="text-white text-[10px] font-medium leading-tight">ภาพการเยี่ยมบ้านนักเรียน</p>
                             </div>
-                        </a>
+                        </div>
                     </div>
                 </div>
 
@@ -438,6 +438,18 @@
         }
 
         const activityData = {
+            'homeroom': {
+                title: 'การโฮมรูมนักเรียนในช่วงเช้า',
+                subtitle: 'กิจกรรมสร้างเสริมความสัมพันธ์',
+                description: 'ปฏิบัติหน้าที่โฮมรูมนักเรียนในช่วงเช้า เพื่อพบปะพูดคุย แจ้งข่าวสารนิเทศ ตรวจสอบความพร้อม และดูแลสุขภาวะเบื้องต้นของนักเรียนอย่างสม่ำเสมอ เป็นการสร้างความสัมพันธ์อันดีและรับทราบปัญหาของนักเรียนเพื่อหาแนวทางช่วยเหลือได้ทันท่วงที',
+                images: 4
+            },
+            'homevisit': {
+                title: 'ภาพการเยี่ยมบ้านนักเรียน',
+                subtitle: 'การลงพื้นที่เยี่ยมบ้านประจำปี',
+                description: 'ลงพื้นที่เยี่ยมบ้านนักเรียนเพื่อรับทราบข้อมูลสภาพความเป็นอยู่ที่แท้จริง แลกเปลี่ยนความคิดเห็นกับผู้ปกครองเพื่อร่วมกันหาแนวทางส่งเสริมและแก้ปัญหานักเรียนทั้งด้านการเรียนและพฤติกรรม เป็นการสร้างเครือข่ายความร่วมมือที่เข้มแข็งระหว่างบ้านและโรงเรียน',
+                images: 5
+            },
             'parent': {
                 title: 'การประชุมผู้ปกครอง',
                 subtitle: 'ภาคเรียนที่ 2/2568',
