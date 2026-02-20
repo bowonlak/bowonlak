@@ -663,8 +663,14 @@
                         <!-- Activity: Queen Tribute -->
                         <div onclick="openActivityModal('queen-tribute')"
                             class="aspect-square rounded-2xl border border-gray-200 overflow-hidden relative group cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300">
+                            <!-- Cover Image -->
+                            <img src="assets/image/ส่งนางฟ้าสู่สวรรค์/LINE_ALBUM_เข้าร่วมกิจกรรมส่งนางฟ้าสู่สวรรค์_260220_1.jpg"
+                                alt="น้อมสำนึกในพระมหากรุณาธิคุณ"
+                                class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                onerror="this.style.display='none'; this.parentElement.querySelector('.fallback-icon').style.display='flex';" />
+                            <!-- Fallback icon -->
                             <div
-                                class="fallback-icon absolute inset-0 bg-gradient-to-br from-blue-50 to-sky-50 flex items-center justify-center">
+                                class="fallback-icon absolute inset-0 bg-gradient-to-br from-blue-50 to-sky-50 items-center justify-center hidden">
                                 <i class="fa-solid fa-crown text-3xl text-blue-300 opacity-40"></i>
                             </div>
                             <div
