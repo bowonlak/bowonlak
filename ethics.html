@@ -236,9 +236,13 @@
                         <!-- Duty Photo Card 1 -->
                         <div onclick="openActivityModal('duty')"
                             class="aspect-square rounded-2xl border border-gray-200 overflow-hidden relative group cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300">
+                            <!-- Cover Image -->
+                            <img src="assets/image/ยืนเวร/ยืนเวร1.jpg" alt="ภาพการปฏิบัติหน้าที่เวร"
+                                class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                onerror="this.style.display='none'; this.parentElement.querySelector('.fallback-icon').style.display='flex';" />
                             <!-- Fallback icon (shown when no image) -->
                             <div
-                                class="fallback-icon absolute inset-0 bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
+                                class="fallback-icon absolute inset-0 bg-gradient-to-br from-purple-50 to-blue-50 items-center justify-center hidden">
                                 <i class="fa-regular fa-clock text-3xl text-purple-300 opacity-40"></i>
                             </div>
                             <!-- Gradient overlay -->
@@ -384,7 +388,7 @@
                         <div onclick="openActivityModal('recruit')"
                             class="aspect-square rounded-2xl border border-gray-200 overflow-hidden relative group cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300">
                             <!-- Cover Image -->
-                            <img src="assets/images/recruit-1.jpg" alt="การช่วยรับสมัครนักเรียน"
+                            <img src="assets/image/รับนักเรียน/รับนักเรียน.jpg" alt="การช่วยรับสมัครนักเรียน"
                                 class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                                 onerror="this.style.display='none'; this.parentElement.querySelector('.fallback-icon').style.display='flex';" />
                             <!-- Fallback icon -->
@@ -609,7 +613,14 @@
                 title: 'ภาพการปฏิบัติหน้าที่เวรประจำวัน',
                 subtitle: 'เวรประจำวัน ภาคเรียนที่ 2 ปีการศึกษา 2568',
                 description: 'ปฏิบัติหน้าที่เวรประจำวันร่วมกับคณะครูและบุคลากรในโรงเรียน ดูแลความเรียบร้อยและความปลอดภัยของนักเรียนในช่วงเช้า บริเวณประตูทางเข้า และบริเวณต่างๆ ของโรงเรียนเฉลิมขวัญสตรี ตามที่ได้รับมอบหมาย',
-                imageList: []
+                imageList: [
+                    'assets/image/ยืนเวร/ยืนเวร1.jpg',
+                    'assets/image/ยืนเวร/ยืนเวร 2.jpg',
+                    'assets/image/ยืนเวร/ยืนเวร 3.jpg',
+                    'assets/image/ยืนเวร/ยืนเวร 4.jpg',
+                    'assets/image/ยืนเวร/ยืนเวร 5.jpg',
+                    'assets/image/ยืนเวร/ยืนเวร 6.jpg'
+                ]
             },
             'school-dev': {
                 title: 'กิจกรรมพัฒนาโรงเรียน',
@@ -634,11 +645,9 @@
                 subtitle: 'มัธยมศึกษาปีที่ 1 และ 4',
                 description: 'ปฏิบัติหน้าที่ต้อนรับผู้ปกครองและนักเรียนใหม่ ชี้แจงรายละเอียดเอกสารการสมัคร แนะนำขั้นตอนการสอบคัดเลือก และช่วยเหลือทีมงานฝ่ายวิชาการในการตรวจสอบความถูกต้องของเอกสาร เพื่อให้กระบวนการรับสมัครเป็นไปด้วยความเรียบร้อยและสร้างความประทับใจให้แก่ชุมชน',
                 imageList: [
-                    'assets/images/recruit-1.jpg',
-                    'assets/images/recruit-2.jpg',
-                    'assets/images/recruit-3.jpg',
-                    'assets/images/recruit-4.jpg',
-                    'assets/images/recruit-5.jpg'
+                    'assets/image/รับนักเรียน/รับนักเรียน.jpg',
+                    'assets/image/รับนักเรียน/LINE_ALBUM_รับนักเรียน ม.1,4_260220_1.jpg',
+                    'assets/image/รับนักเรียน/LINE_ALBUM_รับนักเรียน ม.1,4_260220_2.jpg'
                 ]
             }
         };
