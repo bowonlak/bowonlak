@@ -328,6 +328,20 @@
                             </div>
                         </div>
 
+                        <!-- Activity: Student Recruitment (ย้ายมาจากระบบดูแลนักเรียน) -->
+                        <div onclick="openActivityModal('recruit')"
+                            class="aspect-square rounded-2xl bg-white border border-gray-100 overflow-hidden relative group cursor-pointer shadow-sm hover:shadow-lg transition-all">
+                            <div
+                                class="absolute inset-0 flex items-center justify-center opacity-20 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-user-plus text-2xl md:text-4xl text-blue-400"></i>
+                            </div>
+                            <div
+                                class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 p-3 opacity-90 group-hover:opacity-100 transition-opacity">
+                                <p class="text-white text-[10px] font-bold leading-tight">การช่วยรับสมัครนักเรียน</p>
+                                <p class="text-white/70 text-[8px] mt-0.5">ม.1 และ ม.4</p>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -515,6 +529,19 @@
                 subtitle: 'การพัฒนาทักษะวิชาชีพครู',
                 description: 'เรียนรู้เทคนิคการจัดการชั้นเรียนยุคใหม่ การใช้เครื่องมือเทคโนโลยีทางการศึกษา (EdTech) และการสร้างบรรยากาศการเรียนรู้ที่ยืดหยุ่น เพื่อส่งเสริมสมรรถนะผู้เรียนในศตวรรษที่ 21 ให้สอดคล้องกับมาตรฐานวิชาชีพและจรรยาบรรณของครู',
                 images: 6
+            },
+            'recruit': {
+                title: 'การช่วยรับสมัครนักเรียน',
+                subtitle: 'มัธยมศึกษาปีที่ 1 และ 4',
+                description: 'ปฏิบัติหน้าที่ต้อนรับผู้ปกครองและนักเรียนใหม่ ชี้แจงรายละเอียดเอกสารการสมัคร แนะนำขั้นตอนการสอบคัดเลือก และช่วยเหลือทีมงานฝ่ายวิชาการในการตรวจสอบความถูกต้องของเอกสาร เพื่อให้กระบวนการรับสมัครเป็นไปด้วยความเรียบร้อยและสร้างความประทับใจให้แก่ชุมชน',
+                images: 5,
+                imageList: [
+                    'assets/images/recruit-1.jpg',
+                    'assets/images/recruit-2.jpg',
+                    'assets/images/recruit-3.jpg',
+                    'assets/images/recruit-4.jpg',
+                    'assets/images/recruit-5.jpg'
+                ]
             }
         };
 
