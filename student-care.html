@@ -368,15 +368,31 @@
                     <div class="grid grid-cols-2 lg:grid-cols-4 lg:grid-cols-5 gap-4">
                         <!-- Activity 1: Parent Meeting -->
                         <div onclick="openActivityModal('parent')"
-                            class="aspect-square rounded-2xl bg-white border border-gray-100 overflow-hidden relative group cursor-pointer shadow-sm hover:shadow-lg transition-all">
+                            class="aspect-square rounded-2xl border border-gray-200 overflow-hidden relative group cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300">
+                            <!-- Cover Image -->
+                            <img src="assets/image/วันประชุมผู้ปกครอง/LINE_ALBUM_วันประชุมผู้ปกครอง_260220_1.jpg"
+                                alt="การประชุมผู้ปกครอง"
+                                class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                onerror="this.style.display='none'; this.parentElement.querySelector('.fallback-icon').style.display='flex';" />
+                            <!-- Fallback icon (shows if image missing) -->
                             <div
-                                class="absolute inset-0 flex items-center justify-center opacity-20 group-hover:scale-110 transition-transform">
-                                <i class="fa-solid fa-users text-2xl md:text-4xl text-purple-400"></i>
+                                class="fallback-icon absolute inset-0 bg-gradient-to-br from-purple-50 to-blue-50 items-center justify-center hidden">
+                                <i class="fa-solid fa-users text-3xl text-purple-300 opacity-40"></i>
                             </div>
+                            <!-- Gradient overlay (always visible at bottom) -->
                             <div
-                                class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 p-3 opacity-90 group-hover:opacity-100 transition-opacity">
-                                <p class="text-white text-[10px] font-bold leading-tight">การประชุมผู้ปกครอง</p>
-                                <p class="text-white/70 text-[8px] mt-0.5">ภาคเรียนที่ 2/2568</p>
+                                class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent p-3">
+                                <p class="text-white text-[11px] font-semibold leading-tight drop-shadow">
+                                    การประชุมผู้ปกครอง</p>
+                                <p class="text-white/70 text-[9px] mt-0.5">ภาคเรียนที่ 2/2568</p>
+                            </div>
+                            <!-- Hover magnify icon -->
+                            <div
+                                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div
+                                    class="bg-white/20 backdrop-blur-sm rounded-full w-10 h-10 flex items-center justify-center">
+                                    <i class="fa-solid fa-magnifying-glass-plus text-white text-lg"></i>
+                                </div>
                             </div>
                         </div>
 
