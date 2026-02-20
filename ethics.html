@@ -232,14 +232,26 @@
                         </div>
                     </div>
 
-                    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
-                        <div
-                            class="aspect-square rounded-2xl bg-white border border-gray-100 flex items-center justify-center text-gray-200">
-                            <i class="fa-regular fa-image text-2xl md:text-4xl"></i>
-                        </div>
-                        <div
-                            class="aspect-square rounded-2xl bg-white border border-gray-100 flex items-center justify-center text-gray-200">
-                            <i class="fa-regular fa-image text-2xl md:text-4xl"></i>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                        <!-- Duty Photo Card 1 -->
+                        <div onclick="openActivityModal('duty')"
+                            class="aspect-square rounded-2xl bg-white border border-gray-100 overflow-hidden relative group cursor-pointer shadow-sm hover:shadow-lg transition-all">
+                            <div
+                                class="absolute inset-0 flex items-center justify-center opacity-20 group-hover:scale-110 transition-transform">
+                                <i class="fa-regular fa-clock text-3xl text-purple-400"></i>
+                            </div>
+                            <div
+                                class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 p-2.5 opacity-90 group-hover:opacity-100 transition-opacity">
+                                <p class="text-white text-[10px] font-bold leading-tight">ภาพการปฏิบัติหน้าที่เวร</p>
+                                <p class="text-white/70 text-[8px] mt-0.5">เวรประจำวัน ภาคเรียนที่ 2/2568</p>
+                            </div>
+                            <div
+                                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div
+                                    class="bg-white/20 backdrop-blur-sm rounded-full w-10 h-10 flex items-center justify-center">
+                                    <i class="fa-solid fa-magnifying-glass-plus text-white text-lg"></i>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -515,6 +527,13 @@
         }
 
         const activityData = {
+            'duty': {
+                title: 'ภาพการปฏิบัติหน้าที่เวรประจำวัน',
+                subtitle: 'เวรประจำวัน ภาคเรียนที่ 2 ปีการศึกษา 2568',
+                description: 'ปฏิบัติหน้าที่เวรประจำวันร่วมกับคณะครูและบุคลากรในโรงเรียน ดูแลความเรียบร้อยและความปลอดภัยของนักเรียนในช่วงเช้า บริเวณประตูทางเข้า และบริเวณต่างๆ ของโรงเรียนเฉลิมขวัญสตรี ตามที่ได้รับมอบหมาย',
+                images: 2,
+                imageList: []
+            },
             'school-dev': {
                 title: 'กิจกรรมพัฒนาโรงเรียน',
                 subtitle: 'ร่วมแรงร่วมใจพัฒนาภูมิทัศน์',
