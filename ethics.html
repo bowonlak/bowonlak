@@ -493,6 +493,34 @@
         </div>
     </div>
 
+    <!-- Lightbox -->
+    <div id="lightbox" class="fixed inset-0 z-[200] hidden items-center justify-center bg-black/90 backdrop-blur-sm">
+        <!-- Close button -->
+        <button onclick="closeLightbox()"
+            class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-all z-10">
+            <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+        <!-- Counter -->
+        <div id="lightbox-counter"
+            class="absolute top-4 left-1/2 -translate-x-1/2 text-white/80 text-sm font-medium bg-black/30 px-4 py-1.5 rounded-full">
+            1 / 1</div>
+        <!-- Prev -->
+        <button onclick="lightboxPrev()"
+            class="absolute left-2 md:left-6 w-11 h-11 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/25 transition-all text-xl">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <!-- Image -->
+        <img id="lightbox-img" src="" alt="Lightbox"
+            class="max-h-[85vh] max-w-[90vw] object-contain rounded-2xl shadow-2xl select-none">
+        <!-- Next -->
+        <button onclick="lightboxNext()"
+            class="absolute right-2 md:right-6 w-11 h-11 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/25 transition-all text-xl">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+        <!-- Click outside to close -->
+        <div onclick="closeLightbox()" class="absolute inset-0 -z-10"></div>
+    </div>
+
     <!-- Footer -->
     <footer class="bg-white py-12 border-t border-gray-100 mt-auto">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
@@ -531,32 +559,30 @@
                 title: 'ภาพการปฏิบัติหน้าที่เวรประจำวัน',
                 subtitle: 'เวรประจำวัน ภาคเรียนที่ 2 ปีการศึกษา 2568',
                 description: 'ปฏิบัติหน้าที่เวรประจำวันร่วมกับคณะครูและบุคลากรในโรงเรียน ดูแลความเรียบร้อยและความปลอดภัยของนักเรียนในช่วงเช้า บริเวณประตูทางเข้า และบริเวณต่างๆ ของโรงเรียนเฉลิมขวัญสตรี ตามที่ได้รับมอบหมาย',
-                images: 2,
                 imageList: []
             },
             'school-dev': {
                 title: 'กิจกรรมพัฒนาโรงเรียน',
                 subtitle: 'ร่วมแรงร่วมใจพัฒนาภูมิทัศน์',
                 description: 'ปฏิบัติหน้าที่ร่วมกับคณะครูและบุคลากรในการปรับปรุงภูมิทัศน์รอบบริเวณโรงเรียน ทาสีอาคารเรียน ปลูกต้นไม้ และดูแลความสะอาดพื้นที่ส่วนรวม เพื่อสร้างบรรยากาศที่เอื้อต่อการเรียนรู้ของนักเรียน และสร้างความภาคภูมิใจในสถานศึกษาร่วมกัน',
-                images: 6
+                imageList: []
             },
             'workshop-canva': {
                 title: 'การอบรมเชิงปฏิบัติการ Canva',
                 subtitle: 'การสร้างสื่อการเรียนรู้แบบโต้ตอบ',
                 description: 'เข้ารับการอบรมเชิงปฏิบัติการเกี่ยวกับการใช้งานแอปพลิเคชัน Canva เพื่อสร้างสื่อการเรียนการสอนที่มีประสิทธิภาพ สวยงาม และน่าสนใจ โดยมุ่งเน้นการสร้าง Interactive Presentation และ Infographic ข้อมูลเชิงนามธรรมสำหรับนักเรียนชั้นมัธยมศึกษาปีที่ 1',
-                images: 6
+                imageList: []
             },
             'pro-teacher': {
                 title: 'หลักสูตรครูมืออาชีพในยุคดิจิทัล',
                 subtitle: 'การพัฒนาทักษะวิชาชีพครู',
                 description: 'เรียนรู้เทคนิคการจัดการชั้นเรียนยุคใหม่ การใช้เครื่องมือเทคโนโลยีทางการศึกษา (EdTech) และการสร้างบรรยากาศการเรียนรู้ที่ยืดหยุ่น เพื่อส่งเสริมสมรรถนะผู้เรียนในศตวรรษที่ 21 ให้สอดคล้องกับมาตรฐานวิชาชีพและจรรยาบรรณของครู',
-                images: 6
+                imageList: []
             },
             'recruit': {
                 title: 'การช่วยรับสมัครนักเรียน',
                 subtitle: 'มัธยมศึกษาปีที่ 1 และ 4',
                 description: 'ปฏิบัติหน้าที่ต้อนรับผู้ปกครองและนักเรียนใหม่ ชี้แจงรายละเอียดเอกสารการสมัคร แนะนำขั้นตอนการสอบคัดเลือก และช่วยเหลือทีมงานฝ่ายวิชาการในการตรวจสอบความถูกต้องของเอกสาร เพื่อให้กระบวนการรับสมัครเป็นไปด้วยความเรียบร้อยและสร้างความประทับใจให้แก่ชุมชน',
-                images: 5,
                 imageList: [
                     'assets/images/recruit-1.jpg',
                     'assets/images/recruit-2.jpg',
@@ -576,15 +602,33 @@
             const gallery = document.getElementById('modal-gallery');
             gallery.innerHTML = '';
 
-            for (let i = 1; i <= data.images; i++) {
-                const imgContainer = document.createElement('div');
-                imgContainer.className = "aspect-[4/3] rounded-2xl bg-gray-50 border border-gray-100 flex items-center justify-center overflow-hidden group cursor-pointer hover:shadow-lg transition-all";
-                imgContainer.innerHTML = `
-                    <div class="opacity-20 group-hover:scale-110 transition-transform duration-500">
-                        <i class="fa-solid fa-image text-2xl md:text-4xl text-gray-300"></i>
-                    </div>
+            const images = data.imageList || [];
+
+            if (images.length === 0) {
+                // Show placeholder if no images
+                const placeholder = document.createElement('div');
+                placeholder.className = "col-span-2 md:col-span-3 py-12 flex flex-col items-center justify-center text-gray-300 gap-3";
+                placeholder.innerHTML = `
+                    <i class="fa-regular fa-image text-5xl"></i>
+                    <p class="text-sm font-light">ยังไม่มีภาพบรรยากาศ</p>
+                    <p class="text-xs">เพิ่มรูปภาพใน imageList ของ activityData</p>
                 `;
-                gallery.appendChild(imgContainer);
+                gallery.appendChild(placeholder);
+            } else {
+                images.forEach((src, idx) => {
+                    const imgContainer = document.createElement('div');
+                    imgContainer.className = "aspect-[4/3] rounded-2xl bg-gray-50 border border-gray-100 overflow-hidden group cursor-pointer hover:shadow-lg transition-all relative";
+                    imgContainer.onclick = () => openLightbox(images, idx);
+                    imgContainer.innerHTML = `
+                        <img src="${src}" alt="ภาพที่ ${idx + 1}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.parentElement.innerHTML='<div class=\'w-full h-full flex flex-col items-center justify-center text-gray-300 gap-2\'><i class=\'fa-solid fa-image text-3xl opacity-30\'></i><p class=\'text-xs\'>ไม่พบรูปภาพ</p></div>'">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+                            <div class="bg-white/80 backdrop-blur-sm rounded-full w-10 h-10 flex items-center justify-center">
+                                <i class="fa-solid fa-magnifying-glass-plus text-gray-700"></i>
+                            </div>
+                        </div>
+                    `;
+                    gallery.appendChild(imgContainer);
+                });
             }
 
             const modal = document.getElementById('activity-modal');
@@ -600,9 +644,46 @@
             document.body.style.overflow = 'auto';
         }
 
+        // Lightbox
+        let lightboxImages = [];
+        let lightboxIndex = 0;
+
+        function openLightbox(images, index) {
+            lightboxImages = images;
+            lightboxIndex = index;
+            const lb = document.getElementById('lightbox');
+            document.getElementById('lightbox-img').src = images[index];
+            document.getElementById('lightbox-counter').innerText = `${index + 1} / ${images.length}`;
+            lb.classList.remove('hidden');
+            lb.classList.add('flex');
+        }
+
+        function closeLightbox() {
+            const lb = document.getElementById('lightbox');
+            lb.classList.add('hidden');
+            lb.classList.remove('flex');
+        }
+
+        function lightboxPrev() {
+            lightboxIndex = (lightboxIndex - 1 + lightboxImages.length) % lightboxImages.length;
+            document.getElementById('lightbox-img').src = lightboxImages[lightboxIndex];
+            document.getElementById('lightbox-counter').innerText = `${lightboxIndex + 1} / ${lightboxImages.length}`;
+        }
+
+        function lightboxNext() {
+            lightboxIndex = (lightboxIndex + 1) % lightboxImages.length;
+            document.getElementById('lightbox-img').src = lightboxImages[lightboxIndex];
+            document.getElementById('lightbox-counter').innerText = `${lightboxIndex + 1} / ${lightboxImages.length}`;
+        }
+
         // Close on ESC
         window.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeActivityModal();
+            if (e.key === 'Escape') {
+                closeLightbox();
+                closeActivityModal();
+            }
+            if (e.key === 'ArrowLeft') lightboxPrev();
+            if (e.key === 'ArrowRight') lightboxNext();
         });
     </script>
     <script>
