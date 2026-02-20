@@ -315,6 +315,36 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Photo Card 3: กิจกรรมรับนักเรียนตัวอย่าง -->
+                        <div onclick="openActivityModal('example-student')"
+                            class="aspect-square rounded-2xl border border-gray-200 overflow-hidden relative group cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300">
+                            <!-- Cover Image -->
+                            <img src="assets/image/เข้าร่วมกิจกรรมรับนักเรียนตัวอย่าง/LINE_ALBUM_เข้ากิจกรรมมอบรางวัลครูดีเด่น_260220_1.jpg"
+                                alt="กิจกรรมรับนักเรียนตัวอย่าง"
+                                class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                onerror="this.style.display='none'; this.parentElement.querySelector('.fallback-icon').style.display='flex';" />
+                            <!-- Fallback icon -->
+                            <div
+                                class="fallback-icon absolute inset-0 bg-gradient-to-br from-yellow-50 to-orange-50 items-center justify-center hidden">
+                                <i class="fa-solid fa-star text-3xl text-yellow-300 opacity-40"></i>
+                            </div>
+                            <!-- Gradient overlay -->
+                            <div
+                                class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent p-3">
+                                <p class="text-white text-[11px] font-semibold leading-tight drop-shadow">
+                                    กิจกรรมรับนักเรียนตัวอย่าง</p>
+                                <p class="text-white/70 text-[9px] mt-0.5">การเชิดชูเกียรติและสร้างแรงบันดาลใจ</p>
+                            </div>
+                            <!-- Hover magnify icon -->
+                            <div
+                                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div
+                                    class="bg-white/20 backdrop-blur-sm rounded-full w-10 h-10 flex items-center justify-center">
+                                    <i class="fa-solid fa-magnifying-glass-plus text-white text-lg"></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -572,6 +602,17 @@
                     'assets/images/recruit-3.jpg',
                     'assets/images/recruit-4.jpg',
                     'assets/images/recruit-5.jpg'
+                ]
+            },
+            'example-student': {
+                title: 'กิจกรรมรับนักเรียนตัวอย่าง',
+                subtitle: 'การเชิดชูเกียรตินักเรียนที่เป็นแบบอย่างที่ดี',
+                description: 'เข้าร่วมกิจกรรมแสดงความยินดีและร่วมเป็นเกียรติในพิธีมอบรางวัลให้แก่บรรดานักเรียนที่ได้รับเลือกเป็นนักเรียนตัวอย่าง เพื่อเป็นการสร้างขวัญกำลังใจและส่งเสริมให้ผู้เรียนรักษาความดีและเป็นแบบอย่างที่ดีแก่เพื่อนร่วมสถาบันสืบไป',
+                images: 3,
+                imageList: [
+                    'assets/image/เข้าร่วมกิจกรรมรับนักเรียนตัวอย่าง/LINE_ALBUM_เข้ากิจกรรมมอบรางวัลครูดีเด่น_260220_1.jpg',
+                    'assets/image/เข้าร่วมกิจกรรมรับนักเรียนตัวอย่าง/LINE_ALBUM_เข้ากิจกรรมมอบรางวัลครูดีเด่น_260220_2.jpg',
+                    'assets/image/เข้าร่วมกิจกรรมรับนักเรียนตัวอย่าง/LINE_ALBUM_เข้ากิจกรรมมอบรางวัลครูดีเด่น_260220_3.jpg'
                 ]
             }
         };
