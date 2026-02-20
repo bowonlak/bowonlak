@@ -232,19 +232,23 @@
                         </div>
                     </div>
 
-                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                    <div class="grid grid-cols-2 lg:grid-cols-4 lg:grid-cols-5 gap-4">
                         <!-- Duty Photo Card 1 -->
                         <div onclick="openActivityModal('duty')"
-                            class="aspect-square rounded-2xl bg-white border border-gray-100 overflow-hidden relative group cursor-pointer shadow-sm hover:shadow-lg transition-all">
+                            class="aspect-square rounded-2xl border border-gray-200 overflow-hidden relative group cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300">
+                            <!-- Fallback icon (shown when no image) -->
                             <div
-                                class="absolute inset-0 flex items-center justify-center opacity-20 group-hover:scale-110 transition-transform">
-                                <i class="fa-regular fa-clock text-3xl text-purple-400"></i>
+                                class="fallback-icon absolute inset-0 bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
+                                <i class="fa-regular fa-clock text-3xl text-purple-300 opacity-40"></i>
                             </div>
+                            <!-- Gradient overlay -->
                             <div
-                                class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 p-2.5 opacity-90 group-hover:opacity-100 transition-opacity">
-                                <p class="text-white text-[10px] font-bold leading-tight">ภาพการปฏิบัติหน้าที่เวร</p>
-                                <p class="text-white/70 text-[8px] mt-0.5">เวรประจำวัน ภาคเรียนที่ 2/2568</p>
+                                class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent p-3">
+                                <p class="text-white text-[11px] font-semibold leading-tight drop-shadow">
+                                    ภาพการปฏิบัติหน้าที่เวร</p>
+                                <p class="text-white/70 text-[9px] mt-0.5">เวรประจำวัน ภาคเรียนที่ 2/2568</p>
                             </div>
+                            <!-- Hover magnify icon -->
                             <div
                                 class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <div
@@ -300,60 +304,108 @@
                         </div>
                     </div>
 
-                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                    <div class="grid grid-cols-2 lg:grid-cols-4 lg:grid-cols-5 gap-4">
                         <!-- Activity 1: School Development -->
                         <div onclick="openActivityModal('school-dev')"
-                            class="aspect-square rounded-2xl bg-white border border-gray-100 overflow-hidden relative group cursor-pointer shadow-sm hover:shadow-lg transition-all">
+                            class="aspect-square rounded-2xl border border-gray-200 overflow-hidden relative group cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300">
+                            <!-- Fallback icon -->
                             <div
-                                class="absolute inset-0 flex items-center justify-center opacity-20 group-hover:scale-110 transition-transform">
-                                <i class="fa-solid fa-broom text-3xl text-purple-400"></i>
+                                class="fallback-icon absolute inset-0 bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
+                                <i class="fa-solid fa-broom text-3xl text-purple-300 opacity-40"></i>
                             </div>
+                            <!-- Gradient overlay -->
                             <div
-                                class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 p-2.5 opacity-90 group-hover:opacity-100 transition-opacity">
-                                <p class="text-white text-[10px] font-bold leading-tight">กิจกรรมพัฒนาโรงเรียน</p>
-                                <p class="text-white/70 text-[8px] mt-0.5">ร่วมแรงร่วมใจพัฒนาภูมิทัศน์</p>
+                                class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent p-3">
+                                <p class="text-white text-[11px] font-semibold leading-tight drop-shadow">
+                                    กิจกรรมพัฒนาโรงเรียน</p>
+                                <p class="text-white/70 text-[9px] mt-0.5">ร่วมแรงร่วมใจพัฒนาภูมิทัศน์</p>
+                            </div>
+                            <!-- Hover magnify icon -->
+                            <div
+                                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div
+                                    class="bg-white/20 backdrop-blur-sm rounded-full w-10 h-10 flex items-center justify-center">
+                                    <i class="fa-solid fa-magnifying-glass-plus text-white text-lg"></i>
+                                </div>
                             </div>
                         </div>
 
                         <!-- Activity 2 -->
                         <div onclick="openActivityModal('school-dev')"
-                            class="aspect-square rounded-2xl bg-white border border-gray-100 overflow-hidden relative group cursor-pointer shadow-sm hover:shadow-lg transition-all">
+                            class="aspect-square rounded-2xl border border-gray-200 overflow-hidden relative group cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300">
+                            <!-- Fallback icon -->
                             <div
-                                class="absolute inset-0 flex items-center justify-center opacity-20 group-hover:scale-110 transition-transform">
-                                <i class="fa-solid fa-paint-roller text-3xl text-blue-400"></i>
+                                class="fallback-icon absolute inset-0 bg-gradient-to-br from-blue-50 to-purple-50 flex items-center justify-center">
+                                <i class="fa-solid fa-paint-roller text-3xl text-blue-300 opacity-40"></i>
                             </div>
+                            <!-- Gradient overlay -->
                             <div
-                                class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 p-2.5 opacity-90 group-hover:opacity-100 transition-opacity">
-                                <p class="text-white text-[10px] font-bold leading-tight">กิจกรรมพัฒนาโรงเรียน</p>
-                                <p class="text-white/70 text-[8px] mt-0.5">ร่วมแรงร่วมใจพัฒนาภูมิทัศน์</p>
+                                class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent p-3">
+                                <p class="text-white text-[11px] font-semibold leading-tight drop-shadow">
+                                    กิจกรรมพัฒนาโรงเรียน</p>
+                                <p class="text-white/70 text-[9px] mt-0.5">ร่วมแรงร่วมใจพัฒนาภูมิทัศน์</p>
+                            </div>
+                            <!-- Hover magnify icon -->
+                            <div
+                                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div
+                                    class="bg-white/20 backdrop-blur-sm rounded-full w-10 h-10 flex items-center justify-center">
+                                    <i class="fa-solid fa-magnifying-glass-plus text-white text-lg"></i>
+                                </div>
                             </div>
                         </div>
 
                         <!-- Activity 3 -->
                         <div onclick="openActivityModal('school-dev')"
-                            class="aspect-square rounded-2xl bg-white border border-gray-100 overflow-hidden relative group cursor-pointer shadow-sm hover:shadow-lg transition-all">
+                            class="aspect-square rounded-2xl border border-gray-200 overflow-hidden relative group cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300">
+                            <!-- Fallback icon -->
                             <div
-                                class="absolute inset-0 flex items-center justify-center opacity-20 group-hover:scale-110 transition-transform">
-                                <i class="fa-solid fa-seedling text-3xl text-green-400"></i>
+                                class="fallback-icon absolute inset-0 bg-gradient-to-br from-green-50 to-blue-50 flex items-center justify-center">
+                                <i class="fa-solid fa-seedling text-3xl text-green-300 opacity-40"></i>
                             </div>
+                            <!-- Gradient overlay -->
                             <div
-                                class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 p-2.5 opacity-90 group-hover:opacity-100 transition-opacity">
-                                <p class="text-white text-[10px] font-bold leading-tight">กิจกรรมพัฒนาโรงเรียน</p>
-                                <p class="text-white/70 text-[8px] mt-0.5">ร่วมแรงร่วมใจพัฒนาภูมิทัศน์</p>
+                                class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent p-3">
+                                <p class="text-white text-[11px] font-semibold leading-tight drop-shadow">
+                                    กิจกรรมพัฒนาโรงเรียน</p>
+                                <p class="text-white/70 text-[9px] mt-0.5">ร่วมแรงร่วมใจพัฒนาภูมิทัศน์</p>
+                            </div>
+                            <!-- Hover magnify icon -->
+                            <div
+                                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div
+                                    class="bg-white/20 backdrop-blur-sm rounded-full w-10 h-10 flex items-center justify-center">
+                                    <i class="fa-solid fa-magnifying-glass-plus text-white text-lg"></i>
+                                </div>
                             </div>
                         </div>
 
                         <!-- Activity: Student Recruitment -->
                         <div onclick="openActivityModal('recruit')"
-                            class="aspect-square rounded-2xl bg-white border border-gray-100 overflow-hidden relative group cursor-pointer shadow-sm hover:shadow-lg transition-all">
+                            class="aspect-square rounded-2xl border border-gray-200 overflow-hidden relative group cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300">
+                            <!-- Cover Image -->
+                            <img src="assets/images/recruit-1.jpg" alt="การช่วยรับสมัครนักเรียน"
+                                class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                onerror="this.style.display='none'; this.parentElement.querySelector('.fallback-icon').style.display='flex';" />
+                            <!-- Fallback icon -->
                             <div
-                                class="absolute inset-0 flex items-center justify-center opacity-20 group-hover:scale-110 transition-transform">
-                                <i class="fa-solid fa-user-plus text-3xl text-blue-400"></i>
+                                class="fallback-icon absolute inset-0 bg-gradient-to-br from-blue-50 to-purple-50 items-center justify-center hidden">
+                                <i class="fa-solid fa-user-plus text-3xl text-blue-300 opacity-40"></i>
                             </div>
+                            <!-- Gradient overlay -->
                             <div
-                                class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 p-2.5 opacity-90 group-hover:opacity-100 transition-opacity">
-                                <p class="text-white text-[10px] font-bold leading-tight">การช่วยรับสมัครนักเรียน</p>
-                                <p class="text-white/70 text-[8px] mt-0.5">ม.1 และ ม.4</p>
+                                class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent p-3">
+                                <p class="text-white text-[11px] font-semibold leading-tight drop-shadow">
+                                    การช่วยรับสมัครนักเรียน</p>
+                                <p class="text-white/70 text-[9px] mt-0.5">ม.1 และ ม.4</p>
+                            </div>
+                            <!-- Hover magnify icon -->
+                            <div
+                                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div
+                                    class="bg-white/20 backdrop-blur-sm rounded-full w-10 h-10 flex items-center justify-center">
+                                    <i class="fa-solid fa-magnifying-glass-plus text-white text-lg"></i>
+                                </div>
                             </div>
                         </div>
 
@@ -493,32 +545,30 @@
         </div>
     </div>
 
-    <!-- Lightbox -->
-    <div id="lightbox" class="fixed inset-0 z-[200] hidden items-center justify-center bg-black/90 backdrop-blur-sm">
-        <!-- Close button -->
+    <!-- Lightbox Modal -->
+    <div id="lightbox-modal" class="fixed inset-0 z-[200] hidden items-center justify-center p-4"
+        style="background: rgba(0,0,0,0.92);">
+        <!-- Close Button -->
         <button onclick="closeLightbox()"
-            class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-all z-10">
-            <i class="fa-solid fa-xmark text-lg"></i>
+            class="absolute top-5 right-5 w-11 h-11 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-all z-10">
+            <i class="fa-solid fa-xmark text-xl"></i>
+        </button>
+        <!-- Prev Button -->
+        <button onclick="lightboxNav(-1)" id="lightbox-prev"
+            class="absolute left-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-all z-10">
+            <i class="fa-solid fa-chevron-left text-lg"></i>
+        </button>
+        <!-- Image -->
+        <img id="lightbox-img" src="" alt=""
+            class="max-w-full max-h-[85vh] rounded-2xl object-contain shadow-2xl select-none" />
+        <!-- Next Button -->
+        <button onclick="lightboxNav(1)" id="lightbox-next"
+            class="absolute right-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-all z-10">
+            <i class="fa-solid fa-chevron-right text-lg"></i>
         </button>
         <!-- Counter -->
         <div id="lightbox-counter"
-            class="absolute top-4 left-1/2 -translate-x-1/2 text-white/80 text-sm font-medium bg-black/30 px-4 py-1.5 rounded-full">
-            1 / 1</div>
-        <!-- Prev -->
-        <button onclick="lightboxPrev()"
-            class="absolute left-2 md:left-6 w-11 h-11 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/25 transition-all text-xl">
-            <i class="fa-solid fa-chevron-left"></i>
-        </button>
-        <!-- Image -->
-        <img id="lightbox-img" src="" alt="Lightbox"
-            class="max-h-[85vh] max-w-[90vw] object-contain rounded-2xl shadow-2xl select-none">
-        <!-- Next -->
-        <button onclick="lightboxNext()"
-            class="absolute right-2 md:right-6 w-11 h-11 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/25 transition-all text-xl">
-            <i class="fa-solid fa-chevron-right"></i>
-        </button>
-        <!-- Click outside to close -->
-        <div onclick="closeLightbox()" class="absolute inset-0 -z-10"></div>
+            class="absolute bottom-5 left-1/2 -translate-x-1/2 text-white/60 text-sm font-medium"></div>
     </div>
 
     <!-- Footer -->
@@ -602,33 +652,43 @@
             const gallery = document.getElementById('modal-gallery');
             gallery.innerHTML = '';
 
-            const images = data.imageList || [];
+            const imageList = data.imageList || [];
+            const totalImages = data.images || imageList.length;
+            window._lightboxImages = imageList;
 
-            if (images.length === 0) {
-                // Show placeholder if no images
+            if (totalImages === 0) {
                 const placeholder = document.createElement('div');
                 placeholder.className = "col-span-2 md:col-span-3 py-12 flex flex-col items-center justify-center text-gray-300 gap-3";
                 placeholder.innerHTML = `
                     <i class="fa-regular fa-image text-5xl"></i>
                     <p class="text-sm font-light">ยังไม่มีภาพบรรยากาศ</p>
-                    <p class="text-xs">เพิ่มรูปภาพใน imageList ของ activityData</p>
                 `;
                 gallery.appendChild(placeholder);
             } else {
-                images.forEach((src, idx) => {
+                for (let i = 1; i <= totalImages; i++) {
+                    const imgSrc = imageList[i - 1] || '';
                     const imgContainer = document.createElement('div');
-                    imgContainer.className = "aspect-[4/3] rounded-2xl bg-gray-50 border border-gray-100 overflow-hidden group cursor-pointer hover:shadow-lg transition-all relative";
-                    imgContainer.onclick = () => openLightbox(images, idx);
-                    imgContainer.innerHTML = `
-                        <img src="${src}" alt="ภาพที่ ${idx + 1}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.parentElement.innerHTML='<div class=\'w-full h-full flex flex-col items-center justify-center text-gray-300 gap-2\'><i class=\'fa-solid fa-image text-3xl opacity-30\'></i><p class=\'text-xs\'>ไม่พบรูปภาพ</p></div>'">
-                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
-                            <div class="bg-white/80 backdrop-blur-sm rounded-full w-10 h-10 flex items-center justify-center">
-                                <i class="fa-solid fa-magnifying-glass-plus text-gray-700"></i>
+                    imgContainer.className = "aspect-[4/3] rounded-2xl bg-gray-50 border border-gray-100 flex items-center justify-center overflow-hidden group cursor-pointer hover:shadow-lg hover:border-purple-200 transition-all relative";
+                    imgContainer.setAttribute('data-index', i - 1);
+                    imgContainer.onclick = () => openLightbox(i - 1);
+
+                    if (imgSrc) {
+                        imgContainer.innerHTML = `
+                            <img src="${imgSrc}" alt="ภาพที่ ${i}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                            <div class="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/20 transition-all duration-300">
+                                <i class="fa-solid fa-magnifying-glass-plus text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity"></i>
                             </div>
-                        </div>
-                    `;
+                        `;
+                    } else {
+                        imgContainer.innerHTML = `
+                            <div class="flex flex-col items-center gap-2 opacity-30 group-hover:opacity-50 transition-opacity">
+                                <i class="fa-solid fa-image text-2xl md:text-4xl text-gray-400"></i>
+                                <span class="text-xs text-gray-400">ภาพที่ ${i}</span>
+                            </div>
+                        `;
+                    }
                     gallery.appendChild(imgContainer);
-                });
+                }
             }
 
             const modal = document.getElementById('activity-modal');
@@ -645,45 +705,55 @@
         }
 
         // Lightbox
-        let lightboxImages = [];
-        let lightboxIndex = 0;
+        let _lbCurrentIndex = 0;
 
-        function openLightbox(images, index) {
-            lightboxImages = images;
-            lightboxIndex = index;
-            const lb = document.getElementById('lightbox');
-            document.getElementById('lightbox-img').src = images[index];
-            document.getElementById('lightbox-counter').innerText = `${index + 1} / ${images.length}`;
+        function openLightbox(index) {
+            const images = window._lightboxImages || [];
+            _lbCurrentIndex = index;
+            const lb = document.getElementById('lightbox-modal');
+            const img = document.getElementById('lightbox-img');
+            const counter = document.getElementById('lightbox-counter');
+            const prevBtn = document.getElementById('lightbox-prev');
+            const nextBtn = document.getElementById('lightbox-next');
+
+            const src = images[index] || '';
+            if (!src) return;
+
+            img.src = src;
+            counter.textContent = `${index + 1} / ${images.length}`;
+            prevBtn.style.display = images.length <= 1 ? 'none' : '';
+            nextBtn.style.display = images.length <= 1 ? 'none' : '';
+
             lb.classList.remove('hidden');
             lb.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function lightboxNav(dir) {
+            const images = window._lightboxImages || [];
+            _lbCurrentIndex = (_lbCurrentIndex + dir + images.length) % images.length;
+            openLightbox(_lbCurrentIndex);
         }
 
         function closeLightbox() {
-            const lb = document.getElementById('lightbox');
+            const lb = document.getElementById('lightbox-modal');
             lb.classList.add('hidden');
             lb.classList.remove('flex');
-        }
-
-        function lightboxPrev() {
-            lightboxIndex = (lightboxIndex - 1 + lightboxImages.length) % lightboxImages.length;
-            document.getElementById('lightbox-img').src = lightboxImages[lightboxIndex];
-            document.getElementById('lightbox-counter').innerText = `${lightboxIndex + 1} / ${lightboxImages.length}`;
-        }
-
-        function lightboxNext() {
-            lightboxIndex = (lightboxIndex + 1) % lightboxImages.length;
-            document.getElementById('lightbox-img').src = lightboxImages[lightboxIndex];
-            document.getElementById('lightbox-counter').innerText = `${lightboxIndex + 1} / ${lightboxImages.length}`;
+            document.body.style.overflow = 'hidden';
         }
 
         // Close on ESC
         window.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
-                closeLightbox();
-                closeActivityModal();
+                const lb = document.getElementById('lightbox-modal');
+                if (!lb.classList.contains('hidden')) {
+                    closeLightbox();
+                } else {
+                    closeActivityModal();
+                }
             }
-            if (e.key === 'ArrowLeft') lightboxPrev();
-            if (e.key === 'ArrowRight') lightboxNext();
+            if (e.key === 'ArrowLeft') lightboxNav(-1);
+            if (e.key === 'ArrowRight') lightboxNav(1);
         });
     </script>
     <script>
