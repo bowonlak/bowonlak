@@ -411,6 +411,32 @@
         </div>
     </div>
 
+    <!-- Lightbox Modal -->
+    <div id="lightbox-modal" class="fixed inset-0 z-[200] hidden items-center justify-center p-4"
+        style="background: rgba(0,0,0,0.92);">
+        <!-- Close Button -->
+        <button onclick="closeLightbox()"
+            class="absolute top-5 right-5 w-11 h-11 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-all z-10">
+            <i class="fa-solid fa-xmark text-xl"></i>
+        </button>
+        <!-- Prev Button -->
+        <button onclick="lightboxNav(-1)" id="lightbox-prev"
+            class="absolute left-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-all z-10">
+            <i class="fa-solid fa-chevron-left text-lg"></i>
+        </button>
+        <!-- Image -->
+        <img id="lightbox-img" src="" alt=""
+            class="max-w-full max-h-[85vh] rounded-2xl object-contain shadow-2xl select-none" />
+        <!-- Next Button -->
+        <button onclick="lightboxNav(1)" id="lightbox-next"
+            class="absolute right-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-all z-10">
+            <i class="fa-solid fa-chevron-right text-lg"></i>
+        </button>
+        <!-- Counter -->
+        <div id="lightbox-counter"
+            class="absolute bottom-5 left-1/2 -translate-x-1/2 text-white/60 text-sm font-medium"></div>
+    </div>
+
     <!-- Footer -->
     <footer class="bg-white py-12 border-t border-gray-100 mt-auto">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
@@ -456,25 +482,53 @@
                 title: 'การโฮมรูมนักเรียนในช่วงเช้า',
                 subtitle: 'กิจกรรมสร้างเสริมความสัมพันธ์',
                 description: 'ปฏิบัติหน้าที่โฮมรูมนักเรียนในช่วงเช้า เพื่อพบปะพูดคุย แจ้งข่าวสารนิเทศ ตรวจสอบความพร้อม และดูแลสุขภาวะเบื้องต้นของนักเรียนอย่างสม่ำเสมอ เป็นการสร้างความสัมพันธ์อันดีและรับทราบปัญหาของนักเรียนเพื่อหาแนวทางช่วยเหลือได้ทันท่วงที',
-                images: 4
+                images: 4,
+                imageList: [
+                    'assets/images/homeroom-1.jpg',
+                    'assets/images/homeroom-2.jpg',
+                    'assets/images/homeroom-3.jpg',
+                    'assets/images/homeroom-4.jpg'
+                ]
             },
             'homevisit': {
                 title: 'ภาพการเยี่ยมบ้านนักเรียน',
                 subtitle: 'การลงพื้นที่เยี่ยมบ้านประจำปี',
                 description: 'ลงพื้นที่เยี่ยมบ้านนักเรียนเพื่อรับทราบข้อมูลสภาพความเป็นอยู่ที่แท้จริง แลกเปลี่ยนความคิดเห็นกับผู้ปกครองเพื่อร่วมกันหาแนวทางส่งเสริมและแก้ปัญหานักเรียนทั้งด้านการเรียนและพฤติกรรม เป็นการสร้างเครือข่ายความร่วมมือที่เข้มแข็งระหว่างบ้านและโรงเรียน',
-                images: 5
+                images: 5,
+                imageList: [
+                    'assets/images/homevisit-1.jpg',
+                    'assets/images/homevisit-2.jpg',
+                    'assets/images/homevisit-3.jpg',
+                    'assets/images/homevisit-4.jpg',
+                    'assets/images/homevisit-5.jpg'
+                ]
             },
             'parent': {
                 title: 'การประชุมผู้ปกครอง',
                 subtitle: 'ภาคเรียนที่ 2/2568',
                 description: 'ปฏิบัติหน้าที่ชี้แจงแนวทางการจัดการเรียนการสอน รายงานพฤติกรรมของนักเรียน และสร้างความร่วมมือระหว่างโรงเรียนและผู้ปกครอง เพื่อส่งเสริมการเรียนรู้และพัฒนาพฤติกรรมในทางที่ถูกต้อง โดยมีการประสานงานอย่างใกล้ชิดและแลกเปลี่ยนข้อมูลที่เป็นประโยชน์ต่อตัวนักเรียน',
-                images: 6
+                images: 6,
+                imageList: [
+                    'assets/images/parent-1.jpg',
+                    'assets/images/parent-2.jpg',
+                    'assets/images/parent-3.jpg',
+                    'assets/images/parent-4.jpg',
+                    'assets/images/parent-5.jpg',
+                    'assets/images/parent-6.jpg'
+                ]
             },
             'recruit': {
                 title: 'การช่วยรับสมัครนักเรียน',
                 subtitle: 'มัธยมศึกษาปีที่ 1 และ 4',
                 description: 'ปฏิบัติหน้าที่ต้อนรับผู้ปกครองและนักเรียนใหม่ ชี้แจงรายละเอียดเอกสารการสมัคร แนะนำขั้นตอนการสอบคัดเลือก และช่วยเหลือทีมงานฝ่ายวิชาการในการตรวจสอบความถูกต้องของเอกสาร เพื่อให้กระบวนการรับสมัครเป็นไปด้วยความเรียบร้อยและสร้างความประทับใจให้แก่ชุมชน',
-                images: 5
+                images: 5,
+                imageList: [
+                    'assets/images/recruit-1.jpg',
+                    'assets/images/recruit-2.jpg',
+                    'assets/images/recruit-3.jpg',
+                    'assets/images/recruit-4.jpg',
+                    'assets/images/recruit-5.jpg'
+                ]
             }
         };
 
@@ -487,14 +541,32 @@
             const gallery = document.getElementById('modal-gallery');
             gallery.innerHTML = '';
 
-            for (let i = 1; i <= data.images; i++) {
+            const imageList = data.imageList || [];
+            const totalImages = data.images;
+            window._lightboxImages = imageList;
+
+            for (let i = 1; i <= totalImages; i++) {
+                const imgSrc = imageList[i - 1] || '';
                 const imgContainer = document.createElement('div');
-                imgContainer.className = "aspect-[4/3] rounded-2xl bg-gray-50 border border-gray-100 flex items-center justify-center overflow-hidden group cursor-pointer hover:shadow-lg transition-all";
-                imgContainer.innerHTML = `
-                    <div class="opacity-20 group-hover:scale-110 transition-transform duration-500">
-                        <i class="fa-solid fa-image text-2xl md:text-4xl text-gray-300"></i>
-                    </div>
-                `;
+                imgContainer.className = "aspect-[4/3] rounded-2xl bg-gray-50 border border-gray-100 flex items-center justify-center overflow-hidden group cursor-pointer hover:shadow-lg hover:border-purple-200 transition-all relative";
+                imgContainer.setAttribute('data-index', i - 1);
+                imgContainer.onclick = () => openLightbox(i - 1);
+
+                if (imgSrc) {
+                    imgContainer.innerHTML = `
+                        <img src="${imgSrc}" alt="ภาพที่ ${i}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                        <div class="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/20 transition-all duration-300">
+                            <i class="fa-solid fa-magnifying-glass-plus text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                        </div>
+                    `;
+                } else {
+                    imgContainer.innerHTML = `
+                        <div class="flex flex-col items-center gap-2 opacity-30 group-hover:opacity-50 transition-opacity">
+                            <i class="fa-solid fa-image text-2xl md:text-4xl text-gray-400"></i>
+                            <span class="text-xs text-gray-400">ภาพที่ ${i}</span>
+                        </div>
+                    `;
+                }
                 gallery.appendChild(imgContainer);
             }
 
@@ -511,9 +583,56 @@
             document.body.style.overflow = 'auto';
         }
 
+        // Lightbox
+        let _lbCurrentIndex = 0;
+
+        function openLightbox(index) {
+            const images = window._lightboxImages || [];
+            _lbCurrentIndex = index;
+            const lb = document.getElementById('lightbox-modal');
+            const img = document.getElementById('lightbox-img');
+            const counter = document.getElementById('lightbox-counter');
+            const prevBtn = document.getElementById('lightbox-prev');
+            const nextBtn = document.getElementById('lightbox-next');
+
+            const src = images[index] || '';
+            if (!src) return; // ไม่เปิดถ้าไม่มีภาพจริง
+
+            img.src = src;
+            counter.textContent = `${index + 1} / ${images.length}`;
+            prevBtn.style.display = images.length <= 1 ? 'none' : '';
+            nextBtn.style.display = images.length <= 1 ? 'none' : '';
+
+            lb.classList.remove('hidden');
+            lb.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function lightboxNav(dir) {
+            const images = window._lightboxImages || [];
+            _lbCurrentIndex = (_lbCurrentIndex + dir + images.length) % images.length;
+            openLightbox(_lbCurrentIndex);
+        }
+
+        function closeLightbox() {
+            const lb = document.getElementById('lightbox-modal');
+            lb.classList.add('hidden');
+            lb.classList.remove('flex');
+            document.body.style.overflow = 'hidden'; // keep activity modal scroll locked
+        }
+
         // Close on ESC
         window.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeActivityModal();
+            if (e.key === 'Escape') {
+                const lb = document.getElementById('lightbox-modal');
+                if (!lb.classList.contains('hidden')) {
+                    closeLightbox();
+                } else {
+                    closeActivityModal();
+                }
+            }
+            if (e.key === 'ArrowLeft') lightboxNav(-1);
+            if (e.key === 'ArrowRight') lightboxNav(1);
         });
     </script>
     <script>
