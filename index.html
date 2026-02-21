@@ -540,6 +540,19 @@
         </div>
     </footer>
 
+    <!-- Image Lightbox Modal -->
+    <div id="image-modal"
+        class="hidden fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 md:p-10 transition-all duration-300">
+        <button id="close-modal"
+            class="absolute top-6 right-6 text-white text-3xl hover:text-purple-400 transition-colors">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="max-w-5xl w-full h-full flex items-center justify-center">
+            <img id="modal-img" src="" alt="Full size activity"
+                class="max-w-full max-h-full object-contain rounded-lg shadow-2xl">
+        </div>
+    </div>
+
     <script>
         // Mobile Menu Toggle logic
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -583,13 +596,15 @@
                 scrollContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
             });
 
-            // Optional: Mouse Drag to Scroll for Desktop
+            // Mouse Drag to Scroll for Desktop
             let isDown = false;
             let startX;
             let scrollLeft;
+            let moved = false;
 
             scrollContainer.addEventListener('mousedown', (e) => {
                 isDown = true;
+                moved = false;
                 scrollContainer.classList.add('active');
                 startX = e.pageX - scrollContainer.offsetLeft;
                 scrollLeft = scrollContainer.scrollLeft;
@@ -608,9 +623,43 @@
             scrollContainer.addEventListener('mousemove', (e) => {
                 if (!isDown) return;
                 e.preventDefault();
+                moved = true;
                 const x = e.pageX - scrollContainer.offsetLeft;
-                const walk = (x - startX) * 2; // Scroll speed multiplier
+                const walk = (x - startX) * 2;
                 scrollContainer.scrollLeft = scrollLeft - walk;
+            });
+
+            // Lightbox Modal Logic
+            const modal = document.getElementById('image-modal');
+            const modalImg = document.getElementById('modal-img');
+            const closeModal = document.getElementById('close-modal');
+            const activityCards = document.querySelectorAll('#activity-scroll > div');
+
+            activityCards.forEach(card => {
+                card.style.cursor = 'pointer';
+                card.addEventListener('click', (e) => {
+                    // Don't open if we were dragging
+                    if (moved) return;
+
+                    const img = card.querySelector('img');
+                    if (img) {
+                        modalImg.src = img.src;
+                        modal.classList.remove('hidden');
+                        document.body.style.overflow = 'hidden'; // Prevent background scroll
+                    }
+                });
+            });
+
+            closeModal.addEventListener('click', () => {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            });
+
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.add('hidden');
+                    document.body.style.overflow = 'auto';
+                }
             });
         }
     </script>
