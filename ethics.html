@@ -841,85 +841,111 @@
 
             <!-- Tab Content: Self Development -->
             <div id="dev-content" class="hidden space-y-12 animate-in">
-                <!-- Section 1: Certificates -->
+                <!-- Section 1: Development Intro -->
                 <div>
                     <div class="mb-8">
                         <h2 class="text-2xl font-bold text-gray-800">3.3) การพัฒนาตนเองด้านวิชาชีพครู</h2>
                         <div class="h-1.5 w-16 bg-gradient-to-r from-purple-500 to-purple-300 rounded-full mt-2"></div>
                     </div>
 
-                    <div class="flex justify-between items-center mb-6">
-                        <div class="relative">
-                            <h2 class="text-xl font-bold text-gray-800">เอกสารคำสั่ง</h2>
-                            <div class="h-1 w-10 bg-purple-300 rounded-full mt-1.5 opacity-60"></div>
+                    <!-- Documents Section -->
+                    <div class="mb-10">
+                        <div class="flex justify-between items-center mb-6">
+                            <div class="relative">
+                                <h2 class="text-xl font-bold text-gray-800">เอกสารคำสั่ง</h2>
+                                <div class="h-1 w-10 bg-purple-300 rounded-full mt-1.5 opacity-60"></div>
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <!-- Certificate 1 -->
+                            <a href="#" target="_blank" rel="noopener noreferrer"
+                                onclick="openActivityModal('workshop-canva')"
+                                class="bg-white p-5 rounded-2xl border border-gray-100 hover:border-purple-200 hover:shadow-md transition-all flex items-center gap-4 cursor-pointer group">
+                                <div
+                                    class="w-12 h-12 flex-shrink-0 rounded-xl bg-purple-50 flex items-center justify-center text-purple-400 text-xl group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-award"></i>
+                                </div>
+                                <div>
+                                    <h3
+                                        class="text-sm font-bold text-gray-700 group-hover:text-purple-600 transition-colors">
+                                        เกียรติบัตร การอบรมเชิงปฏิบัติการ Canva สำหรับการศึกษา</h3>
+                                    <p class="text-[10px] text-gray-400 mt-1">การสร้างสื่อการเรียนรู้แบบโต้ตอบ</p>
+                                </div>
+                            </a>
+
+                            <!-- Certificate 2 -->
+                            <a href="#" target="_blank" rel="noopener noreferrer"
+                                onclick="openActivityModal('pro-teacher')"
+                                class="bg-white p-5 rounded-2xl border border-gray-100 hover:border-purple-200 hover:shadow-md transition-all flex items-center gap-4 cursor-pointer group">
+                                <div
+                                    class="w-12 h-12 flex-shrink-0 rounded-xl bg-blue-50 flex items-center justify-center text-blue-400 text-xl group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-certificate"></i>
+                                </div>
+                                <div>
+                                    <h3
+                                        class="text-sm font-bold text-gray-700 group-hover:text-purple-600 transition-colors">
+                                        เกียรติบัตร หลักสูตรครูมืออาชีพในยุคดิจิทัล</h3>
+                                    <p class="text-[10px] text-gray-400 mt-1">การพัฒนาทักษะวิชาชีพครู</p>
+                                </div>
+                            </a>
+
+                            <!-- Training Report -->
+                            <a href="#" target="_blank" rel="noopener noreferrer"
+                                class="bg-white p-5 rounded-2xl border border-gray-100 hover:border-purple-200 hover:shadow-md transition-all flex items-center gap-4 cursor-pointer group leading-tight">
+                                <div
+                                    class="w-12 h-12 flex-shrink-0 rounded-xl bg-red-50 flex items-center justify-center text-red-400 text-xl group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </div>
+                                <div>
+                                    <h3
+                                        class="text-sm font-bold text-gray-700 group-hover:text-purple-600 transition-colors">
+                                        รายงานสรุปผลการอบรมออนไลน์ ThaiMOOC</h3>
+                                    <p class="text-[10px] text-gray-400 mt-1">20 ธ.ค. 2566</p>
+                                </div>
+                            </a>
                         </div>
                     </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <!-- Certificate 1 -->
-                        <a href="#" target="_blank" rel="noopener noreferrer"
-                            onclick="openActivityModal('workshop-canva')"
-                            class="bg-white rounded-3xl border border-gray-100 p-2 shadow-sm hover:shadow-xl transition-all group cursor-pointer">
-                            <div
-                                class="aspect-[4/3] rounded-2xl bg-gray-50 flex flex-col items-center justify-center relative overflow-hidden text-gray-300 group-hover:text-purple-300 transition-colors">
-                                <i
-                                    class="fa-solid fa-award text-2xl md:text-4xl mb-2 opacity-50 group-hover:scale-110 transition-transform"></i>
-                                <p class="text-[10px] uppercase tracking-widest font-light">Certificate</p>
-                                <div
-                                    class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-white/80 to-transparent">
-                                </div>
+                    <!-- Photos Section -->
+                    <div>
+                        <div class="mb-6">
+                            <div class="relative">
+                                <h2 class="text-xl font-bold text-gray-800">ภาพการปฏิบัติหน้าที่</h2>
+                                <div class="h-1 w-10 bg-purple-300 rounded-full mt-1.5 opacity-60"></div>
                             </div>
-                            <div class="px-4 py-3 text-center">
-                                <h3
-                                    class="text-xs font-bold text-gray-700 leading-tight group-hover:text-purple-600 transition-colors">
-                                    การอบรมเชิงปฏิบัติการ..</h3>
-                            </div>
-                        </a>
-
-                        <!-- Certificate 2 -->
-                        <a href="#" target="_blank" rel="noopener noreferrer" onclick="openActivityModal('pro-teacher')"
-                            class="bg-white rounded-3xl border border-gray-100 p-2 shadow-sm hover:shadow-xl transition-all group cursor-pointer">
-                            <div
-                                class="aspect-[4/3] rounded-2xl bg-gray-50 flex flex-col items-center justify-center relative overflow-hidden text-gray-300 group-hover:text-purple-300 transition-colors">
-                                <i
-                                    class="fa-solid fa-award text-2xl md:text-4xl mb-2 opacity-50 group-hover:scale-110 transition-transform"></i>
-                                <p class="text-[10px] uppercase tracking-widest font-light">Certificate</p>
-                                <div
-                                    class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-white/80 to-transparent">
-                                </div>
-                            </div>
-                            <div class="px-4 py-3 text-center">
-                                <h3
-                                    class="text-xs font-bold text-gray-700 leading-tight group-hover:text-purple-600 transition-colors">
-                                    หลักสูตรครูมืออาชีพ..</h3>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Section 2: Training Reports -->
-                <div>
-                    <div class="flex justify-between items-center mb-6">
-                        <div class="relative">
-                            <h2 class="text-xl font-bold text-gray-800">รายงานการอบรม</h2>
-                            <div class="h-1 w-10 bg-purple-300 rounded-full mt-1.5 opacity-60"></div>
                         </div>
-                    </div>
 
-                    <div class="grid grid-cols-1 gap-4">
-                        <a href="#" target="_blank" rel="noopener noreferrer"
-                            class="bg-white p-5 rounded-3xl border border-gray-100 hover:border-purple-200 hover:shadow-md transition-all flex items-center gap-4 cursor-pointer group leading-tight">
-                            <div
-                                class="w-12 h-12 rounded-2xl bg-red-50 flex items-center justify-center text-red-400 text-xl group-hover:scale-110 transition-transform">
-                                <i class="fa-solid fa-file-pdf"></i>
+                        <div class="grid grid-cols-2 lg:grid-cols-4 lg:grid-cols-5 gap-4">
+                            <!-- Photo Card 1 -->
+                            <div onclick="openActivityModal('self-dev')"
+                                class="aspect-square rounded-2xl border border-gray-200 overflow-hidden relative group cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300">
+                                <!-- Cover Image -->
+                                <img src="assets/image/On the Job/LINE_ALBUM_On the job_260220_1.jpg"
+                                    alt="ภาพการพัฒนาตนเอง"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                    onerror="this.style.display='none'; this.parentElement.querySelector('.fallback-icon').style.display='flex';" />
+                                <div
+                                    class="fallback-icon absolute inset-0 bg-gradient-to-br from-purple-50 to-blue-50 items-center justify-center hidden">
+                                    <i class="fa-solid fa-graduation-cap text-3xl text-purple-300 opacity-40"></i>
+                                </div>
+                                <!-- Gradient overlay -->
+                                <div
+                                    class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent p-3">
+                                    <p class="text-white text-[11px] font-semibold leading-tight drop-shadow">
+                                        ภาพกิจกรรมการพัฒนาตนเอง</p>
+                                    <p class="text-white/70 text-[9px] mt-0.5">การอบรมและสัมมนาวิชาชีพ</p>
+                                </div>
+                                <!-- Hover magnify icon -->
+                                <div
+                                    class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <div
+                                        class="bg-white/20 backdrop-blur-sm rounded-full w-10 h-10 flex items-center justify-center">
+                                        <i class="fa-solid fa-magnifying-glass-plus text-white text-lg"></i>
+                                    </div>
+                                </div>
                             </div>
-                            <div>
-                                <h3
-                                    class="text-sm font-bold text-gray-700 group-hover:text-purple-600 transition-colors">
-                                    สรุปผลการอบรมออนไลน์ ThaiMOOC</h3>
-                                <p class="text-[10px] text-gray-400 mt-1 font-light tracking-wide">20 ธ.ค. 2566</p>
-                            </div>
-                        </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1078,6 +1104,15 @@
                     'assets/image/งานครบรอบ 102 ปี/LINE_ALBUM_กิจกรรมเทอม2_260220_4.jpg',
                     'assets/image/งานครบรอบ 102 ปี/LINE_ALBUM_กิจกรรมเทอม2_260220_5.jpg',
                     'assets/image/งานครบรอบ 102 ปี/LINE_ALBUM_ครบรอบ 102 ปี_260220_3.jpg'
+                ]
+            },
+            'self-dev': {
+                title: 'การพัฒนาตนเองด้านวิชาชีพครู',
+                subtitle: 'การอบรมและสัมมนาวิชาชีพ',
+                description: 'เข้าร่วมการอบรม สัมมนา และกิจกรรมการเรียนรู้ต่างๆ เพื่อพัฒนาสมรรถนะทางวิชาชีพครู ทั้งในด้านเทคโนโลยีการศึกษา การจัดการเรียนรู้ยุคใหม่ และการพัฒนาทักษะเฉพาะทาง เพื่อนำมาประยุกต์ใช้ในการจัดการเรียนการสอนและการทำงานให้เกิดประสิทธิภาพสูงสุด',
+                imageList: [
+                    'assets/image/On the Job/LINE_ALBUM_On the job_260220_1.jpg',
+                    'assets/image/On the Job/LINE_ALBUM_On the job_260220_2.jpg'
                 ]
             },
             'workshop-canva': {
