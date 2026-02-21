@@ -334,101 +334,119 @@
                 <div class="w-16 h-1 bg-purple-400 mx-auto mt-4 rounded-full"></div>
             </div>
 
-            <!-- Horizontal Scroll Container -->
-            <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 -mx-6 px-6 scrollbar-hide">
-                <!-- Photo 1 -->
-                <div
-                    class="snap-center shrink-0 w-[300px] h-[400px] bg-white rounded-2xl shadow-md overflow-hidden group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    <div class="w-full h-2/3 bg-gray-200 relative flex items-center justify-center overflow-hidden">
-                        <i
-                            class="fa-solid fa-camera text-2xl md:text-4xl text-gray-400 group-hover:scale-110 transition-transform duration-500"></i>
-                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900/20 to-transparent"></div>
-                    </div>
-                    <div class="p-6">
-                        <span class="text-xs font-bold text-purple-500 uppercase tracking-wider">Activity 01</span>
-                        <h3 class="text-lg font-bold text-gray-800 mt-1">กิจกรรมการเรียนรู้</h3>
-                        <p class="text-gray-500 text-sm mt-2 line-clamp-2">
-                            บรรยากาศการจัดการเรียนการสอนในชั้นเรียนที่เน้นผู้เรียนเป็นสำคัญ</p>
-                    </div>
-                </div>
+            <!-- Horizontal Scroll Wrapper with Navigation Buttons -->
+            <div class="relative group/scroll">
+                <!-- Navigation Buttons (Hidden on mobile, visible on hover on desktop) -->
+                <button id="prev-btn"
+                    class="hidden lg:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6 z-10 w-12 h-12 bg-white rounded-full shadow-lg items-center justify-center text-purple-600 hover:bg-purple-600 hover:text-white transition-all opacity-0 group-hover/scroll:opacity-100 group-hover/scroll:-translate-x-4">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
 
-                <!-- Photo 2 -->
-                <div
-                    class="snap-center shrink-0 w-[300px] h-[400px] bg-white rounded-2xl shadow-md overflow-hidden group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    <div class="w-full h-2/3 bg-gray-200 relative flex items-center justify-center overflow-hidden">
-                        <i
-                            class="fa-solid fa-camera text-2xl md:text-4xl text-gray-400 group-hover:scale-110 transition-transform duration-500"></i>
-                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900/20 to-transparent"></div>
-                    </div>
-                    <div class="p-6">
-                        <span class="text-xs font-bold text-blue-500 uppercase tracking-wider">Activity 02</span>
-                        <h3 class="text-lg font-bold text-gray-800 mt-1">กิจกรรมพัฒนาผู้เรียน</h3>
-                        <p class="text-gray-500 text-sm mt-2 line-clamp-2">
-                            กิจกรรมส่งเสริมทักษะทางวิชาการและทักษะชีวิตให้กับนักเรียน</p>
-                    </div>
-                </div>
+                <button id="next-btn"
+                    class="hidden lg:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-6 z-10 w-12 h-12 bg-white rounded-full shadow-lg items-center justify-center text-purple-600 hover:bg-purple-600 hover:text-white transition-all opacity-0 group-hover/scroll:opacity-100 group-hover/scroll:translate-x-4">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
 
-                <!-- Photo 3 -->
-                <div
-                    class="snap-center shrink-0 w-[300px] h-[400px] bg-white rounded-2xl shadow-md overflow-hidden group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    <div class="w-full h-2/3 bg-gray-200 relative flex items-center justify-center overflow-hidden">
-                        <i
-                            class="fa-solid fa-camera text-2xl md:text-4xl text-gray-400 group-hover:scale-110 transition-transform duration-500"></i>
-                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900/20 to-transparent"></div>
+                <!-- Horizontal Scroll Container -->
+                <div id="activity-scroll"
+                    class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 -mx-6 px-6 scrollbar-hide cursor-grab active:cursor-grabbing select-none">
+                    <!-- Photo 1 -->
+                    <div
+                        class="snap-center shrink-0 w-[300px] h-[400px] bg-white rounded-2xl shadow-md overflow-hidden group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                        <div class="w-full h-2/3 bg-gray-200 relative flex items-center justify-center overflow-hidden">
+                            <i
+                                class="fa-solid fa-camera text-2xl md:text-4xl text-gray-400 group-hover:scale-110 transition-transform duration-500"></i>
+                            <div class="absolute inset-0 bg-gradient-to-t from-gray-900/20 to-transparent"></div>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-purple-500 uppercase tracking-wider">Activity 01</span>
+                            <h3 class="text-lg font-bold text-gray-800 mt-1">กิจกรรมการเรียนรู้</h3>
+                            <p class="text-gray-500 text-sm mt-2 line-clamp-2">
+                                บรรยากาศการจัดการเรียนการสอนในชั้นเรียนที่เน้นผู้เรียนเป็นสำคัญ</p>
+                        </div>
                     </div>
-                    <div class="p-6">
-                        <span class="text-xs font-bold text-yellow-500 uppercase tracking-wider">Activity 03</span>
-                        <h3 class="text-lg font-bold text-gray-800 mt-1">อบรมสัมมนา</h3>
-                        <p class="text-gray-500 text-sm mt-2 line-clamp-2">
-                            เข้าร่วมการอบรมเพื่อพัฒนาตนเองทางด้านวิชาชีพครู</p>
-                    </div>
-                </div>
 
-                <!-- Photo 4 -->
-                <div
-                    class="snap-center shrink-0 w-[300px] h-[400px] bg-white rounded-2xl shadow-md overflow-hidden group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    <div class="w-full h-2/3 bg-gray-200 relative flex items-center justify-center overflow-hidden">
-                        <i
-                            class="fa-solid fa-camera text-2xl md:text-4xl text-gray-400 group-hover:scale-110 transition-transform duration-500"></i>
-                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900/20 to-transparent"></div>
+                    <!-- Photo 2 -->
+                    <div
+                        class="snap-center shrink-0 w-[300px] h-[400px] bg-white rounded-2xl shadow-md overflow-hidden group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                        <div class="w-full h-2/3 bg-gray-200 relative flex items-center justify-center overflow-hidden">
+                            <i
+                                class="fa-solid fa-camera text-2xl md:text-4xl text-gray-400 group-hover:scale-110 transition-transform duration-500"></i>
+                            <div class="absolute inset-0 bg-gradient-to-t from-gray-900/20 to-transparent"></div>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-blue-500 uppercase tracking-wider">Activity 02</span>
+                            <h3 class="text-lg font-bold text-gray-800 mt-1">กิจกรรมพัฒนาผู้เรียน</h3>
+                            <p class="text-gray-500 text-sm mt-2 line-clamp-2">
+                                กิจกรรมส่งเสริมทักษะทางวิชาการและทักษะชีวิตให้กับนักเรียน</p>
+                        </div>
                     </div>
-                    <div class="p-6">
-                        <span class="text-xs font-bold text-purple-500 uppercase tracking-wider">Activity 04</span>
-                        <h3 class="text-lg font-bold text-gray-800 mt-1">กิจกรรมชุมชน</h3>
-                        <p class="text-gray-500 text-sm mt-2 line-clamp-2">การมีส่วนร่วมกับชุมชนและกิจกรรมสาธารณประโยชน์
-                        </p>
-                    </div>
-                </div>
 
-                <!-- Photo 5 -->
-                <div
-                    class="snap-center shrink-0 w-[300px] h-[400px] bg-white rounded-2xl shadow-md overflow-hidden group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    <div class="w-full h-2/3 bg-gray-200 relative flex items-center justify-center overflow-hidden">
-                        <i
-                            class="fa-solid fa-camera text-2xl md:text-4xl text-gray-400 group-hover:scale-110 transition-transform duration-500"></i>
-                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900/20 to-transparent"></div>
+                    <!-- Photo 3 -->
+                    <div
+                        class="snap-center shrink-0 w-[300px] h-[400px] bg-white rounded-2xl shadow-md overflow-hidden group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                        <div class="w-full h-2/3 bg-gray-200 relative flex items-center justify-center overflow-hidden">
+                            <i
+                                class="fa-solid fa-camera text-2xl md:text-4xl text-gray-400 group-hover:scale-110 transition-transform duration-500"></i>
+                            <div class="absolute inset-0 bg-gradient-to-t from-gray-900/20 to-transparent"></div>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-yellow-500 uppercase tracking-wider">Activity 03</span>
+                            <h3 class="text-lg font-bold text-gray-800 mt-1">อบรมสัมมนา</h3>
+                            <p class="text-gray-500 text-sm mt-2 line-clamp-2">
+                                เข้าร่วมการอบรมเพื่อพัฒนาตนเองทางด้านวิชาชีพครู</p>
+                        </div>
                     </div>
-                    <div class="p-6">
-                        <span class="text-xs font-bold text-blue-500 uppercase tracking-wider">Activity 05</span>
-                        <h3 class="text-lg font-bold text-gray-800 mt-1">นิเทศการสอน</h3>
-                        <p class="text-gray-500 text-sm mt-2 line-clamp-2">รับการนิเทศการสอนจากอาจารย์และครูพี่เลี้ยง
-                        </p>
-                    </div>
-                </div>
 
-                <!-- Photo 6 -->
-                <div
-                    class="snap-center shrink-0 w-[300px] h-[400px] bg-white rounded-2xl shadow-md overflow-hidden group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    <div class="w-full h-2/3 bg-gray-200 relative flex items-center justify-center overflow-hidden">
-                        <i
-                            class="fa-solid fa-camera text-2xl md:text-4xl text-gray-400 group-hover:scale-110 transition-transform duration-500"></i>
-                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900/20 to-transparent"></div>
+                    <!-- Photo 4 -->
+                    <div
+                        class="snap-center shrink-0 w-[300px] h-[400px] bg-white rounded-2xl shadow-md overflow-hidden group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                        <div class="w-full h-2/3 bg-gray-200 relative flex items-center justify-center overflow-hidden">
+                            <i
+                                class="fa-solid fa-camera text-2xl md:text-4xl text-gray-400 group-hover:scale-110 transition-transform duration-500"></i>
+                            <div class="absolute inset-0 bg-gradient-to-t from-gray-900/20 to-transparent"></div>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-purple-500 uppercase tracking-wider">Activity 04</span>
+                            <h3 class="text-lg font-bold text-gray-800 mt-1">กิจกรรมชุมชน</h3>
+                            <p class="text-gray-500 text-sm mt-2 line-clamp-2">
+                                การมีส่วนร่วมกับชุมชนและกิจกรรมสาธารณประโยชน์
+                            </p>
+                        </div>
                     </div>
-                    <div class="p-6">
-                        <span class="text-xs font-bold text-yellow-500 uppercase tracking-wider">Activity 06</span>
-                        <h3 class="text-lg font-bold text-gray-800 mt-1">ผลงานนักเรียน</h3>
-                        <p class="text-gray-500 text-sm mt-2 line-clamp-2">ตัวอย่างผลงานที่เกิดจากการเรียนรู้ของนักเรียน
-                        </p>
+
+                    <!-- Photo 5 -->
+                    <div
+                        class="snap-center shrink-0 w-[300px] h-[400px] bg-white rounded-2xl shadow-md overflow-hidden group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                        <div class="w-full h-2/3 bg-gray-200 relative flex items-center justify-center overflow-hidden">
+                            <i
+                                class="fa-solid fa-camera text-2xl md:text-4xl text-gray-400 group-hover:scale-110 transition-transform duration-500"></i>
+                            <div class="absolute inset-0 bg-gradient-to-t from-gray-900/20 to-transparent"></div>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-blue-500 uppercase tracking-wider">Activity 05</span>
+                            <h3 class="text-lg font-bold text-gray-800 mt-1">นิเทศการสอน</h3>
+                            <p class="text-gray-500 text-sm mt-2 line-clamp-2">
+                                รับการนิเทศการสอนจากอาจารย์และครูพี่เลี้ยง
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 6 -->
+                    <div
+                        class="snap-center shrink-0 w-[300px] h-[400px] bg-white rounded-2xl shadow-md overflow-hidden group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                        <div class="w-full h-2/3 bg-gray-200 relative flex items-center justify-center overflow-hidden">
+                            <i
+                                class="fa-solid fa-camera text-2xl md:text-4xl text-gray-400 group-hover:scale-110 transition-transform duration-500"></i>
+                            <div class="absolute inset-0 bg-gradient-to-t from-gray-900/20 to-transparent"></div>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-yellow-500 uppercase tracking-wider">Activity 06</span>
+                            <h3 class="text-lg font-bold text-gray-800 mt-1">ผลงานนักเรียน</h3>
+                            <p class="text-gray-500 text-sm mt-2 line-clamp-2">
+                                ตัวอย่างผลงานที่เกิดจากการเรียนรู้ของนักเรียน
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -543,6 +561,53 @@
                 link.addEventListener('click', () => {
                     mobileMenu.classList.add('hidden');
                 });
+            });
+        }
+
+        // Horizontal Scroll Controls
+        const scrollContainer = document.getElementById('activity-scroll');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+
+        if (scrollContainer && prevBtn && nextBtn) {
+            const scrollAmount = 350; // Adjust scroll distance
+
+            nextBtn.addEventListener('click', () => {
+                scrollContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            });
+
+            prevBtn.addEventListener('click', () => {
+                scrollContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            });
+
+            // Optional: Mouse Drag to Scroll for Desktop
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+
+            scrollContainer.addEventListener('mousedown', (e) => {
+                isDown = true;
+                scrollContainer.classList.add('active');
+                startX = e.pageX - scrollContainer.offsetLeft;
+                scrollLeft = scrollContainer.scrollLeft;
+            });
+
+            scrollContainer.addEventListener('mouseleave', () => {
+                isDown = false;
+                scrollContainer.classList.remove('active');
+            });
+
+            scrollContainer.addEventListener('mouseup', () => {
+                isDown = false;
+                scrollContainer.classList.remove('active');
+            });
+
+            scrollContainer.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - scrollContainer.offsetLeft;
+                const walk = (x - startX) * 2; // Scroll speed multiplier
+                scrollContainer.scrollLeft = scrollLeft - walk;
             });
         }
     </script>
