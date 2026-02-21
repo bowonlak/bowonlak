@@ -69,6 +69,16 @@
         .tab-inactive:hover {
             color: #6B7280;
         }
+
+        /* Hide scrollbar */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
     </style>
 </head>
 
@@ -167,16 +177,17 @@
         <div class="max-w-7xl mx-auto px-6">
 
             <!-- Custom Styled Tabs (As per screenshot) -->
-            <div class="flex justify-center mb-8">
-                <div
-                    class="inline-flex p-1 bg-gray-100 rounded-2xl shadow-inner border border-gray-200 overflow-x-auto max-w-full">
+            <!-- Premium Tabs Navigation -->
+            <div class="flex justify-center mb-10 sticky top-[80px] z-30">
+                <div id="tabs-container"
+                    class="inline-flex p-1.5 bg-white/80 backdrop-blur-md rounded-2xl shadow-lg border border-purple-100/50 overflow-x-auto max-w-full scrollbar-hide">
                     <button onclick="switchTab('advisor')" id="tabadvisor"
-                        class="px-6 py-2.5 rounded-xl transition-all duration-300 flex items-center gap-2 text-sm font-medium bg-white text-purple-600 shadow-sm border border-gray-200/50 whitespace-nowrap">
+                        class="px-6 py-2.5 rounded-xl transition-all duration-300 flex items-center gap-2 text-sm font-semibold bg-purple-600 text-white shadow-md shadow-purple-200 whitespace-nowrap">
                         <i class="fa-solid fa-user-check"></i>
                         หน้าที่ครูประจำชั้น
                     </button>
                     <button onclick="switchTab('community')" id="tabcommunity"
-                        class="px-6 py-2.5 rounded-xl transition-all duration-300 flex items-center gap-2 text-sm font-medium text-gray-500 hover:text-gray-700 whitespace-nowrap">
+                        class="px-6 py-2.5 rounded-xl transition-all duration-300 flex items-center gap-2 text-sm font-medium text-gray-500 hover:bg-gray-50 whitespace-nowrap">
                         <i class="fa-solid fa-users-rectangle"></i>
                         ความสัมพันธ์ชุมชน
                     </button>
@@ -524,25 +535,25 @@
 
     <script>
         function switchTab(tab) {
-            const advisorTab = document.getElementById('tabadvisor');
-            const communityTab = document.getElementById('tabcommunity');
-            const advisorContent = document.getElementById('advisor-content');
-            const communityContent = document.getElementById('community-content');
+            const tabs = ['advisor', 'community'];
+            tabs.forEach(t => {
+                const btn = document.getElementById('tab' + t);
+                const content = document.getElementById(t + '-content');
+                if (t === tab) {
+                    btn.className = "px-6 py-2.5 rounded-xl transition-all duration-300 flex items-center gap-2 text-sm font-semibold bg-purple-600 text-white shadow-md shadow-purple-200 whitespace-nowrap";
+                    content.classList.remove('hidden');
 
-            // Reset styles
-            advisorTab.className = "px-6 py-2.5 rounded-xl transition-all duration-300 flex items-center gap-2 text-sm font-medium text-gray-500 hover:text-gray-700";
-            communityTab.className = advisorTab.className;
-
-            // Set active
-            if (tab === 'advisor') {
-                advisorTab.className = "px-6 py-2.5 rounded-xl transition-all duration-300 flex items-center gap-2 text-sm font-medium bg-white text-purple-600 shadow-sm border border-gray-200/50";
-                advisorContent.classList.remove('hidden');
-                communityContent.classList.add('hidden');
-            } else {
-                communityTab.className = "px-6 py-2.5 rounded-xl transition-all duration-300 flex items-center gap-2 text-sm font-medium bg-white text-purple-600 shadow-sm border border-gray-200/50";
-                communityContent.classList.remove('hidden');
-                advisorContent.classList.add('hidden');
-            }
+                    // Auto-scroll the active tab to center
+                    const container = document.getElementById('tabs-container');
+                    if (container && btn) {
+                        const scrollPos = btn.offsetLeft - (container.offsetWidth / 2) + (btn.offsetWidth / 2);
+                        container.scrollTo({ left: scrollPos, behavior: 'smooth' });
+                    }
+                } else {
+                    btn.className = "px-6 py-2.5 rounded-xl transition-all duration-300 flex items-center gap-2 text-sm font-medium text-gray-500 hover:bg-gray-50 whitespace-nowrap";
+                    content.classList.add('hidden');
+                }
+            });
         }
 
         const activityData = {
