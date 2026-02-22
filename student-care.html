@@ -356,6 +356,36 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Photo Card 4: การเดินตรวจแถว -->
+                        <div onclick="openActivityModal('walking-line')"
+                            class="aspect-square rounded-2xl border border-gray-200 overflow-hidden relative group cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300">
+                            <!-- Cover Image -->
+                            <img src="assets/image/หน้าที่ครูที่ปรึกษา/LINE_ALBUM_หน้าที่ครูที่ปรึกษา_260220_2.jpg"
+                                alt="การเดินตรวจแถว"
+                                class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                onerror="this.style.display='none'; this.parentElement.querySelector('.fallback-icon').style.display='flex';" />
+                            <!-- Fallback icon -->
+                            <div
+                                class="fallback-icon absolute inset-0 bg-gradient-to-br from-indigo-50 to-purple-50 items-center justify-center hidden">
+                                <i class="fa-solid fa-person-walking text-3xl text-indigo-300 opacity-40"></i>
+                            </div>
+                            <!-- Gradient overlay -->
+                            <div
+                                class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent p-3">
+                                <p class="text-white text-[11px] font-semibold leading-tight drop-shadow">
+                                    การเดินตรวจแถว</p>
+                                <p class="text-white/70 text-[9px] mt-0.5">การตรวจสอบความเรียบร้อยของนักเรียน</p>
+                            </div>
+                            <!-- Hover magnify icon -->
+                            <div
+                                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div
+                                    class="bg-white/20 backdrop-blur-sm rounded-full w-10 h-10 flex items-center justify-center">
+                                    <i class="fa-solid fa-magnifying-glass-plus text-white text-lg"></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -611,6 +641,18 @@
                     'assets/image/เข้าร่วมกิจกรรมรับนักเรียนตัวอย่าง/LINE_ALBUM_เข้ากิจกรรมมอบรางวัลครูดีเด่น_260220_1.jpg',
                     'assets/image/เข้าร่วมกิจกรรมรับนักเรียนตัวอย่าง/LINE_ALBUM_เข้ากิจกรรมมอบรางวัลครูดีเด่น_260220_2.jpg',
                     'assets/image/เข้าร่วมกิจกรรมรับนักเรียนตัวอย่าง/LINE_ALBUM_เข้ากิจกรรมมอบรางวัลครูดีเด่น_260220_3.jpg'
+                ]
+            },
+            'walking-line': {
+                title: 'การเดินตรวจแถว',
+                subtitle: 'การตรวจสอบความเรียบร้อยของนักเรียน',
+                description: 'ปฏิบัติหน้าที่เดินตรวจแถวนักเรียนในช่วงเช้า เพื่อตรวจสอบความระเบียบเรียบร้อย การแต่งกาย และความเป็นระเบียบของนักเรียนในแต่ละระดับชั้น พร้อมทั้งให้คำแนะนำและดูแลความปลอดภัยของนักเรียนอย่างใกล้ชิด',
+                images: 4,
+                imageList: [
+                    'assets/image/หน้าที่ครูที่ปรึกษา/LINE_ALBUM_หน้าที่ครูที่ปรึกษา_260220_2.jpg',
+                    'assets/image/หน้าที่ครูที่ปรึกษา/LINE_ALBUM_หน้าที่ครูที่ปรึกษา_260220_3.jpg',
+                    'assets/image/หน้าที่ครูที่ปรึกษา/LINE_ALBUM_หน้าที่ครูที่ปรึกษา_260220_5.jpg',
+                    'assets/image/หน้าที่ครูที่ปรึกษา/LINE_ALBUM_หน้าที่ครูที่ปรึกษา_260220_6.jpg',
                 ]
             }
         };
