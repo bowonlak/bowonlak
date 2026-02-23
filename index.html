@@ -352,7 +352,7 @@
                     class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 -mx-6 px-6 scrollbar-hide cursor-grab active:cursor-grabbing select-none">
                     <!-- Photo 1 -->
                     <div
-                        class="snap-center shrink-0 w-[300px] h-[450px] bg-white rounded-2xl shadow-md overflow-hidden group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col border border-gray-100/50">
+                        class="snap-center shrink-0 w-[300px] h-[450px] bg-white rounded-2xl shadow-md overflow-hidden group transition-all duration-300 flex flex-col border border-gray-100/50">
                         <div class="w-full h-48 bg-gray-200 relative overflow-hidden">
                             <img src="assets/image/บรรยากาศในการจัดการเรียนการสอน.jpg" alt="กิจกรรมการเรียนรู้"
                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
@@ -377,7 +377,7 @@
 
                     <!-- Photo 2 -->
                     <div
-                        class="snap-center shrink-0 w-[300px] h-[450px] bg-white rounded-2xl shadow-md overflow-hidden group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col border border-gray-100/50">
+                        class="snap-center shrink-0 w-[300px] h-[450px] bg-white rounded-2xl shadow-md overflow-hidden group transition-all duration-300 flex flex-col border border-gray-100/50">
                         <div class="w-full h-48 bg-gray-200 relative overflow-hidden">
                             <img src="assets/image/ศิลปหัตถกรรม/LINE_ALBUM_แข่งศิลปะหัตถกรรม_260220_4.jpg"
                                 alt="การแข่งขันศิลปหัตถกรรม"
@@ -402,7 +402,7 @@
 
                     <!-- Photo 3 -->
                     <div
-                        class="snap-center shrink-0 w-[300px] h-[450px] bg-white rounded-2xl shadow-md overflow-hidden group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col border border-gray-100/50">
+                        class="snap-center shrink-0 w-[300px] h-[450px] bg-white rounded-2xl shadow-md overflow-hidden group transition-all duration-300 flex flex-col border border-gray-100/50">
                         <div class="w-full h-48 bg-gray-200 relative overflow-hidden">
                             <img src="assets/image/เป็นผู้ช่วยวิทยากร/LINE_ALBUM_เป็นผู้ช่วยวิทยากร_260220_1.jpg"
                                 alt="ผู้ช่วยวิทยากร"
@@ -428,7 +428,7 @@
 
                     <!-- Photo 4 -->
                     <div
-                        class="snap-center shrink-0 w-[300px] h-[450px] bg-white rounded-2xl shadow-md overflow-hidden group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col border border-gray-100/50">
+                        class="snap-center shrink-0 w-[300px] h-[450px] bg-white rounded-2xl shadow-md overflow-hidden group transition-all duration-300 flex flex-col border border-gray-100/50">
                         <div class="w-full h-48 bg-gray-200 relative overflow-hidden">
                             <img src="assets/image/รับนักเรียน/LINE_ALBUM_รับนักเรียน ม.1,4_260220_2.jpg"
                                 alt="รับสมัครนักเรียน"
@@ -453,7 +453,7 @@
 
                     <!-- Photo 5 -->
                     <div
-                        class="snap-center shrink-0 w-[300px] h-[450px] bg-white rounded-2xl shadow-md overflow-hidden group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col border border-gray-100/50">
+                        class="snap-center shrink-0 w-[300px] h-[450px] bg-white rounded-2xl shadow-md overflow-hidden group transition-all duration-300 flex flex-col border border-gray-100/50">
                         <div class="w-full h-48 bg-gray-200 relative overflow-hidden">
                             <img src="assets/image/On the Job/LINE_ALBUM_On the job_260220_2.jpg"
                                 alt="การอบรม On The Job Training"
@@ -478,7 +478,7 @@
 
                     <!-- Photo 6 -->
                     <div
-                        class="snap-center shrink-0 w-[300px] h-[450px] bg-white rounded-2xl shadow-md overflow-hidden group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col border border-gray-100/50">
+                        class="snap-center shrink-0 w-[300px] h-[450px] bg-white rounded-2xl shadow-md overflow-hidden group transition-all duration-300 flex flex-col border border-gray-100/50">
                         <div class="w-full h-48 bg-gray-200 relative overflow-hidden">
                             <img src="assets/image/งานครบรอบ 102 ปี/LINE_ALBUM_ครบรอบ 102 ปี_260220_1.jpg"
                                 alt="งานครบรอบ 102 ปี"
@@ -591,18 +591,6 @@
         </div>
     </footer>
 
-    <!-- Image Lightbox Modal -->
-    <div id="image-modal"
-        class="hidden fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 md:p-10 transition-all duration-300">
-        <button id="close-modal"
-            class="absolute top-6 right-6 text-white text-3xl hover:text-purple-400 transition-colors">
-            <i class="fa-solid fa-xmark"></i>
-        </button>
-        <div class="max-w-5xl w-full h-full flex items-center justify-center">
-            <img id="modal-img" src="" alt="Full size activity"
-                class="max-w-full max-h-full object-contain rounded-lg shadow-2xl">
-        </div>
-    </div>
 
     <script>
         // Mobile Menu Toggle logic
@@ -702,38 +690,6 @@
             // Initial call to set correct dot if start position isn't 0
             updateDots();
 
-            // Lightbox Modal Logic
-            const modal = document.getElementById('image-modal');
-            const modalImg = document.getElementById('modal-img');
-            const closeModal = document.getElementById('close-modal');
-            const activityCards = document.querySelectorAll('#activity-scroll > div');
-
-            activityCards.forEach(card => {
-                card.style.cursor = 'pointer';
-                card.addEventListener('click', (e) => {
-                    // Don't open if we were dragging
-                    if (moved) return;
-
-                    const img = card.querySelector('img');
-                    if (img) {
-                        modalImg.src = img.src;
-                        modal.classList.remove('hidden');
-                        document.body.style.overflow = 'hidden'; // Prevent background scroll
-                    }
-                });
-            });
-
-            closeModal.addEventListener('click', () => {
-                modal.classList.add('hidden');
-                document.body.style.overflow = 'auto';
-            });
-
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    modal.classList.add('hidden');
-                    document.body.style.overflow = 'auto';
-                }
-            });
         }
     </script>
 </body>
