@@ -86,16 +86,28 @@
     <nav class="fixed w-full z-50 glass-nav transition-all duration-300 py-4 top-0 left-0">
         <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
             <!-- Logo / Name -->
-            <div class="flex items-center gap-3">
+            <!-- Logo / Name: Home for Mobile, Profile for Desktop -->
+            <a href="index.html" class="lg:hidden flex items-center gap-3 group">
                 <div
-                    class="w-10 h-10 md:w-12 md:h-12 lg:w-10 lg:h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 font-bold text-lg md:text-xl lg:text-lg">
-                    B
-                </div>
+                    class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 font-bold text-lg">
+                    B</div>
                 <div class="leading-tight">
-                    <h1 class="text-lg md:text-xl lg:text-lg font-bold text-gray-800">Bowonlak Sandee</h1>
+                    <h1 class="text-lg font-bold text-gray-800">Bowonlak
+                        Sandee</h1>
+                    <p class="text-xs text-gray-400 font-light">หน้าแรก</p>
+                </div>
+            </a>
+
+            <a href="profile.html" class="hidden lg:flex items-center gap-3 group">
+                <div
+                    class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 font-bold text-lg group-hover:scale-110 transition-transform">
+                    B</div>
+                <div class="leading-tight">
+                    <h1 class="text-lg font-bold text-gray-800 group-hover:text-purple-600 transition-colors">Bowonlak
+                        Sandee</h1>
                     <p class="text-xs text-gray-400 font-light">ข้อมูลส่วนตัว</p>
                 </div>
-            </div>
+            </a>
 
             <!-- Menu -->
             <div class="hidden lg:flex items-center gap-8 text-sm font-medium text-gray-500">
