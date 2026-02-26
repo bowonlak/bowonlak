@@ -38,7 +38,8 @@
     <style>
         body {
             font-family: 'Prompt', sans-serif;
-            background-color: #ffffff;
+            background-color: #F9FAFB;
+            /* gray-50 fallback */
             overflow-x: hidden;
         }
 
@@ -80,7 +81,7 @@
     </style>
 </head>
 
-<body class="text-gray-700">
+<body class="text-gray-700 bg-gray-50/50">
 
     <!-- Navbar -->
     <nav class="fixed w-full z-50 glass-nav transition-all duration-300 py-4 top-0 left-0">
@@ -170,7 +171,7 @@
     </nav>
 
     <!-- Header / Background -->
-    <div class="pt-32 md:pt-48 lg:pt-32 pb-10 bg-gradient-to-b from-purple-50 to-white">
+    <div class="pt-32 md:pt-48 lg:pt-32 pb-10 bg-gray-50/50">
         <div class="max-w-5xl mx-auto px-6">
             <div class="bg-white rounded-3xl shadow-sm p-8 lg:p-12 relative overflow-hidden">
                 <!-- Decorative background elements -->
@@ -394,7 +395,7 @@
     <!-- Footer -->
     <!-- Footer -->
     <footer
-        class="bg-white py-12 md:py-16 border-t border-gray-100 mt-auto pb-[calc(3rem+env(safe-area-inset-bottom))] md:pb-12">
+        class="bg-gray-50/50 py-12 md:py-16 border-t border-gray-100 mt-auto pb-[calc(3rem+env(safe-area-inset-bottom))] md:pb-12">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
             <!-- Left Side -->
             <div class="text-center md:text-left">
