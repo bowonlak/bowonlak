@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>ผลงานและประสบการณ์ระหว่างการศึกษา - Bowonlak Sandee</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts (Prompt for Thai) -->
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Prompt', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            purple: '#A855F7',
+                            light: '#F3E8FF',
+                            blue: '#38BDF8',
+                            yellow: '#FACC15',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Prompt', sans-serif;
+            background-color: #F9FAFB;
+            overflow-x: hidden;
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .glass-nav {
+                background: #ffffff;
+                backdrop-filter: none;
+                -webkit-backdrop-filter: none;
+                padding-top: calc(0.75rem + env(safe-area-inset-top));
+                padding-bottom: 0.75rem;
+            }
+        }
+
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(168, 85, 247, 0.12), 0 8px 10px -6px rgba(168, 85, 247, 0.08);
+        }
+    </style>
+</head>
+
+<body class="text-gray-700 bg-gray-50/50">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300 py-4 top-0 left-0">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <!-- Logo / Name -->
+            <a href="profile.html" class="flex items-center gap-3 group">
+                <div
+                    class="w-10 h-10 md:w-12 md:h-12 lg:w-10 lg:h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 font-bold text-lg md:text-xl lg:text-lg group-hover:scale-110 transition-transform">
+                    B
+                </div>
+                <div class="leading-tight">
+                    <h1
+                        class="text-lg md:text-xl lg:text-lg font-bold text-gray-800 group-hover:text-purple-600 transition-colors">
+                        Bowonlak Sandee
+                    </h1>
+                    <p class="text-xs text-gray-400 font-light">ข้อมูลส่วนตัว</p>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex items-center gap-6 xl:gap-8 text-sm font-medium text-gray-500">
+                <a href="index.html" class="hover:text-purple-600 transition-colors">หน้าแรก</a>
+                <a href="experience.html" class="text-purple-600 border-b-2 border-purple-500 pb-1 font-semibold">ผลงานและประสบการณ์ระหว่างการศึกษา</a>
+                <a href="teaching.html" class="hover:text-purple-600 transition-colors">การจัดการเรียนรู้</a>
+                <a href="student-care.html" class="hover:text-purple-600 transition-colors">ระบบดูแลนักเรียน</a>
+                <a href="ethics.html" class="hover:text-purple-600 transition-colors">จรรยาบรรณวิชาชีพ</a>
+            </div>
+
+            <!-- Contact Button -->
+            <a href="index.html#contact"
+                class="hidden lg:inline-block px-8 py-2.5 rounded-full bg-gradient-to-r from-[#C084FC] to-[#A855F7] text-white text-sm font-semibold hover:scale-105 hover:shadow-lg transition-all shadow-md">
+                ติดต่อ
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn"
+                class="lg:hidden text-gray-600 text-xl focus:outline-none hover:text-purple-600 transition-colors">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu"
+            class="hidden absolute top-16 right-6 w-72 bg-white/95 backdrop-blur-md border border-gray-200/50 rounded-xl shadow-xl z-[100]">
+            <nav class="flex flex-col p-2 text-sm font-medium text-gray-700">
+                <a href="index.html"
+                    class="px-4 py-2.5 rounded-lg hover:bg-purple-50 hover:text-purple-600 transition-colors flex items-center gap-3">
+                    <i class="fa-solid fa-house w-5 text-center text-purple-500"></i>
+                    หน้าแรก
+                </a>
+                <a href="profile.html"
+                    class="px-4 py-2.5 rounded-lg hover:bg-purple-50 hover:text-purple-600 transition-colors flex items-center gap-3">
+                    <i class="fa-solid fa-user-tie w-5 text-center text-purple-500"></i>
+                    ข้อมูลส่วนตัว
+                </a>
+                <a href="experience.html"
+                    class="px-4 py-2.5 rounded-lg bg-purple-50 text-purple-600 font-semibold transition-colors flex items-center gap-3">
+                    <i class="fa-solid fa-graduation-cap w-5 text-center text-purple-600"></i>
+                    ผลงานและประสบการณ์ระหว่างการศึกษา
+                </a>
+                <a href="teaching.html"
+                    class="px-4 py-2.5 rounded-lg hover:bg-purple-50 hover:text-purple-600 transition-colors flex items-center gap-3">
+                    <i class="fa-solid fa-book-open w-5 text-center text-purple-500"></i>
+                    การจัดการเรียนรู้
+                </a>
+                <a href="student-care.html"
+                    class="px-4 py-2.5 rounded-lg hover:bg-purple-50 hover:text-purple-600 transition-colors flex items-center gap-3">
+                    <i class="fa-solid fa-hands-holding-child w-5 text-center text-purple-500"></i>
+                    ระบบดูแลนักเรียน
+                </a>
+                <a href="ethics.html"
+                    class="px-4 py-2.5 rounded-lg hover:bg-purple-50 hover:text-purple-600 transition-colors flex items-center gap-3">
+                    <i class="fa-solid fa-scale-balanced w-5 text-center text-purple-500"></i>
+                    จรรยาบรรณวิชาชีพ
+                </a>
+                <div class="h-px bg-gray-200/60 my-1 mx-2"></div>
+                <a href="index.html#contact"
+                    class="px-4 py-2.5 rounded-lg hover:bg-purple-50 hover:text-purple-600 transition-colors flex items-center gap-3">
+                    <i class="fa-solid fa-envelope w-5 text-center text-purple-500"></i>
+                    ติดต่อ
+                </a>
+            </nav>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="pt-32 md:pt-36 pb-12 bg-gradient-to-b from-purple-50/80 via-white to-gray-50/50">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-100/80 text-purple-700 text-xs md:text-sm font-medium mb-4">
+                <i class="fa-solid fa-award"></i>
+                Academic Achievements & Experiences
+            </div>
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4 leading-tight">
+                ผลงานและประสบการณ์<span class="text-purple-600">ระหว่างการศึกษา</span>
+            </h1>
+            <p class="text-gray-500 font-light max-w-3xl mx-auto text-sm md:text-base leading-relaxed">
+                สรุปประวัติผลงาน เกียรติประวัติ การฝึกประสบการณ์วิชาชีพครู และการเข้าร่วมกิจกรรมทางวิชาการและสังคม
+                ระหว่างศึกษาระดับปริญญาตรี คณะศึกษาศาสตร์ มหาวิทยาลัยนเรศวร
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="py-10 max-w-7xl mx-auto px-6">
+
+        <!-- Category Tabs -->
+        <div class="flex justify-center mb-10 sticky top-[80px] z-30">
+            <div id="filter-container"
+                class="inline-flex p-1.5 bg-white/90 backdrop-blur-md rounded-2xl shadow-lg border border-purple-100/60 overflow-x-auto max-w-full scrollbar-hide gap-1">
+                <button onclick="filterItems('all')" id="btn-all"
+                    class="filter-btn active-tab px-5 py-2.5 rounded-xl text-xs md:text-sm font-semibold transition-all duration-300 whitespace-nowrap bg-purple-600 text-white shadow-md shadow-purple-200">
+                    <i class="fa-solid fa-border-all mr-1.5"></i>ทั้งหมด
+                </button>
+                <button onclick="filterItems('award')" id="btn-award"
+                    class="filter-btn px-5 py-2.5 rounded-xl text-xs md:text-sm font-medium text-gray-600 hover:bg-purple-50 transition-all duration-300 whitespace-nowrap">
+                    <i class="fa-solid fa-trophy text-yellow-500 mr-1.5"></i>รางวัลและเกียรติประวัติ
+                </button>
+                <button onclick="filterItems('teaching')" id="btn-teaching"
+                    class="filter-btn px-5 py-2.5 rounded-xl text-xs md:text-sm font-medium text-gray-600 hover:bg-purple-50 transition-all duration-300 whitespace-nowrap">
+                    <i class="fa-solid fa-chalkboard-user text-blue-500 mr-1.5"></i>ประสบการณ์ฝึกสอน
+                </button>
+                <button onclick="filterItems('activity')" id="btn-activity"
+                    class="filter-btn px-5 py-2.5 rounded-xl text-xs md:text-sm font-medium text-gray-600 hover:bg-purple-50 transition-all duration-300 whitespace-nowrap">
+                    <i class="fa-solid fa-people-group text-purple-500 mr-1.5"></i>กิจกรรมและจิตอาสา
+                </button>
+                <button onclick="filterItems('cert')" id="btn-cert"
+                    class="filter-btn px-5 py-2.5 rounded-xl text-xs md:text-sm font-medium text-gray-600 hover:bg-purple-50 transition-all duration-300 whitespace-nowrap">
+                    <i class="fa-solid fa-certificate text-emerald-500 mr-1.5"></i>เกียรติบัตรและการอบรม
+                </button>
+            </div>
+        </div>
+
+        <!-- Portfolio Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
+
+            <!-- Card 1: Honors Degree -->
+            <div class="item-card award bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm card-hover flex flex-col">
+                <div class="relative h-48 bg-gradient-to-tr from-purple-600 to-indigo-500 p-6 flex flex-col justify-between text-white">
+                    <div class="flex justify-between items-start">
+                        <span class="px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-xs font-medium">เกียรติประวัติ</span>
+                        <div class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-yellow-300 text-lg">
+                            <i class="fa-solid fa-medal"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text-xs text-purple-200 uppercase tracking-wider font-medium">มหาวิทยาลัยนเรศวร</p>
+                        <h3 class="text-xl font-bold text-white mt-1">เกียรตินิยมอันดับ 2</h3>
+                    </div>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            สำเร็จการศึกษาระดับปริญญาตรี การศึกษาบัณฑิต (เทคโนโลยีและสื่อสารการศึกษา) เกียรตินิยมอันดับ 2 ด้วยผลการเรียนเฉลี่ยสะสม (GPAX) 3.40
+                        </p>
+                        <div class="pt-2 flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-purple-50 text-purple-700 text-xs rounded-lg font-medium">GPAX 3.40</span>
+                            <span class="px-3 py-1 bg-blue-50 text-blue-700 text-xs rounded-lg font-medium">คณะศึกษาศาสตร์</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: Teaching Practicum -->
+            <div class="item-card teaching bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm card-hover flex flex-col">
+                <div class="relative h-48 bg-gray-100 overflow-hidden group">
+                    <img src="assets/image/Profile.jpg" alt="ฝึกประสบการณ์วิชาชีพครู" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-4">
+                        <span class="px-3 py-1 bg-blue-500/80 backdrop-blur-md text-white rounded-full text-xs font-medium">การฝึกสอน</span>
+                    </div>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">ฝึกประสบการณ์วิชาชีพครู</h3>
+                        <p class="text-sm text-gray-500 mb-3">โรงเรียนเฉลิมขวัญสตรี</p>
+                        <p class="text-sm text-gray-600 leading-relaxed mb-4">
+                            ปฏิบัติหน้าที่ครูผู้สอนวิชาคอมพิวเตอร์และเทคโนโลยี ออกแบบแผนการจัดการเรียนรู้ ผลิตสื่อการสอนดิจิทัล และดูแลชั้นเรียนอย่างมีประสิทธิภาพ
+                        </p>
+                    </div>
+                    <a href="teaching.html" class="inline-flex items-center gap-2 text-sm text-purple-600 font-semibold hover:text-purple-700">
+                        ดูผลงานการสอน <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 3: Media & Innovation -->
+            <div class="item-card teaching bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm card-hover flex flex-col">
+                <div class="relative h-48 bg-gradient-to-br from-blue-500 to-cyan-400 p-6 flex flex-col justify-between text-white">
+                    <div class="flex justify-between items-start">
+                        <span class="px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-xs font-medium">สื่อและนวัตกรรม</span>
+                        <div class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white text-lg">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text-xs text-blue-100 uppercase tracking-wider font-medium">นวัตกรรมการศึกษา</p>
+                        <h3 class="text-xl font-bold text-white mt-1">การผลิตสื่อการเรียนรู้ดิจิทัล</h3>
+                    </div>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <p class="text-sm text-gray-600 leading-relaxed mb-4">
+                            สร้างสรรค์สื่อมัลติมีเดีย บทเรียนคอมพิวเตอร์ช่วยสอน (CAI) อินโฟกราฟิก และคลิปวิดีโอเพื่อการเรียนรู้ สอดคล้องกับเนื้อหาวิชาและพัฒนาทักษะผู้เรียน
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2.5 py-1 bg-gray-100 text-gray-600 text-xs rounded-md">Digital Media</span>
+                            <span class="px-2.5 py-1 bg-gray-100 text-gray-600 text-xs rounded-md">Canva & Adobe</span>
+                        </div>
+                    </div>
+                    <a href="teaching-media.html" class="inline-flex items-center gap-2 text-sm text-purple-600 font-semibold hover:text-purple-700">
+                        ดูสื่อการสอนทั้งหมด <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 4: PLC & Seminar -->
+            <div class="item-card activity bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm card-hover flex flex-col">
+                <div class="relative h-48 bg-gradient-to-tr from-purple-500 to-pink-500 p-6 flex flex-col justify-between text-white">
+                    <div class="flex justify-between items-start">
+                        <span class="px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-xs font-medium">กิจกรรมทางวิชาการ</span>
+                        <div class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white text-lg">
+                            <i class="fa-solid fa-users-rectangle"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text-xs text-pink-100 uppercase tracking-wider font-medium">การชุมชนแห่งการเรียนรู้ทางวิชาชีพ</p>
+                        <h3 class="text-xl font-bold text-white mt-1">เข้าร่วมกิจกรรม PLC & สัมมนา</h3>
+                    </div>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <p class="text-sm text-gray-600 leading-relaxed mb-4">
+                            เข้าร่วมการประชุมสะท้อนคิด (PLC) แลกเปลี่ยนเรียนรู้ร่วมกับครูพี่เลี้ยงและเพื่อนเพื่อนินิสิตฝึกสอน เพื่อพัฒนากระบวนการจัดการเรียนรู้และแก้ไขปัญหาในชั้นเรียน
+                        </p>
+                    </div>
+                    <div class="flex items-center text-xs text-gray-400 gap-2">
+                        <i class="fa-regular fa-calendar"></i>
+                        <span>ภาคเรียนที่ 1 - 2 / 2568</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5: Student Support System -->
+            <div class="item-card teaching bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm card-hover flex flex-col">
+                <div class="relative h-48 bg-gradient-to-tr from-sky-400 to-blue-600 p-6 flex flex-col justify-between text-white">
+                    <div class="flex justify-between items-start">
+                        <span class="px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-xs font-medium">การดูแลผู้เรียน</span>
+                        <div class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white text-lg">
+                            <i class="fa-solid fa-heart-circle-check"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text-xs text-sky-100 uppercase tracking-wider font-medium">กิจการนักเรียน</p>
+                        <h3 class="text-xl font-bold text-white mt-1">ระบบดูแลช่วยเหลือนักเรียน</h3>
+                    </div>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <p class="text-sm text-gray-600 leading-relaxed mb-4">
+                            ดำเนินการเยี่ยมบ้านนักเรียน การโฮมรูม กิจกรรมแนะแนว และการคัดกรองผู้เรียนเพื่อส่งเสริมและช่วยเหลือเยียวยานักเรียนเป็นรายบุคคล
+                        </p>
+                    </div>
+                    <a href="student-care.html" class="inline-flex items-center gap-2 text-sm text-purple-600 font-semibold hover:text-purple-700">
+                        ดูรายละเอียดระบบดูแลนักเรียน <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 6: Certificates & Training -->
+            <div class="item-card cert bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm card-hover flex flex-col">
+                <div class="relative h-48 bg-gradient-to-tr from-emerald-500 to-teal-600 p-6 flex flex-col justify-between text-white">
+                    <div class="flex justify-between items-start">
+                        <span class="px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-xs font-medium">การพัฒนาตนเอง</span>
+                        <div class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white text-lg">
+                            <i class="fa-solid fa-certificate"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text-xs text-emerald-100 uppercase tracking-wider font-medium">การพัฒนาวิชาชีพ</p>
+                        <h3 class="text-xl font-bold text-white mt-1">การอบรมและเกียรติบัตรวิชาการ</h3>
+                    </div>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <p class="text-sm text-gray-600 leading-relaxed mb-4">
+                            ผ่านการอบรมเชิงปฏิบัติการด้านเทคโนโลยีการศึกษา การวัดและประเมินผล และการพัฒนาทักษะดิจิทัลสำหรับครูยุคใหม่
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2.5 py-1 bg-emerald-50 text-emerald-700 text-xs rounded-md font-medium">Digital Literacy</span>
+                            <span class="px-2.5 py-1 bg-emerald-50 text-emerald-700 text-xs rounded-md font-medium">EdTech Training</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12 border-t border-gray-800 mt-20">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="flex justify-center items-center gap-3 mb-4">
+                <div class="w-8 h-8 rounded-full bg-purple-600 text-white font-bold flex items-center justify-center text-sm">
+                    B
+                </div>
+                <span class="text-white font-semibold text-lg">Bowonlak Sandee</span>
+            </div>
+            <p class="text-xs text-gray-400 font-light mt-1">นิสิตฝึกประสบการณ์วิชาชีพครู | โรงเรียนเฉลิมขวัญสตรี</p>
+            <p class="text-xs text-gray-500 font-light mt-4">© 2026 Bowonlak Sandee. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Script for Filter & Mobile Menu -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!menuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+
+        // Portfolio Filter Function
+        function filterItems(category) {
+            const cards = document.querySelectorAll('.item-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-purple-600', 'text-white', 'shadow-md', 'shadow-purple-200', 'font-semibold');
+                btn.classList.add('text-gray-600', 'font-medium');
+            });
+
+            const activeBtn = document.getElementById(`btn-${category}`);
+            if (activeBtn) {
+                activeBtn.classList.remove('text-gray-600', 'font-medium');
+                activeBtn.classList.add('bg-purple-600', 'text-white', 'shadow-md', 'shadow-purple-200', 'font-semibold');
+            }
+
+            cards.forEach(card => {
+                if (category === 'all' || card.classList.contains(category)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
