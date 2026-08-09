@@ -60,21 +60,6 @@
             }
         }
 
-        .tab-active {
-            color: #A855F7;
-            background-color: rgba(168, 85, 247, 0.08);
-            border-radius: 9999px;
-        }
-
-        .tab-inactive {
-            color: #9CA3AF;
-        }
-
-        .tab-inactive:hover {
-            color: #6B7280;
-            background-color: rgba(0, 0, 0, 0.02);
-            border-radius: 9999px;
-        }
 
         /* Hide scrollbar */
         .scrollbar-hide::-webkit-scrollbar {
@@ -191,30 +176,39 @@
         </div>
     </div>
 
-    <div class="bg-white border-b border-gray-100 sticky top-[80px] z-40">
-        <div id="tabs-container" class="max-w-7xl mx-auto px-6 overflow-x-auto scrollbar-hide py-3">
-            <div class="flex items-center gap-3 md:gap-8 min-w-max">
-                <a href="teaching.html"
-                    class="px-5 py-2 text-sm font-semibold flex items-center gap-2 tab-inactive transition-all duration-300">
-                    <i class="fa-solid fa-book-open"></i> แผนการสอน
-                </a>
-                <a href="teaching-media.html"
-                    class="px-5 py-2 text-sm font-semibold flex items-center gap-2 tab-inactive transition-all duration-300">
-                    <i class="fa-solid fa-laptop-code"></i> สื่อเทคโนโลยี
-                </a>
-                <a href="teaching-eval.html"
-                    class="px-5 py-2 text-sm font-semibold flex items-center gap-2 tab-inactive transition-all duration-300">
-                    <i class="fa-solid fa-clipboard-check"></i> วัดและประเมินผล
-                </a>
-                <a href="teaching-research.html"
-                    class="px-5 py-2 text-sm font-semibold flex items-center gap-2 tab-inactive transition-all duration-300">
-                    <i class="fa-solid fa-microscope"></i> วิจัยในชั้นเรียน
-                </a>
-                <a href="teaching-student-works.html"
-                    class="px-5 py-2 text-sm font-semibold flex items-center gap-2 tab-active transition-all duration-300">
-                    <i class="fa-solid fa-users"></i> ผลงานนักเรียน
-                </a>
-            </div>
+    <!-- Tabs Navigation -->
+    <div class="flex justify-center mb-10 sticky top-[80px] z-30">
+        <div id="tabs-container"
+            class="inline-flex p-1.5 bg-white/80 backdrop-blur-md rounded-2xl shadow-lg border border-purple-100/50 overflow-x-auto max-w-full scrollbar-hide">
+            <!-- Tab 1: Learning Plans -->
+            <a href="teaching.html"
+                class="px-6 py-2.5 rounded-xl transition-all duration-300 flex items-center gap-2 text-sm font-medium text-gray-500 hover:bg-gray-50 whitespace-nowrap tab-inactive">
+                <i class="fa-solid fa-book-open"></i> แผนการสอน
+            </a>
+
+            <!-- Tab 2: Technology -->
+            <a href="teaching-media.html"
+                class="px-6 py-2.5 rounded-xl transition-all duration-300 flex items-center gap-2 text-sm font-medium text-gray-500 hover:bg-gray-50 whitespace-nowrap tab-inactive">
+                <i class="fa-solid fa-laptop-code"></i> สื่อเทคโนโลยี
+            </a>
+
+            <!-- Tab 3: Evaluation -->
+            <a href="teaching-eval.html"
+                class="px-6 py-2.5 rounded-xl transition-all duration-300 flex items-center gap-2 text-sm font-medium text-gray-500 hover:bg-gray-50 whitespace-nowrap tab-inactive">
+                <i class="fa-solid fa-clipboard-check"></i> วัดและประเมินผล
+            </a>
+
+            <!-- Tab 4: Research -->
+            <a href="teaching-research.html"
+                class="px-6 py-2.5 rounded-xl transition-all duration-300 flex items-center gap-2 text-sm font-medium text-gray-500 hover:bg-gray-50 whitespace-nowrap tab-inactive">
+                <i class="fa-solid fa-microscope"></i> วิจัยในชั้นเรียน
+            </a>
+
+            <!-- Tab 5: Student Works -->
+            <a href="teaching-student-works.html"
+                class="px-6 py-2.5 rounded-xl transition-all duration-300 flex items-center gap-2 text-sm font-semibold bg-purple-600 text-white shadow-md shadow-purple-200 whitespace-nowrap tab-active">
+                <i class="fa-solid fa-users"></i> ผลงานนักเรียน
+            </a>
         </div>
     </div>
 
