@@ -192,25 +192,21 @@
         <div class="flex justify-center mb-10 sticky top-[80px] z-30">
             <div id="filter-container"
                 class="inline-flex p-1.5 bg-white/90 backdrop-blur-md rounded-2xl shadow-lg border border-purple-100/60 overflow-x-auto max-w-full scrollbar-hide gap-1">
-                <button onclick="filterItems('all')" id="btn-all"
+                <button onclick="filterItems('doc')" id="btn-doc"
                     class="filter-btn active-tab px-5 py-2.5 rounded-xl text-xs md:text-sm font-semibold transition-all duration-300 whitespace-nowrap bg-purple-600 text-white shadow-md shadow-purple-200">
-                    <i class="fa-solid fa-border-all mr-1.5"></i>ทั้งหมด
+                    <i class="fa-solid fa-file-contract mr-1.5"></i>เอกสารรับรอง
                 </button>
-                <button onclick="filterItems('award')" id="btn-award"
+                <button onclick="filterItems('observation')" id="btn-observation"
                     class="filter-btn px-5 py-2.5 rounded-xl text-xs md:text-sm font-medium text-gray-600 hover:bg-purple-50 transition-all duration-300 whitespace-nowrap">
-                    <i class="fa-solid fa-trophy text-yellow-500 mr-1.5"></i>รางวัลและเกียรติประวัติ
-                </button>
-                <button onclick="filterItems('teaching')" id="btn-teaching"
-                    class="filter-btn px-5 py-2.5 rounded-xl text-xs md:text-sm font-medium text-gray-600 hover:bg-purple-50 transition-all duration-300 whitespace-nowrap">
-                    <i class="fa-solid fa-chalkboard-user text-blue-500 mr-1.5"></i>ประสบการณ์ฝึกสอน
+                    <i class="fa-solid fa-eye text-blue-500 mr-1.5"></i>ประสบการณ์ในการสังเกตการสอน
                 </button>
                 <button onclick="filterItems('activity')" id="btn-activity"
                     class="filter-btn px-5 py-2.5 rounded-xl text-xs md:text-sm font-medium text-gray-600 hover:bg-purple-50 transition-all duration-300 whitespace-nowrap">
-                    <i class="fa-solid fa-people-group text-purple-500 mr-1.5"></i>กิจกรรมและจิตอาสา
+                    <i class="fa-solid fa-people-group text-purple-500 mr-1.5"></i>กิจกรรมที่เข้าร่วม
                 </button>
                 <button onclick="filterItems('cert')" id="btn-cert"
                     class="filter-btn px-5 py-2.5 rounded-xl text-xs md:text-sm font-medium text-gray-600 hover:bg-purple-50 transition-all duration-300 whitespace-nowrap">
-                    <i class="fa-solid fa-certificate text-emerald-500 mr-1.5"></i>เกียรติบัตรและการอบรม
+                    <i class="fa-solid fa-award text-amber-500 mr-1.5"></i>เกียรติบัตร
                 </button>
             </div>
         </div>
@@ -218,203 +214,319 @@
         <!-- Portfolio Cards Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
 
-            <!-- Card 1: Honors Degree -->
-            <div
-                class="item-card award bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm card-hover flex flex-col">
-                <div
-                    class="relative h-48 bg-gradient-to-tr from-purple-600 to-indigo-500 p-6 flex flex-col justify-between text-white">
-                    <div class="flex justify-between items-start">
-                        <span
-                            class="px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-xs font-medium">เกียรติประวัติ</span>
-                        <div
-                            class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-yellow-300 text-lg">
-                            <i class="fa-solid fa-medal"></i>
-                        </div>
-                    </div>
-                    <div>
-                        <p class="text-xs text-purple-200 uppercase tracking-wider font-medium">มหาวิทยาลัยนเรศวร</p>
-                        <h3 class="text-xl font-bold text-white mt-1">เกียรตินิยมอันดับ 2</h3>
+            <!-- ================= CATEGORY 1: เอกสารรับรอง (doc) ================= -->
+            <!-- Doc Card 1 -->
+            <div class="item-card doc bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm card-hover flex flex-col">
+                <div class="relative h-48 bg-gray-100 overflow-hidden group">
+                    <img src="assets/image/Profile.jpg" alt="หนังสือรับรองการฝึกประสบการณ์"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4">
+                        <span class="px-3 py-1 bg-purple-600/90 backdrop-blur-md text-white rounded-full text-xs font-medium">เอกสารรับรอง</span>
+                        <span class="text-xs text-white/90 font-light"><i class="fa-regular fa-calendar mr-1"></i>2568</span>
                     </div>
                 </div>
                 <div class="p-6 flex-1 flex flex-col justify-between">
-                    <div class="space-y-3">
-                        <p class="text-sm text-gray-600 leading-relaxed">
-                            สำเร็จการศึกษาระดับปริญญาตรี การศึกษาบัณฑิต (เทคโนโลยีและสื่อสารการศึกษา) เกียรตินิยมอันดับ
-                            2 ด้วยผลการเรียนเฉลี่ยสะสม (GPAX) 3.40
+                    <div>
+                        <div class="text-xs font-semibold text-purple-600 mb-1">หัวข้อย่อย 1.1</div>
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">หนังสือรับรองการปฏิบัติหน้าที่ฝึกประสบการณ์วิชาชีพครู</h3>
+                        <p class="text-sm text-gray-500 mb-3">โรงเรียนเฉลิมขวัญสตรี</p>
+                        <p class="text-sm text-gray-600 leading-relaxed mb-4">
+                            หนังสือรับรองการปฏิบัติหน้าที่ครูผู้สอนวิชาคอมพิวเตอร์และเทคโนโลยี ออกแบบแผนการสอน และร่วมกิจกรรมสถานศึกษาครบถ้วนตามหลักสูตร
                         </p>
-                        <div class="pt-2 flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-purple-50 text-purple-700 text-xs rounded-lg font-medium">GPAX
-                                3.40</span>
-                            <span
-                                class="px-3 py-1 bg-blue-50 text-blue-700 text-xs rounded-lg font-medium">คณะศึกษาศาสตร์</span>
-                        </div>
                     </div>
+                    <a href="assets/PDF/คำสั่ง On the job.pdf" target="_blank" rel="noopener noreferrer"
+                        class="inline-flex items-center gap-2 text-sm text-purple-600 font-semibold hover:text-purple-700 mt-auto">
+                        ดูเอกสารรับรอง <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
                 </div>
             </div>
 
-            <!-- Card 2: Teaching Practicum -->
-            <div
-                class="item-card teaching bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm card-hover flex flex-col">
+            <!-- Doc Card 2 -->
+            <div class="item-card doc bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm card-hover flex flex-col">
                 <div class="relative h-48 bg-gray-100 overflow-hidden group">
-                    <img src="assets/image/Profile.jpg" alt="ฝึกประสบการณ์วิชาชีพครู"
+                    <img src="assets/image/Profile.jpg" alt="เอกสารรับรองผลการเรียน"
                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-4">
-                        <span
-                            class="px-3 py-1 bg-blue-500/80 backdrop-blur-md text-white rounded-full text-xs font-medium">การฝึกสอน</span>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4">
+                        <span class="px-3 py-1 bg-purple-600/90 backdrop-blur-md text-white rounded-full text-xs font-medium">เอกสารรับรอง</span>
+                        <span class="text-xs text-white/90 font-light"><i class="fa-regular fa-calendar mr-1"></i>2568</span>
                     </div>
                 </div>
                 <div class="p-6 flex-1 flex flex-col justify-between">
                     <div>
-                        <h3 class="text-lg font-bold text-gray-800 mb-2">ฝึกประสบการณ์วิชาชีพครู</h3>
-                        <p class="text-sm text-gray-500 mb-3">โรงเรียนเฉลิมขวัญสตรี</p>
+                        <div class="text-xs font-semibold text-purple-600 mb-1">หัวข้อย่อย 1.2</div>
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">เอกสารรับรองผลการเรียนและคุณวุฒิเกียรตินิยมอันดับ 2</h3>
+                        <p class="text-sm text-gray-500 mb-3">มหาวิทยาลัยนเรศวร</p>
                         <p class="text-sm text-gray-600 leading-relaxed mb-4">
-                            ปฏิบัติหน้าที่ครูผู้สอนวิชาคอมพิวเตอร์และเทคโนโลยี ออกแบบแผนการจัดการเรียนรู้
-                            ผลิตสื่อการสอนดิจิทัล และดูแลชั้นเรียนอย่างมีประสิทธิภาพ
+                            หนังสือรับรองผลการเรียนระดับปริญญาตรี การศึกษาบัณฑิต (เทคโนโลยีและสื่อสารการศึกษา) เกียรตินิยมอันดับ 2 ด้วยเกรดเฉลี่ยสะสม 3.40
+                        </p>
+                    </div>
+                    <a href="profile.html"
+                        class="inline-flex items-center gap-2 text-sm text-purple-600 font-semibold hover:text-purple-700 mt-auto">
+                        ดูรายละเอียดคุณวุฒิ <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Doc Card 3 -->
+            <div class="item-card doc bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm card-hover flex flex-col">
+                <div class="relative h-48 bg-gray-100 overflow-hidden group">
+                    <img src="assets/image/Profile.jpg" alt="คำสั่งแต่งตั้งการปฏิบัติหน้าที่"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4">
+                        <span class="px-3 py-1 bg-purple-600/90 backdrop-blur-md text-white rounded-full text-xs font-medium">เอกสารรับรอง</span>
+                        <span class="text-xs text-white/90 font-light"><i class="fa-regular fa-calendar mr-1"></i>2568</span>
+                    </div>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="text-xs font-semibold text-purple-600 mb-1">หัวข้อย่อย 1.3</div>
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">หนังสือรับรองการปฏิบัติหน้าที่เวรและงานครูที่ปรึกษา</h3>
+                        <p class="text-sm text-gray-500 mb-3">งานกิจการนักเรียน</p>
+                        <p class="text-sm text-gray-600 leading-relaxed mb-4">
+                            คำสั่งแต่งตั้งข้าราชการครูและบุคลากรทางการศึกษาปฏิบัติหน้าที่เวรประจำวัน คุมสอบ และหน้าที่ครูประจำชั้นครูที่ปรึกษา
+                        </p>
+                    </div>
+                    <a href="assets/PDF/คำสั่ง เวรประจำวัน.pdf" target="_blank" rel="noopener noreferrer"
+                        class="inline-flex items-center gap-2 text-sm text-purple-600 font-semibold hover:text-purple-700 mt-auto">
+                        ดูคำสั่งแต่งตั้ง <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- ================= CATEGORY 2: ประสบการณ์ในการสังเกตการสอน (observation) ================= -->
+            <!-- Observation Card 1 -->
+            <div class="item-card observation bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm card-hover flex flex-col" style="display: none;">
+                <div class="relative h-48 bg-gray-100 overflow-hidden group">
+                    <img src="assets/image/รูป Practicum 1/LINE_ALBUM_16-23พ.ค.66_๒๓0๕๒๓_120.jpg" alt="การสังเกตการจัดการเรียนรู้"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4">
+                        <span class="px-3 py-1 bg-blue-600/90 backdrop-blur-md text-white rounded-full text-xs font-medium">สังเกตการสอน</span>
+                        <span class="text-xs text-white/90 font-light"><i class="fa-regular fa-calendar mr-1"></i>2566 - 2568</span>
+                    </div>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="text-xs font-semibold text-blue-600 mb-1">หัวข้อย่อย 2.1</div>
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">การสังเกตการณ์จัดการเรียนรู้ วิชาคอมพิวเตอร์และเทคโนโลยี</h3>
+                        <p class="text-sm text-gray-500 mb-3">การสังเกตการสอนในชั้นเรียนจริง</p>
+                        <p class="text-sm text-gray-600 leading-relaxed mb-4">
+                            ถอดบทเรียนจากการสังเกตการสอนของครูพี่เลี้ยงในการจัดกิจกรรมการเรียนรู้แบบ Active Learning สื่อดิจิทัล และการแก้ปัญหาเชิงคำนวณ
                         </p>
                     </div>
                     <a href="teaching.html"
-                        class="inline-flex items-center gap-2 text-sm text-purple-600 font-semibold hover:text-purple-700">
-                        ดูผลงานการสอน <i class="fa-solid fa-arrow-right text-xs"></i>
+                        class="inline-flex items-center gap-2 text-sm text-purple-600 font-semibold hover:text-purple-700 mt-auto">
+                        ดูรายละเอียดแผนการสอน <i class="fa-solid fa-arrow-right text-xs"></i>
                     </a>
                 </div>
             </div>
 
-            <!-- Card 3: Media & Innovation -->
-            <div
-                class="item-card teaching bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm card-hover flex flex-col">
-                <div
-                    class="relative h-48 bg-gradient-to-br from-blue-500 to-cyan-400 p-6 flex flex-col justify-between text-white">
-                    <div class="flex justify-between items-start">
-                        <span
-                            class="px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-xs font-medium">สื่อและนวัตกรรม</span>
-                        <div
-                            class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white text-lg">
-                            <i class="fa-solid fa-laptop-code"></i>
-                        </div>
-                    </div>
-                    <div>
-                        <p class="text-xs text-blue-100 uppercase tracking-wider font-medium">นวัตกรรมการศึกษา</p>
-                        <h3 class="text-xl font-bold text-white mt-1">การผลิตสื่อการเรียนรู้ดิจิทัล</h3>
+            <!-- Observation Card 2 -->
+            <div class="item-card observation bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm card-hover flex flex-col" style="display: none;">
+                <div class="relative h-48 bg-gray-100 overflow-hidden group">
+                    <img src="assets/image/บรรยากาศในการจัดการเรียนการสอน.jpg" alt="การสังเกตพฤติกรรมผู้เรียน"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4">
+                        <span class="px-3 py-1 bg-blue-600/90 backdrop-blur-md text-white rounded-full text-xs font-medium">สังเกตการสอน</span>
+                        <span class="text-xs text-white/90 font-light"><i class="fa-regular fa-calendar mr-1"></i>2568</span>
                     </div>
                 </div>
                 <div class="p-6 flex-1 flex flex-col justify-between">
                     <div>
+                        <div class="text-xs font-semibold text-blue-600 mb-1">หัวข้อย่อย 2.2</div>
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">การสังเกตพฤติกรรมผู้เรียนและการบริหารจัดการชั้นเรียน</h3>
+                        <p class="text-sm text-gray-500 mb-3">การจัดบรรยากาศการเรียนรู้เชิงบวก</p>
                         <p class="text-sm text-gray-600 leading-relaxed mb-4">
-                            สร้างสรรค์สื่อมัลติมีเดีย บทเรียนคอมพิวเตอร์ช่วยสอน (CAI) อินโฟกราฟิก
-                            และคลิปวิดีโอเพื่อการเรียนรู้ สอดคล้องกับเนื้อหาวิชาและพัฒนาทักษะผู้เรียน
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-2.5 py-1 bg-gray-100 text-gray-600 text-xs rounded-md">Digital Media</span>
-                            <span class="px-2.5 py-1 bg-gray-100 text-gray-600 text-xs rounded-md">Canva & Adobe</span>
-                        </div>
-                    </div>
-                    <a href="teaching-media.html"
-                        class="inline-flex items-center gap-2 text-sm text-purple-600 font-semibold hover:text-purple-700">
-                        ดูสื่อการสอนทั้งหมด <i class="fa-solid fa-arrow-right text-xs"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Card 4: PLC & Seminar -->
-            <div
-                class="item-card activity bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm card-hover flex flex-col">
-                <div
-                    class="relative h-48 bg-gradient-to-tr from-purple-500 to-pink-500 p-6 flex flex-col justify-between text-white">
-                    <div class="flex justify-between items-start">
-                        <span
-                            class="px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-xs font-medium">กิจกรรมทางวิชาการ</span>
-                        <div
-                            class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white text-lg">
-                            <i class="fa-solid fa-users-rectangle"></i>
-                        </div>
-                    </div>
-                    <div>
-                        <p class="text-xs text-pink-100 uppercase tracking-wider font-medium">
-                            การชุมชนแห่งการเรียนรู้ทางวิชาชีพ</p>
-                        <h3 class="text-xl font-bold text-white mt-1">เข้าร่วมกิจกรรม PLC & สัมมนา</h3>
-                    </div>
-                </div>
-                <div class="p-6 flex-1 flex flex-col justify-between">
-                    <div>
-                        <p class="text-sm text-gray-600 leading-relaxed mb-4">
-                            เข้าร่วมการประชุมสะท้อนคิด (PLC)
-                            แลกเปลี่ยนเรียนรู้ร่วมกับครูพี่เลี้ยงและเพื่อนเพื่อนินิสิตฝึกสอน
-                            เพื่อพัฒนากระบวนการจัดการเรียนรู้และแก้ไขปัญหาในชั้นเรียน
-                        </p>
-                    </div>
-                    <div class="flex items-center text-xs text-gray-400 gap-2">
-                        <i class="fa-regular fa-calendar"></i>
-                        <span>ภาคเรียนที่ 1 - 2 / 2568</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 5: Student Support System -->
-            <div
-                class="item-card teaching bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm card-hover flex flex-col">
-                <div
-                    class="relative h-48 bg-gradient-to-tr from-sky-400 to-blue-600 p-6 flex flex-col justify-between text-white">
-                    <div class="flex justify-between items-start">
-                        <span
-                            class="px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-xs font-medium">การดูแลผู้เรียน</span>
-                        <div
-                            class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white text-lg">
-                            <i class="fa-solid fa-heart-circle-check"></i>
-                        </div>
-                    </div>
-                    <div>
-                        <p class="text-xs text-sky-100 uppercase tracking-wider font-medium">กิจการนักเรียน</p>
-                        <h3 class="text-xl font-bold text-white mt-1">ระบบดูแลช่วยเหลือนักเรียน</h3>
-                    </div>
-                </div>
-                <div class="p-6 flex-1 flex flex-col justify-between">
-                    <div>
-                        <p class="text-sm text-gray-600 leading-relaxed mb-4">
-                            ดำเนินการเยี่ยมบ้านนักเรียน การโฮมรูม กิจกรรมแนะแนว
-                            และการคัดกรองผู้เรียนเพื่อส่งเสริมและช่วยเหลือเยียวยานักเรียนเป็นรายบุคคล
+                            ศึกษาและสังเกตบริบทห้องเรียน การสร้างแรงจูงใจในการเรียน การดูแลช่วยเหลือนักเรียนรายบุคคล และกลยุทธ์การคุมชั้นเรียนอย่างสร้างสรรค์
                         </p>
                     </div>
                     <a href="student-care.html"
-                        class="inline-flex items-center gap-2 text-sm text-purple-600 font-semibold hover:text-purple-700">
-                        ดูรายละเอียดระบบดูแลนักเรียน <i class="fa-solid fa-arrow-right text-xs"></i>
+                        class="inline-flex items-center gap-2 text-sm text-purple-600 font-semibold hover:text-purple-700 mt-auto">
+                        ดูระบบดูแลนักเรียน <i class="fa-solid fa-arrow-right text-xs"></i>
                     </a>
                 </div>
             </div>
 
-            <!-- Card 6: Certificates & Training -->
-            <div
-                class="item-card cert bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm card-hover flex flex-col">
-                <div
-                    class="relative h-48 bg-gradient-to-tr from-emerald-500 to-teal-600 p-6 flex flex-col justify-between text-white">
-                    <div class="flex justify-between items-start">
-                        <span
-                            class="px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-xs font-medium">การพัฒนาตนเอง</span>
-                        <div
-                            class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white text-lg">
-                            <i class="fa-solid fa-certificate"></i>
-                        </div>
-                    </div>
-                    <div>
-                        <p class="text-xs text-emerald-100 uppercase tracking-wider font-medium">การพัฒนาวิชาชีพ</p>
-                        <h3 class="text-xl font-bold text-white mt-1">การอบรมและเกียรติบัตรวิชาการ</h3>
+            <!-- Observation Card 3 -->
+            <div class="item-card observation bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm card-hover flex flex-col" style="display: none;">
+                <div class="relative h-48 bg-gray-100 overflow-hidden group">
+                    <img src="assets/image/รูป Practicum 1/LINE_ALBUM_16-23พ.ค.66_๒๓0๕๒๓_91.jpg" alt="การสังเกตและประเมินสื่อดิจิทัล"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4">
+                        <span class="px-3 py-1 bg-blue-600/90 backdrop-blur-md text-white rounded-full text-xs font-medium">สังเกตการสอน</span>
+                        <span class="text-xs text-white/90 font-light"><i class="fa-regular fa-calendar mr-1"></i>2568</span>
                     </div>
                 </div>
                 <div class="p-6 flex-1 flex flex-col justify-between">
                     <div>
+                        <div class="text-xs font-semibold text-blue-600 mb-1">หัวข้อย่อย 2.3</div>
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">การสังเกตและประเมินการใช้สื่อเทคโนโลยีดิจิทัลในการสอน</h3>
+                        <p class="text-sm text-gray-500 mb-3">การประยุกต์ใช้นวัตกรรมการศึกษา</p>
                         <p class="text-sm text-gray-600 leading-relaxed mb-4">
-                            ผ่านการอบรมเชิงปฏิบัติการด้านเทคโนโลยีการศึกษา การวัดและประเมินผล
-                            และการพัฒนาทักษะดิจิทัลสำหรับครูยุคใหม่
+                            ศึกษาเทคนิคการประยุกต์ใช้สื่อมัลติมีเดียและแพลตฟอร์มดิจิทัลในการกระตุ้นความสนใจ และการประเมินผลการเรียนรู้ของผู้เรียน
                         </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span
-                                class="px-2.5 py-1 bg-emerald-50 text-emerald-700 text-xs rounded-md font-medium">Digital
-                                Literacy</span>
-                            <span
-                                class="px-2.5 py-1 bg-emerald-50 text-emerald-700 text-xs rounded-md font-medium">EdTech
-                                Training</span>
-                        </div>
                     </div>
+                    <a href="teaching-media.html"
+                        class="inline-flex items-center gap-2 text-sm text-purple-600 font-semibold hover:text-purple-700 mt-auto">
+                        ดูสื่อและนวัตกรรม <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- ================= CATEGORY 3: กิจกรรมที่เข้าร่วม (activity) ================= -->
+            <!-- Activity Card 1 -->
+            <div class="item-card activity bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm card-hover flex flex-col" style="display: none;">
+                <div class="relative h-48 bg-gray-100 overflow-hidden group">
+                    <img src="assets/image/Profile.jpg" alt="กิจกรรม PLC & สัมมนา"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4">
+                        <span class="px-3 py-1 bg-pink-600/90 backdrop-blur-md text-white rounded-full text-xs font-medium">กิจกรรมที่เข้าร่วม</span>
+                        <span class="text-xs text-white/90 font-light"><i class="fa-regular fa-calendar mr-1"></i>2568</span>
+                    </div>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="text-xs font-semibold text-pink-600 mb-1">หัวข้อย่อย 3.1</div>
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">กิจกรรมชุมชนแห่งการเรียนรู้ทางวิชาชีพ (PLC & สัมมนา)</h3>
+                        <p class="text-sm text-gray-500 mb-3">การพัฒนาวิชาชีพอย่างต่อเนื่อง</p>
+                        <p class="text-sm text-gray-600 leading-relaxed mb-4">
+                            เข้าร่วมการประชุมสะท้อนคิด (PLC) แลกเปลี่ยนเรียนรู้ร่วมกับครูพี่เลี้ยงและเพื่อนินิสิตฝึกสอน เพื่อพัฒนากระบวนการจัดการเรียนรู้
+                        </p>
+                    </div>
+                    <a href="assets/PDF/PLC 1.pdf" target="_blank" rel="noopener noreferrer"
+                        class="inline-flex items-center gap-2 text-sm text-purple-600 font-semibold hover:text-purple-700 mt-auto">
+                        ดูสรุปกิจกรรม PLC <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Activity Card 2 -->
+            <div class="item-card activity bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm card-hover flex flex-col" style="display: none;">
+                <div class="relative h-48 bg-gray-100 overflow-hidden group">
+                    <img src="assets/image/Profile.jpg" alt="กิจกรรมพัฒนาผู้เรียนและค่ายลูกเสือ"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4">
+                        <span class="px-3 py-1 bg-pink-600/90 backdrop-blur-md text-white rounded-full text-xs font-medium">กิจกรรมที่เข้าร่วม</span>
+                        <span class="text-xs text-white/90 font-light"><i class="fa-regular fa-calendar mr-1"></i>2568</span>
+                    </div>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="text-xs font-semibold text-pink-600 mb-1">หัวข้อย่อย 3.2</div>
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">กิจกรรมพัฒนาผู้เรียน ค่ายลูกเสือ-เนตรนารี และงานพิธีการ</h3>
+                        <p class="text-sm text-gray-500 mb-3">กิจกรรมเสริมหลักสูตร</p>
+                        <p class="text-sm text-gray-600 leading-relaxed mb-4">
+                            ปฏิบัติหน้าที่ครูผู้ช่วยวิทยากรฝึกอบรมค่ายลูกเสือ-เนตรนารี กิจกรรมคาบปกครอง และงานกิจกรรมวันสำคัญของโรงเรียน
+                        </p>
+                    </div>
+                    <a href="assets/PDF/คำสั่ง เข้าค่าเนตรนารี.pdf" target="_blank" rel="noopener noreferrer"
+                        class="inline-flex items-center gap-2 text-sm text-purple-600 font-semibold hover:text-purple-700 mt-auto">
+                        ดูคำสั่งและรูปภาพกิจกรรม <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Activity Card 3 -->
+            <div class="item-card activity bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm card-hover flex flex-col" style="display: none;">
+                <div class="relative h-48 bg-gray-100 overflow-hidden group">
+                    <img src="assets/image/Profile.jpg" alt="กิจกรรมจิตอาสาและบริการสังคม"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4">
+                        <span class="px-3 py-1 bg-pink-600/90 backdrop-blur-md text-white rounded-full text-xs font-medium">กิจกรรมที่เข้าร่วม</span>
+                        <span class="text-xs text-white/90 font-light"><i class="fa-regular fa-calendar mr-1"></i>2568</span>
+                    </div>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="text-xs font-semibold text-pink-600 mb-1">หัวข้อย่อย 3.3</div>
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">กิจกรรมจิตอาสาและการมีส่วนร่วมกับชุมชนและท้องถิ่น</h3>
+                        <p class="text-sm text-gray-500 mb-3">การบริการสังคมและวัฒนธรรม</p>
+                        <p class="text-sm text-gray-600 leading-relaxed mb-4">
+                            เข้าร่วมกิจกรรมทำบุญตักบาตร ทอดผ้าป่าเพื่อการศึกษา งานครบรอบโรงเรียน และกิจกรรมบำเพ็ญประโยชน์ร่วมกับชุมชน
+                        </p>
+                    </div>
+                    <a href="student-care.html"
+                        class="inline-flex items-center gap-2 text-sm text-purple-600 font-semibold hover:text-purple-700 mt-auto">
+                        ดูรายละเอียดกิจกรรมชุมชน <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- ================= CATEGORY 4: เกียรติบัตร (cert) ================= -->
+            <!-- Cert Card 1 -->
+            <div class="item-card cert bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm card-hover flex flex-col" style="display: none;">
+                <div class="relative h-48 bg-gray-100 overflow-hidden group">
+                    <img src="assets/image/รูปเกียรติบัตร/29521632-84BC-4892-B7F0-2D4BF2A77702.jpg" alt="เกียรติบัตรวิชาการ"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4">
+                        <span class="px-3 py-1 bg-emerald-600/90 backdrop-blur-md text-white rounded-full text-xs font-medium">เกียรติบัตร</span>
+                        <span class="text-xs text-white/90 font-light"><i class="fa-regular fa-calendar mr-1"></i>2568</span>
+                    </div>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="text-xs font-semibold text-emerald-600 mb-1">หัวข้อย่อย 4.1</div>
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">เกียรติบัตรผลงานวิชาการและการแข่งขันนวัตกรรม (IS / ศิลปหัตถกรรม)</h3>
+                        <p class="text-sm text-gray-500 mb-3">รางวัลและผลงานวิชาการ</p>
+                        <p class="text-sm text-gray-600 leading-relaxed mb-4">
+                            ได้รับเกียรติบัตรการนำเสนอนวัตกรรมและการส่งเสริมผู้เรียนในการแข่งขันงานศิลปหัตถกรรมนักเรียนและงานนำเสนอ IS
+                        </p>
+                    </div>
+                    <a href="assets/PDF/เกียรติบัตร Is.pdf" target="_blank" rel="noopener noreferrer"
+                        class="inline-flex items-center gap-2 text-sm text-purple-600 font-semibold hover:text-purple-700 mt-auto">
+                        ดูเกียรติบัตรวิชาการ <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Cert Card 2 -->
+            <div class="item-card cert bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm card-hover flex flex-col" style="display: none;">
+                <div class="relative h-48 bg-gray-100 overflow-hidden group">
+                    <img src="assets/image/รูปเกียรติบัตร/7F08AE29-EA4F-4686-8460-8F9BF1F13635.jpg" alt="เกียรติบัตรการอบรมเทคโนโลยี"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4">
+                        <span class="px-3 py-1 bg-emerald-600/90 backdrop-blur-md text-white rounded-full text-xs font-medium">เกียรติบัตร</span>
+                        <span class="text-xs text-white/90 font-light"><i class="fa-regular fa-calendar mr-1"></i>2568</span>
+                    </div>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="text-xs font-semibold text-emerald-600 mb-1">หัวข้อย่อย 4.2</div>
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">เกียรติบัตรการอบรมเชิงปฏิบัติการพัฒนาทักษะดิจิทัลและสื่อ EdTech</h3>
+                        <p class="text-sm text-gray-500 mb-3">การพัฒนาตนเองและวิชาชีพ</p>
+                        <p class="text-sm text-gray-600 leading-relaxed mb-4">
+                            ผ่านการอบรมเชิงปฏิบัติการพัฒนาสื่อการสอนดิจิทัล การสร้างสรรค์บทเรียนดิจิทัลและการวัดประเมินผลการเรียนรู้ยุคใหม่
+                        </p>
+                    </div>
+                    <a href="assets/PDF/เกียรติบัตร On the job.pdf" target="_blank" rel="noopener noreferrer"
+                        class="inline-flex items-center gap-2 text-sm text-purple-600 font-semibold hover:text-purple-700 mt-auto">
+                        ดูเกียรติบัตรการอบรม <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Cert Card 3 -->
+            <div class="item-card cert bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm card-hover flex flex-col" style="display: none;">
+                <div class="relative h-48 bg-gray-100 overflow-hidden group">
+                    <img src="assets/image/รูปเกียรติบัตร/92B05B97-FEA4-4AB3-9D8F-AC6090075405.jpg" alt="เกียรติบัตรจิตอาสาและฝึกสอน"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4">
+                        <span class="px-3 py-1 bg-emerald-600/90 backdrop-blur-md text-white rounded-full text-xs font-medium">เกียรติบัตร</span>
+                        <span class="text-xs text-white/90 font-light"><i class="fa-regular fa-calendar mr-1"></i>2568</span>
+                    </div>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="text-xs font-semibold text-emerald-600 mb-1">หัวข้อย่อย 4.3</div>
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">เกียรติบัตรการปฏิบัติหน้าที่ฝึกประสบการณ์วิชาชีพและจิตอาสาดีเด่น</h3>
+                        <p class="text-sm text-gray-500 mb-3">ยกย่องเชิดชูเกียรติ</p>
+                        <p class="text-sm text-gray-600 leading-relaxed mb-4">
+                            เกียรติบัตรยกย่องเชิดชูเกียรติในการปฏิบัติหน้าที่ฝึกประสบการณ์วิชาชีพครูด้วยความมุ่งมั่น ทุ่มเท และเข้าร่วมกิจกรรมบำเพ็ญประโยชน์
+                        </p>
+                    </div>
+                    <a href="assets/PDF/เกียรติบัตรศิลปะหัตถกรรม.pdf" target="_blank" rel="noopener noreferrer"
+                        class="inline-flex items-center gap-2 text-sm text-purple-600 font-semibold hover:text-purple-700 mt-auto">
+                        ดูเกียรติบัตร <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
                 </div>
             </div>
 
@@ -470,13 +582,18 @@
             }
 
             cards.forEach(card => {
-                if (category === 'all' || card.classList.contains(category)) {
+                if (card.classList.contains(category)) {
                     card.style.display = 'flex';
                 } else {
                     card.style.display = 'none';
                 }
             });
         }
+
+        // Initialize default filter on load
+        window.addEventListener('load', () => {
+            filterItems('doc');
+        });
     </script>
 </body>
 
