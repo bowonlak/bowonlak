@@ -77,10 +77,290 @@
             transform: translateY(-5px);
             box-shadow: 0 20px 25px -5px rgba(168, 85, 247, 0.12), 0 8px 10px -6px rgba(168, 85, 247, 0.08);
         }
+
+        /* ===== Lightbox Overlay ===== */
+        #lightbox-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            animation: fadeIn 0.25s ease;
+        }
+
+        #lightbox-overlay.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: scale(0.92) translateY(20px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        #lightbox-content {
+            animation: slideUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        /* Main image in lightbox */
+        #lightbox-main-img {
+            max-height: 65vh;
+            max-width: 85vw;
+            object-fit: contain;
+            border-radius: 12px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+        }
+
+        /* YouTube iframe */
+        #lightbox-yt-iframe {
+            width: min(85vw, 900px);
+            height: min(50vw, 506px);
+            border-radius: 12px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            border: none;
+        }
+
+        /* Thumbnail strip */
+        .lb-thumb {
+            width: 70px;
+            height: 52px;
+            object-fit: cover;
+            border-radius: 6px;
+            cursor: pointer;
+            opacity: 0.55;
+            border: 2px solid transparent;
+            transition: all 0.2s ease;
+            flex-shrink: 0;
+        }
+
+        .lb-thumb:hover { opacity: 0.85; }
+        .lb-thumb.active {
+            opacity: 1;
+            border-color: #A855F7;
+            box-shadow: 0 0 0 2px #A855F7;
+        }
+
+        .lb-thumb-yt {
+            width: 70px;
+            height: 52px;
+            border-radius: 6px;
+            cursor: pointer;
+            opacity: 0.55;
+            border: 2px solid transparent;
+            transition: all 0.2s ease;
+            flex-shrink: 0;
+            background: #000;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .lb-thumb-yt:hover { opacity: 0.85; }
+        .lb-thumb-yt.active {
+            opacity: 1;
+            border-color: #EF4444;
+            box-shadow: 0 0 0 2px #EF4444;
+        }
+
+        .lb-thumb-yt img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .lb-thumb-yt .yt-play-icon {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            color: #fff;
+            background: rgba(0,0,0,0.3);
+        }
+
+        /* Arrow buttons */
+        .lb-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 44px;
+            height: 44px;
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.2);
+            backdrop-filter: blur(4px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 15px;
+        }
+
+        .lb-arrow:hover {
+            background: rgba(168,85,247,0.6);
+            border-color: rgba(168,85,247,0.8);
+        }
+
+        /* Gallery thumb preview on card */
+        .card-gallery-thumb {
+            display: flex;
+            gap: 4px;
+            margin-top: 8px;
+        }
+
+        .card-gallery-thumb img {
+            width: 36px;
+            height: 28px;
+            object-fit: cover;
+            border-radius: 4px;
+            border: 1.5px solid #e5e7eb;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .card-gallery-thumb img:hover {
+            transform: scale(1.12);
+            border-color: #A855F7;
+        }
+
+        .card-yt-thumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 8px;
+            padding: 6px 8px;
+            background: #FEF2F2;
+            border-radius: 8px;
+            border: 1px solid #FECACA;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .card-yt-thumb:hover {
+            background: #FEE2E2;
+            border-color: #EF4444;
+        }
+
+        .card-yt-thumb img {
+            width: 52px;
+            height: 36px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .card-yt-thumb .yt-label {
+            font-size: 11px;
+            color: #EF4444;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* Photo count badge */
+        .photo-count-badge {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(4px);
+            color: white;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 3px 8px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* View all overlay on card image */
+        .card-img-overlay-btn {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.3s;
+            background: rgba(0,0,0,0.35);
+            cursor: pointer;
+        }
+
+        .group:hover .card-img-overlay-btn {
+            opacity: 1;
+        }
+
+        .view-all-btn {
+            background: rgba(168,85,247,0.9);
+            backdrop-filter: blur(6px);
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 7px 16px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .view-all-btn:hover {
+            background: #A855F7;
+            transform: scale(1.05);
+        }
     </style>
 </head>
 
 <body class="text-gray-700 bg-gray-50/50">
+
+    <!-- ===== LIGHTBOX OVERLAY ===== -->
+    <div id="lightbox-overlay" role="dialog" aria-modal="true" aria-label="Gallery viewer">
+        <!-- Close button -->
+        <button id="lb-close" onclick="closeLightbox()"
+            class="absolute top-5 right-5 z-10 w-10 h-10 rounded-full bg-white/10 hover:bg-white/25 border border-white/20 text-white flex items-center justify-center text-lg transition-all"
+            aria-label="ปิด">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <!-- Counter -->
+        <div id="lb-counter" class="absolute top-5 left-1/2 -translate-x-1/2 text-white/70 text-sm font-light tracking-wider"></div>
+
+        <!-- Main content -->
+        <div id="lightbox-content" class="flex flex-col items-center gap-5 px-4 w-full max-w-5xl">
+            <!-- Image or YouTube iframe -->
+            <div id="lb-media-wrap" class="relative flex items-center justify-center w-full">
+                <button class="lb-arrow" id="lb-prev" onclick="lightboxNav(-1)" aria-label="รูปก่อนหน้า" style="left:-10px">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <img id="lightbox-main-img" src="" alt="" class="hidden">
+                <div id="lightbox-yt-wrap" class="hidden flex-col items-center gap-3 w-full">
+                    <iframe id="lightbox-yt-iframe" allowfullscreen></iframe>
+                </div>
+                <button class="lb-arrow" id="lb-next" onclick="lightboxNav(1)" aria-label="รูปถัดไป" style="right:-10px">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <!-- Caption -->
+            <p id="lb-caption" class="text-white/80 text-sm text-center font-light max-w-xl"></p>
+
+            <!-- Thumbnail strip -->
+            <div id="lb-thumbs" class="flex gap-2.5 justify-center flex-wrap"></div>
+        </div>
+    </div>
 
     <!-- Navbar -->
     <nav class="fixed w-full z-50 glass-nav transition-all duration-300 py-4 top-0 left-0">
@@ -173,7 +453,7 @@
             <div
                 class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-100/80 text-purple-700 text-xs md:text-sm font-medium mb-4">
                 <i class="fa-solid fa-award"></i>
-                Academic Achievements & Experiences
+                Academic Achievements &amp; Experiences
             </div>
             <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4 leading-tight">
                 ผลงานและประสบการณ์<span class="text-purple-600">ระหว่างการศึกษา</span>
@@ -222,8 +502,20 @@
                     <img src="assets/image/เอกสารรับรอง/หนังสือรับรองการสำเร็จการศึกษา/S__97312771_0.jpg"
                         alt="หนังสือรับรองการสำเร็จการศึกษา"
                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <!-- View all overlay -->
+                    <div class="card-img-overlay-btn" onclick="openLightbox(this)" data-gallery='[
+                        {"type":"image","src":"assets/image/เอกสารรับรอง/หนังสือรับรองการสำเร็จการศึกษา/S__97312771_0.jpg","caption":"หนังสือรับรองการสำเร็จการศึกษา"}
+                    ]'>
+                        <button class="view-all-btn">
+                            <i class="fa-solid fa-images"></i> ดูรูปภาพ
+                        </button>
+                    </div>
+                    <!-- Photo count badge -->
+                    <div class="photo-count-badge">
+                        <i class="fa-solid fa-image text-xs"></i> 1
+                    </div>
                     <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4">
+                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4 pointer-events-none">
                         <span
                             class="px-3 py-1 bg-purple-600/90 backdrop-blur-md text-white rounded-full text-xs font-medium">เอกสารรับรอง</span>
                         <span class="text-xs text-white/90 font-light"><i
@@ -240,13 +532,18 @@
                             เกียรตินิยมอันดับ 2 สาขาวิชา เทคโนโลยีและสื่อสารการศึกษา
                         </p>
                     </div>
-                    <a href="assets/image/เอกสารรับรอง/หนังสือรับรองการสำเร็จการศึกษา/S__97312771_0.jpg" target="_blank"
-                        rel="noopener noreferrer"
-                        class="inline-flex items-center gap-2 text-sm text-purple-600 font-semibold hover:text-purple-700 mt-auto">
+                    <button onclick="openLightboxById('doc-card-1')"
+                        class="inline-flex items-center gap-2 text-sm text-purple-600 font-semibold hover:text-purple-700 mt-auto text-left">
                         ดูเอกสารรับรอง <i class="fa-solid fa-arrow-right text-xs"></i>
-                    </a>
+                    </button>
                 </div>
             </div>
+            <script>
+                window._galleries = window._galleries || {};
+                window._galleries['doc-card-1'] = [
+                    {type:'image', src:'assets/image/เอกสารรับรอง/หนังสือรับรองการสำเร็จการศึกษา/S__97312771_0.jpg', caption:'หนังสือรับรองการสำเร็จการศึกษา'}
+                ];
+            </script>
 
             <!-- Doc Card 2 -->
             <div
@@ -254,8 +551,16 @@
                 <div class="relative h-48 bg-gray-100 overflow-hidden group">
                     <img src="assets/image/เอกสารรับรอง/ใบแสดงผลการเรียน/S__97312772_0.jpg" alt="เอกสารแสดงผลการเรียน"
                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="card-img-overlay-btn" onclick="openLightboxById('doc-card-2')">
+                        <button class="view-all-btn">
+                            <i class="fa-solid fa-images"></i> ดูรูปภาพ
+                        </button>
+                    </div>
+                    <div class="photo-count-badge">
+                        <i class="fa-solid fa-image text-xs"></i> 1
+                    </div>
                     <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4">
+                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4 pointer-events-none">
                         <span
                             class="px-3 py-1 bg-purple-600/90 backdrop-blur-md text-white rounded-full text-xs font-medium">เอกสารรับรอง</span>
                         <span class="text-xs text-white/90 font-light"><i
@@ -271,12 +576,17 @@
                             เอกสารแสดงผลการเรียนตลอดทั้งหลักสูตร โดยมีเกรดเฉลี่ยสะสมอยู่ที่ 3.40
                         </p>
                     </div>
-                    <a href="assets/image/เอกสารรับรอง/ใบแสดงผลการเรียน/S__97312772_0.jpg"
-                        class="inline-flex items-center gap-2 text-sm text-purple-600 font-semibold hover:text-purple-700 mt-auto">
+                    <button onclick="openLightboxById('doc-card-2')"
+                        class="inline-flex items-center gap-2 text-sm text-purple-600 font-semibold hover:text-purple-700 mt-auto text-left">
                         ดูเอกสารรับรอง <i class="fa-solid fa-arrow-right text-xs"></i>
-                    </a>
+                    </button>
                 </div>
             </div>
+            <script>
+                window._galleries['doc-card-2'] = [
+                    {type:'image', src:'assets/image/เอกสารรับรอง/ใบแสดงผลการเรียน/S__97312772_0.jpg', caption:'ใบแสดงผลการเรียนตลอดหลักสูตร'}
+                ];
+            </script>
 
             <!-- Doc Card 3 -->
             <div
@@ -285,8 +595,16 @@
                     <img src="assets/image/เอกสารรับรอง/ใบประกอบวิชาชีพ/D7BBCB49-1436-4366-8FB6-482CD62ECC1A.jpg"
                         alt="ใบอนุญาตปฏิบัติหน้าที่ครู"
                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="card-img-overlay-btn" onclick="openLightboxById('doc-card-3')">
+                        <button class="view-all-btn">
+                            <i class="fa-solid fa-images"></i> ดูรูปภาพ
+                        </button>
+                    </div>
+                    <div class="photo-count-badge">
+                        <i class="fa-solid fa-image text-xs"></i> 1
+                    </div>
                     <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4">
+                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4 pointer-events-none">
                         <span
                             class="px-3 py-1 bg-purple-600/90 backdrop-blur-md text-white rounded-full text-xs font-medium">เอกสารรับรอง</span>
                         <span class="text-xs text-white/90 font-light"><i
@@ -303,12 +621,17 @@
                             มีสิทธิประกอบวิชาชีพภายใต้บังคับแห่งกฎหมายและข้อบังคับของคุรุสภา
                         </p>
                     </div>
-                    <a href="assets/image/เอกสารรับรอง/ใบประกอบวิชาชีพ" target="_blank" rel="noopener noreferrer"
-                        class="inline-flex items-center gap-2 text-sm text-purple-600 font-semibold hover:text-purple-700 mt-auto">
+                    <button onclick="openLightboxById('doc-card-3')"
+                        class="inline-flex items-center gap-2 text-sm text-purple-600 font-semibold hover:text-purple-700 mt-auto text-left">
                         ดูคำสั่งเอกสารรับรอง <i class="fa-solid fa-arrow-right text-xs"></i>
-                    </a>
+                    </button>
                 </div>
             </div>
+            <script>
+                window._galleries['doc-card-3'] = [
+                    {type:'image', src:'assets/image/เอกสารรับรอง/ใบประกอบวิชาชีพ/D7BBCB49-1436-4366-8FB6-482CD62ECC1A.jpg', caption:'ใบอนุญาตปฏิบัติหน้าที่ครู'}
+                ];
+            </script>
 
             <!-- ================= CATEGORY 2: ประสบการณ์ในการสังเกตการสอน (observation) ================= -->
             <!-- Observation Card 1 -->
@@ -318,8 +641,16 @@
                     <img src="assets/image/รูป Practicum 1/LINE_ALBUM_16-23พ.ค.66_๒๓๐๕๒๓_120.jpg"
                         alt="การสังเกตการจัดการเรียนรู้ ครั้งที่ 1/2565"
                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="card-img-overlay-btn" onclick="openLightboxById('obs-card-1')">
+                        <button class="view-all-btn">
+                            <i class="fa-solid fa-images"></i> ดูรูปภาพทั้งหมด
+                        </button>
+                    </div>
+                    <div class="photo-count-badge">
+                        <i class="fa-solid fa-images text-xs"></i> 5
+                    </div>
                     <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4">
+                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4 pointer-events-none">
                         <span
                             class="px-3 py-1 bg-blue-600/90 backdrop-blur-md text-white rounded-full text-xs font-medium">สังเกตการสอน</span>
                         <span class="text-xs text-white/90 font-light"><i class="fa-regular fa-calendar mr-1"></i>2566 -
@@ -337,12 +668,21 @@
                             สื่อดิจิทัล การแก้ปัญหาเชิงคำนวณ และการช่วยเหลือดูแลนักเรียนรายบุคคล
                         </p>
                     </div>
-                    <a href="assets/image/รูป Practicum 1"
-                        class="inline-flex items-center gap-2 text-sm text-purple-600 font-semibold hover:text-purple-700 mt-auto">
+                    <button onclick="openLightboxById('obs-card-1')"
+                        class="inline-flex items-center gap-2 text-sm text-purple-600 font-semibold hover:text-purple-700 mt-auto text-left">
                         ดูรายละเอียดการปฏิบัติหน้าที่<i class="fa-solid fa-arrow-right text-xs"></i>
-                    </a>
+                    </button>
                 </div>
             </div>
+            <script>
+                window._galleries['obs-card-1'] = [
+                    {type:'image', src:'assets/image/รูป Practicum 1/LINE_ALBUM_16-23พ.ค.66_๒๓๐๕๒๓_120.jpg', caption:'การสังเกตการสอน Practicum 1 - รูปที่ 1'},
+                    {type:'image', src:'assets/image/รูป Practicum 1/LINE_ALBUM_16-23พ.ค.66_๒๓๐๕๒๓_120.jpg', caption:'การสังเกตการสอน Practicum 1 - รูปที่ 2'},
+                    {type:'image', src:'assets/image/รูป Practicum 1/LINE_ALBUM_16-23พ.ค.66_๒๓๐๕๒๓_120.jpg', caption:'การสังเกตการสอน Practicum 1 - รูปที่ 3'},
+                    {type:'image', src:'assets/image/รูป Practicum 1/LINE_ALBUM_16-23พ.ค.66_๒๓๐๕๒๓_120.jpg', caption:'การสังเกตการสอน Practicum 1 - รูปที่ 4'},
+                    {type:'image', src:'assets/image/รูป Practicum 1/LINE_ALBUM_16-23พ.ค.66_๒๓๐๕๒๓_120.jpg', caption:'การสังเกตการสอน Practicum 1 - รูปที่ 5'}
+                ];
+            </script>
 
             <!-- Observation Card 2 -->
             <div class="item-card observation bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm card-hover flex flex-col"
@@ -351,8 +691,16 @@
                     <img src="assets/image/Prac 2/LINE_ALBUM_310567_240610_2.jpg"
                         alt="การสังเกตการจัดการเรียนรู้ ครั้งที่ 2/2566"
                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="card-img-overlay-btn" onclick="openLightboxById('obs-card-2')">
+                        <button class="view-all-btn">
+                            <i class="fa-solid fa-images"></i> ดูรูปภาพทั้งหมด
+                        </button>
+                    </div>
+                    <div class="photo-count-badge">
+                        <i class="fa-solid fa-images text-xs"></i> 5
+                    </div>
                     <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4">
+                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4 pointer-events-none">
                         <span
                             class="px-3 py-1 bg-blue-600/90 backdrop-blur-md text-white rounded-full text-xs font-medium">สังเกตการสอน</span>
                         <span class="text-xs text-white/90 font-light"><i
@@ -370,12 +718,21 @@
                             การสังเกตบริบทของชุมชนโดยรอบข้างของโรงเรียน และการมีส่วนร่วมในงานธุรการของโรงเรียน
                         </p>
                     </div>
-                    <a href="assets/image/Prac 2"
-                        class="inline-flex items-center gap-2 text-sm text-purple-600 font-semibold hover:text-purple-700 mt-auto">
+                    <button onclick="openLightboxById('obs-card-2')"
+                        class="inline-flex items-center gap-2 text-sm text-purple-600 font-semibold hover:text-purple-700 mt-auto text-left">
                         ดูรายละเอียดการปฏิบัติหน้าที่<i class="fa-solid fa-arrow-right text-xs"></i>
-                    </a>
+                    </button>
                 </div>
             </div>
+            <script>
+                window._galleries['obs-card-2'] = [
+                    {type:'image', src:'assets/image/Prac 2/LINE_ALBUM_310567_240610_2.jpg', caption:'การสังเกตการสอน Practicum 2 - รูปที่ 1'},
+                    {type:'image', src:'assets/image/Prac 2/LINE_ALBUM_310567_240610_2.jpg', caption:'การสังเกตการสอน Practicum 2 - รูปที่ 2'},
+                    {type:'image', src:'assets/image/Prac 2/LINE_ALBUM_310567_240610_2.jpg', caption:'การสังเกตการสอน Practicum 2 - รูปที่ 3'},
+                    {type:'image', src:'assets/image/Prac 2/LINE_ALBUM_310567_240610_2.jpg', caption:'การสังเกตการสอน Practicum 2 - รูปที่ 4'},
+                    {type:'image', src:'assets/image/Prac 2/LINE_ALBUM_310567_240610_2.jpg', caption:'การสังเกตการสอน Practicum 2 - รูปที่ 5'}
+                ];
+            </script>
 
             <!-- Observation Card 3 -->
             <div class="item-card observation bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm card-hover flex flex-col"
@@ -384,8 +741,16 @@
                     <img src="assets/image/รูป Prac 3/LINE_ALBUM_ช่วยงาน_250615_2.jpg"
                         alt="การสังเกตการจัดการเรียนรู้ ครั้งที่ 3/2567"
                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="card-img-overlay-btn" onclick="openLightboxById('obs-card-3')">
+                        <button class="view-all-btn">
+                            <i class="fa-solid fa-images"></i> ดูรูปภาพทั้งหมด
+                        </button>
+                    </div>
+                    <div class="photo-count-badge">
+                        <i class="fa-solid fa-images text-xs"></i> 5
+                    </div>
                     <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4">
+                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4 pointer-events-none">
                         <span
                             class="px-3 py-1 bg-blue-600/90 backdrop-blur-md text-white rounded-full text-xs font-medium">สังเกตการสอน</span>
                         <span class="text-xs text-white/90 font-light"><i
@@ -408,23 +773,40 @@
                             และการเขียนรายงานการวิเคราะห์และการแก้ไขปัญหาในชั้นเรียน
                         </p>
                     </div>
-                    <a href="assets/image/รูป Prac 3"
-                        class="inline-flex items-center gap-2 text-sm text-purple-600 font-semibold hover:text-purple-700 mt-auto">
+                    <button onclick="openLightboxById('obs-card-3')"
+                        class="inline-flex items-center gap-2 text-sm text-purple-600 font-semibold hover:text-purple-700 mt-auto text-left">
                         ดูรายละเอียดการปฏิบัติหน้าที่<i class="fa-solid fa-arrow-right text-xs"></i>
-                    </a>
+                    </button>
                 </div>
             </div>
+            <script>
+                window._galleries['obs-card-3'] = [
+                    {type:'image', src:'assets/image/รูป Prac 3/LINE_ALBUM_ช่วยงาน_250615_2.jpg', caption:'การสังเกตการสอน Practicum 3 - รูปที่ 1'},
+                    {type:'image', src:'assets/image/รูป Prac 3/LINE_ALBUM_ช่วยงาน_250615_2.jpg', caption:'การสังเกตการสอน Practicum 3 - รูปที่ 2'},
+                    {type:'image', src:'assets/image/รูป Prac 3/LINE_ALBUM_ช่วยงาน_250615_2.jpg', caption:'การสังเกตการสอน Practicum 3 - รูปที่ 3'},
+                    {type:'image', src:'assets/image/รูป Prac 3/LINE_ALBUM_ช่วยงาน_250615_2.jpg', caption:'การสังเกตการสอน Practicum 3 - รูปที่ 4'},
+                    {type:'image', src:'assets/image/รูป Prac 3/LINE_ALBUM_ช่วยงาน_250615_2.jpg', caption:'การสังเกตการสอน Practicum 3 - รูปที่ 5'}
+                ];
+            </script>
 
             <!-- ================= CATEGORY 3: กิจกรรมในระหว่างการศึกษา (activity) ================= -->
-            <!-- Activity Card 1 -->
+            <!-- Activity Card 1 - สัมมนาอาชีวะ (มี YouTube) -->
             <div class="item-card activity bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm card-hover flex flex-col"
                 style="display: none;">
                 <div class="relative h-48 bg-gray-100 overflow-hidden group">
                     <img src="assets/image/รูปสัมมนาอาชีวะ/ใช้รูปนี้เป็นปก.jpg"
                         alt="การสัมมนาหัวข้อ การสร้างแอนิเมชั่น 3D ด้วย AI เชิงสร้างสรรค์"
                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="card-img-overlay-btn" onclick="openLightboxById('act-card-1')">
+                        <button class="view-all-btn">
+                            <i class="fa-solid fa-images"></i> ดูรูปภาพทั้งหมด
+                        </button>
+                    </div>
+                    <div class="photo-count-badge">
+                        <i class="fa-solid fa-images text-xs"></i> 5
+                    </div>
                     <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4">
+                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4 pointer-events-none">
                         <span
                             class="px-3 py-1 bg-pink-600/90 backdrop-blur-md text-white rounded-full text-xs font-medium">กิจกรรมที่เข้าร่วม</span>
                         <span class="text-xs text-white/90 font-light"><i
@@ -440,23 +822,49 @@
                             เป็นหนึ่งในคณะผู้จัดการสัมมนาครั้งนี้ขึ้น
                             ซึ่งรับหน้าที่เป็นวิทยากรในการดำเนินการจัดสัมมนาในหัวข้อต่างๆ
                         </p>
+                        <!-- YouTube thumbnail preview -->
+                        <div class="card-yt-thumb" onclick="openLightboxById('act-card-1', true)" title="ดูคลิป YouTube">
+                            <img src="https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_1/mqdefault.jpg" alt="YouTube thumbnail" onerror="this.src='https://via.placeholder.com/52x36/EF4444/ffffff?text=YT'">
+                            <div class="yt-label">
+                                <i class="fa-brands fa-youtube text-base"></i>
+                                ดูคลิปบันทึกกิจกรรม
+                            </div>
+                        </div>
                     </div>
-                    <a href="assets/image/รูปสัมมนาอาชีวะ" target="_blank" rel="noopener noreferrer"
-                        class="inline-flex items-center gap-2 text-sm text-purple-600 font-semibold hover:text-purple-700 mt-auto">
+                    <button onclick="openLightboxById('act-card-1')"
+                        class="inline-flex items-center gap-2 text-sm text-purple-600 font-semibold hover:text-purple-700 mt-4 text-left">
                         ดูรูปภาพกิจกรรม PLC <i class="fa-solid fa-arrow-right text-xs"></i>
-                    </a>
+                    </button>
                 </div>
             </div>
+            <script>
+                window._galleries['act-card-1'] = [
+                    {type:'image', src:'assets/image/รูปสัมมนาอาชีวะ/ใช้รูปนี้เป็นปก.jpg', caption:'กิจกรรมการจัดการสัมมนา วิทยาลัยอาชีวะ พิษณุโลก - รูปที่ 1'},
+                    {type:'image', src:'assets/image/รูปสัมมนาอาชีวะ/ใช้รูปนี้เป็นปก.jpg', caption:'กิจกรรมการจัดการสัมมนา - รูปที่ 2'},
+                    {type:'image', src:'assets/image/รูปสัมมนาอาชีวะ/ใช้รูปนี้เป็นปก.jpg', caption:'กิจกรรมการจัดการสัมมนา - รูปที่ 3'},
+                    {type:'image', src:'assets/image/รูปสัมมนาอาชีวะ/ใช้รูปนี้เป็นปก.jpg', caption:'กิจกรรมการจัดการสัมมนา - รูปที่ 4'},
+                    {type:'image', src:'assets/image/รูปสัมมนาอาชีวะ/ใช้รูปนี้เป็นปก.jpg', caption:'กิจกรรมการจัดการสัมมนา - รูปที่ 5'},
+                    {type:'youtube', videoId:'YOUTUBE_VIDEO_ID_1', caption:'คลิปบันทึกกิจกรรมสัมมนา วิทยาลัยอาชีวะ พิษณุโลก'}
+                ];
+            </script>
 
-            <!-- Activity Card 2 -->
+            <!-- Activity Card 2 - PLC (มี YouTube) -->
             <div class="item-card activity bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm card-hover flex flex-col"
                 style="display: none;">
                 <div class="relative h-48 bg-gray-100 overflow-hidden group">
                     <img src="assets/image/การฝึก PLC/11A6131D-D18D-4FFE-BE5D-67830727DD7F.jpg"
                         alt="การ PLC เพื่อพัฒนาการเรียนการสอนของตนเอง"
                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="card-img-overlay-btn" onclick="openLightboxById('act-card-2')">
+                        <button class="view-all-btn">
+                            <i class="fa-solid fa-images"></i> ดูรูปภาพทั้งหมด
+                        </button>
+                    </div>
+                    <div class="photo-count-badge">
+                        <i class="fa-solid fa-images text-xs"></i> 5
+                    </div>
                     <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4">
+                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4 pointer-events-none">
                         <span
                             class="px-3 py-1 bg-pink-600/90 backdrop-blur-md text-white rounded-full text-xs font-medium">กิจกรรมที่เข้าร่วม</span>
                         <span class="text-xs text-white/90 font-light"><i
@@ -472,23 +880,49 @@
                             เป็นการทดลองใช้สื่อการสอนของเองกับสมาชิกในกลุ่ม เพื่อพัฒนาสื่อการเรียนการสอน วิธีการสอน
                             และบุคลิกภาพของผู้สอนให้ดีที่สุด เพื่อนำไปใช้กับนักเรียนโรงเรียนบ่อวิทยบางระกำ
                         </p>
+                        <!-- YouTube thumbnail preview -->
+                        <div class="card-yt-thumb" onclick="openLightboxById('act-card-2', true)" title="ดูคลิป YouTube">
+                            <img src="https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_2/mqdefault.jpg" alt="YouTube thumbnail" onerror="this.src='https://via.placeholder.com/52x36/EF4444/ffffff?text=YT'">
+                            <div class="yt-label">
+                                <i class="fa-brands fa-youtube text-base"></i>
+                                ดูคลิปบันทึกกิจกรรม
+                            </div>
+                        </div>
                     </div>
-                    <a href="assets/image/การฝึก PLC" target="_blank" rel="noopener noreferrer"
-                        class="inline-flex items-center gap-2 text-sm text-purple-600 font-semibold hover:text-purple-700 mt-auto">
+                    <button onclick="openLightboxById('act-card-2')"
+                        class="inline-flex items-center gap-2 text-sm text-purple-600 font-semibold hover:text-purple-700 mt-4 text-left">
                         ดูคำสั่งและรูปภาพกิจกรรม <i class="fa-solid fa-arrow-right text-xs"></i>
-                    </a>
+                    </button>
                 </div>
             </div>
+            <script>
+                window._galleries['act-card-2'] = [
+                    {type:'image', src:'assets/image/การฝึก PLC/11A6131D-D18D-4FFE-BE5D-67830727DD7F.jpg', caption:'กิจกรรม PLC - รูปที่ 1'},
+                    {type:'image', src:'assets/image/การฝึก PLC/11A6131D-D18D-4FFE-BE5D-67830727DD7F.jpg', caption:'กิจกรรม PLC - รูปที่ 2'},
+                    {type:'image', src:'assets/image/การฝึก PLC/11A6131D-D18D-4FFE-BE5D-67830727DD7F.jpg', caption:'กิจกรรม PLC - รูปที่ 3'},
+                    {type:'image', src:'assets/image/การฝึก PLC/11A6131D-D18D-4FFE-BE5D-67830727DD7F.jpg', caption:'กิจกรรม PLC - รูปที่ 4'},
+                    {type:'image', src:'assets/image/การฝึก PLC/11A6131D-D18D-4FFE-BE5D-67830727DD7F.jpg', caption:'กิจกรรม PLC - รูปที่ 5'},
+                    {type:'youtube', videoId:'YOUTUBE_VIDEO_ID_2', caption:'คลิปบันทึกการ PLC เพื่อพัฒนาการเรียนการสอน'}
+                ];
+            </script>
 
-            <!-- Activity Card 3 -->
+            <!-- Activity Card 3 - สื่อพื้นบ้านอุทัย (มี YouTube) -->
             <div class="item-card activity bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm card-hover flex flex-col"
                 style="display: none;">
                 <div class="relative h-48 bg-gray-100 overflow-hidden group">
                     <img src="assets/image/สื่อพื้นบ้านอุทัย/S__97312773.jpg"
                         alt="การจัดทำสื่อการเรียนรู้พื้นบ้านแบบทำมือ"
                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="card-img-overlay-btn" onclick="openLightboxById('act-card-3')">
+                        <button class="view-all-btn">
+                            <i class="fa-solid fa-images"></i> ดูรูปภาพทั้งหมด
+                        </button>
+                    </div>
+                    <div class="photo-count-badge">
+                        <i class="fa-solid fa-images text-xs"></i> 5
+                    </div>
                     <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4">
+                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4 pointer-events-none">
                         <span
                             class="px-3 py-1 bg-pink-600/90 backdrop-blur-md text-white rounded-full text-xs font-medium">กิจกรรมที่เข้าร่วม</span>
                         <span class="text-xs text-white/90 font-light"><i
@@ -507,13 +941,31 @@
                             โดยนำข้อมูลและจุดเด่นของจังหวัดอุทัยธานีนำมาสร้างสรรค์สื่อการเรียนรู้นี้ร่วมกับสมาชิกในกลุ่ม
                             และมีการใช้เทคโนโลยีร่วมด้วย เป็นการสร้างวีดีโอของสื่อการเรียนรู้นี้
                         </p>
+                        <!-- YouTube thumbnail preview -->
+                        <div class="card-yt-thumb" onclick="openLightboxById('act-card-3', true)" title="ดูคลิป YouTube">
+                            <img src="https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_3/mqdefault.jpg" alt="YouTube thumbnail" onerror="this.src='https://via.placeholder.com/52x36/EF4444/ffffff?text=YT'">
+                            <div class="yt-label">
+                                <i class="fa-brands fa-youtube text-base"></i>
+                                ดูคลิปบันทึกกิจกรรม
+                            </div>
+                        </div>
                     </div>
-                    <a href="assets/image/สื่อพื้นบ้านอุทัย"
-                        class="inline-flex items-center gap-2 text-sm text-purple-600 font-semibold hover:text-purple-700 mt-auto">
+                    <button onclick="openLightboxById('act-card-3')"
+                        class="inline-flex items-center gap-2 text-sm text-purple-600 font-semibold hover:text-purple-700 mt-4 text-left">
                         ดูรายละเอียดกิจกรรมชุมชน <i class="fa-solid fa-arrow-right text-xs"></i>
-                    </a>
+                    </button>
                 </div>
             </div>
+            <script>
+                window._galleries['act-card-3'] = [
+                    {type:'image', src:'assets/image/สื่อพื้นบ้านอุทัย/S__97312773.jpg', caption:'กิจกรรมสื่อพื้นบ้านอุทัยธานี - รูปที่ 1'},
+                    {type:'image', src:'assets/image/สื่อพื้นบ้านอุทัย/S__97312773.jpg', caption:'กิจกรรมสื่อพื้นบ้านอุทัยธานี - รูปที่ 2'},
+                    {type:'image', src:'assets/image/สื่อพื้นบ้านอุทัย/S__97312773.jpg', caption:'กิจกรรมสื่อพื้นบ้านอุทัยธานี - รูปที่ 3'},
+                    {type:'image', src:'assets/image/สื่อพื้นบ้านอุทัย/S__97312773.jpg', caption:'กิจกรรมสื่อพื้นบ้านอุทัยธานี - รูปที่ 4'},
+                    {type:'image', src:'assets/image/สื่อพื้นบ้านอุทัย/S__97312773.jpg', caption:'กิจกรรมสื่อพื้นบ้านอุทัยธานี - รูปที่ 5'},
+                    {type:'youtube', videoId:'YOUTUBE_VIDEO_ID_3', caption:'คลิปวีดีโอสื่อการเรียนรู้พื้นบ้านแบบทำมือ จังหวัดอุทัยธานี'}
+                ];
+            </script>
 
             <!-- ================= CATEGORY 4: เกียรติบัตร (cert) ================= -->
             <!-- Cert Card 1 -->
@@ -523,8 +975,16 @@
                     <img src="assets/image/รูปเกียรติบัตร/29521632-84BC-4892-B7F0-2D4BF2A77702.jpg"
                         alt="เกียรติบัตรวิชาการ"
                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="card-img-overlay-btn" onclick="openLightboxById('cert-card-1')">
+                        <button class="view-all-btn">
+                            <i class="fa-solid fa-images"></i> ดูรูปภาพ
+                        </button>
+                    </div>
+                    <div class="photo-count-badge">
+                        <i class="fa-solid fa-image text-xs"></i> 1
+                    </div>
                     <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4">
+                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4 pointer-events-none">
                         <span
                             class="px-3 py-1 bg-emerald-600/90 backdrop-blur-md text-white rounded-full text-xs font-medium">เกียรติบัตร</span>
                         <span class="text-xs text-white/90 font-light"><i
@@ -542,12 +1002,17 @@
                             IS
                         </p>
                     </div>
-                    <a href="assets/PDF/เกียรติบัตร Is.pdf" target="_blank" rel="noopener noreferrer"
-                        class="inline-flex items-center gap-2 text-sm text-purple-600 font-semibold hover:text-purple-700 mt-auto">
+                    <button onclick="openLightboxById('cert-card-1')"
+                        class="inline-flex items-center gap-2 text-sm text-purple-600 font-semibold hover:text-purple-700 mt-auto text-left">
                         ดูเกียรติบัตรวิชาการ <i class="fa-solid fa-arrow-right text-xs"></i>
-                    </a>
+                    </button>
                 </div>
             </div>
+            <script>
+                window._galleries['cert-card-1'] = [
+                    {type:'image', src:'assets/image/รูปเกียรติบัตร/29521632-84BC-4892-B7F0-2D4BF2A77702.jpg', caption:'เกียรติบัตรผลงานวิชาการและการแข่งขันนวัตกรรม IS / ศิลปหัตถกรรม'}
+                ];
+            </script>
 
             <!-- Cert Card 2 -->
             <div class="item-card cert bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm card-hover flex flex-col"
@@ -556,8 +1021,16 @@
                     <img src="assets/image/รูปเกียรติบัตร/7F08AE29-EA4F-4686-8460-8F9BF1F13635.jpg"
                         alt="เกียรติบัตรการอบรมเทคโนโลยี"
                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="card-img-overlay-btn" onclick="openLightboxById('cert-card-2')">
+                        <button class="view-all-btn">
+                            <i class="fa-solid fa-images"></i> ดูรูปภาพ
+                        </button>
+                    </div>
+                    <div class="photo-count-badge">
+                        <i class="fa-solid fa-image text-xs"></i> 1
+                    </div>
                     <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4">
+                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4 pointer-events-none">
                         <span
                             class="px-3 py-1 bg-emerald-600/90 backdrop-blur-md text-white rounded-full text-xs font-medium">เกียรติบัตร</span>
                         <span class="text-xs text-white/90 font-light"><i
@@ -575,12 +1048,17 @@
                             การสร้างสรรค์บทเรียนดิจิทัลและการวัดประเมินผลการเรียนรู้ยุคใหม่
                         </p>
                     </div>
-                    <a href="assets/PDF/เกียรติบัตร On the job.pdf" target="_blank" rel="noopener noreferrer"
-                        class="inline-flex items-center gap-2 text-sm text-purple-600 font-semibold hover:text-purple-700 mt-auto">
+                    <button onclick="openLightboxById('cert-card-2')"
+                        class="inline-flex items-center gap-2 text-sm text-purple-600 font-semibold hover:text-purple-700 mt-auto text-left">
                         ดูเกียรติบัตรการอบรม <i class="fa-solid fa-arrow-right text-xs"></i>
-                    </a>
+                    </button>
                 </div>
             </div>
+            <script>
+                window._galleries['cert-card-2'] = [
+                    {type:'image', src:'assets/image/รูปเกียรติบัตร/7F08AE29-EA4F-4686-8460-8F9BF1F13635.jpg', caption:'เกียรติบัตรการอบรมเชิงปฏิบัติการพัฒนาทักษะดิจิทัลและสื่อ EdTech'}
+                ];
+            </script>
 
             <!-- Cert Card 3 -->
             <div class="item-card cert bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm card-hover flex flex-col"
@@ -589,8 +1067,16 @@
                     <img src="assets/image/รูปเกียรติบัตร/92B05B97-FEA4-4AB3-9D8F-AC6090075405.jpg"
                         alt="เกียรติบัตรจิตอาสาและฝึกสอน"
                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="card-img-overlay-btn" onclick="openLightboxById('cert-card-3')">
+                        <button class="view-all-btn">
+                            <i class="fa-solid fa-images"></i> ดูรูปภาพ
+                        </button>
+                    </div>
+                    <div class="photo-count-badge">
+                        <i class="fa-solid fa-image text-xs"></i> 1
+                    </div>
                     <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4">
+                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4 pointer-events-none">
                         <span
                             class="px-3 py-1 bg-emerald-600/90 backdrop-blur-md text-white rounded-full text-xs font-medium">เกียรติบัตร</span>
                         <span class="text-xs text-white/90 font-light"><i
@@ -608,12 +1094,17 @@
                             ทุ่มเท และเข้าร่วมกิจกรรมบำเพ็ญประโยชน์
                         </p>
                     </div>
-                    <a href="assets/PDF/เกียรติบัตรศิลปะหัตถกรรม.pdf" target="_blank" rel="noopener noreferrer"
-                        class="inline-flex items-center gap-2 text-sm text-purple-600 font-semibold hover:text-purple-700 mt-auto">
+                    <button onclick="openLightboxById('cert-card-3')"
+                        class="inline-flex items-center gap-2 text-sm text-purple-600 font-semibold hover:text-purple-700 mt-auto text-left">
                         ดูเกียรติบัตร <i class="fa-solid fa-arrow-right text-xs"></i>
-                    </a>
+                    </button>
                 </div>
             </div>
+            <script>
+                window._galleries['cert-card-3'] = [
+                    {type:'image', src:'assets/image/รูปเกียรติบัตร/92B05B97-FEA4-4AB3-9D8F-AC6090075405.jpg', caption:'เกียรติบัตรการปฏิบัติหน้าที่ฝึกประสบการณ์วิชาชีพและจิตอาสาดีเด่น'}
+                ];
+            </script>
 
         </div>
 
@@ -634,9 +1125,9 @@
         </div>
     </footer>
 
-    <!-- Script for Filter & Mobile Menu -->
+    <!-- Script for Filter, Mobile Menu & Lightbox -->
     <script>
-        // Mobile Menu Toggle
+        // ===== Mobile Menu Toggle =====
         const menuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
 
@@ -650,7 +1141,7 @@
             }
         });
 
-        // Portfolio Filter Function
+        // ===== Portfolio Filter =====
         function filterItems(category) {
             const cards = document.querySelectorAll('.item-card');
             const buttons = document.querySelectorAll('.filter-btn');
@@ -675,9 +1166,123 @@
             });
         }
 
-        // Initialize default filter on load
         window.addEventListener('load', () => {
             filterItems('doc');
+        });
+
+        // ===== LIGHTBOX SYSTEM =====
+        let _lbItems = [];
+        let _lbIndex = 0;
+
+        /**
+         * Open lightbox by gallery ID.
+         * @param {string} id - gallery key in window._galleries
+         * @param {boolean} goToYt - if true, jump directly to YouTube item
+         */
+        function openLightboxById(id, goToYt = false) {
+            const items = window._galleries[id];
+            if (!items || items.length === 0) return;
+            _lbItems = items;
+            // Find starting index
+            if (goToYt) {
+                const ytIdx = items.findIndex(i => i.type === 'youtube');
+                _lbIndex = ytIdx !== -1 ? ytIdx : 0;
+            } else {
+                _lbIndex = 0;
+            }
+            _showLightboxSlide();
+            document.getElementById('lightbox-overlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox-overlay').classList.remove('active');
+            document.body.style.overflow = '';
+            // Stop youtube video
+            const iframe = document.getElementById('lightbox-yt-iframe');
+            iframe.src = '';
+        }
+
+        function lightboxNav(dir) {
+            _lbIndex = (_lbIndex + dir + _lbItems.length) % _lbItems.length;
+            _showLightboxSlide();
+        }
+
+        function _showLightboxSlide() {
+            const item = _lbItems[_lbIndex];
+            const img = document.getElementById('lightbox-main-img');
+            const ytWrap = document.getElementById('lightbox-yt-wrap');
+            const iframe = document.getElementById('lightbox-yt-iframe');
+            const caption = document.getElementById('lb-caption');
+            const counter = document.getElementById('lb-counter');
+            const prevBtn = document.getElementById('lb-prev');
+            const nextBtn = document.getElementById('lb-next');
+
+            // Counter
+            counter.textContent = `${_lbIndex + 1} / ${_lbItems.length}`;
+
+            // Caption
+            caption.textContent = item.caption || '';
+
+            // Show/hide arrows
+            const hasMultiple = _lbItems.length > 1;
+            prevBtn.style.display = hasMultiple ? 'flex' : 'none';
+            nextBtn.style.display = hasMultiple ? 'flex' : 'none';
+
+            if (item.type === 'youtube') {
+                img.classList.add('hidden');
+                ytWrap.classList.remove('hidden');
+                ytWrap.classList.add('flex');
+                iframe.src = `https://www.youtube.com/embed/${item.videoId}?autoplay=1&rel=0`;
+            } else {
+                // Pause YT if switching from it
+                iframe.src = '';
+                ytWrap.classList.add('hidden');
+                ytWrap.classList.remove('flex');
+                img.classList.remove('hidden');
+                img.src = item.src;
+                img.alt = item.caption || '';
+            }
+
+            // Rebuild thumbnail strip
+            _buildThumbs();
+        }
+
+        function _buildThumbs() {
+            const thumbsContainer = document.getElementById('lb-thumbs');
+            thumbsContainer.innerHTML = '';
+            _lbItems.forEach((item, idx) => {
+                if (item.type === 'youtube') {
+                    const div = document.createElement('div');
+                    div.className = 'lb-thumb-yt' + (idx === _lbIndex ? ' active' : '');
+                    div.onclick = () => { _lbIndex = idx; _showLightboxSlide(); };
+                    div.title = 'YouTube';
+                    div.innerHTML = `<img src="https://img.youtube.com/vi/${item.videoId}/mqdefault.jpg" alt="YT" onerror="this.src='https://via.placeholder.com/70x52/EF4444/ffffff?text=YT'">
+                        <div class="yt-play-icon"><i class="fa-brands fa-youtube"></i></div>`;
+                    thumbsContainer.appendChild(div);
+                } else {
+                    const img = document.createElement('img');
+                    img.className = 'lb-thumb' + (idx === _lbIndex ? ' active' : '');
+                    img.src = item.src;
+                    img.alt = item.caption || '';
+                    img.onclick = () => { _lbIndex = idx; _showLightboxSlide(); };
+                    thumbsContainer.appendChild(img);
+                }
+            });
+        }
+
+        // Close on overlay click (not content)
+        document.getElementById('lightbox-overlay').addEventListener('click', function(e) {
+            if (e.target === this) closeLightbox();
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            const overlay = document.getElementById('lightbox-overlay');
+            if (!overlay.classList.contains('active')) return;
+            if (e.key === 'ArrowLeft') lightboxNav(-1);
+            if (e.key === 'ArrowRight') lightboxNav(1);
+            if (e.key === 'Escape') closeLightbox();
         });
     </script>
 </body>
