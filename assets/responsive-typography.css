@@ -156,79 +156,53 @@ p[class*="text-[10px]"] {
    6. NAVIGATION
    ============================================================ */
 
-/* Navbar inner container — Desktop & Laptop */
-@media (min-width: 1025px) {
+/* Ensure navbar inner container stretches beautifully to the sides on desktop */
+@media (min-width: 1024px) {
     nav > div {
-        max-width: 96% !important;
-        width: 96% !important;
-        padding-left: 1rem !important;
-        padding-right: 1rem !important;
+        max-width: 94% !important; /* Stretch container layout */
+        width: 94% !important;
     }
+}
 
-    /* Desktop logo container */
-    nav > div > a:first-child,
+/* Ensure the desktop logo container always remains a horizontal flex row with proper gap on desktop sizes */
+@media (min-width: 1024px) {
     nav a[class*="lg:flex"] {
         display: flex !important;
         flex-direction: row !important;
         align-items: center !important;
-        gap: 0.625rem !important;
+        gap: 0.75rem !important;
         flex-shrink: 0 !important;
         white-space: nowrap !important;
     }
 
-    /* B circle on desktop/laptop */
-    nav > div > a:first-child div:first-child,
-    nav a[class*="lg:flex"] div:first-child {
-        width: 2.5rem !important;
-        height: 2.5rem !important;
-        font-size: 1.1rem !important;
-    }
-
-    /* Logo name on desktop/laptop */
-    nav > div > a:first-child h1,
-    nav a[class*="lg:flex"] h1,
-    nav h1.font-bold {
-        font-size: clamp(0.95rem, 0.9rem + 0.15vw, 1.15rem) !important;
-        line-height: 1.25 !important;
-    }
-
-    nav p.text-xs {
-        font-size: var(--fs-caption) !important;
-    }
-
-    /* Desktop menu container — prevent any wrapping or overlapping */
+    /* Ensure horizontal menu container does not wrap and remains flex */
     nav div[class*="lg:flex"] {
         display: flex !important;
         flex-direction: row !important;
         align-items: center !important;
         flex-wrap: nowrap !important;
         flex-shrink: 1 !important;
-        gap: clamp(0.5rem, 0.1rem + 0.9vw, 1.5rem) !important; /* Dynamically adjusts from iPad Landscape to Large Monitor */
     }
+}
 
-    /* Desktop menu items */
-    nav div[class*="lg:flex"] a {
-        white-space: nowrap !important;
-        display: inline-block !important;
-        font-size: clamp(0.78rem, 0.72rem + 0.12vw, 0.925rem) !important; /* 12.5px - 14.8px - perfectly proportional */
-        padding: 0.25rem 0.2rem !important;
-        vertical-align: middle !important;
-    }
-
-    /* Contact button on desktop/laptop */
-    nav a[class*="lg:inline-block"],
-    nav a[href*="contact"] {
-        display: inline-block !important;
-        padding: 0.45rem 1.25rem !important;
-        font-size: 0.85rem !important;
-        white-space: nowrap !important;
-        flex-shrink: 0 !important;
-    }
+/* Ensure horizontal menu options never wrap internally, stay on same line and have same size */
+nav div[class*="lg:flex"] a {
+    white-space: nowrap !important;
+    display: inline-block !important;
+    font-size: clamp(0.85rem, 0.75rem + 0.25vw, 1rem) !important; /* Original clean font size 13.6px to 16px */
+    vertical-align: middle !important;
 }
 
 /* Base style for nav link font-size */
 nav .text-sm.font-medium {
     font-size: var(--fs-small) !important;
+}
+
+/* Original spacious gap on desktops/laptops */
+@media (min-width: 900px) {
+    nav div[class*="lg:flex"] {
+        gap: clamp(1rem, 0.2rem + 2vw, 2.25rem) !important;
+    }
 }
 
 /* Force mobile layout (mobile logo + hamburger menu) on all screens <= 1024px (covers phone and iPad/iPad Pro portrait) */
@@ -243,17 +217,11 @@ nav .text-sm.font-medium {
         display: none !important;
     }
     
-    /* Hide desktop contact button on the navbar bar */
+    /* Hide desktop contact button on the navbar */
     nav > div > a[class*="lg:inline-block"],
-    nav > div > a[href*="contact"],
-    nav > div > a.hidden {
+    nav > div > a.hidden,
+    nav a[class*="lg:inline-block"] {
         display: none !important;
-    }
-    
-    /* Ensure all links inside mobile-menu dropdown (including ติดต่อ) are visible */
-    #mobile-menu a,
-    #mobile-menu a[href*="contact"] {
-        display: flex !important;
     }
     
     /* Show mobile logo and ensure flex row layout */
@@ -268,6 +236,12 @@ nav .text-sm.font-medium {
     nav button#mobile-menu-btn {
         display: block !important;
     }
+}
+
+/* Ensure all links inside mobile-menu dropdown (including ติดต่อ) are visible */
+#mobile-menu a,
+#mobile-menu a[href*="contact"] {
+    display: flex !important;
 }
 
 /* Phone scaling (< 768px) — balanced, clean proportions */
