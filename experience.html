@@ -131,8 +131,9 @@
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
         }
 
-        /* YouTube iframe */
-        #lightbox-yt-iframe {
+        /* YouTube iframe and fallback */
+        #lightbox-yt-iframe,
+        #lightbox-yt-fallback {
             width: min(85vw, 900px);
             height: min(50vw, 506px);
             border-radius: 12px;
@@ -368,6 +369,35 @@
                 <img id="lightbox-main-img" src="" alt="" class="hidden">
                 <div id="lightbox-yt-wrap" class="hidden flex-col items-center gap-3 w-full">
                     <iframe id="lightbox-yt-iframe" allowfullscreen></iframe>
+
+                    <!-- Fallback UI for local file:// protocol -->
+                    <div id="lightbox-yt-fallback"
+                        class="hidden flex-col items-center justify-center bg-black rounded-xl overflow-hidden relative border border-white/10 shadow-2xl">
+                        <img id="lightbox-yt-fallback-thumb" src="" alt="YouTube Preview"
+                            class="w-full h-full object-cover opacity-60">
+                        <div
+                            class="absolute inset-0 flex flex-col items-center justify-center p-6 text-center text-white bg-gradient-to-t from-black/80 via-black/40 to-black/80">
+                            <!-- Play button icon style overlay -->
+                            <div
+                                class="w-16 h-16 rounded-full bg-red-600 flex items-center justify-center text-white text-2xl shadow-lg shadow-red-600/30 mb-4 animate-pulse">
+                                <i class="fa-solid fa-play ml-1"></i>
+                            </div>
+                            <h4 class="text-lg font-bold mb-2">คลิกเพื่อรับชมทาง YouTube</h4>
+                            <p class="text-xs text-white/70 max-w-md leading-relaxed mb-1">
+                                เนื่องจากเปิดหน้าเว็บผ่านไฟล์โดยตรง (`file://`) ระบบความปลอดภัยของ YouTube
+                                จะป้องกันไม่ให้เล่นวิดีโอในหน้านี้
+                            </p>
+                            <p class="text-[11px] text-purple-300 font-light">
+                                *เมื่ออัปโหลดขึ้นโฮสทีงจริง (http/https) จะสามารถเล่นในเว็บได้ทันที
+                            </p>
+                        </div>
+                    </div>
+
+                    <a id="lightbox-yt-btn" href="#" target="_blank" rel="noopener noreferrer"
+                        class="inline-flex items-center gap-2 px-6 py-2.5 bg-[#FF0000] hover:bg-[#E60000] text-white rounded-full text-sm font-semibold tracking-wide transition-all shadow-md hover:shadow-lg hover:shadow-red-600/25 active:scale-95 duration-200 mt-1">
+                        <i class="fa-brands fa-youtube text-lg"></i>
+                        เปิดใน YouTube
+                    </a>
                 </div>
                 <button class="lb-arrow" id="lb-next" onclick="lightboxNav(1)" aria-label="รูปถัดไป"
                     style="right:-10px">
@@ -513,7 +543,7 @@
         </div>
 
         <!-- Portfolio Cards Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start" id="portfolio-grid">
 
             <!-- ================= CATEGORY 1: เอกสารรับรอง (doc) ================= -->
             <!-- Doc Card 1 -->
@@ -543,7 +573,7 @@
                                 class="fa-regular fa-calendar mr-1"></i>2568</span>
                     </div>
                 </div>
-                <div class="p-6 flex-1 flex flex-col justify-between">
+                <div class="p-6 flex-1 flex flex-col">
                     <div>
                         <div class="text-xs font-semibold text-purple-600 mb-1">เทคโนโลยีและสื่อสารการศึกษา</div>
                         <h3 class="text-lg font-bold text-gray-800 mb-2">เอกสารรับรองการสำเร็จการศึกษา</h3>
@@ -588,7 +618,7 @@
                                 class="fa-regular fa-calendar mr-1"></i>2568</span>
                     </div>
                 </div>
-                <div class="p-6 flex-1 flex flex-col justify-between">
+                <div class="p-6 flex-1 flex flex-col">
                     <div>
                         <div class="text-xs font-semibold text-purple-600 mb-1">เทคโนโลยีและสื่อสารการศึกษา</div>
                         <h3 class="text-lg font-bold text-gray-800 mb-2">เอกสารแสดงผลการเรียนตลอดทั้งหลักสูตร</h3>
@@ -632,7 +662,7 @@
                                 class="fa-regular fa-calendar mr-1"></i>2568</span>
                     </div>
                 </div>
-                <div class="p-6 flex-1 flex flex-col justify-between">
+                <div class="p-6 flex-1 flex flex-col">
                     <div>
                         <div class="text-xs font-semibold text-purple-600 mb-1">เทคโนโลยีและสื่อสารการศึกษา</div>
                         <h3 class="text-lg font-bold text-gray-800 mb-2">เอกสารรับรองการปฏิบัติหน้าที่ครู</h3>
@@ -679,7 +709,7 @@
                             2568</span>
                     </div>
                 </div>
-                <div class="p-6 flex-1 flex flex-col justify-between">
+                <div class="p-6 flex-1 flex flex-col">
                     <div>
                         <div class="text-xs font-semibold text-blue-600 mb-1">โรงเรียนบ่อวิทยบางระกำ</div>
                         <h3 class="text-lg font-bold text-gray-800 mb-2">การสังเกตการณ์จัดการเรียนรู้ วิชาวิทยาการคำนวณ
@@ -700,7 +730,7 @@
                 window._galleries['obs-card-1'] = [
                     { type: 'image', src: 'assets/image/รูป Practicum 1/LINE_ALBUM_16-23พ.ค.66_๒๓๐๕๒๓_91.jpg', caption: 'การสังเกตการสอน Practicum 1 - รูปที่ 1' },
                     { type: 'image', src: 'assets/image/รูป Practicum 1/LINE_ALBUM_16-23พ.ค.66_๒๓๐๕๒๓_120.jpg', caption: 'การสังเกตการสอน Practicum 1 - รูปที่ 2' },
-                    { type: 'image', src: 'assets/image/รูป Practicum 1/LINE_ALBUM_16-23พ.ค.66_๒๓๐๕๒๓_121.jpg.jpg', caption: 'การสังเกตการสอน Practicum 1 - รูปที่ 3' },
+                    { type: 'image', src: 'assets/image/รูป Practicum 1/LINE_ALBUM_16-23พ.ค.66_๒๓๐๕๒๓_121.jpg', caption: 'การสังเกตการสอน Practicum 1 - รูปที่ 3' },
                     { type: 'image', src: 'assets/image/รูป Practicum 1/LINE_ALBUM_16-23พ.ค.66_๒๓๐๕๒๓_126.jpg', caption: 'การสังเกตการสอน Practicum 1 - รูปที่ 4' },
                     { type: 'image', src: 'assets/image/รูป Practicum 1/LINE_ALBUM_16-23พ.ค.66_๒๓๐๕๒๓_128.jpg', caption: 'การสังเกตการสอน Practicum 1 - รูปที่ 5' }
                 ];
@@ -729,7 +759,7 @@
                                 class="fa-regular fa-calendar mr-1"></i>2568</span>
                     </div>
                 </div>
-                <div class="p-6 flex-1 flex flex-col justify-between">
+                <div class="p-6 flex-1 flex flex-col">
                     <div>
                         <div class="text-xs font-semibold text-blue-600 mb-1">โรงเรียนจ่านกร้อง</div>
                         <h3 class="text-lg font-bold text-gray-800 mb-2">การสังเกตการจัดการเรียนรู้ วิชาวิทยาการคำนวณ
@@ -781,7 +811,7 @@
                                 class="fa-regular fa-calendar mr-1"></i>2568</span>
                     </div>
                 </div>
-                <div class="p-6 flex-1 flex flex-col justify-between">
+                <div class="p-6 flex-1 flex flex-col">
                     <div>
                         <div class="text-xs font-semibold text-blue-600 mb-1">โรงเรียนเฉลิมขวัญสตรี</div>
                         <h3 class="text-lg font-bold text-gray-800 mb-2">การสังเกตการจัดการเรียนรู้
@@ -837,7 +867,7 @@
                                 class="fa-regular fa-calendar mr-1"></i>2568</span>
                     </div>
                 </div>
-                <div class="p-6 flex-1 flex flex-col justify-between">
+                <div class="p-6 flex-1 flex flex-col">
                     <div>
                         <div class="text-xs font-semibold text-pink-600 mb-1">วิทยาลัยอาชีวะ พิษณุโลก</div>
                         <h3 class="text-lg font-bold text-gray-800 mb-2">กิจกรรมการจัดการสัมมนา</h3>
@@ -854,7 +884,7 @@
                                 onerror="this.src='https://via.placeholder.com/52x36/EF4444/ffffff?text=YT'">
                             <div class="yt-label">
                                 <i class="fa-brands fa-youtube text-base"></i>
-                                ดูคลิปบันทึกกิจกรรม
+                                ดูคลิปตัวอย่างผลงานจากกิจกรรมสัมมนา
                             </div>
                         </div>
                     </div>
@@ -879,7 +909,7 @@
             <div class="item-card activity bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm card-hover flex flex-col"
                 style="display: none;">
                 <div class="relative h-48 bg-gray-100 overflow-hidden group">
-                    <img src="assets/image/การฝึก PLC/11A6131D-D18D-4FFE-BE5D-67830727DD7F.jpg"
+                    <img src="assets/image/การฝึก PLC/ใช้รูปนี้เป็นรูปปก.jpg"
                         alt="การ PLC เพื่อพัฒนาการเรียนการสอนของตนเอง"
                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     <div class="card-img-overlay-btn" onclick="openLightboxById('act-card-2')">
@@ -888,7 +918,7 @@
                         </button>
                     </div>
                     <div class="photo-count-badge">
-                        <i class="fa-solid fa-images text-xs"></i> 5
+                        <i class="fa-solid fa-images text-xs"></i> 10
                     </div>
                     <div
                         class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4 pointer-events-none">
@@ -898,7 +928,7 @@
                                 class="fa-regular fa-calendar mr-1"></i>2568</span>
                     </div>
                 </div>
-                <div class="p-6 flex-1 flex flex-col justify-between">
+                <div class="p-6 flex-1 flex flex-col">
                     <div>
                         <div class="text-xs font-semibold text-pink-600 mb-1">Professional Learning Community</div>
                         <h3 class="text-lg font-bold text-gray-800 mb-2">การ PLC เพื่อพัฒนาการเรียนการสอนของตนเอง</h3>
@@ -907,15 +937,52 @@
                             เป็นการทดลองใช้สื่อการสอนของเองกับสมาชิกในกลุ่ม เพื่อพัฒนาสื่อการเรียนการสอน วิธีการสอน
                             และบุคลิกภาพของผู้สอนให้ดีที่สุด เพื่อนำไปใช้กับนักเรียนโรงเรียนบ่อวิทยบางระกำ
                         </p>
-                        <!-- YouTube thumbnail preview -->
-                        <div class="card-yt-thumb" onclick="openLightboxById('act-card-2', true)"
-                            title="ดูคลิป YouTube">
-                            <img src="https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_2/mqdefault.jpg"
-                                alt="YouTube thumbnail"
-                                onerror="this.src='https://via.placeholder.com/52x36/EF4444/ffffff?text=YT'">
-                            <div class="yt-label">
-                                <i class="fa-brands fa-youtube text-base"></i>
-                                ดูคลิปบันทึกกิจกรรม
+                        <!-- YouTube clips section -->
+                        <div class="border border-red-100 rounded-xl p-3 bg-red-50/50">
+                            <div class="flex items-center gap-1.5 text-[11px] text-red-600 font-semibold mb-2.5 uppercase tracking-wide">
+                                <i class="fa-brands fa-youtube text-sm"></i> คลิปวิดีโอกิจกรรม
+                            </div>
+                            <!-- การฝึก PLC group -->
+                            <div class="mb-2.5">
+                                <div class="text-[10px] text-gray-400 font-semibold uppercase tracking-widest mb-1.5">การฝึก PLC</div>
+                                <div class="flex flex-wrap gap-1.5">
+                                    <a href="https://www.youtube.com/watch?v=bIPauBkm6Fc" target="_blank" rel="noopener"
+                                        class="inline-flex items-center gap-1 px-2.5 py-1 bg-white border border-red-200 text-red-600 rounded-full text-[11px] font-semibold hover:bg-red-600 hover:text-white hover:border-red-600 transition-all duration-200 shadow-sm">
+                                        <i class="fa-brands fa-youtube text-xs"></i> PLC 1
+                                    </a>
+                                    <a href="https://www.youtube.com/watch?v=oFznTIXD_hc" target="_blank" rel="noopener"
+                                        class="inline-flex items-center gap-1 px-2.5 py-1 bg-white border border-red-200 text-red-600 rounded-full text-[11px] font-semibold hover:bg-red-600 hover:text-white hover:border-red-600 transition-all duration-200 shadow-sm">
+                                        <i class="fa-brands fa-youtube text-xs"></i> PLC 2
+                                    </a>
+                                    <a href="https://www.youtube.com/watch?v=CaAClbjlpaU" target="_blank" rel="noopener"
+                                        class="inline-flex items-center gap-1 px-2.5 py-1 bg-white border border-red-200 text-red-600 rounded-full text-[11px] font-semibold hover:bg-red-600 hover:text-white hover:border-red-600 transition-all duration-200 shadow-sm">
+                                        <i class="fa-brands fa-youtube text-xs"></i> PLC 3
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- ทดลองสอน group -->
+                            <div class="mb-2.5">
+                                <div class="text-[10px] text-gray-400 font-semibold uppercase tracking-widest mb-1.5">ทดลองสอน</div>
+                                <div class="flex flex-wrap gap-1.5">
+                                    <a href="https://www.youtube.com/watch?v=ahcECody1-4" target="_blank" rel="noopener"
+                                        class="inline-flex items-center gap-1 px-2.5 py-1 bg-white border border-red-200 text-red-600 rounded-full text-[11px] font-semibold hover:bg-red-600 hover:text-white hover:border-red-600 transition-all duration-200 shadow-sm">
+                                        <i class="fa-brands fa-youtube text-xs"></i> ทดลองสอน 1
+                                    </a>
+                                    <a href="https://www.youtube.com/watch?v=CVfzYHkmY6M" target="_blank" rel="noopener"
+                                        class="inline-flex items-center gap-1 px-2.5 py-1 bg-white border border-red-200 text-red-600 rounded-full text-[11px] font-semibold hover:bg-red-600 hover:text-white hover:border-red-600 transition-all duration-200 shadow-sm">
+                                        <i class="fa-brands fa-youtube text-xs"></i> ทดลองสอน 2
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- สอนจริง group -->
+                            <div>
+                                <div class="text-[10px] text-gray-400 font-semibold uppercase tracking-widest mb-1.5">สอนจริง</div>
+                                <div class="flex flex-wrap gap-1.5">
+                                    <a href="https://www.youtube.com/watch?v=rSkqzoqsfsw" target="_blank" rel="noopener"
+                                        class="inline-flex items-center gap-1 px-2.5 py-1 bg-white border border-red-200 text-red-600 rounded-full text-[11px] font-semibold hover:bg-red-600 hover:text-white hover:border-red-600 transition-all duration-200 shadow-sm">
+                                        <i class="fa-brands fa-youtube text-xs"></i> สอนจริง
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -927,12 +994,22 @@
             </div>
             <script>
                 window._galleries['act-card-2'] = [
+                    { type: 'image', src: 'assets/image/การฝึก PLC/ใช้รูปนี้เป็นรูปปก.jpg', caption: 'กิจกรรม PLC - รูปปก' },
                     { type: 'image', src: 'assets/image/การฝึก PLC/11A6131D-D18D-4FFE-BE5D-67830727DD7F.jpg', caption: 'กิจกรรม PLC - รูปที่ 1' },
-                    { type: 'image', src: 'assets/image/การฝึก PLC/11A6131D-D18D-4FFE-BE5D-67830727DD7F.jpg', caption: 'กิจกรรม PLC - รูปที่ 2' },
-                    { type: 'image', src: 'assets/image/การฝึก PLC/11A6131D-D18D-4FFE-BE5D-67830727DD7F.jpg', caption: 'กิจกรรม PLC - รูปที่ 3' },
-                    { type: 'image', src: 'assets/image/การฝึก PLC/11A6131D-D18D-4FFE-BE5D-67830727DD7F.jpg', caption: 'กิจกรรม PLC - รูปที่ 4' },
-                    { type: 'image', src: 'assets/image/การฝึก PLC/11A6131D-D18D-4FFE-BE5D-67830727DD7F.jpg', caption: 'กิจกรรม PLC - รูปที่ 5' },
-                    { type: 'youtube', videoId: 'YOUTUBE_VIDEO_ID_2', caption: 'คลิปบันทึกการ PLC เพื่อพัฒนาการเรียนการสอน' }
+                    { type: 'image', src: 'assets/image/การฝึก PLC/15BB69EE-9A46-47D8-9BE0-4785DBD6699B.jpg', caption: 'กิจกรรม PLC - รูปที่ 2' },
+                    { type: 'image', src: 'assets/image/การฝึก PLC/3F18EECD-79A8-4AE9-975C-5C7530F97963.jpg', caption: 'กิจกรรม PLC - รูปที่ 3' },
+                    { type: 'image', src: 'assets/image/การฝึก PLC/4349620A-1E5B-402C-8EB8-3D1BF77B63F0.jpg', caption: 'กิจกรรม PLC - รูปที่ 4' },
+                    { type: 'image', src: 'assets/image/การฝึก PLC/656A33C8-2C63-4018-9E7B-05B780902695.jpg', caption: 'กิจกรรม PLC - รูปที่ 5' },
+                    { type: 'image', src: 'assets/image/การฝึก PLC/A9513364-F18F-4A8B-A850-AB3E4A79F11E.jpg', caption: 'กิจกรรม PLC - รูปที่ 6' },
+                    { type: 'image', src: 'assets/image/การฝึก PLC/AD25B908-1FDF-4A03-87A6-AFDF060E4AF1.jpg', caption: 'กิจกรรม PLC - รูปที่ 7' },
+                    { type: 'image', src: 'assets/image/การฝึก PLC/D01B415E-4C97-4DE7-8EAA-26FB6380976D.jpg', caption: 'กิจกรรม PLC - รูปที่ 8' },
+                    { type: 'image', src: 'assets/image/การฝึก PLC/F7CF26C2-EAA2-4B30-B69F-317EF995C605.jpg', caption: 'กิจกรรม PLC - รูปที่ 9' },
+                    { type: 'youtube', videoId: 'bIPauBkm6Fc', caption: 'คลิปการฝึก PLC ครั้งที่ 1' },
+                    { type: 'youtube', videoId: 'oFznTIXD_hc', caption: 'คลิปการฝึก PLC ครั้งที่ 2' },
+                    { type: 'youtube', videoId: 'CaAClbjlpaU', caption: 'คลิปการฝึก PLC ครั้งที่ 3' },
+                    { type: 'youtube', videoId: 'ahcECody1-4', caption: 'คลิปทดลองสอน ครั้งที่ 1' },
+                    { type: 'youtube', videoId: 'CVfzYHkmY6M', caption: 'คลิปทดลองสอน ครั้งที่ 2' },
+                    { type: 'youtube', videoId: 'rSkqzoqsfsw', caption: 'คลิปการสอนจริง' }
                 ];
             </script>
 
@@ -959,10 +1036,10 @@
                                 class="fa-regular fa-calendar mr-1"></i>2568</span>
                     </div>
                 </div>
-                <div class="p-6 flex-1 flex flex-col justify-between">
+                <div class="p-6 flex-1 flex flex-col">
                     <div>
                         <div class="text-xs font-semibold text-pink-600 mb-1">สื่อการเรียนรู้พื้นบ้านแบบทำมือ
-                            จังหวัดิุทัยธานี</div>
+                            จังหวัดอุทัยธานี</div>
                         <h3 class="text-lg font-bold text-gray-800 mb-2">กิจกรรมการทำสื่อการเรียนรู้พื้นบ้านแบบทำมือ
                             และมีการประยุกต์ใช้เทคโนโลยีร่วมด้วย</h3>
                         <p class="text-sm text-gray-500 mb-3">กิจกรรมส่งเสริมการเรียนรู้และการอนุรักษ์วัฒนธรรมไทย</p>
@@ -971,17 +1048,17 @@
                             โดยนำข้อมูลและจุดเด่นของจังหวัดอุทัยธานีนำมาสร้างสรรค์สื่อการเรียนรู้นี้ร่วมกับสมาชิกในกลุ่ม
                             และมีการใช้เทคโนโลยีร่วมด้วย เป็นการสร้างวีดีโอของสื่อการเรียนรู้นี้
                         </p>
-                        <!-- YouTube thumbnail preview -->
-                        <div class="card-yt-thumb" onclick="openLightboxById('act-card-3', true)"
-                            title="ดูคลิป YouTube">
-                            <img src="https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_3/mqdefault.jpg"
+                        <!-- YouTube link -->
+                        <a href="https://www.youtube.com/watch?v=bKK-gL070P8" target="_blank" rel="noopener"
+                            class="card-yt-thumb flex items-center gap-2 no-underline">
+                            <img src="https://img.youtube.com/vi/bKK-gL070P8/mqdefault.jpg"
                                 alt="YouTube thumbnail"
                                 onerror="this.src='https://via.placeholder.com/52x36/EF4444/ffffff?text=YT'">
                             <div class="yt-label">
                                 <i class="fa-brands fa-youtube text-base"></i>
-                                ดูคลิปบันทึกกิจกรรม
+                                ดูคลิปวีดีโอสื่อการเรียนรู้
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <button onclick="openLightboxById('act-card-3')"
                         class="inline-flex items-center gap-2 text-sm text-purple-600 font-semibold hover:text-purple-700 mt-4 text-left">
@@ -992,11 +1069,10 @@
             <script>
                 window._galleries['act-card-3'] = [
                     { type: 'image', src: 'assets/image/สื่อพื้นบ้านอุทัย/S__97312773.jpg', caption: 'กิจกรรมสื่อพื้นบ้านอุทัยธานี - รูปที่ 1' },
-                    { type: 'image', src: 'assets/image/สื่อพื้นบ้านอุทัย/S__97312773.jpg', caption: 'กิจกรรมสื่อพื้นบ้านอุทัยธานี - รูปที่ 2' },
-                    { type: 'image', src: 'assets/image/สื่อพื้นบ้านอุทัย/S__97312773.jpg', caption: 'กิจกรรมสื่อพื้นบ้านอุทัยธานี - รูปที่ 3' },
-                    { type: 'image', src: 'assets/image/สื่อพื้นบ้านอุทัย/S__97312773.jpg', caption: 'กิจกรรมสื่อพื้นบ้านอุทัยธานี - รูปที่ 4' },
-                    { type: 'image', src: 'assets/image/สื่อพื้นบ้านอุทัย/S__97312773.jpg', caption: 'กิจกรรมสื่อพื้นบ้านอุทัยธานี - รูปที่ 5' },
-                    { type: 'youtube', videoId: 'YOUTUBE_VIDEO_ID_3', caption: 'คลิปวีดีโอสื่อการเรียนรู้พื้นบ้านแบบทำมือ จังหวัดอุทัยธานี' }
+                    { type: 'image', src: 'assets/image/สื่อพื้นบ้านอุทัย/6D5C731B-AEB1-4198-B784-B789645DD1C6.jpg', caption: 'กิจกรรมสื่อพื้นบ้านอุทัยธานี - รูปที่ 2' },
+                    { type: 'image', src: 'assets/image/สื่อพื้นบ้านอุทัย/IMG_0045.JPG', caption: 'กิจกรรมสื่อพื้นบ้านอุทัยธานี - รูปที่ 3' },
+                    { type: 'image', src: 'assets/image/สื่อพื้นบ้านอุทัย/IMG_0047.JPG', caption: 'กิจกรรมสื่อพื้นบ้านอุทัยธานี - รูปที่ 4' },
+                    { type: 'image', src: 'assets/image/สื่อพื้นบ้านอุทัย/IMG_0052.JPG', caption: 'กิจกรรมสื่อพื้นบ้านอุทัยธานี - รูปที่ 5' }
                 ];
             </script>
 
@@ -1024,7 +1100,7 @@
                                 class="fa-regular fa-calendar mr-1"></i>2568</span>
                     </div>
                 </div>
-                <div class="p-6 flex-1 flex flex-col justify-between">
+                <div class="p-6 flex-1 flex flex-col">
                     <div>
                         <div class="text-xs font-semibold text-emerald-600 mb-1">การสัมมนาวิชาการ</div>
                         <h3 class="text-lg font-bold text-gray-800 mb-2 leading-snug">
@@ -1070,7 +1146,7 @@
                                 class="fa-regular fa-calendar mr-1"></i>2568</span>
                     </div>
                 </div>
-                <div class="p-6 flex-1 flex flex-col justify-between">
+                <div class="p-6 flex-1 flex flex-col">
                     <div>
                         <div class="text-xs font-semibold text-emerald-600 mb-1">การอบรมเชิงปฏิบัติการ</div>
                         <h3 class="text-lg font-bold text-gray-800 mb-2 leading-snug">โครงการอบรมเชิงปฏิบัติการ
@@ -1116,7 +1192,7 @@
                                 class="fa-regular fa-calendar mr-1"></i>2566</span>
                     </div>
                 </div>
-                <div class="p-6 flex-1 flex flex-col justify-between">
+                <div class="p-6 flex-1 flex flex-col">
                     <div>
                         <div class="text-xs font-semibold text-emerald-600 mb-1">การประชุมวิชาการระดับนานาชาติ</div>
                         <h3 class="text-lg font-bold text-gray-800 mb-2 leading-snug">The 20th International Joint
@@ -1162,7 +1238,7 @@
                                 class="fa-regular fa-calendar mr-1"></i>2568</span>
                     </div>
                 </div>
-                <div class="p-6 flex-1 flex flex-col justify-between">
+                <div class="p-6 flex-1 flex flex-col">
                     <div>
                         <div class="text-xs font-semibold text-emerald-600 mb-1">รางวัลและเชิดชูเกียรติ</div>
                         <h3 class="text-lg font-bold text-gray-800 mb-2 leading-snug">
@@ -1208,7 +1284,7 @@
                                 class="fa-regular fa-calendar mr-1"></i>2567</span>
                     </div>
                 </div>
-                <div class="p-6 flex-1 flex flex-col justify-between">
+                <div class="p-6 flex-1 flex flex-col">
                     <div>
                         <div class="text-xs font-semibold text-emerald-600 mb-1">หลักสูตรออนไลน์ (Thai MOOC)</div>
                         <h3 class="text-lg font-bold text-gray-800 mb-2 leading-snug">
@@ -1255,7 +1331,7 @@
                                 class="fa-regular fa-calendar mr-1"></i>2567</span>
                     </div>
                 </div>
-                <div class="p-6 flex-1 flex flex-col justify-between">
+                <div class="p-6 flex-1 flex flex-col">
                     <div>
                         <div class="text-xs font-semibold text-emerald-600 mb-1">หลักสูตรสากล (Google & Coursera)</div>
                         <h3 class="text-lg font-bold text-gray-800 mb-2 leading-snug">Google AI Essentials</h3>
@@ -1300,7 +1376,7 @@
                                 class="fa-regular fa-calendar mr-1"></i>2567</span>
                     </div>
                 </div>
-                <div class="p-6 flex-1 flex flex-col justify-between">
+                <div class="p-6 flex-1 flex flex-col">
                     <div>
                         <div class="text-xs font-semibold text-emerald-600 mb-1">วิทยาการคอมพิวเตอร์สากล</div>
                         <h3 class="text-lg font-bold text-gray-800 mb-2 leading-snug">Certificate of Completion - Hour
@@ -1346,7 +1422,7 @@
                                 class="fa-regular fa-calendar mr-1"></i>2567</span>
                     </div>
                 </div>
-                <div class="p-6 flex-1 flex flex-col justify-between">
+                <div class="p-6 flex-1 flex flex-col">
                     <div>
                         <div class="text-xs font-semibold text-emerald-600 mb-1">การอบรมเชิงปฏิบัติการ</div>
                         <h3 class="text-lg font-bold text-gray-800 mb-2 leading-snug">โครงการอบรมเชิงปฏิบัติการ "AI
@@ -1391,7 +1467,7 @@
                                 class="fa-regular fa-calendar mr-1"></i>2568</span>
                     </div>
                 </div>
-                <div class="p-6 flex-1 flex flex-col justify-between">
+                <div class="p-6 flex-1 flex flex-col">
                     <div>
                         <div class="text-xs font-semibold text-emerald-600 mb-1">หลักสูตรออนไลน์ (Thai MOOC)</div>
                         <h3 class="text-lg font-bold text-gray-800 mb-2 leading-snug">
@@ -1478,6 +1554,48 @@
             filterItems('doc');
         });
 
+        // ===== YOUTUBE UTILS =====
+        function getYouTubeId(urlOrId) {
+            if (!urlOrId) return '';
+            urlOrId = urlOrId.trim();
+            // Check if it's already just an 11-char alphanumeric/dash/underscore ID
+            if (/^[a-zA-Z0-9_-]{11}$/.test(urlOrId)) {
+                return urlOrId;
+            }
+            // Parse URL
+            try {
+                let urlStr = urlOrId;
+                if (!/^https?:\/\//i.test(urlStr)) {
+                    urlStr = 'https://' + urlStr;
+                }
+                const url = new URL(urlStr);
+                if (url.hostname.includes('youtu.be')) {
+                    return url.pathname.substring(1);
+                }
+                if (url.pathname.startsWith('/shorts/')) {
+                    return url.pathname.split('/')[2];
+                }
+                if (url.pathname.startsWith('/embed/')) {
+                    return url.pathname.split('/')[2];
+                }
+                if (url.searchParams.has('v')) {
+                    return url.searchParams.get('v');
+                }
+                const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+                const match = urlOrId.match(regExp);
+                if (match && match[2].length === 11) {
+                    return match[2];
+                }
+            } catch (e) {
+                const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+                const match = urlOrId.match(regExp);
+                if (match && match[2].length === 11) {
+                    return match[2];
+                }
+            }
+            return urlOrId;
+        }
+
         // ===== LIGHTBOX SYSTEM =====
         let _lbItems = [];
         let _lbIndex = 0;
@@ -1490,14 +1608,12 @@
         function openLightboxById(id, goToYt = false) {
             const items = window._galleries[id];
             if (!items || items.length === 0) return;
-            _lbItems = items;
-            // Find starting index
-            if (goToYt) {
-                const ytIdx = items.findIndex(i => i.type === 'youtube');
-                _lbIndex = ytIdx !== -1 ? ytIdx : 0;
-            } else {
-                _lbIndex = 0;
-            }
+
+            // Filter out youtube type items so they do not appear in the lightbox slideshow
+            _lbItems = items.filter(item => item.type !== 'youtube');
+            if (_lbItems.length === 0) return;
+
+            _lbIndex = 0;
             _showLightboxSlide();
             document.getElementById('lightbox-overlay').classList.add('active');
             document.body.style.overflow = 'hidden';
@@ -1509,6 +1625,9 @@
             // Stop youtube video
             const iframe = document.getElementById('lightbox-yt-iframe');
             iframe.src = '';
+            // Clear fallback thumb src
+            const fallbackThumb = document.getElementById('lightbox-yt-fallback-thumb');
+            if (fallbackThumb) fallbackThumb.src = '';
         }
 
         function lightboxNav(dir) {
@@ -1541,10 +1660,49 @@
                 img.classList.add('hidden');
                 ytWrap.classList.remove('hidden');
                 ytWrap.classList.add('flex');
-                iframe.src = `https://www.youtube.com/embed/${item.videoId}?autoplay=1&rel=0`;
+
+                const cleanId = getYouTubeId(item.videoId);
+                const isLocalFile = window.location.protocol === 'file:';
+
+                const fallbackEl = document.getElementById('lightbox-yt-fallback');
+                const fallbackThumb = document.getElementById('lightbox-yt-fallback-thumb');
+
+                if (isLocalFile) {
+                    iframe.classList.add('hidden');
+                    if (fallbackEl) {
+                        fallbackEl.classList.remove('hidden');
+                        fallbackEl.classList.add('flex');
+                    }
+                    if (fallbackThumb) {
+                        fallbackThumb.src = `https://img.youtube.com/vi/${cleanId}/maxresdefault.jpg`;
+                        fallbackThumb.onerror = () => {
+                            fallbackThumb.src = `https://img.youtube.com/vi/${cleanId}/hqdefault.jpg`;
+                        };
+                    }
+                    iframe.src = '';
+                } else {
+                    if (fallbackEl) {
+                        fallbackEl.classList.add('hidden');
+                        fallbackEl.classList.remove('flex');
+                    }
+                    iframe.classList.remove('hidden');
+                    iframe.src = `https://www.youtube.com/embed/${cleanId}?autoplay=1&rel=0`;
+                }
+
+                const ytBtn = document.getElementById('lightbox-yt-btn');
+                if (ytBtn) {
+                    ytBtn.href = `https://www.youtube.com/watch?v=${cleanId}`;
+                }
             } else {
                 // Pause YT if switching from it
                 iframe.src = '';
+                const fallbackEl = document.getElementById('lightbox-yt-fallback');
+                if (fallbackEl) {
+                    fallbackEl.classList.add('hidden');
+                    fallbackEl.classList.remove('flex');
+                }
+                iframe.classList.remove('hidden');
+
                 ytWrap.classList.add('hidden');
                 ytWrap.classList.remove('flex');
                 img.classList.remove('hidden');
@@ -1561,11 +1719,12 @@
             thumbsContainer.innerHTML = '';
             _lbItems.forEach((item, idx) => {
                 if (item.type === 'youtube') {
+                    const cleanId = getYouTubeId(item.videoId);
                     const div = document.createElement('div');
                     div.className = 'lb-thumb-yt' + (idx === _lbIndex ? ' active' : '');
                     div.onclick = () => { _lbIndex = idx; _showLightboxSlide(); };
                     div.title = 'YouTube';
-                    div.innerHTML = `<img src="https://img.youtube.com/vi/${item.videoId}/mqdefault.jpg" alt="YT" onerror="this.src='https://via.placeholder.com/70x52/EF4444/ffffff?text=YT'">
+                    div.innerHTML = `<img src="https://img.youtube.com/vi/${cleanId}/mqdefault.jpg" alt="YT" onerror="this.src='https://via.placeholder.com/70x52/EF4444/ffffff?text=YT'">
                         <div class="yt-play-icon"><i class="fa-brands fa-youtube"></i></div>`;
                     thumbsContainer.appendChild(div);
                 } else {
@@ -1578,6 +1737,58 @@
                 }
             });
         }
+
+        // Initialize Youtube links and previews once document is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            // Clean the initial YouTube video ID placeholders or URLs in galleries
+            for (const galleryId in window._galleries) {
+                const items = window._galleries[galleryId];
+                if (!items) continue;
+                items.forEach(item => {
+                    if (item.type === 'youtube') {
+                        item.videoId = getYouTubeId(item.videoId);
+                    }
+                });
+            }
+
+            // Update card YT thumb previews with real thumbnails and hijack clicks to open YouTube directly
+            const ytThumbs = document.querySelectorAll('.card-yt-thumb');
+            ytThumbs.forEach(thumb => {
+                const onclickAttr = thumb.getAttribute('onclick');
+                if (onclickAttr) {
+                    const match = onclickAttr.match(/openLightboxById\(['"]([^'"]+)['"]/);
+                    if (match && match[1]) {
+                        const galleryId = match[1];
+                        const gallery = window._galleries[galleryId];
+                        if (gallery) {
+                            const ytItem = gallery.find(item => item.type === 'youtube');
+                            if (ytItem && ytItem.videoId) {
+                                // 1. Update preview image
+                                if (!ytItem.videoId.includes('YOUTUBE_VIDEO_ID')) {
+                                    const img = thumb.querySelector('img');
+                                    if (img) {
+                                        img.src = `https://img.youtube.com/vi/${ytItem.videoId}/mqdefault.jpg`;
+                                        img.onerror = null;
+                                    }
+                                }
+
+                                // 2. Hijack click handler to open YouTube in new tab directly instead of opening Lightbox
+                                thumb.removeAttribute('onclick');
+                                thumb.addEventListener('click', (e) => {
+                                    e.preventDefault();
+                                    e.stopPropagation();
+                                    if (!ytItem.videoId.includes('YOUTUBE_VIDEO_ID')) {
+                                        window.open(`https://www.youtube.com/watch?v=${ytItem.videoId}`, '_blank');
+                                    } else {
+                                        alert('ลิงก์ YouTube ยังคงเป็นค่าเริ่มต้น (Placeholder) กรุณาแก้ไขรหัสวิดีโอก่อน');
+                                    }
+                                });
+                            }
+                        }
+                    }
+                }
+            });
+        });
 
         // Close on overlay click (not content)
         document.getElementById('lightbox-overlay').addEventListener('click', function (e) {
