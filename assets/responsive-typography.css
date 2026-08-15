@@ -156,54 +156,79 @@ p[class*="text-[10px]"] {
    6. NAVIGATION
    ============================================================ */
 
-/* Ensure navbar inner container stretches beautifully to the sides on desktop */
-@media (min-width: 1024px) {
+/* Navbar inner container — Desktop & Laptop */
+@media (min-width: 1025px) {
     nav > div {
-        max-width: 94% !important; /* Stretch container layout */
-        width: 94% !important;
+        max-width: 96% !important;
+        width: 96% !important;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
     }
-}
 
-/* Ensure the desktop logo container always remains a horizontal flex row with proper gap on desktop sizes */
-@media (min-width: 1024px) {
+    /* Desktop logo container */
+    nav > div > a:first-child,
     nav a[class*="lg:flex"] {
         display: flex !important;
         flex-direction: row !important;
         align-items: center !important;
-        gap: 0.75rem !important;
+        gap: 0.625rem !important;
         flex-shrink: 0 !important;
         white-space: nowrap !important;
     }
 
-    /* Ensure horizontal menu container does not wrap and remains flex */
+    /* B circle on desktop/laptop */
+    nav > div > a:first-child div:first-child,
+    nav a[class*="lg:flex"] div:first-child {
+        width: 2.5rem !important;
+        height: 2.5rem !important;
+        font-size: 1.1rem !important;
+    }
+
+    /* Logo name on desktop/laptop */
+    nav > div > a:first-child h1,
+    nav a[class*="lg:flex"] h1,
+    nav h1.font-bold {
+        font-size: clamp(0.95rem, 0.9rem + 0.15vw, 1.15rem) !important;
+        line-height: 1.25 !important;
+    }
+
+    nav p.text-xs {
+        font-size: var(--fs-caption) !important;
+    }
+
+    /* Desktop menu container — prevent any wrapping or overlapping */
     nav div[class*="lg:flex"] {
         display: flex !important;
         flex-direction: row !important;
         align-items: center !important;
         flex-wrap: nowrap !important;
         flex-shrink: 1 !important;
+        gap: clamp(0.5rem, 0.1rem + 0.9vw, 1.5rem) !important; /* Dynamically adjusts from iPad Landscape to Large Monitor */
     }
-}
 
-/* Ensure horizontal menu options never wrap internally, stay on same line and have same size */
-nav div[class*="lg:flex"] a {
-    white-space: nowrap !important;
-    display: inline-block !important;
-    font-size: clamp(0.85rem, 0.75rem + 0.25vw, 1rem) !important; /* Larger font size 13.6px to 16px */
-    vertical-align: middle !important;
+    /* Desktop menu items */
+    nav div[class*="lg:flex"] a {
+        white-space: nowrap !important;
+        display: inline-block !important;
+        font-size: clamp(0.78rem, 0.72rem + 0.12vw, 0.925rem) !important; /* 12.5px - 14.8px - perfectly proportional */
+        padding: 0.25rem 0.2rem !important;
+        vertical-align: middle !important;
+    }
+
+    /* Contact button on desktop/laptop */
+    nav a[class*="lg:inline-block"],
+    nav a[href*="contact"] {
+        display: inline-block !important;
+        padding: 0.45rem 1.25rem !important;
+        font-size: 0.85rem !important;
+        white-space: nowrap !important;
+        flex-shrink: 0 !important;
+    }
 }
 
 /* Base style for nav link font-size */
 nav .text-sm.font-medium {
     font-size: var(--fs-small) !important;
-}
-
-/* Specific responsive adjustments for navbar on smaller desktop, tablet landscape, or landscape phone orientation */
-@media (min-width: 900px) {
-    /* Increased gap on desktops/laptops for spacious layout */
-    nav div[class*="lg:flex"] {
-        gap: clamp(1rem, 0.2rem + 2vw, 2.25rem) !important;
-    }
 }
 
 /* Force mobile layout (mobile logo + hamburger menu) on all screens <= 1024px (covers phone and iPad/iPad Pro portrait) */
@@ -226,6 +251,7 @@ nav .text-sm.font-medium {
     }
     
     /* Show mobile logo and ensure flex row layout */
+    nav > div > a:first-child,
     nav a[class*="lg:hidden"] {
         display: flex !important;
         flex-direction: row !important;
@@ -238,76 +264,73 @@ nav .text-sm.font-medium {
     }
 }
 
-/* Phone scaling — ensure mobile logo is a proper readable size on phones */
+/* Phone scaling (< 768px) — balanced, clean proportions */
 @media (max-width: 767px) {
+    nav > div > a:first-child,
     nav a[class*="lg:hidden"] {
-        gap: 0.875rem !important;
+        gap: 0.625rem !important;
     }
     
-    /* B circle — match visual weight of hamburger icon */
+    /* B circle */
+    nav > div > a:first-child div:first-child,
     nav a[class*="lg:hidden"] div:first-child {
-        width: 3.25rem !important;
-        height: 3.25rem !important;
-        font-size: 1.375rem !important;
+        width: 2.35rem !important;
+        height: 2.35rem !important;
+        font-size: 1rem !important;
     }
     
-    nav a[class*="lg:hidden"] h1 {
-        font-size: 1.5rem !important; /* 24px */
+    /* Name */
+    nav > div > a:first-child h1,
+    nav a[class*="lg:hidden"] h1,
+    nav h1.font-bold {
+        font-size: 1.05rem !important; /* ~16.8px */
         line-height: 1.2 !important;
     }
     
+    /* Subtitle */
+    nav > div > a:first-child p,
     nav a[class*="lg:hidden"] p {
-        font-size: 0.875rem !important; /* 14px */
+        font-size: 0.75rem !important; /* 12px */
     }
     
+    /* Hamburger button */
     nav button#mobile-menu-btn {
-        font-size: 1.5rem !important; /* 24px, matching logo name */
+        font-size: 1.25rem !important; /* 20px */
     }
 }
 
-/* Specific scaling for iPad portrait/landscape tablets (768px–1024px) to make mobile layout elements proportional */
+/* Specific scaling for iPad portrait (768px–1024px) — proportional & elegant */
 @media (min-width: 768px) and (max-width: 1024px) {
+    nav > div > a:first-child,
     nav a[class*="lg:hidden"] {
-        gap: 1.25rem !important;
+        gap: 0.75rem !important;
     }
     
+    /* B circle */
+    nav > div > a:first-child div:first-child,
     nav a[class*="lg:hidden"] div:first-child {
-        width: 4rem !important;
-        height: 4rem !important;
-        font-size: 1.625rem !important;
+        width: 2.75rem !important;
+        height: 2.75rem !important;
+        font-size: 1.15rem !important;
     }
     
-    nav a[class*="lg:hidden"] h1 {
-        font-size: 2rem !important; /* 32px */
-    }
-    
-    nav a[class*="lg:hidden"] p {
-        font-size: 1.125rem !important; /* 18px */
-    }
-    
-    nav button#mobile-menu-btn {
-        font-size: 2.25rem !important; /* 36px */
-    }
-}
-
-
-
-/* Mobile menu items — comfortable tap targets */
-nav #mobile-menu a {
-    font-size: var(--fs-small) !important;
-    line-height: var(--lh-small) !important;
-}
-
-/* Logo name — desktop only (mobile/tablet sizes handled per breakpoint above) */
-@media (min-width: 1025px) {
+    /* Name */
+    nav > div > a:first-child h1,
+    nav a[class*="lg:hidden"] h1,
     nav h1.font-bold {
-        font-size: clamp(1.05rem, 1rem + 0.15vw, 1.2rem) !important;
-        line-height: 1.3 !important;
+        font-size: 1.25rem !important; /* ~20px */
+        line-height: 1.2 !important;
     }
     
-    /* Logo subtitle */
-    nav p.text-xs {
-        font-size: var(--fs-caption) !important;
+    /* Subtitle */
+    nav > div > a:first-child p,
+    nav a[class*="lg:hidden"] p {
+        font-size: 0.825rem !important; /* ~13.2px */
+    }
+    
+    /* Hamburger button */
+    nav button#mobile-menu-btn {
+        font-size: 1.35rem !important; /* ~21.6px */
     }
 }
 
@@ -683,22 +706,34 @@ i[class*="fa-"] {
         line-height: 1.7 !important;
     }
 
-    /* ---- Filter/Tab bar — fit all tabs in one line on iPad, no horizontal scroll ---- */
+    /* ---- Filter/Tab bar — Beautiful floating pill on iPad, fits on one line gracefully ---- */
     #filter-container {
         overflow-x: visible !important;
         flex-wrap: nowrap !important;
-        width: 100% !important;
+        width: auto !important;
         max-width: 100% !important;
-        justify-content: space-between !important;
+        display: inline-flex !important;
+        gap: 0.5rem !important;
+        padding: 0.35rem 0.5rem !important;
+        justify-content: center !important;
+        align-items: center !important;
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04) !important;
     }
 
-    /* Shrink each filter button so all 4 fit on one line */
+    /* Filter buttons on iPad */
     #filter-container .filter-btn,
     button.filter-btn {
-        font-size: 0.8rem !important;       /* smaller text */
-        padding: 0.5rem 0.75rem !important; /* tighter padding */
+        font-size: 0.85rem !important;        /* 13.6px — clear and readable */
+        padding: 0.5rem 0.9rem !important;   /* comfortable breathing room */
         white-space: nowrap !important;
-        flex: 1 1 0 !important;             /* even distribution across full width */
+        flex: 0 0 auto !important;           /* natural pill width */
         text-align: center !important;
+        border-radius: 0.75rem !important;
+    }
+
+    #filter-container .filter-btn i,
+    button.filter-btn i {
+        font-size: 0.85rem !important;
+        margin-right: 0.35rem !important;
     }
 }
