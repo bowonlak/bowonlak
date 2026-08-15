@@ -164,14 +164,16 @@ p[class*="text-[10px]"] {
     }
 }
 
-/* Ensure the desktop logo container always remains a horizontal flex row with proper gap */
-nav a[class*="lg:flex"] {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    gap: 0.75rem !important;
-    flex-shrink: 0 !important;
-    white-space: nowrap !important;
+/* Ensure the desktop logo container always remains a horizontal flex row with proper gap on desktop sizes */
+@media (min-width: 1024px) {
+    nav a[class*="lg:flex"] {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 0.75rem !important;
+        flex-shrink: 0 !important;
+        white-space: nowrap !important;
+    }
 }
 
 /* Ensure horizontal menu container does not wrap and remains flex */
@@ -216,6 +218,11 @@ nav .text-sm.font-medium {
     /* Ensure desktop logo is shown horizontally on landscape tablets/phones */
     nav a[class*="lg:flex"] {
         display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 0.75rem !important;
+        flex-shrink: 0 !important;
+        white-space: nowrap !important;
     }
     
     nav a[class*="lg:inline-block"],
