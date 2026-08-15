@@ -1123,8 +1123,7 @@
                         <!-- YouTube thumbnail preview -->
                         <div class="card-yt-thumb" onclick="openLightboxById('act-card-1', true)"
                             title="ดูคลิป YouTube">
-                            <img src="https://img.youtube.com/vi/I3zgLXl8La4/mqdefault.jpg"
-                                alt="YouTube thumbnail"
+                            <img src="https://img.youtube.com/vi/I3zgLXl8La4/mqdefault.jpg" alt="YouTube thumbnail"
                                 onerror="this.src='https://via.placeholder.com/52x36/EF4444/ffffff?text=YT'">
                             <div class="yt-label">
                                 <i class="fa-brands fa-youtube text-base"></i>
@@ -1585,8 +1584,8 @@
                         <h3 class="text-lg font-bold text-gray-800 mb-2 leading-snug">Google AI Essentials</h3>
                         <p class="text-sm text-gray-500 mb-3">Google & Coursera</p>
                         <p class="text-sm text-gray-600 leading-relaxed mb-4">
-                            Successfully completed the Google AI Essentials course, demonstrating foundational
-                            capabilities in AI implementation and prompt engineering.
+                            สำเร็จหลักสูตร Google AI Essentials แสดงให้เห็นถึงความสามารถพื้นฐานด้านการประยุกต์ใช้ AI
+                            และการเขียนพรอมต์
                         </p>
                     </div>
                     <button onclick="openLightboxById('cert-card-6')"
@@ -1631,8 +1630,8 @@
                             of Code (Minecraft)</h3>
                         <p class="text-sm text-gray-500 mb-3">Code.org & Mojang</p>
                         <p class="text-sm text-gray-600 leading-relaxed mb-4">
-                            Demonstrated understanding of basic computer science concepts and coding logic through Hour
-                            of Code campaign.
+                            สาธิตความเข้าใจในแนวคิดพื้นฐานด้านวิทยาการคอมพิวเตอร์และตรรกะการเขียนโค้ด ผ่านโครงการ Hour
+                            of Code
                         </p>
                     </div>
                     <button onclick="openLightboxById('cert-card-7')"
@@ -1750,8 +1749,10 @@
                 <div
                     class="px-5 py-4 sm:px-8 sm:py-6 border-b border-gray-100 flex justify-between items-center sticky top-0 bg-white z-10">
                     <div class="pr-3">
-                        <h2 id="modal-title" class="text-lg sm:text-2xl font-bold text-gray-800 leading-tight">หัวข้อกิจกรรม</h2>
-                        <p id="modal-subtitle" class="text-purple-500 text-xs sm:text-sm font-medium mt-1">รายละเอียดภาคเรียน</p>
+                        <h2 id="modal-title" class="text-lg sm:text-2xl font-bold text-gray-800 leading-tight">
+                            หัวข้อกิจกรรม</h2>
+                        <p id="modal-subtitle" class="text-purple-500 text-xs sm:text-sm font-medium mt-1">
+                            รายละเอียดภาคเรียน</p>
                     </div>
                     <button onclick="closeActivityModal()"
                         class="w-9 h-9 sm:w-10 sm:h-10 flex-shrink-0 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:text-red-500 hover:bg-red-50 transition-all">
@@ -2200,9 +2201,9 @@
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                             ${ytItems.map((item, i) => {
-                                const cleanId = getYouTubeId(item.videoId);
-                                const label = item.caption || `คลิปวิดีโอที่ ${i + 1}`;
-                                return `
+                        const cleanId = getYouTubeId(item.videoId);
+                        const label = item.caption || `คลิปวิดีโอที่ ${i + 1}`;
+                        return `
                                     <a href="https://www.youtube.com/watch?v=${cleanId}" target="_blank" rel="noopener noreferrer"
                                         class="group flex items-center gap-3 p-3 bg-white rounded-xl border border-red-200 hover:border-red-500 hover:shadow-md transition-all duration-200 cursor-pointer text-left no-underline">
                                         <div class="relative w-24 h-16 rounded-lg overflow-hidden bg-black flex-shrink-0">
@@ -2223,7 +2224,7 @@
                                         </div>
                                     </a>
                                 `;
-                            }).join('')}
+                    }).join('')}
                         </div>
                     `;
                 }
