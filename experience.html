@@ -1120,7 +1120,7 @@
                         <!-- YouTube thumbnail preview -->
                         <div class="card-yt-thumb" onclick="openLightboxById('act-card-1', true)"
                             title="ดูคลิป YouTube">
-                            <img src="https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_1/mqdefault.jpg"
+                            <img src="https://img.youtube.com/vi/I3zgLXl8La4/mqdefault.jpg"
                                 alt="YouTube thumbnail"
                                 onerror="this.src='https://via.placeholder.com/52x36/EF4444/ffffff?text=YT'">
                             <div class="yt-label">
@@ -1142,7 +1142,7 @@
                     { type: 'image', src: 'assets/image/รูปสัมมนาอาชีวะ/S__97304586_0.jpg', caption: 'กิจกรรมการจัดการสัมมนา - รูปที่ 3' },
                     { type: 'image', src: 'assets/image/รูปสัมมนาอาชีวะ/S__97304587_0.jpg', caption: 'กิจกรรมการจัดการสัมมนา - รูปที่ 4' },
                     { type: 'image', src: 'assets/image/รูปสัมมนาอาชีวะ/S__97304588.jpg', caption: 'กิจกรรมการจัดการสัมมนา - รูปที่ 5' },
-                    { type: 'youtube', videoId: 'https://youtu.be/I3zgLXl8La4?si=z4st7Z1CbGyIQr2c', caption: 'ตัวอย่างผลงานจากกิจกรรมสัมมนา วิทยาลัยอาชีวะ พิษณุโลก' }
+                    { type: 'youtube', videoId: 'I3zgLXl8La4', caption: 'ตัวอย่างผลงานจากกิจกรรมสัมมนา วิทยาลัยอาชีวะ พิษณุโลก' }
                 ];
             </script>
 
@@ -1786,17 +1786,20 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-12 border-t border-gray-800 mt-20">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <div class="flex justify-center items-center gap-3 mb-4">
-                <div
-                    class="w-8 h-8 rounded-full bg-purple-600 text-white font-bold flex items-center justify-center text-sm">
-                    B
-                </div>
-                <span class="text-white font-semibold text-lg">Bowonlak Sandee</span>
+    <footer
+        class="bg-white py-12 md:py-16 border-t border-gray-100 mt-auto pb-[calc(3rem+env(safe-area-inset-bottom))] md:pb-12">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <!-- Left Side -->
+            <div class="text-center md:text-left">
+                <h3 class="font-bold text-purple-600">นางสาวบวรลักษณ์ แสนดี</h3>
+                <p class="text-xs text-gray-400 font-light mt-1">ผู้ช่วยครูผู้ช่วย | กลุ่มวิชาคอมพิวเตอร์
+                </p>
             </div>
-            <p class="text-xs text-gray-400 font-light mt-1">ผู้ช่วยครูผู้ช่วย | กลุ่มวิชาคอมพิวเตอร์</p>
-            <p class="text-xs text-gray-500 font-light mt-4">© 2026 Bowonlak Sandee. All rights reserved.</p>
+
+            <!-- Right Side -->
+            <div class="flex items-center gap-6 text-gray-300">
+                <span class="text-sm font-medium text-gray-400">Jasminenie</span>
+            </div>
         </div>
     </footer>
 
@@ -2142,34 +2145,86 @@
             const ytContainer = document.getElementById('modal-yt-container');
             ytContainer.innerHTML = '';
 
-            const originalYtBlock = card.querySelector('.border.border-red-100');
-            const originalYtThumb = card.querySelector('.card-yt-thumb');
-
-            if (originalYtBlock) {
-                const clone = originalYtBlock.cloneNode(true);
-                ytContainer.appendChild(clone);
-            } else if (originalYtThumb) {
-                const clone = originalYtThumb.cloneNode(true);
-                clone.style.display = 'flex';
-                ytContainer.appendChild(clone);
-            } else if (ytItems.length > 0) {
+            if (ytItems.length > 0) {
                 const ytCard = document.createElement('div');
-                ytCard.className = 'border border-red-100 rounded-xl p-3 bg-red-50/50';
-                ytCard.innerHTML = `
-                    <div class="flex items-center gap-1.5 text-[11px] text-red-600 font-semibold mb-2.5 uppercase tracking-wide">
-                        <i class="fa-brands fa-youtube text-sm"></i> คลิปวิดีโอกิจกรรม
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        ${ytItems.map((item, i) => {
+                ytCard.className = 'border border-red-200/80 rounded-2xl p-4 sm:p-5 bg-gradient-to-br from-red-50/80 via-white to-rose-50/30 shadow-sm';
+
+                let ytContent = '';
+                if (ytItems.length === 1) {
+                    const item = ytItems[0];
                     const cleanId = getYouTubeId(item.videoId);
-                    const label = item.caption || `คลิปที่ ${i + 1}`;
-                    return `<a href="https://www.youtube.com/watch?v=${cleanId}" target="_blank" rel="noopener"
-                                class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border border-red-200 text-red-600 rounded-full text-xs font-medium hover:bg-red-600 hover:text-white hover:border-red-600 transition-all duration-200 shadow-sm">
-                                <i class="fa-brands fa-youtube text-sm"></i> ${label}
-                            </a>`;
-                }).join('')}
-                    </div>
-                `;
+                    const label = item.caption || 'คลิปวิดีโอตัวอย่างผลงานจากกิจกรรม';
+                    ytContent = `
+                        <div class="flex items-center justify-between gap-2 mb-3">
+                            <div class="flex items-center gap-2 text-xs font-bold text-red-600 uppercase tracking-wide">
+                                <i class="fa-brands fa-youtube text-lg"></i> คลิปวิดีโอกิจกรรม
+                            </div>
+                            <span class="text-[11px] text-gray-400 font-medium hidden sm:inline">กดเพื่อเปิดรับชมบน YouTube</span>
+                        </div>
+                        <a href="https://www.youtube.com/watch?v=${cleanId}" target="_blank" rel="noopener noreferrer"
+                            class="group relative flex flex-col sm:flex-row items-stretch sm:items-center gap-4 p-3 sm:p-4 bg-white rounded-2xl border-2 border-red-100 hover:border-red-500 hover:shadow-lg transition-all duration-300 cursor-pointer overflow-hidden text-left no-underline">
+                            <!-- Thumbnail with Play Button -->
+                            <div class="relative w-full sm:w-56 aspect-video sm:aspect-[16/10] rounded-xl overflow-hidden bg-black flex-shrink-0 shadow-sm">
+                                <img src="https://img.youtube.com/vi/${cleanId}/mqdefault.jpg" alt="${label}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-black/30 flex items-center justify-center group-hover:bg-black/15 transition-colors">
+                                    <div class="w-12 h-12 rounded-full bg-red-600 text-white flex items-center justify-center shadow-lg shadow-red-600/50 group-hover:scale-110 transition-transform">
+                                        <i class="fa-solid fa-play text-base ml-1"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Info & CTA -->
+                            <div class="flex-1 min-w-0 flex flex-col justify-center">
+                                <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-red-100 text-red-600 w-fit mb-2">
+                                    <i class="fa-brands fa-youtube"></i> รับชมบน YouTube
+                                </div>
+                                <h4 class="text-base sm:text-lg font-bold text-gray-800 group-hover:text-red-600 transition-colors leading-snug line-clamp-2">
+                                    ${label}
+                                </h4>
+                                <p class="text-xs sm:text-sm text-gray-500 mt-2 flex items-center gap-1.5 font-normal">
+                                    <span>คลิกที่นี่เพื่อเปิดดูวิดีโอ</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-xs text-red-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
+                                </p>
+                            </div>
+                        </a>
+                    `;
+                } else {
+                    ytContent = `
+                        <div class="flex items-center justify-between gap-2 mb-3.5">
+                            <div class="flex items-center gap-2 text-xs font-bold text-red-600 uppercase tracking-wide">
+                                <i class="fa-brands fa-youtube text-lg"></i> คลิปวิดีโอกิจกรรม (${ytItems.length} คลิป)
+                            </div>
+                            <span class="text-[11px] text-gray-400 font-medium hidden sm:inline">กดเพื่อเปิดรับชมบน YouTube</span>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            ${ytItems.map((item, i) => {
+                                const cleanId = getYouTubeId(item.videoId);
+                                const label = item.caption || `คลิปวิดีโอที่ ${i + 1}`;
+                                return `
+                                    <a href="https://www.youtube.com/watch?v=${cleanId}" target="_blank" rel="noopener noreferrer"
+                                        class="group flex items-center gap-3 p-3 bg-white rounded-xl border border-red-200 hover:border-red-500 hover:shadow-md transition-all duration-200 cursor-pointer text-left no-underline">
+                                        <div class="relative w-24 h-16 rounded-lg overflow-hidden bg-black flex-shrink-0">
+                                            <img src="https://img.youtube.com/vi/${cleanId}/mqdefault.jpg" alt="${label}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                            <div class="absolute inset-0 bg-black/25 flex items-center justify-center">
+                                                <div class="w-7 h-7 rounded-full bg-red-600 text-white flex items-center justify-center text-xs shadow">
+                                                    <i class="fa-solid fa-play ml-0.5"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex-1 min-w-0">
+                                            <h5 class="text-xs sm:text-sm font-bold text-gray-800 group-hover:text-red-600 transition-colors line-clamp-2">
+                                                ${label}
+                                            </h5>
+                                            <span class="text-[11px] text-red-500 font-medium flex items-center gap-1 mt-1">
+                                                เปิดดูบน YouTube <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                                            </span>
+                                        </div>
+                                    </a>
+                                `;
+                            }).join('')}
+                        </div>
+                    `;
+                }
+                ytCard.innerHTML = ytContent;
                 ytContainer.appendChild(ytCard);
             }
 
