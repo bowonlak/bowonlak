@@ -157,90 +157,26 @@ p[class*="text-[10px]"] {
    ============================================================ */
 
 /* ============================================================
-   iPad Landscape & Medium Screen Navbar (1024px – 1279px)
+   Desktop, Laptop & iPad Landscape Navbar (>= 1024px)
    ============================================================ */
-@media (min-width: 1024px) and (max-width: 1279px) {
-    /* Stretch container */
+@media (min-width: 1024px) {
+    /* Stretch container across screen with generous breathing room */
     nav > div {
-        max-width: 96% !important;
-        width: 96% !important;
-        padding-left: 0.75rem !important;
-        padding-right: 0.75rem !important;
-    }
-
-    /* Logo B circle and name — compact and proportional */
-    nav > div > a:first-child,
-    nav a[class*="lg:flex"] {
+        max-width: 95% !important;
+        width: 95% !important;
         display: flex !important;
-        flex-direction: row !important;
+        justify-content: space-between !important;
         align-items: center !important;
-        gap: 0.5rem !important;
-        flex-shrink: 0 !important;
-        margin-right: 0.5rem !important;
-        white-space: nowrap !important;
     }
 
-    nav > div > a:first-child div:first-child,
-    nav a[class*="lg:flex"] div:first-child {
-        width: 2.25rem !important;
-        height: 2.25rem !important;
-        font-size: 0.95rem !important;
+    /* STRICTLY HIDE mobile logo on desktop / iPad landscape */
+    nav a[class*="lg:hidden"] {
+        display: none !important;
     }
 
-    nav > div > a:first-child h1,
-    nav a[class*="lg:flex"] h1,
-    nav h1.font-bold {
-        font-size: 0.95rem !important; /* ~15.2px */
-        line-height: 1.2 !important;
-    }
-
-    nav p.text-xs {
-        font-size: 0.6875rem !important; /* 11px */
-    }
-
-    /* Desktop menu container — prevent any wrapping or overlapping */
-    nav div[class*="lg:flex"] {
-        display: flex !important;
-        flex-direction: row !important;
-        align-items: center !important;
-        flex-wrap: nowrap !important;
-        flex-shrink: 1 !important;
-        gap: 0.625rem !important; /* ~10px gap between links */
-        margin: 0 0.5rem !important;
-    }
-
-    /* Desktop menu links */
-    nav div[class*="lg:flex"] a {
-        white-space: nowrap !important;
-        display: inline-block !important;
-        font-size: 0.785rem !important; /* 12.5px — crisp, clear Thai text */
-        padding: 0.2rem 0.15rem !important;
-        vertical-align: middle !important;
-    }
-
-    /* Contact button — proportional pill, no excess horizontal padding */
-    nav a[class*="lg:inline-block"],
-    nav a[href*="contact"] {
-        display: inline-block !important;
-        padding: 0.4rem 1rem !important;
-        font-size: 0.8rem !important;
-        white-space: nowrap !important;
-        flex-shrink: 0 !important;
-        margin-left: 0.5rem !important;
-    }
-}
-
-/* ============================================================
-   Large Desktop & Laptop Navbar (>= 1280px)
-   ============================================================ */
-@media (min-width: 1280px) {
-    nav > div {
-        max-width: 94% !important;
-        width: 94% !important;
-    }
-
+    /* Desktop logo container — ONE single logo on the far left */
     nav a[class*="lg:flex"],
-    nav > div > a:first-child {
+    nav a.group:not([class*="lg:hidden"]) {
         display: flex !important;
         flex-direction: row !important;
         align-items: center !important;
@@ -249,34 +185,67 @@ p[class*="text-[10px]"] {
         white-space: nowrap !important;
     }
 
+    /* B circle */
+    nav a[class*="lg:flex"] div:first-child,
+    nav a.group:not([class*="lg:hidden"]) div:first-child {
+        width: 2.75rem !important;
+        height: 2.75rem !important;
+        font-size: 1.15rem !important;
+    }
+
+    /* Name "Bowonlak Sandee" */
+    nav a[class*="lg:flex"] h1,
+    nav a.group:not([class*="lg:hidden"]) h1,
+    nav h1.font-bold {
+        font-size: clamp(1.05rem, 0.95rem + 0.2vw, 1.25rem) !important;
+        line-height: 1.25 !important;
+    }
+
+    /* Subtitle "ข้อมูลส่วนตัว" */
+    nav a[class*="lg:flex"] p,
+    nav a.group:not([class*="lg:hidden"]) p {
+        font-size: 0.75rem !important;
+    }
+
+    /* Desktop menu container — spread out and spacious */
     nav div[class*="lg:flex"] {
         display: flex !important;
         flex-direction: row !important;
         align-items: center !important;
         flex-wrap: nowrap !important;
         flex-shrink: 1 !important;
-        gap: clamp(1rem, 0.5rem + 1.2vw, 2rem) !important;
+        gap: clamp(1rem, 0.4rem + 1.2vw, 2.25rem) !important; /* Generous gap across whole bar */
     }
 
+    /* Desktop menu links — clear, large, legible */
     nav div[class*="lg:flex"] a {
         white-space: nowrap !important;
         display: inline-block !important;
-        font-size: clamp(0.85rem, 0.75rem + 0.15vw, 0.95rem) !important;
+        font-size: clamp(0.85rem, 0.75rem + 0.2vw, 1rem) !important; /* Large, crisp text */
+        padding: 0.25rem 0.25rem !important;
         vertical-align: middle !important;
     }
 
+    /* Contact button */
     nav a[class*="lg:inline-block"],
     nav a[href*="contact"] {
         display: inline-block !important;
-        padding: 0.5rem 1.75rem !important;
+        padding: 0.5rem 1.5rem !important;
         font-size: 0.875rem !important;
         white-space: nowrap !important;
         flex-shrink: 0 !important;
     }
 }
 
-/* Force mobile layout (mobile logo + hamburger menu) on all screens <= 1024px (covers phone and iPad/iPad Pro portrait) */
-@media (max-width: 1024px) {
+/* Base style for nav link font-size */
+nav .text-sm.font-medium {
+    font-size: var(--fs-small) !important;
+}
+
+/* ============================================================
+   Mobile & iPad Portrait Navbar (< 1024px)
+   ============================================================ */
+@media (max-width: 1023px) {
     /* Hide desktop logo */
     nav a[class*="lg:flex"] {
         display: none !important;
@@ -295,8 +264,8 @@ p[class*="text-[10px]"] {
     }
     
     /* Show mobile logo and ensure flex row layout */
-    nav > div > a:first-child,
-    nav a[class*="lg:hidden"] {
+    nav a[class*="lg:hidden"],
+    nav > div > a:first-child:not([class*="lg:flex"]) {
         display: flex !important;
         flex-direction: row !important;
         align-items: center !important;
