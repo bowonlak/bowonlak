@@ -169,8 +169,10 @@ p[class*="text-[10px]"] {
         align-items: center !important;
     }
 
-    /* STRICTLY HIDE mobile logo on desktop / iPad landscape */
-    nav a[class*="lg:hidden"] {
+    /* STRICTLY HIDE mobile logo, hamburger button, and mobile dropdown menu on landscape/desktop */
+    nav a[class*="lg:hidden"],
+    nav button#mobile-menu-btn,
+    #mobile-menu {
         display: none !important;
     }
 
@@ -242,8 +244,13 @@ nav .text-sm.font-medium {
     font-size: var(--fs-small) !important;
 }
 
+/* Global rule: mobile menu is ALWAYS hidden when having .hidden class */
+#mobile-menu.hidden {
+    display: none !important;
+}
+
 /* ============================================================
-   Mobile & iPad Portrait Navbar (< 1024px)
+   Mobile & iPad Portrait Navbar (< 1024px) — แนวตั้งเท่านั้น
    ============================================================ */
 @media (max-width: 1023px) {
     /* Hide desktop logo */
@@ -275,12 +282,16 @@ nav .text-sm.font-medium {
     nav button#mobile-menu-btn {
         display: block !important;
     }
-}
 
-/* Ensure all links inside mobile-menu dropdown (including ติดต่อ) are visible */
-#mobile-menu a,
-#mobile-menu a[href*="contact"] {
-    display: flex !important;
+    /* Show mobile menu dropdown ONLY when opened (not hidden) */
+    #mobile-menu:not(.hidden) {
+        display: block !important;
+    }
+
+    /* Ensure all links inside mobile-menu dropdown (including ติดต่อ) are flex */
+    #mobile-menu a {
+        display: flex !important;
+    }
 }
 
 /* Phone scaling (< 768px) — balanced, clean proportions */
