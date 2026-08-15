@@ -666,11 +666,7 @@ i[class*="fa-"] {
     }
 
     /* ---- Tab / filter buttons ---- */
-    button.tab-btn,
-    button[class*="tab"],
-    .flex button {
-        font-size: clamp(1rem, 0.9rem + 0.35vw, 1.2rem) !important;
-    }
+    /* Remove old overly broad selector — replaced below with specific ones */
 
     /* ---- Captions under document cards ---- */
     p[class*="text-[10px]"],
@@ -685,5 +681,24 @@ i[class*="fa-"] {
     section > .max-w-7xl > p {
         font-size: clamp(1.0625rem, 1rem + 0.3vw, 1.25rem) !important;
         line-height: 1.7 !important;
+    }
+
+    /* ---- Filter/Tab bar — fit all tabs in one line on iPad, no horizontal scroll ---- */
+    #filter-container {
+        overflow-x: visible !important;
+        flex-wrap: nowrap !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        justify-content: space-between !important;
+    }
+
+    /* Shrink each filter button so all 4 fit on one line */
+    #filter-container .filter-btn,
+    button.filter-btn {
+        font-size: 0.8rem !important;       /* smaller text */
+        padding: 0.5rem 0.75rem !important; /* tighter padding */
+        white-space: nowrap !important;
+        flex: 1 1 0 !important;             /* even distribution across full width */
+        text-align: center !important;
     }
 }
