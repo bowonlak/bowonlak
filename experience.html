@@ -286,6 +286,63 @@
             gap: 4px;
         }
 
+        /* Modal YouTube Card Enhancements (Prominent & Larger) */
+        #modal-yt-container .card-yt-thumb {
+            display: flex !important;
+            align-items: center !important;
+            gap: 16px !important;
+            padding: 12px 18px !important;
+            background: #FFF5F5 !important;
+            border: 1.5px solid #FECACA !important;
+            border-radius: 16px !important;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            box-shadow: 0 2px 6px rgba(239, 68, 68, 0.08) !important;
+            text-decoration: none !important;
+        }
+
+        #modal-yt-container .card-yt-thumb:hover {
+            background: #FEE2E2 !important;
+            border-color: #EF4444 !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 6px 16px rgba(239, 68, 68, 0.15) !important;
+        }
+
+        #modal-yt-container .card-yt-thumb img {
+            width: 96px !important;
+            height: 64px !important;
+            object-fit: cover !important;
+            border-radius: 10px !important;
+            flex-shrink: 0 !important;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+        }
+
+        #modal-yt-container .card-yt-thumb .yt-label {
+            font-size: 15px !important;
+            font-weight: 700 !important;
+            color: #DC2626 !important;
+            display: flex !important;
+            align-items: center !important;
+            gap: 10px !important;
+        }
+
+        #modal-yt-container .card-yt-thumb .yt-label i {
+            font-size: 22px !important;
+        }
+
+        #modal-yt-container .border.border-red-100 {
+            padding: 16px 20px !important;
+            border-radius: 18px !important;
+            border: 1.5px solid #FECACA !important;
+            background: #FFF5F5 !important;
+        }
+
+        #modal-yt-container .border.border-red-100 a {
+            padding: 8px 16px !important;
+            font-size: 13px !important;
+            border-radius: 9999px !important;
+            font-weight: 600 !important;
+        }
+
         /* Photo count badge */
         .photo-count-badge {
             position: absolute;
@@ -339,6 +396,199 @@
         .view-all-btn:hover {
             background: #A855F7;
             transform: scale(1.05);
+        }
+
+        /* ===== CSS to style .item-card as aspect-square, matching student-care.html's photo cards ===== */
+        #portfolio-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+            gap: 1rem !important;
+            align-items: stretch !important;
+        }
+
+        @media (min-width: 640px) {
+            #portfolio-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+            }
+        }
+
+        @media (min-width: 768px) {
+            #portfolio-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            #portfolio-grid {
+                grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            #portfolio-grid {
+                grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+            }
+        }
+
+        .item-card {
+            position: relative !important;
+            aspect-ratio: 1 / 1 !important;
+            height: auto !important;
+            border-radius: 1rem !important;
+            border: 1px solid #e5e7eb !important;
+            cursor: pointer !important;
+            overflow: hidden !important;
+            flex-direction: column !important;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1) !important;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        }
+
+        .item-card:hover {
+            transform: translateY(0) !important;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
+        }
+
+        .item-card>div.relative {
+            position: absolute !important;
+            inset: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            background-color: #f3f4f6 !important;
+            z-index: 1 !important;
+        }
+
+        .item-card img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            transition: transform 0.5s !important;
+        }
+
+        .item-card:hover img {
+            transform: scale(1.1) !important;
+        }
+
+        .item-card .card-img-overlay-btn,
+        .item-card .photo-count-badge,
+        .item-card .absolute.inset-0.bg-gradient-to-t {
+            display: none !important;
+        }
+
+        /* Single gradient source – always stretches to fill card bottom */
+        .item-card .p-6 {
+            position: absolute !important;
+            left: 0 !important;
+            right: 0 !important;
+            bottom: 0 !important;
+            min-height: 42% !important;
+            background: linear-gradient(to top,
+                    rgba(0, 0, 0, 0.65) 0%,
+                    rgba(0, 0, 0, 0.35) 40%,
+                    rgba(0, 0, 0, 0.10) 70%,
+                    transparent 100%) !important;
+            padding: 0.625rem 0.75rem !important;
+            color: #ffffff !important;
+            z-index: 10 !important;
+            pointer-events: none !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: flex-end !important;
+            border-top: none !important;
+            box-sizing: border-box !important;
+        }
+
+        .item-card .p-6 div.text-xs.font-semibold,
+        .item-card .p-6 p.leading-relaxed,
+        .item-card .p-6 button.inline-flex,
+        .item-card .p-6 a.inline-flex,
+        .item-card .p-6 .card-yt-thumb,
+        .item-card .p-6 .border.border-red-100 {
+            display: none !important;
+        }
+
+        .item-card .p-6 h3 {
+            color: #ffffff !important;
+            font-size: 11px !important;
+            font-weight: 700 !important;
+            line-height: 1.3 !important;
+            margin-bottom: 2px !important;
+            text-shadow:
+                0 1px 3px rgba(0, 0, 0, 0.9),
+                0 0 8px rgba(0, 0, 0, 0.7) !important;
+            display: -webkit-box !important;
+            -webkit-line-clamp: 2 !important;
+            -webkit-box-orient: vertical !important;
+            overflow: hidden !important;
+        }
+
+        @media (min-width: 640px) {
+            .item-card .p-6 h3 {
+                font-size: 12px !important;
+            }
+        }
+
+        .item-card .p-6 p.text-sm.text-gray-500 {
+            color: rgba(255, 255, 255, 0.88) !important;
+            font-size: 9px !important;
+            margin-bottom: 0 !important;
+            text-shadow:
+                0 1px 2px rgba(0, 0, 0, 0.9),
+                0 0 6px rgba(0, 0, 0, 0.6) !important;
+            white-space: nowrap !important;
+            overflow: hidden !important;
+            text-overflow: ellipsis !important;
+        }
+
+        @media (min-width: 640px) {
+            .item-card .p-6 p.text-sm.text-gray-500 {
+                font-size: 10px !important;
+            }
+        }
+
+        .item-card::after {
+            content: "\f00e" !important;
+            font-family: "Font Awesome 6 Free" !important;
+            font-weight: 900 !important;
+            position: absolute !important;
+            inset: 0 !important;
+            background-color: rgba(255, 255, 255, 0.2) !important;
+            backdrop-filter: blur(2px) !important;
+            -webkit-backdrop-filter: blur(2px) !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            color: #ffffff !important;
+            font-size: 1.5rem !important;
+            opacity: 0 !important;
+            transition: opacity 0.3s ease !important;
+            z-index: 20 !important;
+            pointer-events: none !important;
+            border-radius: 1rem !important;
+        }
+
+        .item-card:hover::after {
+            opacity: 1 !important;
+        }
+
+        /* Smooth Activity Modal Transition & Overlay style */
+        #activity-modal {
+            transition: opacity 0.25s ease, visibility 0.25s ease;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        #activity-modal.flex {
+            opacity: 1 !important;
+            visibility: visible !important;
+            display: flex !important;
+        }
+
+        #activity-modal>div.relative {
+            transform: scale(0.95);
+            transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        #activity-modal.flex>div.relative {
+            transform: scale(1);
         }
     </style>
 </head>
@@ -564,7 +814,7 @@
                         <i class="fa-solid fa-image text-xs"></i> 1
                     </div>
                     <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4 pointer-events-none">
+                        class="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent flex items-end justify-between p-4 pointer-events-none">
                         <span
                             class="px-3 py-1 bg-purple-600/90 backdrop-blur-md text-white rounded-full text-xs font-medium">เอกสารรับรอง</span>
                         <span class="text-xs text-white/90 font-light"><i
@@ -609,7 +859,7 @@
                         <i class="fa-solid fa-image text-xs"></i> 1
                     </div>
                     <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4 pointer-events-none">
+                        class="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent flex items-end justify-between p-4 pointer-events-none">
                         <span
                             class="px-3 py-1 bg-purple-600/90 backdrop-blur-md text-white rounded-full text-xs font-medium">เอกสารรับรอง</span>
                         <span class="text-xs text-white/90 font-light"><i
@@ -653,7 +903,7 @@
                         <i class="fa-solid fa-image text-xs"></i> 1
                     </div>
                     <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4 pointer-events-none">
+                        class="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent flex items-end justify-between p-4 pointer-events-none">
                         <span
                             class="px-3 py-1 bg-purple-600/90 backdrop-blur-md text-white rounded-full text-xs font-medium">เอกสารรับรอง</span>
                         <span class="text-xs text-white/90 font-light"><i
@@ -700,7 +950,7 @@
                         <i class="fa-solid fa-images text-xs"></i> 5
                     </div>
                     <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4 pointer-events-none">
+                        class="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent flex items-end justify-between p-4 pointer-events-none">
                         <span
                             class="px-3 py-1 bg-blue-600/90 backdrop-blur-md text-white rounded-full text-xs font-medium">สังเกตการสอน</span>
                         <span class="text-xs text-white/90 font-light"><i
@@ -750,7 +1000,7 @@
                         <i class="fa-solid fa-images text-xs"></i> 7
                     </div>
                     <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4 pointer-events-none">
+                        class="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent flex items-end justify-between p-4 pointer-events-none">
                         <span
                             class="px-3 py-1 bg-blue-600/90 backdrop-blur-md text-white rounded-full text-xs font-medium">สังเกตการสอน</span>
                         <span class="text-xs text-white/90 font-light"><i
@@ -802,7 +1052,7 @@
                         <i class="fa-solid fa-images text-xs"></i> 5
                     </div>
                     <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4 pointer-events-none">
+                        class="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent flex items-end justify-between p-4 pointer-events-none">
                         <span
                             class="px-3 py-1 bg-blue-600/90 backdrop-blur-md text-white rounded-full text-xs font-medium">สังเกตการสอน</span>
                         <span class="text-xs text-white/90 font-light"><i
@@ -817,9 +1067,9 @@
                         <p class="text-sm text-gray-500 mb-3">การประยุกต์ใช้นวัตกรรมการศึกษา</p>
                         <p class="text-sm text-gray-600 leading-relaxed mb-4">
                             ศึกษาเทคนิคการประยุกต์ใช้สื่อมัลติมีเดียและแพลตฟอร์มดิจิทัลในการกระตุ้นความสนใจ
-                            และการประเมินผลการเรียนรู้ของผู้เรียน รวมไปถึงการปฏิบัติหน้าที่การเป็นครูประจำชั้น
-                            และการเข้าร่วมกิจกรรมของโรงเรียน ได้แก่ กิจกรรมวันไหว์ครู กิจกรรมวันประชุมผู้ปกครอง
-                            ซึ่งมีการถ่ายทอดสดทางออนไลน์
+                            และการประเมินผลการเรียนรู้ของผู้เรียน
+                            รวมไปถึงการปฏิบัติหน้าที่การเป็นครูประจำชั้นและการเข้าร่วมกิจกรรมของโรงเรียน ได้แก่
+                            กิจกรรมวันไหว์ครู กิจกรรมวันประชุมผู้ปกครอง ซึ่งมีการถ่ายทอดสดทางออนไลน์
                             อีกทั้งยังได้มีส่วนร่วมในการจัดการเรียนการสอนในระดับชั้นมัธยมศึกษาปีที่ 2 จำนวน 2 คาบเรียน
                             พร้อมทั้งยังมีการจัดทำแผนการเรียนรู้
                             และการเขียนรายงานการวิเคราะห์และการแก้ไขปัญหาในชั้นเรียน
@@ -858,7 +1108,7 @@
                         <i class="fa-solid fa-images text-xs"></i> 5
                     </div>
                     <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4 pointer-events-none">
+                        class="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent flex items-end justify-between p-4 pointer-events-none">
                         <span
                             class="px-3 py-1 bg-pink-600/90 backdrop-blur-md text-white rounded-full text-xs font-medium">กิจกรรมที่เข้าร่วม</span>
                         <span class="text-xs text-white/90 font-light"><i
@@ -919,7 +1169,7 @@
                         <i class="fa-solid fa-images text-xs"></i> 10
                     </div>
                     <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4 pointer-events-none">
+                        class="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent flex items-end justify-between p-4 pointer-events-none">
                         <span
                             class="px-3 py-1 bg-pink-600/90 backdrop-blur-md text-white rounded-full text-xs font-medium">กิจกรรมที่เข้าร่วม</span>
                         <span class="text-xs text-white/90 font-light"><i
@@ -1031,7 +1281,7 @@
                         <i class="fa-solid fa-images text-xs"></i> 5
                     </div>
                     <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4 pointer-events-none">
+                        class="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent flex items-end justify-between p-4 pointer-events-none">
                         <span
                             class="px-3 py-1 bg-pink-600/90 backdrop-blur-md text-white rounded-full text-xs font-medium">กิจกรรมที่เข้าร่วม</span>
                         <span class="text-xs text-white/90 font-light"><i
@@ -1073,7 +1323,8 @@
                     { type: 'image', src: 'assets/image/สื่อพื้นบ้านอุทัย/6D5C731B-AEB1-4198-B784-B789645DD1C6.jpg', caption: 'กิจกรรมสื่อพื้นบ้านอุทัยธานี - รูปที่ 2' },
                     { type: 'image', src: 'assets/image/สื่อพื้นบ้านอุทัย/IMG_0045.JPG', caption: 'กิจกรรมสื่อพื้นบ้านอุทัยธานี - รูปที่ 3' },
                     { type: 'image', src: 'assets/image/สื่อพื้นบ้านอุทัย/IMG_0047.JPG', caption: 'กิจกรรมสื่อพื้นบ้านอุทัยธานี - รูปที่ 4' },
-                    { type: 'image', src: 'assets/image/สื่อพื้นบ้านอุทัย/IMG_0052.JPG', caption: 'กิจกรรมสื่อพื้นบ้านอุทัยธานี - รูปที่ 5' }
+                    { type: 'image', src: 'assets/image/สื่อพื้นบ้านอุทัย/IMG_0052.JPG', caption: 'กิจกรรมสื่อพื้นบ้านอุทัยธานี - รูปที่ 5' },
+                    { type: 'youtube', videoId: 'bKK-gL070P8', caption: 'ดูคลิปวีดีโอสื่อการเรียนรู้' }
                 ];
             </script>
 
@@ -1094,7 +1345,7 @@
                         <i class="fa-solid fa-image text-xs"></i> 1
                     </div>
                     <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4 pointer-events-none">
+                        class="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent flex items-end justify-between p-4 pointer-events-none">
                         <span
                             class="px-3 py-1 bg-emerald-600/90 backdrop-blur-md text-white rounded-full text-xs font-medium">เกียรติบัตร</span>
                         <span class="text-xs text-white/90 font-light"><i
@@ -1140,7 +1391,7 @@
                         <i class="fa-solid fa-image text-xs"></i> 1
                     </div>
                     <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4 pointer-events-none">
+                        class="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent flex items-end justify-between p-4 pointer-events-none">
                         <span
                             class="px-3 py-1 bg-emerald-600/90 backdrop-blur-md text-white rounded-full text-xs font-medium">เกียรติบัตร</span>
                         <span class="text-xs text-white/90 font-light"><i
@@ -1186,7 +1437,7 @@
                         <i class="fa-solid fa-image text-xs"></i> 1
                     </div>
                     <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4 pointer-events-none">
+                        class="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent flex items-end justify-between p-4 pointer-events-none">
                         <span
                             class="px-3 py-1 bg-emerald-600/90 backdrop-blur-md text-white rounded-full text-xs font-medium">เกียรติบัตร</span>
                         <span class="text-xs text-white/90 font-light"><i
@@ -1232,7 +1483,7 @@
                         <i class="fa-solid fa-image text-xs"></i> 1
                     </div>
                     <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4 pointer-events-none">
+                        class="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent flex items-end justify-between p-4 pointer-events-none">
                         <span
                             class="px-3 py-1 bg-emerald-600/90 backdrop-blur-md text-white rounded-full text-xs font-medium">เกียรติบัตร</span>
                         <span class="text-xs text-white/90 font-light"><i
@@ -1278,7 +1529,7 @@
                         <i class="fa-solid fa-image text-xs"></i> 1
                     </div>
                     <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4 pointer-events-none">
+                        class="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent flex items-end justify-between p-4 pointer-events-none">
                         <span
                             class="px-3 py-1 bg-emerald-600/90 backdrop-blur-md text-white rounded-full text-xs font-medium">เกียรติบัตร</span>
                         <span class="text-xs text-white/90 font-light"><i
@@ -1325,7 +1576,7 @@
                         <i class="fa-solid fa-image text-xs"></i> 1
                     </div>
                     <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4 pointer-events-none">
+                        class="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent flex items-end justify-between p-4 pointer-events-none">
                         <span
                             class="px-3 py-1 bg-emerald-600/90 backdrop-blur-md text-white rounded-full text-xs font-medium">เกียรติบัตร</span>
                         <span class="text-xs text-white/90 font-light"><i
@@ -1370,7 +1621,7 @@
                         <i class="fa-solid fa-image text-xs"></i> 1
                     </div>
                     <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4 pointer-events-none">
+                        class="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent flex items-end justify-between p-4 pointer-events-none">
                         <span
                             class="px-3 py-1 bg-emerald-600/90 backdrop-blur-md text-white rounded-full text-xs font-medium">เกียรติบัตร</span>
                         <span class="text-xs text-white/90 font-light"><i
@@ -1416,7 +1667,7 @@
                         <i class="fa-solid fa-image text-xs"></i> 1
                     </div>
                     <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4 pointer-events-none">
+                        class="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent flex items-end justify-between p-4 pointer-events-none">
                         <span
                             class="px-3 py-1 bg-emerald-600/90 backdrop-blur-md text-white rounded-full text-xs font-medium">เกียรติบัตร</span>
                         <span class="text-xs text-white/90 font-light"><i
@@ -1461,7 +1712,7 @@
                         <i class="fa-solid fa-image text-xs"></i> 1
                     </div>
                     <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-4 pointer-events-none">
+                        class="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent flex items-end justify-between p-4 pointer-events-none">
                         <span
                             class="px-3 py-1 bg-emerald-600/90 backdrop-blur-md text-white rounded-full text-xs font-medium">เกียรติบัตร</span>
                         <span class="text-xs text-white/90 font-light"><i
@@ -1491,6 +1742,52 @@
                 ];
             </script>
 
+        </div>
+
+        <!-- Modal for Activity Details (student-care style) -->
+        <div id="activity-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4">
+            <div onclick="closeActivityModal()"
+                class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity"></div>
+            <div
+                class="relative w-full max-w-4xl bg-white rounded-3xl overflow-hidden shadow-2xl animate-in zoom-in duration-300 max-h-[90vh] flex flex-col">
+                <!-- Modal Header -->
+                <div
+                    class="px-8 py-6 border-b border-gray-100 flex justify-between items-center sticky top-0 bg-white z-10">
+                    <div>
+                        <h2 id="modal-title" class="text-2xl font-bold text-gray-800">หัวข้อกิจกรรม</h2>
+                        <p id="modal-subtitle" class="text-purple-500 text-sm font-medium mt-1">รายละเอียดภาคเรียน</p>
+                    </div>
+                    <button onclick="closeActivityModal()"
+                        class="w-10 h-10 flex-shrink-0 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:text-red-500 hover:bg-red-50 transition-all">
+                        <i class="fa-solid fa-xmark text-lg"></i>
+                    </button>
+                </div>
+
+                <!-- Modal Content (Scrollable) -->
+                <div class="p-8 overflow-y-auto">
+                    <div class="mb-6">
+                        <h3 class="text-gray-800 font-bold mb-1.5 flex items-center gap-2">
+                            <i class="fa-solid fa-circle-info text-purple-400"></i>
+                            รายละเอียดกิจกรรม
+                        </h3>
+                        <p id="modal-description" class="text-gray-500 leading-relaxed text-base font-light">
+                            คำบรรยายหน้าที่การทำงาน...
+                        </p>
+                        <!-- YouTube links will be cloned and injected here -->
+                        <div id="modal-yt-container" class="mt-4 flex flex-col gap-3"></div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-gray-800 font-bold mb-3 flex items-center gap-2">
+                            <i class="fa-solid fa-images text-purple-400"></i>
+                            ภาพบรรยากาศกิจกรรม
+                        </h3>
+                        <div id="modal-gallery" class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                            <!-- Gallery images will be injected here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </main>
@@ -1789,6 +2086,23 @@
                     }
                 }
             });
+
+            // Bind click event to the entire card to trigger activity modal
+            document.querySelectorAll('.item-card').forEach(card => {
+                const btn = card.querySelector('[onclick*="openLightboxById"]');
+                if (btn) {
+                    const onclickAttr = btn.getAttribute('onclick');
+                    const match = onclickAttr.match(/openLightboxById\(['"]([^'"]+)['"]/);
+                    if (match && match[1]) {
+                        const id = match[1];
+                        card.addEventListener('click', (e) => {
+                            // Don't trigger if clicked on an actual link or button inside the card
+                            if (e.target.closest('a') || e.target.closest('button')) return;
+                            openActivityModal(id);
+                        });
+                    }
+                }
+            });
         });
 
         // Close on overlay click (not content)
@@ -1804,6 +2118,107 @@
             if (e.key === 'ArrowRight') lightboxNav(1);
             if (e.key === 'Escape') closeLightbox();
         });
+
+        // ===== Activity Modal Helpers =====
+        function openActivityModal(id) {
+            const card = document.querySelector(`.item-card [onclick*="openLightboxById('${id}')"]`)?.closest('.item-card')
+                || document.querySelector(`.item-card [onclick*="openLightboxById(\"${id}\")"]`)?.closest('.item-card');
+
+            if (!card) return;
+
+            const title = (card.querySelector('h3')?.innerText || '').trim();
+            const subtitle = (card.querySelector('p.text-sm.text-gray-500')?.innerText || '').trim();
+            const description = (card.querySelector('p.leading-relaxed')?.innerText || '').trim();
+
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-subtitle').innerText = subtitle;
+            document.getElementById('modal-description').innerText = description;
+
+            // Separate images and youtube items
+            const allItems = window._galleries[id] || [];
+            const imageItems = allItems.filter(item => item.type !== 'youtube');
+            const ytItems = allItems.filter(item => item.type === 'youtube');
+
+            // ----- Render YouTube link cards in modal-yt-container -----
+            const ytContainer = document.getElementById('modal-yt-container');
+            ytContainer.innerHTML = '';
+
+            const originalYtBlock = card.querySelector('.border.border-red-100');
+            const originalYtThumb = card.querySelector('.card-yt-thumb');
+
+            if (originalYtBlock) {
+                const clone = originalYtBlock.cloneNode(true);
+                ytContainer.appendChild(clone);
+            } else if (originalYtThumb) {
+                const clone = originalYtThumb.cloneNode(true);
+                clone.style.display = 'flex';
+                ytContainer.appendChild(clone);
+            } else if (ytItems.length > 0) {
+                const ytCard = document.createElement('div');
+                ytCard.className = 'border border-red-100 rounded-xl p-3 bg-red-50/50';
+                ytCard.innerHTML = `
+                    <div class="flex items-center gap-1.5 text-[11px] text-red-600 font-semibold mb-2.5 uppercase tracking-wide">
+                        <i class="fa-brands fa-youtube text-sm"></i> คลิปวิดีโอกิจกรรม
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        ${ytItems.map((item, i) => {
+                    const cleanId = getYouTubeId(item.videoId);
+                    const label = item.caption || `คลิปที่ ${i + 1}`;
+                    return `<a href="https://www.youtube.com/watch?v=${cleanId}" target="_blank" rel="noopener"
+                                class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border border-red-200 text-red-600 rounded-full text-xs font-medium hover:bg-red-600 hover:text-white hover:border-red-600 transition-all duration-200 shadow-sm">
+                                <i class="fa-brands fa-youtube text-sm"></i> ${label}
+                            </a>`;
+                }).join('')}
+                    </div>
+                `;
+                ytContainer.appendChild(ytCard);
+            }
+
+            // ----- Render image-only gallery -----
+            const galleryContainer = document.getElementById('modal-gallery');
+            galleryContainer.innerHTML = '';
+
+            imageItems.forEach((item, idx) => {
+                const imgContainer = document.createElement('div');
+                imgContainer.className = "aspect-[4/3] rounded-2xl bg-gray-50 border border-gray-100 flex items-center justify-center overflow-hidden group cursor-pointer hover:shadow-lg hover:border-purple-200 transition-all relative";
+                imgContainer.innerHTML = `
+                    <img src="${item.src}" alt="${item.caption || ''}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div class="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/20 transition-all duration-300">
+                        <i class="fa-solid fa-magnifying-glass-plus text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                    </div>
+                `;
+                imgContainer.onclick = () => {
+                    openLightboxForModal(id, idx);
+                };
+                galleryContainer.appendChild(imgContainer);
+            });
+
+            const modal = document.getElementById('activity-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeActivityModal() {
+            const modal = document.getElementById('activity-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
+
+        function openLightboxForModal(id, index) {
+            // Only open images (not youtube) in lightbox from within the modal
+            const allItems = window._galleries[id];
+            if (!allItems || allItems.length === 0) return;
+            const imageItems = allItems.filter(item => item.type !== 'youtube');
+            if (imageItems.length === 0) return;
+
+            _lbItems = imageItems;
+            _lbIndex = index;
+            _showLightboxSlide();
+            document.getElementById('lightbox-overlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
     </script>
 </body>
 
