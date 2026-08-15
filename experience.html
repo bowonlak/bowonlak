@@ -124,18 +124,25 @@
 
         /* Main image in lightbox */
         #lightbox-main-img {
-            max-height: 65vh;
-            max-width: 85vw;
+            max-height: 70vh;
+            max-width: 90vw;
             object-fit: contain;
             border-radius: 12px;
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
         }
 
+        @media (min-width: 640px) {
+            #lightbox-main-img {
+                max-height: 65vh;
+                max-width: 85vw;
+            }
+        }
+
         /* YouTube iframe and fallback */
         #lightbox-yt-iframe,
         #lightbox-yt-fallback {
-            width: min(85vw, 900px);
-            height: min(50vw, 506px);
+            width: min(90vw, 900px);
+            height: min(54vw, 506px);
             border-radius: 12px;
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
             border: none;
@@ -143,8 +150,8 @@
 
         /* Thumbnail strip */
         .lb-thumb {
-            width: 70px;
-            height: 52px;
+            width: 56px;
+            height: 42px;
             object-fit: cover;
             border-radius: 6px;
             cursor: pointer;
@@ -152,6 +159,13 @@
             border: 2px solid transparent;
             transition: all 0.2s ease;
             flex-shrink: 0;
+        }
+
+        @media (min-width: 640px) {
+            .lb-thumb {
+                width: 70px;
+                height: 52px;
+            }
         }
 
         .lb-thumb:hover {
@@ -165,8 +179,8 @@
         }
 
         .lb-thumb-yt {
-            width: 70px;
-            height: 52px;
+            width: 56px;
+            height: 42px;
             border-radius: 6px;
             cursor: pointer;
             opacity: 0.55;
@@ -176,6 +190,13 @@
             background: #000;
             position: relative;
             overflow: hidden;
+        }
+
+        @media (min-width: 640px) {
+            .lb-thumb-yt {
+                width: 70px;
+                height: 52px;
+            }
         }
 
         .lb-thumb-yt:hover {
@@ -342,52 +363,69 @@
         }
 
         /* ===== CSS to style .item-card as aspect-square, matching student-care.html's photo cards ===== */
+        #filter-container {
+            -webkit-overflow-scrolling: touch;
+        }
+
         #portfolio-grid {
+            display: grid !important;
             grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-            gap: 1rem !important;
+            gap: 0.75rem !important;
             align-items: stretch !important;
+            width: 100% !important;
         }
 
         @media (min-width: 640px) {
             #portfolio-grid {
                 grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+                gap: 1rem !important;
             }
         }
 
         @media (min-width: 768px) {
             #portfolio-grid {
                 grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+                gap: 1.25rem !important;
             }
         }
 
         @media (min-width: 1024px) {
             #portfolio-grid {
                 grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+                gap: 1.25rem !important;
             }
         }
 
         @media (min-width: 1280px) {
             #portfolio-grid {
                 grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+                gap: 1.5rem !important;
             }
         }
 
         .item-card {
+            display: block;
             position: relative !important;
             aspect-ratio: 1 / 1 !important;
-            height: auto !important;
-            border-radius: 1rem !important;
+            width: 100% !important;
+            border-radius: 0.875rem !important;
             border: 1px solid #e5e7eb !important;
             cursor: pointer !important;
             overflow: hidden !important;
-            flex-direction: column !important;
-            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1) !important;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 1px 2px -1px rgba(0, 0, 0, 0.08) !important;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            background-color: #f3f4f6 !important;
+        }
+
+        @media (min-width: 640px) {
+            .item-card {
+                border-radius: 1rem !important;
+            }
         }
 
         .item-card:hover {
             transform: translateY(0) !important;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.12), 0 8px 10px -6px rgba(0, 0, 0, 0.08) !important;
         }
 
         .item-card>div.relative {
@@ -407,7 +445,7 @@
         }
 
         .item-card:hover img {
-            transform: scale(1.1) !important;
+            transform: scale(1.08) !important;
         }
 
         .item-card .card-img-overlay-btn,
@@ -422,13 +460,13 @@
             left: 0 !important;
             right: 0 !important;
             bottom: 0 !important;
-            min-height: 42% !important;
+            min-height: 44% !important;
             background: linear-gradient(to top,
-                    rgba(0, 0, 0, 0.65) 0%,
-                    rgba(0, 0, 0, 0.35) 40%,
-                    rgba(0, 0, 0, 0.10) 70%,
+                    rgba(0, 0, 0, 0.75) 0%,
+                    rgba(0, 0, 0, 0.45) 45%,
+                    rgba(0, 0, 0, 0.12) 75%,
                     transparent 100%) !important;
-            padding: 0.625rem 0.75rem !important;
+            padding: 0.5rem 0.625rem !important;
             color: #ffffff !important;
             z-index: 10 !important;
             pointer-events: none !important;
@@ -437,6 +475,12 @@
             justify-content: flex-end !important;
             border-top: none !important;
             box-sizing: border-box !important;
+        }
+
+        @media (min-width: 640px) {
+            .item-card .p-6 {
+                padding: 0.75rem 0.875rem !important;
+            }
         }
 
         .item-card .p-6 div.text-xs.font-semibold,
@@ -505,7 +549,13 @@
             transition: opacity 0.3s ease !important;
             z-index: 20 !important;
             pointer-events: none !important;
-            border-radius: 1rem !important;
+            border-radius: 0.875rem !important;
+        }
+
+        @media (min-width: 640px) {
+            .item-card::after {
+                border-radius: 1rem !important;
+            }
         }
 
         .item-card:hover::after {
@@ -1688,32 +1738,32 @@
         </div>
 
         <!-- Modal for Activity Details (student-care style) -->
-        <div id="activity-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4">
+        <div id="activity-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-3 sm:p-4 md:p-6">
             <div onclick="closeActivityModal()"
                 class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity"></div>
             <div
-                class="relative w-full max-w-4xl bg-white rounded-3xl overflow-hidden shadow-2xl animate-in zoom-in duration-300 max-h-[90vh] flex flex-col">
+                class="relative w-full max-w-4xl bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl animate-in zoom-in duration-300 max-h-[92vh] sm:max-h-[90vh] flex flex-col">
                 <!-- Modal Header -->
                 <div
-                    class="px-8 py-6 border-b border-gray-100 flex justify-between items-center sticky top-0 bg-white z-10">
-                    <div>
-                        <h2 id="modal-title" class="text-2xl font-bold text-gray-800">หัวข้อกิจกรรม</h2>
-                        <p id="modal-subtitle" class="text-purple-500 text-sm font-medium mt-1">รายละเอียดภาคเรียน</p>
+                    class="px-5 py-4 sm:px-8 sm:py-6 border-b border-gray-100 flex justify-between items-center sticky top-0 bg-white z-10">
+                    <div class="pr-3">
+                        <h2 id="modal-title" class="text-lg sm:text-2xl font-bold text-gray-800 leading-tight">หัวข้อกิจกรรม</h2>
+                        <p id="modal-subtitle" class="text-purple-500 text-xs sm:text-sm font-medium mt-1">รายละเอียดภาคเรียน</p>
                     </div>
                     <button onclick="closeActivityModal()"
-                        class="w-10 h-10 flex-shrink-0 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:text-red-500 hover:bg-red-50 transition-all">
-                        <i class="fa-solid fa-xmark text-lg"></i>
+                        class="w-9 h-9 sm:w-10 sm:h-10 flex-shrink-0 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:text-red-500 hover:bg-red-50 transition-all">
+                        <i class="fa-solid fa-xmark text-base sm:text-lg"></i>
                     </button>
                 </div>
 
                 <!-- Modal Content (Scrollable) -->
-                <div class="p-8 overflow-y-auto">
-                    <div class="mb-6">
-                        <h3 class="text-gray-800 font-bold mb-1.5 flex items-center gap-2">
+                <div class="p-4 sm:p-8 overflow-y-auto">
+                    <div class="mb-5 sm:mb-6">
+                        <h3 class="text-gray-800 font-bold text-sm sm:text-base mb-1.5 flex items-center gap-2">
                             <i class="fa-solid fa-circle-info text-purple-400"></i>
                             รายละเอียดกิจกรรม
                         </h3>
-                        <p id="modal-description" class="text-gray-500 leading-relaxed text-base font-light">
+                        <p id="modal-description" class="text-gray-600 leading-relaxed text-sm sm:text-base font-light">
                             คำบรรยายหน้าที่การทำงาน...
                         </p>
                         <!-- YouTube links will be cloned and injected here -->
@@ -1721,11 +1771,11 @@
                     </div>
 
                     <div>
-                        <h3 class="text-gray-800 font-bold mb-3 flex items-center gap-2">
+                        <h3 class="text-gray-800 font-bold text-sm sm:text-base mb-3 flex items-center gap-2">
                             <i class="fa-solid fa-images text-purple-400"></i>
                             ภาพบรรยากาศกิจกรรม
                         </h3>
-                        <div id="modal-gallery" class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div id="modal-gallery" class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
                             <!-- Gallery images will be injected here -->
                         </div>
                     </div>
@@ -1784,13 +1834,19 @@
 
             cards.forEach(card => {
                 if (card.classList.contains(category)) {
-                    card.style.display = 'flex';
+                    card.style.display = 'block';
                 } else {
                     card.style.display = 'none';
                 }
             });
         }
 
+        // Initialize immediately on DOM ready or immediately if already loaded
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => filterItems('doc'));
+        } else {
+            filterItems('doc');
+        }
         window.addEventListener('load', () => {
             filterItems('doc');
         });
