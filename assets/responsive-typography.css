@@ -243,11 +243,17 @@ nav .text-sm.font-medium {
         display: none !important;
     }
     
-    /* Hide desktop contact button */
-    nav a[class*="lg:inline-block"],
-    nav a[class*="lg:flex"],
-    nav a[href*="contact"] {
+    /* Hide desktop contact button on the navbar bar */
+    nav > div > a[class*="lg:inline-block"],
+    nav > div > a[href*="contact"],
+    nav > div > a.hidden {
         display: none !important;
+    }
+    
+    /* Ensure all links inside mobile-menu dropdown (including ติดต่อ) are visible */
+    #mobile-menu a,
+    #mobile-menu a[href*="contact"] {
+        display: flex !important;
     }
     
     /* Show mobile logo and ensure flex row layout */
