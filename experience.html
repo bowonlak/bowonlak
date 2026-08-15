@@ -499,12 +499,12 @@
     </nav>
 
     <!-- Header Section -->
-    <section class="pt-32 md:pt-36 pb-12 bg-gradient-to-b from-purple-50/80 via-white to-gray-50/50">
+    <section class="pt-32 md:pt-36 pb-6 bg-gradient-to-b from-purple-50/80 via-white to-gray-50/50">
         <div class="max-w-7xl mx-auto px-6 text-center">
             <div
                 class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-100/80 text-purple-700 text-xs md:text-sm font-medium mb-4">
                 <i class="fa-solid fa-award"></i>
-                Academic Achievements &amp; Experiences
+                Naresuan University Achievements &amp; Experiences
             </div>
             <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4 leading-tight">
                 ผลงานและประสบการณ์<span class="text-purple-600">ระหว่างการศึกษา</span>
@@ -517,7 +517,7 @@
     </section>
 
     <!-- Main Content -->
-    <main class="py-10 max-w-7xl mx-auto px-6">
+    <main class="pt-6 pb-10 max-w-7xl mx-auto px-6">
 
         <!-- Category Tabs -->
         <div class="flex justify-center mb-10 sticky top-[80px] z-30">
@@ -680,8 +680,8 @@
             </div>
             <script>
                 window._galleries['doc-card-3'] = [
-                    { type: 'image', src: 'assets/image/เอกสารรับรอง/ใบประกอบวิชาชีพ/D7BBCB49-1436-4366-8FB6-482CD62ECC1A.jpg', caption: 'ใบอนุญาตปฏิบัติหน้าที่ครู' }
-                    { type: 'image', src: 'assets/image/เอกสารรับรอง/ใบประกอบวิชาชีพ/0BE0E5C9-2D04-49D1-9A35-730648ED58DF.jpg'
+                    { type: 'image', src: 'assets/image/เอกสารรับรอง/ใบประกอบวิชาชีพ/D7BBCB49-1436-4366-8FB6-482CD62ECC1A.jpg', caption: 'ใบอนุญาตปฏิบัติหน้าที่ครู' },
+                    { type: 'image', src: 'assets/image/เอกสารรับรอง/ใบประกอบวิชาชีพ/0BE0E5C9-2D04-49D1-9A35-730648ED58DF.jpg', caption: 'ใบอนุญาตปฏิบัติหน้าที่ครู 2' }
                 ];
             </script>
 
@@ -1535,12 +1535,12 @@
 
             buttons.forEach(btn => {
                 btn.classList.remove('bg-purple-600', 'text-white', 'shadow-md', 'shadow-purple-200', 'font-semibold');
-                btn.classList.add('text-gray-600', 'font-medium');
+                btn.classList.add('text-gray-600', 'font-medium', 'hover:bg-purple-50');
             });
 
             const activeBtn = document.getElementById(`btn-${category}`);
             if (activeBtn) {
-                activeBtn.classList.remove('text-gray-600', 'font-medium');
+                activeBtn.classList.remove('text-gray-600', 'font-medium', 'hover:bg-purple-50');
                 activeBtn.classList.add('bg-purple-600', 'text-white', 'shadow-md', 'shadow-purple-200', 'font-semibold');
             }
 
